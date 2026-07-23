@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juan Carlos Hernández — Abogado</title>
+<meta name="description" content="Que su caso llegue claro desde el primer mensaje. Coordine su consulta por WhatsApp.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Juan Carlos Hernández — Abogado">
+<meta property="og:description" content="Que su caso llegue claro desde el primer mensaje. Coordine su consulta por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mnonline2001.github.io/medine-demos/juan-carlos-hernandez/">
+<meta property="og:locale" content="es_VE">
+<meta name="theme-color" content="#f6f1e7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --papel: #f6f1e7;
+    --tinta: #1a2238;
+    --tinta-72: rgba(26, 34, 56, .72);
+    --tinta-40: rgba(26, 34, 56, .4);
+    --tinta-18: rgba(26, 34, 56, .16);
+    --ambar: #a97f2f;
+    --wa: #25D366;
+    --serif: "Playfair Display", "Times New Roman", serif;
+    --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    --col: 680px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
+
+  body {
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: var(--sans);
+    font-size: 1.075rem;
+    line-height: 1.68;
+    font-weight: 400;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Grano de papel sutilísimo */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    opacity: .05;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
+  }
+
+  ::selection { background: rgba(169, 127, 47, .28); }
+
+  :focus-visible {
+    outline: 2px solid var(--tinta);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    clip-path: inset(50%);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  /* ============ Columna angosta: el expediente ============ */
+  .columna {
+    width: min(100% - 3rem, var(--col));
+    margin-inline: auto;
+  }
+
+  section, footer { scroll-margin-top: 4.5rem; }
+
+  a { color: inherit; }
+
+  /* ============ CTA subrayado editorial ============ */
+  .cta-linea {
+    display: inline-block;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--tinta);
+    text-decoration: none;
+    background-image: linear-gradient(var(--ambar), var(--ambar));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% .14em;
+    padding-bottom: .24em;
+    transition: background-size .22s ease;
+  }
+  .cta-linea:hover,
+  .cta-linea:focus-visible { background-size: 100% .3em; }
+
+  /* ============ Barra headroom (aparece solo al subir) ============ */
+  .barra {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 40;
+    background: var(--papel);
+    border-bottom: 1px solid var(--tinta-18);
+    transform: translateY(-102%);
+    transition: transform .28s ease;
+  }
+  .barra.visible { transform: none; }
+  .barra-fila {
+    width: min(100% - 3rem, var(--col));
+    margin-inline: auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: .62rem;
+  }
+  .barra-marca {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.02rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .barra-marca small {
+    font-family: var(--sans);
+    font-size: .62rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--tinta-72);
+    margin-left: .55rem;
+  }
+  .barra .cta-linea { font-size: .98rem; padding-bottom: .18em; }
+  @media (max-width: 420px) {
+    .barra-marca small { display: none; }
+  }
+
+  /* ============ Hero: membrete + H1 + sello ============ */
+  .hero { padding-block: clamp(2.8rem, 7vw, 5rem) clamp(2rem, 5vw, 3.5rem); }
+
+  .membrete { text-align: center; margin-bottom: clamp(3rem, 8vw, 4.5rem); }
+  .membrete-nombre {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.3rem, 4vw, 1.65rem);
+    letter-spacing: .01em;
+  }
+  .membrete-cargo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .9rem;
+    margin-top: .5rem;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .38em;
+    text-indent: .38em;
+    text-transform: uppercase;
+    color: var(--tinta-72);
+  }
+  .membrete-cargo::before,
+  .membrete-cargo::after {
+    content: "";
+    height: 1px;
+    width: 2.4rem;
+    background: var(--tinta-40);
+  }
+
+  .h1-bloque {
+    position: relative;
+    padding-bottom: clamp(86px, 21vw, 112px);
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2.55rem, 8.2vw, 4.9rem);
+    line-height: 1.06;
+    letter-spacing: -.012em;
+    text-wrap: balance;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--ambar);
+  }
+
+  /* --- El sello --- */
+  .sello-wrap {
+    position: absolute;
+    right: 2px;
+    bottom: -22px;
+    width: clamp(120px, 31vw, 168px);
+    transform: rotate(-8deg);
+    transform-origin: 50% 50%;
+    color: var(--ambar);
+    opacity: .92;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+  .sello-wrap svg { display: block; width: 100%; height: auto; }
+  .sello-aro {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 3.8px;
+    fill: currentColor;
+  }
+  .sello-jch {
+    font-family: var(--serif);
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    fill: currentColor;
+  }
+  .js .sello-wrap:not(.estampado) { opacity: 0; }
+  .js .sello-wrap.estampado {
+    animation: estampar .55s cubic-bezier(.22, .9, .32, 1) .3s both;
+  }
+  @keyframes estampar {
+    0%   { opacity: 0; transform: rotate(-2deg) scale(1.72); }
+    55%  { opacity: .96; transform: rotate(-9.5deg) scale(.955); }
+    78%  { transform: rotate(-7.6deg) scale(1.02); }
+    100% { opacity: .92; transform: rotate(-8deg) scale(1); }
+  }
+
+  .hero-linea {
+    margin-top: 1.4rem;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--tinta-72);
+  }
+  .hero .cta-linea { margin-top: 1.5rem; }
+
+  /* ============ Ornamentos ============ */
+  .orn {
+    text-align: center;
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    color: var(--ambar);
+    padding-block: clamp(1.8rem, 5vw, 2.8rem);
+    user-select: none;
+  }
+  .raya-corta {
+    border: 0;
+    border-top: 1px solid var(--tinta-40);
+    width: 64px;
+    margin: clamp(1.8rem, 5vw, 2.8rem) auto;
+  }
+
+  /* ============ Secciones numeradas como cláusulas ============ */
+  .seccion { padding-block: clamp(1.2rem, 3vw, 2rem); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.55rem, 4.6vw, 2.05rem);
+    line-height: 1.2;
+    margin-bottom: 1.6rem;
+  }
+  h2 .num {
+    display: block;
+    font-size: clamp(2.2rem, 6vw, 2.9rem);
+    font-weight: 700;
+    color: var(--ambar);
+    line-height: 1;
+    margin-bottom: .35rem;
+  }
+
+  .seccion p + p { margin-top: 1.05rem; }
+
+  .capitular::first-letter {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 3.35em;
+    line-height: .76;
+    float: left;
+    padding: .08em .13em 0 0;
+    color: var(--ambar);
+  }
+
+  .paso { margin-top: 1.3rem; }
+  .paso b {
+    font-weight: 600;
+    font-size: .8rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--tinta-72);
+    display: block;
+    margin-bottom: .2rem;
+  }
+
+  /* --- Frase que se entinta con el scroll --- */
+  .frase-tinta {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(1.95rem, 6.4vw, 3rem);
+    line-height: 1.18;
+    margin-block: clamp(2.4rem, 6vw, 3.4rem) 1rem;
+    color: transparent;
+    -webkit-text-stroke: 1.1px rgba(26, 34, 56, .38);
+    background-image: linear-gradient(90deg, var(--tinta) 0 49.9%, transparent 50.1% 100%);
+    background-size: 204% 100%;
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  @supports (animation-timeline: view()) {
+    .frase-tinta {
+      animation: entintar linear both;
+      animation-timeline: view();
+      animation-range: cover 22% cover 62%;
+    }
+  }
+  @keyframes entintar {
+    from { background-position: 100% 0; }
+    to   { background-position: 0% 0; }
+  }
+
+  /* ============ Selector de trámite: renglones de formulario ============ */
+  .selector fieldset { border: 0; margin-top: .4rem; }
+
+  .renglon {
+    display: flex;
+    align-items: baseline;
+    gap: .9rem;
+    padding: .82rem .15rem .78rem;
+    border-bottom: 1px dashed rgba(26, 34, 56, .3);
+    cursor: pointer;
+    position: relative;
+  }
+  .renglon input {
+    position: absolute;
+    opacity: 0;
+    width: 1px; height: 1px;
+  }
+  .marca {
+    flex: none;
+    width: 1.05em;
+    height: 1.05em;
+    border: 1.5px solid var(--tinta);
+    display: inline-grid;
+    place-items: center;
+    transform: translateY(.14em);
+    font-size: .95em;
+    line-height: 1;
+  }
+  .renglon input:checked ~ .marca::after {
+    content: "✕";
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: .78em;
+    color: var(--tinta);
+  }
+  .renglon .texto { font-size: 1.1rem; }
+  .renglon input:focus-visible ~ .marca {
+    outline: 2px solid var(--tinta);
+    outline-offset: 3px;
+  }
+  .renglon:hover .marca { border-color: var(--ambar); }
+  .renglon:has(input:checked) {
+    border-bottom: 2px solid var(--ambar);
+    padding-bottom: calc(.78rem - 1px);
+  }
+  .renglon:has(input:checked) .texto { font-weight: 600; }
+
+  .cta-zona { margin-top: 1.9rem; }
+  .pista {
+    font-style: italic;
+    color: var(--tinta-72);
+  }
+  .listo { display: none; }
+  .selector.elegido .pista { display: none; }
+  .selector.elegido .listo { display: block; }
+  .selector:has(input:checked) .pista { display: none; }
+  .selector:has(input:checked) .listo { display: block; }
+  .borrador {
+    font-size: .98rem;
+    color: var(--tinta-72);
+    margin-bottom: 1.1rem;
+  }
+  .borrador q { font-style: italic; }
+  .cta-grande { font-size: 1.4rem; }
+
+  /* ============ Contacto ============ */
+  .tel-grande {
+    display: inline-block;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2.1rem, 8vw, 3.3rem);
+    letter-spacing: .015em;
+    text-decoration: none;
+    background-image: linear-gradient(var(--ambar), var(--ambar));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% .09em;
+    padding-bottom: .16em;
+    transition: background-size .22s ease;
+    margin-block: 1.1rem .4rem;
+  }
+  .tel-grande:hover,
+  .tel-grande:focus-visible { background-size: 100% .18em; }
+  .contacto-nota { color: var(--tinta-72); }
+
+  /* ============ Footer índice ============ */
+  footer { padding-block: 1rem clamp(3rem, 7vw, 4.5rem); }
+  .footer-titulo {
+    font-size: .74rem;
+    font-weight: 600;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: var(--tinta-72);
+    margin-bottom: 1.2rem;
+  }
+  .indice { list-style: none; }
+  .indice li + li { margin-top: .55rem; }
+  .indice .num {
+    display: inline-block;
+    min-width: 2.1rem;
+    font-family: var(--serif);
+    font-weight: 600;
+    color: var(--tinta-72);
+  }
+  .indice a {
+    text-decoration: none;
+    background-image: linear-gradient(var(--ambar), var(--ambar));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% .11em;
+    padding-bottom: .16em;
+    transition: background-size .22s ease;
+  }
+  .indice a:hover,
+  .indice a:focus-visible { background-size: 100% .11em; }
+  .footer-wa { margin-top: 1.6rem; }
+  .footer-wa a { font-weight: 600; }
+  .medine {
+    margin-top: 2.2rem;
+    font-size: .82rem;
+    color: var(--tinta-72);
+  }
+  .medine a { color: inherit; }
+
+  /* ============ FAB WhatsApp ============ */
+  .fab-wa {
+    position: fixed;
+    right: 1.15rem;
+    bottom: 1.15rem;
+    z-index: 50;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--wa);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 6px 18px rgba(26, 34, 56, .28);
+    transition: transform .18s ease;
+  }
+  .fab-wa:hover { transform: scale(1.06); }
+  .fab-wa svg { width: 30px; height: 30px; fill: #fff; }
+
+  /* ============ Movimiento reducido ============ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+    .js .sello-wrap:not(.estampado),
+    .js .sello-wrap { opacity: .92; }
+    .frase-tinta { background-position: 0% 0 !important; }
+  }
+</style>
+</head>
+<body id="top">
+
+  <!-- Barra headroom: solo aparece al hacer scroll hacia arriba -->
+  <div class="barra" id="barra">
+    <div class="barra-fila">
+      <a class="barra-marca" href="#top">Juan Carlos Hernández<small>Abogado</small></a>
+      <a class="cta-linea" href="https://wa.me/584160817356?text=Buenas%2C%20abogado.%20Vi%20su%20p%C3%A1gina%20y%20quisiera%20coordinar%20una%20consulta.">WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero columna">
+    <div class="membrete">
+      <p class="membrete-nombre">Juan Carlos Hernández</p>
+      <p class="membrete-cargo">Abogado</p>
+    </div>
+
+    <div class="h1-bloque">
+      <h1>Que su caso llegue <em>claro</em> desde el primer mensaje.</h1>
+      <div class="sello-wrap" aria-hidden="true">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="aro" d="M 100,100 m 0,-70 a 70,70 0 1,1 -0.1,0" fill="none"/>
+            <filter id="tampon" x="-6%" y="-6%" width="112%" height="112%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="7" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6"/>
+            </filter>
+          </defs>
+          <g filter="url(#tampon)">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="89" fill="none" stroke="currentColor" stroke-width="1"/>
+            <text class="sello-aro"><textPath href="#aro">JUAN CARLOS HERNÁNDEZ · ABOGADO ·</textPath></text>
+            <circle cx="100" cy="100" r="52" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <text class="sello-jch" x="100" y="102" text-anchor="middle" dominant-baseline="central">JCH</text>
+            <path d="M 88,72 h 24" stroke="currentColor" stroke-width="1"/>
+            <path d="M 88,128 h 24" stroke="currentColor" stroke-width="1"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <p class="hero-linea">Abogado · Atención por WhatsApp</p>
+    <p><a class="cta-linea" href="https://wa.me/584160817356?text=Buenas%2C%20abogado.%20Vi%20su%20p%C3%A1gina%20y%20quisiera%20coordinar%20una%20consulta.">Escríbame por WhatsApp</a></p>
+  </header>
+
+  <div class="orn columna" aria-hidden="true">§</div>
+
+  <!-- ============ I. CÓMO TRABAJO ============ -->
+  <section class="seccion columna" id="como-trabajo">
+    <h2><span class="num" aria-hidden="true">I.</span>Cómo trabajo</h2>
+    <p class="capitular">Todo caso empieza igual: con un mensaje. Lo que cambia el resultado es lo que ese mensaje trae. Por eso trabajo con un método simple, pensado para que usted no pierda tiempo ni haga diligencias de más.</p>
+
+    <p class="paso"><b>Primero</b>Me escribe su caso por WhatsApp, con sus palabras. No hace falta lenguaje jurídico: cuénteme qué pasó y qué necesita resolver.</p>
+    <p class="paso"><b>Segundo</b>Le respondo con lo concreto: qué papeles hacen falta, qué pasos siguen y qué puede ir adelantando usted mientras tanto.</p>
+    <p class="paso"><b>Tercero</b>Coordinamos la consulta y avanzamos con todo claro, sin vueltas ni recaudos de última hora.</p>
+
+    <p class="frase-tinta">Un caso claro avanza más rápido.</p>
+  </section>
+
+  <hr class="raya-corta">
+
+  <!-- ============ II. ¿QUÉ NECESITA RESOLVER? ============ -->
+  <section class="seccion columna selector" id="solicitudes">
+    <h2><span class="num" aria-hidden="true">II.</span>¿Qué necesita resolver?</h2>
+    <p class="capitular">Marque el renglón que corresponda y su mensaje sale armado: con la solicitud precisa y la pregunta correcta desde el principio.</p>
+
+    <fieldset>
+      <legend class="sr-only">Tipo de trámite</legend>
+      <label class="renglon">
+        <input type="radio" name="tramite" value="redaccion" data-msg="Buenas, abogado. Necesito la redacción de un documento. ¿Qué papeles debo tener a mano?">
+        <span class="marca" aria-hidden="true"></span>
+        <span class="texto">Redacción de un documento</span>
+      </label>
+      <label class="renglon">
+        <input type="radio" name="tramite" value="revision" data-msg="Buenas, abogado. Necesito que me revisen un contrato antes de firmarlo. ¿Qué debo enviarle?">
+        <span class="marca" aria-hidden="true"></span>
+        <span class="texto">Revisión de un contrato</span>
+      </label>
+      <label class="renglon">
+        <input type="radio" name="tramite" value="poder" data-msg="Buenas, abogado. Necesito tramitar un poder. ¿Qué papeles debo tener a mano?">
+        <span class="marca" aria-hidden="true"></span>
+        <span class="texto">Un poder</span>
+      </label>
+      <label class="renglon">
+        <input type="radio" name="tramite" value="consulta" data-msg="Buenas, abogado. Quisiera hacerle una consulta legal. ¿Qué información debo tener lista?">
+        <span class="marca" aria-hidden="true"></span>
+        <span class="texto">Una consulta legal</span>
+      </label>
+      <label class="renglon">
+        <input type="radio" name="tramite" value="otro" data-msg="Buenas, abogado. Tengo un trámite pendiente y quisiera orientación. ¿Qué papeles debo tener a mano?">
+        <span class="marca" aria-hidden="true"></span>
+        <span class="texto">Otro trámite</span>
+      </label>
+    </fieldset>
+
+    <div class="cta-zona" aria-live="polite">
+      <p class="pista">Marque una opción y su mensaje queda listo para enviar.</p>
+      <div class="listo">
+        <p class="borrador">Su mensaje: <q id="vista-msg"></q></p>
+        <a class="cta-linea cta-grande" id="cta-tramite" href="https://wa.me/584160817356">Enviar esta solicitud por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="orn columna" aria-hidden="true">§</div>
+
+  <!-- ============ III. CONTACTO ============ -->
+  <section class="seccion columna" id="contacto">
+    <h2><span class="num" aria-hidden="true">III.</span>Contacto</h2>
+    <p class="capitular">Sin salas de espera: la primera conversación es por WhatsApp, y de ahí coordinamos su consulta con fecha y hora acordadas.</p>
+    <p>
+      <a class="tel-grande" href="https://wa.me/584160817356?text=Buenas%2C%20abogado.%20Vi%20su%20p%C3%A1gina%20y%20quisiera%20coordinar%20una%20consulta.">0416-0817356</a>
+    </p>
+    <p class="contacto-nota">Atención en el estado Sucre · Cita coordinada por WhatsApp</p>
+  </section>
+
+  <hr class="raya-corta">
+
+  <!-- ============ FOOTER ÍNDICE ============ -->
+  <footer class="columna">
+    <p class="footer-titulo">Índice</p>
+    <ol class="indice">
+      <li><span class="num" aria-hidden="true">I.</span><a href="#como-trabajo">Cómo trabajo</a></li>
+      <li><span class="num" aria-hidden="true">II.</span><a href="#solicitudes">Solicitudes</a></li>
+      <li><span class="num" aria-hidden="true">III.</span><a href="#contacto">Contacto</a></li>
+    </ol>
+    <p class="footer-wa">WhatsApp: <a href="https://wa.me/584160817356?text=Buenas%2C%20abogado.%20Vi%20su%20p%C3%A1gina%20y%20quisiera%20coordinar%20una%20consulta.">0416-0817356</a></p>
+    <p class="medine">Demo diseñada por <a href="https://medine.tech">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</p>
+  </footer>
+
+  <!-- FAB WhatsApp -->
+  <a class="fab-wa" aria-label="Escribir por WhatsApp" href="https://wa.me/584160817356?text=Buenas%2C%20abogado.%20Vi%20su%20p%C3%A1gina%20y%20quisiera%20coordinar%20una%20consulta.">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+    </svg>
+  </a>
+
+<script>
+(function () {
+  var d = document;
+  d.documentElement.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* El sello: se estampa al entrar en pantalla */
+  var sello = d.querySelector('.sello-wrap');
+  if (sello) {
+    if (reduce || !('IntersectionObserver' in window)) {
+      sello.classList.add('estampado');
+    } else {
+      new IntersectionObserver(function (entradas, obs) {
+        if (entradas[0].isIntersecting) {
+          sello.classList.add('estampado');
+          obs.disconnect();
+        }
+      }, { threshold: .35 }).observe(sello);
+    }
+  }
+
+  /* Barra headroom: aparece solo al hacer scroll hacia arriba */
+  var barra = d.getElementById('barra');
+  var lastY = window.scrollY;
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY;
+    if (y < 160) {
+      barra.classList.remove('visible');
+    } else if (y < lastY - 4) {
+      barra.classList.add('visible');
+    } else if (y > lastY + 4) {
+      barra.classList.remove('visible');
+    }
+    lastY = y;
+  }, { passive: true });
+
+  /* Selector de trámite: arma el mensaje de WhatsApp */
+  var selector = d.getElementById('solicitudes');
+  var vista = d.getElementById('vista-msg');
+  var cta = d.getElementById('cta-tramite');
+  selector.addEventListener('change', function (e) {
+    if (e.target.name !== 'tramite') return;
+    var msg = e.target.getAttribute('data-msg');
+    vista.textContent = msg;
+    cta.href = 'https://wa.me/584160817356?text=' + encodeURIComponent(msg);
+    selector.classList.add('elegido');
+  });
+
+  /* Frase que se entinta: fallback rAF si no hay animation-timeline */
+  var frase = d.querySelector('.frase-tinta');
+  var soportaTimeline = window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
+  if (frase && !reduce && !soportaTimeline) {
+    var pendiente = false;
+    var pintar = function () {
+      pendiente = false;
+      var r = frase.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var ini = vh * .9, fin = vh * .38;
+      var p = Math.max(0, Math.min(1, (ini - r.top) / (ini - fin)));
+      frase.style.backgroundPosition = (100 - p * 100) + '% 0';
+    };
+    window.addEventListener('scroll', function () {
+      if (!pendiente) { pendiente = true; requestAnimationFrame(pintar); }
+    }, { passive: true });
+    pintar();
+  }
+})();
+</script>
+</body>
+</html>

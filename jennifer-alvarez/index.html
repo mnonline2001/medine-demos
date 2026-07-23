@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Od. Jennifer Álvarez — Odontóloga en Maturín</title>
+  <meta name="description" content="Odontología general y cirugía dental en Maturín. Atención personalizada, solo con cita previa. Aparte la suya por WhatsApp.">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Od. Jennifer Álvarez — Odontóloga en Maturín">
+  <meta property="og:description" content="Odontología general y cirugía dental · Atención solo con cita previa · Aparte su cita por WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_VE">
+  <meta property="og:url" content="https://mnonline2001.github.io/medine-demos/jennifer-alvarez/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..900;1,9..144,400..600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fbfdfd;
+      --ink:#16303a;
+      --aqua:#2aa5a0;
+      --aqua-deep:#1b7a76;
+      --aqua-tint:rgba(42,165,160,.09);
+      --coral:#f2917d;
+      --muted:#4a6570;
+      --cell:#ffffff;
+      --radius:26px;
+      --shadow:0 10px 30px rgba(22,48,58,.06);
+      --shadow-up:0 16px 38px rgba(22,48,58,.10);
+      --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Ccircle cx='8' cy='10' r='2.2' fill='%232aa5a0' opacity='.14'/%3E%3Ccircle cx='34' cy='30' r='3.6' fill='%232aa5a0' opacity='.09'/%3E%3Ccircle cx='14' cy='44' r='1.6' fill='%23f2917d' opacity='.16'/%3E%3Ccircle cx='46' cy='10' r='1.8' fill='%232aa5a0' opacity='.11'/%3E%3C/svg%3E");
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg);
+      color:var(--ink);
+      font-family:"Karla",system-ui,sans-serif;
+      font-size:16px;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    :focus-visible{outline:2px solid var(--aqua-deep);outline-offset:3px;border-radius:6px}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+
+    /* ============ Nav: wordmark suelto, sin barra ============ */
+    .topline{
+      display:flex;justify-content:space-between;align-items:flex-start;
+      padding:26px 2px 6px;
+    }
+    .wordmark{text-decoration:none;display:inline-block;line-height:1.05}
+    .wordmark .wm-name{
+      font-family:"Fraunces",serif;font-optical-sizing:auto;
+      font-weight:700;font-size:1.35rem;letter-spacing:-.01em;display:block;
+    }
+    .wordmark .wm-role{
+      font-size:.66rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;
+      color:var(--aqua-deep);display:block;margin-top:2px;
+    }
+    .top-wa{
+      font-size:.85rem;font-weight:700;letter-spacing:.06em;text-decoration:none;
+      color:var(--ink);border-bottom:2px solid var(--aqua);
+      padding-bottom:2px;margin-top:6px;
+    }
+    .top-wa:hover{color:var(--aqua-deep)}
+
+    /* ============ Bento ============ */
+    .bento{
+      display:grid;gap:14px;
+      grid-template-columns:1fr;
+      padding:18px 0 8px;
+    }
+    .cell{
+      background:var(--cell);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:clamp(22px,3.4vw,36px);
+      position:relative;
+      transition:transform .35s ease, box-shadow .35s ease;
+    }
+    .cell:hover{transform:translateY(-2px);box-shadow:var(--shadow-up)}
+    .js .cell{opacity:0;translate:0 14px;transition:opacity .55s ease,translate .55s ease,transform .35s ease,box-shadow .35s ease}
+    .js .cell.in{opacity:1;translate:0 0}
+    .num{
+      position:absolute;top:20px;right:24px;
+      font-size:.7rem;font-weight:700;letter-spacing:.22em;
+      color:var(--aqua-deep);opacity:.75;
+    }
+    .lbl{
+      display:block;font-size:.68rem;font-weight:700;letter-spacing:.3em;
+      text-transform:uppercase;color:var(--aqua-deep);margin-bottom:14px;
+    }
+    .cell h2{
+      font-family:"Fraunces",serif;font-optical-sizing:auto;
+      font-weight:650;font-size:clamp(1.35rem,2.6vw,1.75rem);
+      letter-spacing:-.01em;line-height:1.15;margin-bottom:10px;
+    }
+    .cell p{color:var(--muted);max-width:52ch}
+
+    /* ============ Hero ============ */
+    .c-hero h1{
+      font-family:"Fraunces",serif;font-optical-sizing:auto;
+      font-weight:750;letter-spacing:-.02em;line-height:1.03;
+      font-size:clamp(2.15rem,7vw,3.9rem);
+      max-width:15ch;margin:6px 0 14px;
+    }
+    .c-hero .sub{
+      font-size:.8rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+      color:var(--aqua-deep);margin-bottom:4px;
+    }
+    .c-hero .lede{margin-bottom:26px;max-width:46ch}
+
+    .agenda{display:grid;gap:22px}
+    .agenda .selects{display:grid;gap:22px}
+    fieldset{border:0}
+    legend{
+      font-size:.68rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+      color:var(--muted);margin-bottom:10px;
+    }
+    .chips{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+    .chips--turno{grid-template-columns:repeat(2,minmax(0,130px))}
+    .chip{
+      position:relative;
+      display:flex;align-items:center;justify-content:center;
+      padding:11px 4px;border-radius:999px;cursor:pointer;
+      border:1.5px solid rgba(22,48,58,.18);background:#fff;
+      font-size:.84rem;font-weight:700;color:var(--ink);
+      transition:border-color .2s,background .2s,transform .2s;
+      user-select:none;
+    }
+    .chip:hover{border-color:var(--aqua-deep)}
+    .chip input{position:absolute;opacity:0;pointer-events:none}
+    .chip:has(input:checked){background:var(--aqua);border-color:var(--aqua);transform:scale(1.04)}
+    .chip:has(input:focus-visible){outline:2px solid var(--aqua-deep);outline-offset:3px}
+
+    .chat{
+      background:var(--aqua-tint) var(--pattern);
+      border-radius:20px;padding:18px 18px 20px;
+    }
+    .chat-lbl{
+      font-size:.66rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+      color:var(--aqua-deep);display:block;margin-bottom:12px;
+    }
+    .bubble{
+      position:relative;background:#fff;border-radius:16px 16px 4px 16px;
+      padding:14px 16px;margin-left:auto;max-width:34ch;
+      box-shadow:0 4px 14px rgba(22,48,58,.07);
+      font-size:.95rem;line-height:1.5;color:var(--muted);
+      min-height:3.4em;
+    }
+    .agenda-cell:has(input[name="dia"]:checked):has(input[name="turno"]:checked) .bubble{color:var(--ink)}
+    .caret{
+      display:inline-block;width:2px;height:1.05em;background:var(--aqua);
+      vertical-align:text-bottom;margin-left:2px;opacity:0;
+    }
+    .agenda-cell:has(input[name="dia"]:checked):has(input[name="turno"]:checked) .caret{
+      opacity:1;animation:blink 1s steps(1) infinite;
+    }
+    @keyframes blink{50%{opacity:0}}
+
+    .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:16px}
+    .cta{
+      display:inline-flex;align-items:center;gap:9px;
+      background:var(--aqua);color:var(--ink);text-decoration:none;
+      font-weight:700;font-size:1rem;padding:14px 26px;border-radius:999px;
+      transition:transform .2s,box-shadow .2s,opacity .3s;
+    }
+    .cta:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(42,165,160,.35)}
+    .cta .arrow{transition:translate .2s}
+    .cta:hover .arrow{translate:3px 0}
+    .cta-book{opacity:.45;pointer-events:none}
+    .agenda-cell:has(input[name="dia"]:checked):has(input[name="turno"]:checked) .cta-book{
+      opacity:1;pointer-events:auto;
+    }
+    .demo-note{font-size:.74rem;color:var(--muted);max-width:30ch;line-height:1.45}
+
+    /* ============ Celda sonrisa (SVG line-drawing) ============ */
+    .c-smile{display:flex;flex-direction:column;background:var(--cell) var(--pattern)}
+    .smile{width:100%;height:auto;flex:1;margin-top:8px}
+    .smile path{
+      fill:none;stroke:var(--aqua);stroke-width:7;stroke-linecap:round;
+      stroke-dasharray:1;stroke-dashoffset:1;
+    }
+    .smile .lower{stroke-width:5;opacity:.4}
+    .smile .spark{stroke:var(--coral);stroke-width:5}
+    .js .cell.in .smile path{
+      transition:stroke-dashoffset 1.3s cubic-bezier(.45,0,.2,1);
+      stroke-dashoffset:0;
+    }
+    .js .cell.in .smile .lower{transition-delay:.45s}
+    .js .cell.in .smile .spark{transition-delay:.95s}
+    .no-js .smile path{stroke-dashoffset:0}
+
+    /* ============ Celda cita textual (perfil) ============ */
+    .c-quote blockquote{
+      font-family:"Fraunces",serif;font-style:italic;font-weight:500;
+      font-size:clamp(1.15rem,2.2vw,1.4rem);line-height:1.3;letter-spacing:-.01em;
+      margin-bottom:10px;
+    }
+    .c-quote .src{font-size:.8rem;color:var(--muted)}
+
+    /* ============ Pasos ============ */
+    .steps{list-style:none;display:grid;gap:18px;margin-top:6px;counter-reset:paso}
+    .steps li{display:flex;gap:14px;align-items:flex-start}
+    .steps li::before{
+      counter-increment:paso;content:counter(paso,decimal-leading-zero);
+      font-family:"Fraunces",serif;font-weight:700;font-size:1.15rem;
+      color:var(--aqua-deep);line-height:1.3;flex:none;
+    }
+    .steps strong{display:block;font-size:1rem;color:var(--ink)}
+    .steps span{font-size:.9rem;color:var(--muted)}
+    .steps-note{margin-top:18px;font-size:.86rem;color:var(--muted)}
+    .steps-note b{color:var(--aqua-deep)}
+
+    /* ============ Confianza (celda oscura) + FAQ ============ */
+    .c-trust{background:var(--ink);color:#f4f9f9}
+    .c-trust .lbl{color:var(--coral)}
+    .c-trust h2{color:#fff}
+    .c-trust>p{color:#cfdde0}
+    .c-trust .num{color:#8fb8b5}
+    .faq{margin-top:22px;display:grid;gap:10px}
+    .faq details{
+      background:rgba(255,255,255,.07);border-radius:16px;
+      transition:background .25s;
+    }
+    .faq details[open]{background:rgba(255,255,255,.11)}
+    .faq summary{
+      cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+      align-items:center;gap:12px;padding:14px 18px;font-weight:700;font-size:.95rem;
+      border-radius:16px;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{
+      content:"+";font-family:"Fraunces",serif;font-size:1.3rem;font-weight:500;
+      color:var(--coral);flex:none;transition:rotate .25s;line-height:1;
+    }
+    .faq details[open] summary::after{rotate:45deg}
+    .faq details p{padding:0 18px 16px;font-size:.9rem;color:#cfdde0;max-width:56ch}
+
+    /* ============ Contacto ============ */
+    .c-contact .tel{
+      font-family:"Fraunces",serif;font-weight:700;letter-spacing:-.01em;
+      font-size:clamp(1.7rem,6vw,2.6rem);line-height:1.1;
+      text-decoration:none;display:inline-block;margin:6px 0 10px;
+      border-bottom:3px solid var(--aqua);
+    }
+    .c-contact .tel:hover{color:var(--aqua-deep)}
+    .c-contact .cta{margin-top:16px}
+
+    /* ============ Celda locación ============ */
+    .c-loc{
+      background:var(--aqua-tint) var(--pattern);
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    .c-loc .city{
+      font-family:"Fraunces",serif;font-weight:750;letter-spacing:-.02em;
+      font-size:clamp(1.9rem,4.5vw,2.5rem);line-height:1;
+    }
+    .c-loc .city::after{
+      content:"";display:inline-block;width:.32em;height:.32em;border-radius:50%;
+      background:var(--coral);margin-left:.18em;
+    }
+    .c-loc .region{font-size:.8rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--aqua-deep);margin-top:8px}
+
+    /* ============ Footer una línea ============ */
+    footer{
+      display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+      gap:8px 14px;padding:30px 16px 96px;text-align:center;
+      font-size:.8rem;color:var(--muted);
+    }
+    footer .f-wm{font-family:"Fraunces",serif;font-weight:700;font-size:.92rem;color:var(--ink)}
+    footer .dot{color:var(--aqua);font-weight:700}
+    footer a{color:var(--muted);text-decoration-color:var(--aqua)}
+    footer a:hover{color:var(--aqua-deep)}
+
+    /* ============ FAB WhatsApp ============ */
+    .fab{
+      position:fixed;right:18px;bottom:18px;z-index:50;
+      width:56px;height:56px;border-radius:50%;
+      background:#25D366;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 8px 24px rgba(22,48,58,.25);
+      transition:transform .2s;
+    }
+    .fab:hover{transform:scale(1.08)}
+    .fab svg{width:30px;height:30px;fill:#fff}
+
+    /* ============ Breakpoints ============ */
+    @media (min-width:640px){
+      .bento{grid-template-columns:1fr 1fr}
+      .c-hero,.c-trust,.c-contact,.c-steps{grid-column:span 2}
+    }
+    @media (min-width:960px){
+      .bento{grid-template-columns:repeat(6,1fr);gap:16px}
+      .c-hero{grid-column:1/5;grid-row:1/3}
+      .c-smile{grid-column:5/7;grid-row:1/2}
+      .c-quote{grid-column:5/7;grid-row:2/3}
+      .c-steps{grid-column:1/4;grid-row:auto}
+      .c-general{grid-column:4/7}
+      .c-cirugia{grid-column:1/3}
+      .c-trust{grid-column:3/7}
+      .c-contact{grid-column:1/5}
+      .c-loc{grid-column:5/7}
+    }
+    @media (max-width:374px){
+      .chip{font-size:.76rem;padding:10px 2px}
+    }
+    @media (min-width:1060px){
+      .agenda{grid-template-columns:1.05fr .95fr;align-items:start}
+    }
+
+    /* ============ Reduced motion ============ */
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{transition:none !important;animation:none !important}
+      html{scroll-behavior:auto}
+      .js .cell{opacity:1;translate:0 0}
+      .smile path{stroke-dashoffset:0 !important}
+      .caret{display:none}
+    }
+  </style>
+</head>
+<body class="no-js">
+  <div class="wrap">
+
+    <!-- Nav: wordmark suelto -->
+    <header class="topline">
+      <a class="wordmark" href="#" aria-label="Jennifer Álvarez, odontóloga — inicio">
+        <span class="wm-name">Jennifer Álvarez</span>
+        <span class="wm-role">Odontóloga</span>
+      </a>
+      <a class="top-wa" href="https://wa.me/584140968531?text=Dra.%20Jennifer%2C%20quiero%20apartar%20una%20cita.">WhatsApp</a>
+    </header>
+
+    <main class="bento">
+
+      <!-- 01 · Hero: la agenda viva -->
+      <section class="cell c-hero agenda-cell" aria-labelledby="titulo">
+        <span class="num" aria-hidden="true">01</span>
+        <p class="sub">Odontología general y cirugía dental · Maturín</p>
+        <h1 id="titulo">Su cita, sin ida y vuelta de mensajes.</h1>
+        <p class="lede">Elija el día y el turno que le convienen: su solicitud llega ordenada al WhatsApp de la doctora, y ella le confirma la hora exacta.</p>
+
+        <form class="agenda" id="agenda">
+          <div class="selects">
+            <fieldset>
+              <legend>Día</legend>
+              <div class="chips">
+                <label class="chip">Lun<input type="radio" name="dia" value="el lunes"></label>
+                <label class="chip">Mar<input type="radio" name="dia" value="el martes"></label>
+                <label class="chip">Mié<input type="radio" name="dia" value="el miércoles"></label>
+                <label class="chip">Jue<input type="radio" name="dia" value="el jueves"></label>
+                <label class="chip">Vie<input type="radio" name="dia" value="el viernes"></label>
+                <label class="chip">Sáb<input type="radio" name="dia" value="el sábado"></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Turno</legend>
+              <div class="chips chips--turno">
+                <label class="chip">Mañana<input type="radio" name="turno" value="en la mañana"></label>
+                <label class="chip">Tarde<input type="radio" name="turno" value="en la tarde"></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="chat">
+            <span class="chat-lbl">Vista previa de su mensaje</span>
+            <p class="bubble"><span id="bubbleText" aria-live="polite">Elija un día y un turno, y aquí se escribe su mensaje…</span><span class="caret" aria-hidden="true"></span></p>
+            <div class="cta-row">
+              <a class="cta cta-book" id="ctaBook" href="https://wa.me/584140968531?text=Dra.%20Jennifer%2C%20quiero%20apartar%20una%20cita." aria-disabled="true">Apartar por WhatsApp <span class="arrow" aria-hidden="true">→</span></a>
+              <p class="demo-note">Horarios de ejemplo — la doctora confirma la hora exacta por WhatsApp.</p>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Sonrisa que se traza -->
+      <section class="cell c-smile" aria-label="Ilustración de una sonrisa">
+        <span class="lbl">Su sonrisa</span>
+        <svg class="smile" viewBox="0 0 340 250" role="img" aria-label="Dibujo lineal de una sonrisa trazándose">
+          <path pathLength="1" d="M38 74 C 84 196, 256 196, 302 74"></path>
+          <path pathLength="1" class="lower" d="M92 120 C 126 184, 214 184, 248 120"></path>
+          <path pathLength="1" class="spark" d="M294 18 v40 M274 38 h40"></path>
+        </svg>
+      </section>
+
+      <!-- De su perfil profesional -->
+      <section class="cell c-quote">
+        <span class="lbl">De su perfil profesional</span>
+        <blockquote>“Dentist and dental surgery — open by appointment only.”</blockquote>
+        <p class="src">Atención con cita previa, como debe ser.</p>
+      </section>
+
+      <!-- 02 · Cómo funciona -->
+      <section class="cell c-steps" aria-labelledby="t-pasos">
+        <span class="num" aria-hidden="true">02</span>
+        <span class="lbl">Cómo funciona</span>
+        <h2 id="t-pasos">Tres pasos, cero enredo</h2>
+        <ol class="steps">
+          <li><div><strong>Elija su día y turno</strong><span>Desde esta página, con dos toques.</span></div></li>
+          <li><div><strong>La doctora confirma por WhatsApp</strong><span>Hora exacta y ubicación del consultorio.</span></div></li>
+          <li><div><strong>Llegue a su cita</strong><span>Su espacio queda reservado para usted.</span></div></li>
+        </ol>
+        <p class="steps-note">La atención es <b>personalizada y con cita previa</b>: cada paciente tiene su tiempo.</p>
+      </section>
+
+      <!-- 03 · Odontología general -->
+      <section class="cell c-general" aria-labelledby="t-general">
+        <span class="num" aria-hidden="true">03</span>
+        <span class="lbl">Servicio</span>
+        <h2 id="t-general">Odontología general</h2>
+        <p>El cuidado de su salud bucal, evaluado en consulta y con un plan de atención según su caso.</p>
+      </section>
+
+      <!-- 04 · Cirugía dental -->
+      <section class="cell c-cirugia" aria-labelledby="t-cirugia">
+        <span class="num" aria-hidden="true">04</span>
+        <span class="lbl">Servicio</span>
+        <h2 id="t-cirugia">Cirugía dental</h2>
+        <p>Procedimientos quirúrgicos planificados en consulta, con indicaciones claras antes y después.</p>
+      </section>
+
+      <!-- 05 · Cita previa + FAQ -->
+      <section class="cell c-trust" aria-labelledby="t-confianza">
+        <span class="num" aria-hidden="true">05</span>
+        <span class="lbl">Solo con cita previa</span>
+        <h2 id="t-confianza">Su tiempo está protegido</h2>
+        <p>La consulta trabaja únicamente con cita previa: cada paciente tiene su espacio y la atención completa de la doctora.</p>
+        <div class="faq">
+          <details>
+            <summary>¿Atiende sin cita?</summary>
+            <p>La atención es solo con cita previa — apártela por WhatsApp y la doctora le confirma.</p>
+          </details>
+          <details>
+            <summary>¿Dónde queda el consultorio?</summary>
+            <p>En Maturín. Al agendar su cita, la doctora le comparte la dirección exacta.</p>
+          </details>
+          <details>
+            <summary>¿Qué incluye la primera consulta?</summary>
+            <p>Escríbale por WhatsApp y la doctora le explica según su caso.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- 06 · Contacto -->
+      <section class="cell c-contact" aria-labelledby="t-contacto">
+        <span class="num" aria-hidden="true">06</span>
+        <span class="lbl">Contacto</span>
+        <h2 id="t-contacto">Escríbale directo</h2>
+        <a class="tel" href="https://wa.me/584140968531?text=Dra.%20Jennifer%2C%20quiero%20apartar%20una%20cita.">0414-0968531</a>
+        <p>WhatsApp de la consulta · Maturín, estado Monagas. Al agendar, la doctora le comparte la ubicación.</p>
+        <a class="cta" href="https://wa.me/584140968531?text=Dra.%20Jennifer%2C%20quiero%20apartar%20una%20cita.">Apartar cita por WhatsApp <span class="arrow" aria-hidden="true">→</span></a>
+      </section>
+
+      <!-- Locación -->
+      <section class="cell c-loc" aria-label="Ubicación">
+        <p class="city">Maturín</p>
+        <p class="region">Estado Monagas · Venezuela</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer una línea -->
+  <footer>
+    <span class="f-wm">Jennifer Álvarez</span>
+    <span class="dot" aria-hidden="true">·</span>
+    <span>Maturín</span>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://wa.me/584140968531?text=Dra.%20Jennifer%2C%20quiero%20apartar%20una%20cita.">WhatsApp</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <span>Demo diseñada por <a href="https://medine.tech">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</span>
+  </footer>
+
+  <!-- FAB WhatsApp -->
+  <a class="fab" href="https://wa.me/584140968531?text=Dra.%20Jennifer%2C%20quiero%20apartar%20una%20cita." aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+  </a>
+
+  <script>
+    document.body.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Reveal + trazado de la sonrisa (IntersectionObserver) */
+    var cells = document.querySelectorAll('.cell');
+    if (reduce || !('IntersectionObserver' in window)) {
+      cells.forEach(function (c) { c.classList.add('in'); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.2 });
+      cells.forEach(function (c) { io.observe(c); });
+    }
+
+    /* La agenda viva: día + turno → mensaje → wa.me */
+    var form = document.getElementById('agenda');
+    var bubble = document.getElementById('bubbleText');
+    var cta = document.getElementById('ctaBook');
+    var timer = null;
+
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    form.addEventListener('change', function () {
+      var d = form.querySelector('input[name="dia"]:checked');
+      var t = form.querySelector('input[name="turno"]:checked');
+      if (!d || !t) return;
+      var msg = 'Dra. Jennifer, quiero una cita ' + d.value + ' ' + t.value + '.';
+      cta.href = 'https://wa.me/584140968531?text=' + encodeURIComponent(msg);
+      cta.removeAttribute('aria-disabled');
+      if (timer) { clearInterval(timer); timer = null; }
+      if (reduce) { bubble.textContent = msg; return; }
+      bubble.textContent = '';
+      var i = 0;
+      timer = setInterval(function () {
+        i++;
+        bubble.textContent = msg.slice(0, i);
+        if (i >= msg.length) { clearInterval(timer); timer = null; }
+      }, 24);
+    });
+  </script>
+</body>
+</html>
