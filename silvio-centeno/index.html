@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silvio Centeno — Técnico en Aire Acondicionado en Maturín</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Mantenimiento, reparación e instalación de aires acondicionados en Maturín, estado Monagas. Precios justos y transparentes. Cotice por WhatsApp.">
+<meta property="og:title" content="Silvio Centeno — Técnico en Aire Acondicionado en Maturín">
+<meta property="og:description" content="Mantenimiento, reparación e instalación de aires acondicionados. Calidad · Confianza · Garantía. Cotice por WhatsApp: 0424-9724398.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9D%84%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101b33;
+    --ink:#131313;
+    --deep:#0d1526;
+    --mid:#243d72;
+    --cobalt:#254a90;
+    --blue:#5374ca;
+    --blue-lt:#9db4ef;
+    --paper:#f7f8f8;
+    --ice:#e2e5e8;
+    --hair:rgba(226,229,232,.16);
+    --hair-blue:rgba(83,116,202,.4);
+    --wa:#25D366;
+    --grille:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Crect x='3' y='5.5' width='22' height='3' rx='1.5' fill='%235374ca' fill-opacity='0.07'/%3E%3C/svg%3E");
+    --fins:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='28'%3E%3Crect x='5.5' y='3' width='3' height='22' rx='1.5' fill='%235374ca' fill-opacity='0.06'/%3E%3C/svg%3E");
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  html,body{overflow-x:clip}
+  body{
+    font-family:"Archivo",system-ui,-apple-system,sans-serif;
+    font-optical-sizing:auto;
+    background:var(--navy);
+    color:var(--ice);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--blue-lt);outline-offset:3px;border-radius:2px}
+  .wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+  .marker{font-family:"Permanent Marker",cursive;font-weight:400}
+
+  /* ============ NAV: píldora flotante ============ */
+  .nav{
+    position:fixed;top:14px;left:50%;transform:translateX(-50%);
+    z-index:60;
+    width:min(700px,calc(100% - 24px));
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:9px 10px 9px 18px;
+    border-radius:999px;
+    background:rgba(16,27,51,.78);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border:1px solid var(--hair);
+  }
+  .wordmark{display:inline-flex;align-items:baseline;gap:.4rem;text-decoration:none;white-space:nowrap}
+  .wordmark b{
+    font-stretch:118%;font-weight:900;letter-spacing:.06em;
+    text-transform:uppercase;font-size:1.02rem;color:var(--paper);
+  }
+  .wordmark .marker{color:var(--blue-lt);font-size:1.05rem;transform:rotate(-2deg)}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--blue);color:#fff;text-decoration:none;
+    font-weight:800;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;
+    padding:.55rem .95rem;border-radius:999px;
+    transition:background .18s ease;
+  }
+  .nav-cta:hover{background:var(--cobalt)}
+  .nav-cta svg{width:16px;height:16px;flex:none}
+  .nav-cta .t{display:inline}
+  @media (max-width:560px){
+    .nav{padding:8px 8px 8px 14px}
+    .nav-cta{padding:.55rem .62rem}
+    .nav-cta .t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  }
+
+  /* ============ HERO: el termostato ============ */
+  .hero{
+    position:relative;
+    background:linear-gradient(163deg,#0d1526 0%,var(--navy) 42%,var(--mid) 88%,var(--cobalt) 120%);
+    padding:118px 0 0;
+    border-bottom:1px solid var(--hair);
+    isolation:isolate;
+  }
+  .heat{
+    position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:linear-gradient(163deg,#3f200e 0%,#2c130d 45%,#1a1220 100%);
+    opacity:0;
+  }
+  .hero-grid{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:1fr;gap:2.5rem;
+    padding-bottom:0;
+  }
+  .kicker{
+    font-size:.72rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--blue-lt);
+    display:flex;align-items:center;gap:.9rem;
+  }
+  .kicker::after{content:"";height:1px;flex:0 1 120px;background:var(--hair-blue)}
+  .thermo{
+    display:flex;align-items:flex-start;gap:1.2rem;
+    margin-top:1.4rem;
+  }
+  .temp{
+    font-stretch:125%;font-weight:900;line-height:.82;letter-spacing:-.03em;
+    font-size:clamp(8.75rem,26vw + 2rem,18rem);
+    color:var(--paper);
+    font-variant-numeric:tabular-nums;
+  }
+  .scale{
+    align-self:stretch;width:14px;margin-top:.6rem;
+    background:
+      repeating-linear-gradient(to bottom,rgba(226,229,232,.45) 0 1px,transparent 1px 16px) left/6px 100% no-repeat,
+      repeating-linear-gradient(to bottom,rgba(83,116,202,.7) 0 1px,transparent 1px 80px) right/14px 100% no-repeat;
+  }
+  @media (max-width:480px){ .scale{display:none} }
+  .thermo-note{
+    margin-top:1rem;max-width:32ch;
+    font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(226,229,232,.75);
+  }
+  .h1{
+    margin-top:1.6rem;
+    font-stretch:120%;font-weight:900;text-transform:uppercase;line-height:1.02;
+    letter-spacing:.005em;
+    font-size:clamp(1.9rem,4.6vw,3.4rem);
+    max-width:15ch;
+    color:var(--ice);
+  }
+  @supports (-webkit-background-clip:text) or (background-clip:text){
+    .h1{
+      background:linear-gradient(100deg,var(--paper) 15%,var(--blue-lt) 60%,var(--blue) 105%);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;color:var(--paper);
+    }
+  }
+  .sub{
+    margin-top:1rem;font-size:1rem;font-weight:500;color:rgba(226,229,232,.82);
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem;margin:1.8rem 0 3rem}
+
+  .btn-hard{
+    display:inline-block;text-decoration:none;
+    background:var(--paper);color:var(--navy);
+    font-weight:900;font-stretch:112%;text-transform:uppercase;letter-spacing:.05em;
+    font-size:.95rem;
+    padding:1rem 1.6rem;
+    border:1px solid var(--navy);
+    box-shadow:6px 6px 0 var(--blue);
+    transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .btn-hard:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--blue)}
+  .btn-hard:active{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--blue)}
+  .btn-hard--navy{
+    background:var(--navy);color:var(--paper);border-color:var(--navy);
+    box-shadow:6px 6px 0 var(--blue);
+  }
+  .link-ghost{
+    font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue-lt);text-decoration:none;border-bottom:1px solid var(--hair-blue);
+    padding-bottom:.2rem;
+  }
+  .link-ghost:hover{color:var(--paper);border-color:var(--paper)}
+
+  .hero-photo{position:relative;margin:0}
+  .duo{
+    clip-path:polygon(0 6%,100% 0,100% 100%,0 94%);
+    position:relative;overflow:hidden;
+    border:1px solid var(--hair);
+    max-height:560px;
+  }
+  .duo img{
+    width:100%;height:100%;max-height:560px;object-fit:cover;object-position:top center;
+    filter:grayscale(1) contrast(1.08) brightness(1.04);
+  }
+  .duo::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(165deg,var(--blue) 0%,var(--cobalt) 55%,var(--navy) 115%);
+    mix-blend-mode:multiply;
+  }
+  .hero-photo figcaption{
+    margin-top:.8rem;
+    font-size:.7rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+    color:rgba(226,229,232,.6);
+    display:flex;gap:.8rem;align-items:center;
+  }
+  .hero-photo figcaption::before{content:"";width:26px;height:1px;background:var(--hair-blue)}
+  @media (min-width:860px){
+    .hero{padding-top:132px}
+    .hero-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:3.5rem;align-items:end}
+    .hero-photo{margin-bottom:-1px;padding-bottom:2.5rem}
+  }
+
+  /* ============ CINTA DE CONFIANZA ============ */
+  .trust{
+    background:var(--deep);
+    border-bottom:1px solid var(--hair);
+    padding:1.1rem 0;
+    overflow:hidden;
+  }
+  .track{
+    display:flex;width:max-content;
+    animation:belt 26s linear infinite;
+  }
+  .trust:hover .track{animation-play-state:paused}
+  .belt-group{display:flex;align-items:center;gap:2.2rem;padding-right:2.2rem}
+  .belt-group span{
+    font-stretch:122%;font-weight:900;text-transform:uppercase;letter-spacing:.18em;
+    font-size:.95rem;color:var(--ice);white-space:nowrap;
+  }
+  .belt-group i{font-style:normal;color:var(--blue);font-weight:900;font-size:1.1rem}
+  @keyframes belt{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){
+    .track{animation:none;width:100%;justify-content:center}
+    .belt-group{flex-wrap:wrap;justify-content:center;row-gap:.4rem;padding-right:0}
+    .belt-group[aria-hidden]{display:none}
+  }
+
+  /* ============ SPEC SECTIONS ============ */
+  .sec{padding:5rem 0 5.5rem}
+  .sec-dark{background:var(--navy) var(--fins)}
+  .sec-dark--flat{background:linear-gradient(180deg,var(--navy),#111a2e)}
+  .sec-head{
+    display:flex;align-items:baseline;gap:1.1rem;flex-wrap:wrap;
+    border-bottom:1px solid var(--hair);
+    padding-bottom:1.1rem;
+  }
+  .num{
+    font-stretch:125%;font-weight:900;font-size:clamp(2.2rem,5vw,3.2rem);line-height:1;
+    color:transparent;-webkit-text-stroke:1px var(--blue);
+  }
+  @supports not (-webkit-text-stroke:1px #000){ .num{color:var(--blue)} }
+  .sec-head h2{
+    font-stretch:118%;font-weight:900;text-transform:uppercase;letter-spacing:.03em;
+    font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--paper);
+  }
+  .sec-tag{
+    margin-left:auto;
+    font-size:.68rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--blue-lt);
+  }
+  @media (max-width:640px){ .sec-tag{margin-left:0;width:100%} }
+
+  .spec{
+    display:grid;grid-template-columns:1fr;gap:.8rem;
+    padding:1.8rem 0;border-bottom:1px solid var(--hair);
+  }
+  .spec h3{
+    font-stretch:115%;font-weight:900;text-transform:uppercase;letter-spacing:.03em;
+    font-size:clamp(1.15rem,2.6vw,1.6rem);color:var(--paper);
+  }
+  .spec .code{
+    font-size:.68rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--blue-lt);
+  }
+  .spec p{color:rgba(226,229,232,.78);max-width:58ch;font-size:.98rem}
+  .spec-link{
+    justify-self:start;
+    font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue-lt);text-decoration:none;border-bottom:1px solid var(--hair-blue);
+    padding-bottom:.15rem;
+  }
+  .spec-link:hover{color:var(--paper);border-color:var(--paper)}
+  @media (min-width:860px){
+    .spec{grid-template-columns:170px minmax(0,1fr) 190px;align-items:start;gap:2rem}
+    .spec-link{justify-self:end;margin-top:.4rem}
+  }
+
+  /* ============ BANDA CLARA: por qué Silvio ============ */
+  .sec-light{
+    background:var(--paper) var(--grille);
+    color:var(--navy);
+  }
+  .sec-light .sec-head{border-color:rgba(16,27,51,.16)}
+  .sec-light .sec-head h2{color:var(--navy)}
+  .sec-light .sec-head h2 .marker{color:var(--cobalt);text-transform:none;letter-spacing:0;font-size:1.06em}
+  .sec-light .num{-webkit-text-stroke:1px var(--cobalt)}
+  .sec-light .sec-tag{color:var(--cobalt)}
+  .light-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:start}
+  .why{padding:1.6rem 0;border-bottom:1px solid rgba(16,27,51,.14)}
+  .why h3{
+    font-stretch:115%;font-weight:900;text-transform:uppercase;letter-spacing:.02em;
+    font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--navy);
+  }
+  .why p{margin-top:.5rem;color:rgba(16,27,51,.78);max-width:52ch;font-size:.97rem}
+  .why .code{font-size:.66rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--cobalt)}
+  .light-photo{margin:0;position:relative}
+  .light-photo .duo{clip-path:polygon(0 0,100% 4%,100% 96%,0 100%);max-height:430px}
+  .light-photo .duo img{max-height:430px}
+  .light-photo figcaption{
+    margin-top:.7rem;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(16,27,51,.72);
+  }
+  .light-note{
+    margin-top:1.2rem;
+    font-family:"Permanent Marker",cursive;color:var(--cobalt);
+    font-size:1.15rem;transform:rotate(-2deg);max-width:18ch;line-height:1.4;
+  }
+  @media (min-width:860px){
+    .light-grid{grid-template-columns:minmax(0,1.5fr) minmax(0,.7fr);gap:4rem}
+    .light-photo{margin-top:1.6rem}
+  }
+
+  /* ============ DIAGNÓSTICO EXPRÉS ============ */
+  .diag fieldset{border:0}
+  .diag legend{
+    padding:1.6rem 0 .4rem;
+    font-weight:700;font-size:1.05rem;color:var(--ice);
+  }
+  .opt{
+    display:flex;align-items:center;gap:1rem;
+    padding:1.05rem .9rem;
+    border-bottom:1px solid var(--hair);
+    cursor:pointer;position:relative;
+    transition:background .15s ease;
+  }
+  .opt:first-of-type{border-top:1px solid var(--hair)}
+  .opt:hover{background:rgba(83,116,202,.08)}
+  .opt input{position:absolute;opacity:0;width:1px;height:1px}
+  .dot{
+    flex:none;width:18px;height:18px;border-radius:50%;
+    border:2px solid rgba(226,229,232,.45);
+    display:grid;place-items:center;
+    transition:border-color .15s ease;
+  }
+  .dot::after{
+    content:"";width:8px;height:8px;border-radius:50%;
+    background:var(--blue);transform:scale(0);transition:transform .15s ease;
+  }
+  .opt-label{font-weight:700;color:var(--ice);font-size:1rem}
+  .opt-hint{margin-left:auto;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(226,229,232,.55)}
+  @media (max-width:560px){ .opt-hint{display:none} }
+  .opt:has(input:checked){
+    background:linear-gradient(90deg,rgba(83,116,202,.16),rgba(83,116,202,0) 70%);
+    box-shadow:inset 3px 0 0 var(--blue);
+  }
+  .opt:has(input:checked) .dot{border-color:var(--blue)}
+  .opt:has(input:checked) .dot::after{transform:scale(1)}
+  .opt:has(input:checked) .opt-label{color:var(--paper)}
+  .opt:has(input:focus-visible){outline:3px solid var(--blue-lt);outline-offset:-3px}
+
+  .diag-out{margin-top:2.2rem;display:grid;gap:1.3rem}
+  .bubble-tag{
+    font-size:.68rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--blue-lt);
+  }
+  .bubble{
+    justify-self:start;position:relative;
+    background:var(--ice);color:var(--navy);
+    font-size:.95rem;font-weight:500;line-height:1.5;
+    padding:.85rem 1.1rem;max-width:46ch;
+    border-radius:2px 14px 14px 14px;
+  }
+  .bubble::before{
+    content:"";position:absolute;top:0;left:-9px;
+    border:10px solid transparent;border-top-color:var(--ice);border-right-color:var(--ice);
+    border-width:0 10px 10px 0;
+  }
+  .diag-sell{
+    color:rgba(226,229,232,.7);font-size:.9rem;max-width:56ch;
+  }
+  @media (min-width:860px){
+    .diag-out{grid-template-columns:minmax(0,1fr) auto;align-items:center}
+    .diag-sell{grid-column:1 / -1}
+  }
+
+  /* ============ CONTACTO ============ */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:2.4rem;padding-top:2.2rem}
+  .c-block .code{
+    font-size:.68rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--blue-lt);display:block;margin-bottom:.7rem;
+  }
+  .c-block p{color:rgba(226,229,232,.82);max-width:40ch}
+  .phone-xl{
+    display:inline-block;text-decoration:none;
+    font-stretch:125%;font-weight:900;line-height:1;letter-spacing:-.01em;
+    font-size:clamp(2.4rem,8vw,4.2rem);
+    color:var(--paper);font-variant-numeric:tabular-nums;
+  }
+  .phone-xl:hover{color:var(--blue-lt)}
+  @media (min-width:860px){
+    .contact-grid{grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
+  }
+
+  /* ============ FOOTER PÓSTER ============ */
+  .poster{
+    background:linear-gradient(180deg,#111a2e 0%,var(--deep) 30%,var(--ink) 130%) ;
+    border-top:1px solid var(--hair);
+    padding:5.5rem 0 2.2rem;
+    position:relative;
+  }
+  .poster-display{
+    font-stretch:125%;font-weight:900;text-transform:uppercase;line-height:.95;
+    letter-spacing:-.01em;
+    font-size:clamp(2.5rem,9vw,7rem);
+    color:var(--paper);
+    max-width:12ch;
+  }
+  .poster-display em{
+    font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--blue);
+  }
+  @supports not (-webkit-text-stroke:1px #000){ .poster-display em{color:var(--blue)} }
+  .poster-cta{margin:2.4rem 0 3.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.6rem}
+  .poster-meta{
+    display:grid;grid-template-columns:1fr;gap:1.8rem;
+    border-top:1px solid var(--hair);padding-top:2rem;
+  }
+  .poster-meta .code{
+    font-size:.66rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--blue-lt);display:block;margin-bottom:.5rem;
+  }
+  .poster-meta p,.poster-meta a{color:rgba(226,229,232,.82);font-size:.95rem;text-decoration:none}
+  .poster-meta a:hover{color:var(--paper)}
+  .poster-phone{
+    font-stretch:120%;font-weight:900;font-size:clamp(1.5rem,4.5vw,2.2rem);
+    color:var(--paper) !important;line-height:1.1;font-variant-numeric:tabular-nums;
+  }
+  @media (min-width:860px){ .poster-meta{grid-template-columns:1.2fr 1fr 1fr} }
+  .seal{
+    margin-top:3.2rem;border-top:1px solid var(--hair);padding-top:1.2rem;
+    display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;align-items:center;
+  }
+  .seal p,.seal a{font-size:.78rem;color:rgba(226,229,232,.62)}
+  .seal a{color:var(--blue-lt);text-decoration:none}
+  .seal a:hover{text-decoration:underline}
+  .seal .wordmark b{font-size:.85rem}
+  .seal .wordmark .marker{font-size:.9rem}
+
+  /* ============ FAB WHATSAPP ============ */
+  .fab{
+    position:fixed;right:18px;bottom:18px;z-index:70;
+    width:56px;height:56px;border-radius:50%;
+    background:var(--wa);
+    display:grid;place-items:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.4);
+    transition:transform .15s ease;
+  }
+  .fab:hover{transform:scale(1.07)}
+  .fab svg{width:30px;height:30px;fill:#fff}
+
+  /* ============ REVEAL (solo con JS) ============ */
+  .js [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .js [data-reveal].in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .js [data-reveal]{opacity:1;transform:none;transition:none}
+    .btn-hard,.fab,.dot,.dot::after,.opt{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Navegación principal">
+  <a class="wordmark" href="#top" aria-label="Silvio Centeno — inicio">
+    <b>Silvio</b><span class="marker" aria-hidden="true">Centeno</span>
+  </a>
+  <a class="nav-cta" href="https://wa.me/584249724398?text=Hola%20Silvio%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20servicio%20de%20aire%20acondicionado." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span class="t">WhatsApp</span>
+  </a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="heat" id="heat" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">Maturín · Estado Monagas</p>
+      <p class="thermo" role="img" aria-label="Termostato bajando de 33 a 17 grados">
+        <span class="temp" id="temp" aria-hidden="true">17°</span>
+        <span class="scale" aria-hidden="true"></span>
+      </p>
+      <p class="thermo-note">De 33° de calor a 17° de confort. Ese es el trabajo.</p>
+      <h1 class="h1">El técnico que baja la temperatura en Maturín</h1>
+      <p class="sub">Técnico profesional en aire acondicionado · Maturín</p>
+      <div class="hero-ctas">
+        <a class="btn-hard" href="https://wa.me/584249724398?text=Hola%20Silvio%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20servicio%20de%20aire%20acondicionado." target="_blank" rel="noopener">Cotice por WhatsApp</a>
+        <a class="link-ghost" href="#diagnostico">Diagnóstico exprés ↓</a>
+      </div>
+    </div>
+    <figure class="hero-photo" data-reveal>
+      <div class="duo">
+        <img src="./assets/silvio-trabajo.jpg" width="333" height="754" alt="Silvio Centeno, con el uniforme azul de su marca, trabajando con un taladro sobre una unidad de aire acondicionado">
+      </div>
+      <figcaption>Silvio Centeno · En pleno trabajo</figcaption>
+    </figure>
+  </div>
+</header>
+
+<!-- ============ CINTA DE CONFIANZA ============ -->
+<section class="trust" aria-label="Calidad, confianza y garantía">
+  <div class="track">
+    <div class="belt-group">
+      <span>Calidad</span><i aria-hidden="true">·</i>
+      <span>Confianza</span><i aria-hidden="true">·</i>
+      <span>Garantía</span><i aria-hidden="true">·</i>
+      <span>Calidad</span><i aria-hidden="true">·</i>
+      <span>Confianza</span><i aria-hidden="true">·</i>
+      <span>Garantía</span><i aria-hidden="true">·</i>
+    </div>
+    <div class="belt-group" aria-hidden="true">
+      <span>Calidad</span><i>·</i>
+      <span>Confianza</span><i>·</i>
+      <span>Garantía</span><i>·</i>
+      <span>Calidad</span><i>·</i>
+      <span>Confianza</span><i>·</i>
+      <span>Garantía</span><i>·</i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 SERVICIOS ============ -->
+<section class="sec sec-dark" id="servicios">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <span class="num" aria-hidden="true">01</span>
+      <h2>Servicios</h2>
+      <p class="sec-tag">Residencial · Comercial</p>
+    </header>
+
+    <article class="spec" data-reveal>
+      <p class="code">Serv / 01 — Preventivo</p>
+      <div>
+        <h3>Mantenimiento preventivo</h3>
+        <p>Limpieza profunda de la unidad, revisión de drenajes y del estado general del equipo. Un aire atendido a tiempo enfría mejor, dura más y evita la reparación cara.</p>
+      </div>
+      <a class="spec-link" href="https://wa.me/584249724398?text=Hola%20Silvio%2C%20quiero%20cotizar%20el%20mantenimiento%20de%20mi%20aire%20acondicionado." target="_blank" rel="noopener">Cotizar →</a>
+    </article>
+
+    <article class="spec" data-reveal>
+      <p class="code">Serv / 02 — Correctivo</p>
+      <div>
+        <h3>Reparación y diagnóstico</h3>
+        <p>Revisión completa para encontrar la falla real — no adivinar. Usted recibe una cotización clara antes de que se toque una sola pieza del equipo.</p>
+      </div>
+      <a class="spec-link" href="https://wa.me/584249724398?text=Hola%20Silvio%2C%20mi%20aire%20tiene%20una%20falla%20y%20quiero%20un%20diagn%C3%B3stico." target="_blank" rel="noopener">Cotizar →</a>
+    </article>
+
+    <article class="spec" data-reveal>
+      <p class="code">Serv / 03 — Instalación</p>
+      <div>
+        <h3>Instalación</h3>
+        <p>Instalación de equipos nuevos en casas y comercios, con asesoría profesional para elegir el equipo correcto para su espacio antes de comprar.</p>
+      </div>
+      <a class="spec-link" href="https://wa.me/584249724398?text=Hola%20Silvio%2C%20quiero%20cotizar%20la%20instalaci%C3%B3n%20de%20un%20aire%20acondicionado." target="_blank" rel="noopener">Cotizar →</a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 02 POR QUÉ SILVIO (banda clara) ============ -->
+<section class="sec sec-light" id="por-que">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <span class="num" aria-hidden="true">02</span>
+      <h2>Por qué <span class="marker">Silvio</span></h2>
+      <p class="sec-tag">Trabajo garantizado · 100% confiable</p>
+    </header>
+
+    <div class="light-grid">
+      <div>
+        <article class="why" data-reveal>
+          <p class="code">Regla / 01</p>
+          <h3>Precios justos y transparentes</h3>
+          <p>Cotización clara antes de empezar. Usted sabe qué se va a hacer y por qué, sin sorpresas cuando el trabajo termina.</p>
+        </article>
+        <article class="why" data-reveal>
+          <p class="code">Regla / 02</p>
+          <h3>Atención personalizada y asesoría profesional</h3>
+          <p>Lo atiende el técnico, no un intermediario. La misma persona que le contesta el WhatsApp es la que llega con las herramientas.</p>
+        </article>
+        <article class="why" data-reveal>
+          <p class="code">Regla / 03</p>
+          <h3>Trabajo garantizado</h3>
+          <p>Sus clientes llegan por recomendación: el que lo contrata una vez, lo vuelve a llamar. Calidad, confianza y garantía en cada servicio.</p>
+        </article>
+        <p class="light-note" aria-hidden="true">— el mismo técnico, de principio a fin</p>
+      </div>
+      <figure class="light-photo" data-reveal>
+        <div class="duo">
+          <img src="./assets/silvio-trabajo.jpg" width="333" height="754" alt="Detalle de Silvio Centeno ajustando una unidad de aire acondicionado con taladro" loading="lazy">
+        </div>
+        <figcaption>Manos en el equipo, no en el teléfono</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 DIAGNÓSTICO EXPRÉS ============ -->
+<section class="sec sec-dark--flat diag" id="diagnostico">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <span class="num" aria-hidden="true">03</span>
+      <h2>Diagnóstico exprés</h2>
+      <p class="sec-tag">Directo a su WhatsApp</p>
+    </header>
+
+    <form id="diag-form" data-reveal>
+      <fieldset>
+        <legend>¿Qué está haciendo su aire?</legend>
+
+        <label class="opt">
+          <input type="radio" name="sintoma" value="no-enfria" data-msg="Hola Silvio, mi aire no está enfriando. ¿Me puede ayudar?">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="opt-label">No enfría</span>
+          <span class="opt-hint" aria-hidden="true">Síntoma 01</span>
+        </label>
+
+        <label class="opt">
+          <input type="radio" name="sintoma" value="gotea" data-msg="Hola Silvio, mi aire está goteando agua. ¿Me puede ayudar?">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="opt-label">Gotea agua</span>
+          <span class="opt-hint" aria-hidden="true">Síntoma 02</span>
+        </label>
+
+        <label class="opt">
+          <input type="radio" name="sintoma" value="ruido" data-msg="Hola Silvio, mi aire está haciendo un ruido raro. ¿Me puede ayudar?">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="opt-label">Hace ruido raro</span>
+          <span class="opt-hint" aria-hidden="true">Síntoma 03</span>
+        </label>
+
+        <label class="opt">
+          <input type="radio" name="sintoma" value="mantenimiento" data-msg="Hola Silvio, a mi aire le toca mantenimiento. ¿Cuándo puede pasar?">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="opt-label">Le toca mantenimiento</span>
+          <span class="opt-hint" aria-hidden="true">Rutina</span>
+        </label>
+
+        <label class="opt">
+          <input type="radio" name="sintoma" value="instalacion" data-msg="Hola Silvio, quiero cotizar la instalación de un aire acondicionado nuevo.">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="opt-label">Instalación nueva</span>
+          <span class="opt-hint" aria-hidden="true">Proyecto</span>
+        </label>
+      </fieldset>
+
+      <div class="diag-out">
+        <div>
+          <p class="bubble-tag">Así le llega el mensaje a Silvio:</p>
+          <p class="bubble" id="diag-preview" aria-live="polite">Hola Silvio, vi su página y quiero hacerle una consulta sobre mi aire acondicionado.</p>
+        </div>
+        <a class="btn-hard" id="diag-cta" href="https://wa.me/584249724398?text=Hola%20Silvio%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20hacerle%20una%20consulta%20sobre%20mi%20aire%20acondicionado." target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        <p class="diag-sell">Elija el síntoma y el mensaje sale listo: sin explicar todo desde cero por llamada. Silvio recibe la solicitud ordenada y le responde con los pasos a seguir.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ 04 CONTACTO ============ -->
+<section class="sec sec-dark" id="contacto">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <span class="num" aria-hidden="true">04</span>
+      <h2>Contacto</h2>
+      <p class="sec-tag">WhatsApp · Llamada</p>
+    </header>
+
+    <div class="contact-grid">
+      <div class="c-block" data-reveal>
+        <span class="code">Zona de trabajo</span>
+        <p>Maturín y alrededores, estado Monagas. Atiende casas y comercios.</p>
+      </div>
+      <div class="c-block" data-reveal>
+        <span class="code">Teléfono / WhatsApp</span>
+        <a class="phone-xl" href="tel:+584249724398">0424-9724398</a>
+        <p style="margin-top:.9rem">¿Horario? Escríbale y coordina directo con él la visita.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER PÓSTER ============ -->
+<footer class="poster">
+  <div class="wrap">
+    <p class="poster-display" data-reveal>¿Su aire dejó de <em>enfriar?</em></p>
+    <div class="poster-cta">
+      <a class="btn-hard" href="https://wa.me/584249724398?text=Hola%20Silvio%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20servicio%20de%20aire%20acondicionado." target="_blank" rel="noopener">Cotice por WhatsApp</a>
+      <a class="link-ghost" href="#diagnostico">O use el diagnóstico exprés</a>
+    </div>
+
+    <div class="poster-meta">
+      <div>
+        <span class="code">Llame o escriba</span>
+        <a class="poster-phone" href="tel:+584249724398">0424-9724398</a>
+      </div>
+      <div>
+        <span class="code">Zona</span>
+        <p>Maturín y alrededores<br>Estado Monagas, Venezuela</p>
+      </div>
+      <div>
+        <span class="code">Compromiso</span>
+        <p>Precios justos y transparentes.<br>Trabajo garantizado · 100% confiable.</p>
+      </div>
+    </div>
+
+    <div class="seal">
+      <span class="wordmark"><b>Silvio</b><span class="marker" aria-hidden="true">Centeno</span></span>
+      <p>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FAB WHATSAPP ============ -->
+<a class="fab" href="https://wa.me/584249724398?text=Hola%20Silvio%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20servicio%20de%20aire%20acondicionado." target="_blank" rel="noopener" aria-label="Escribir a Silvio Centeno por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  document.documentElement.classList.add("js");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* --- 1. Termostato: 33° -> 17° + transición térmica del fondo --- */
+  var temp = document.getElementById("temp");
+  var heat = document.getElementById("heat");
+  if (temp && heat && !reduce && "IntersectionObserver" in window) {
+    temp.textContent = "33°";
+    heat.style.opacity = "1";
+    var ran = false;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting || ran) return;
+        ran = true;
+        io.disconnect();
+        var DURATION = 2600, start = null;
+        function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+        function frame(now){
+          if (start === null) start = now;
+          var t = Math.min((now - start) / DURATION, 1);
+          var e = easeOutCubic(t);
+          temp.textContent = Math.round(33 - 16 * e) + "°";
+          heat.style.opacity = String(1 - e);
+          if (t < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      });
+    }, { threshold: 0.35 });
+    io.observe(temp);
+  }
+  /* reduced-motion o sin IO: queda el estado final del HTML (17°, fondo frío) */
+
+  /* --- 2. Diagnóstico exprés: radio -> CTA de WhatsApp prellenado --- */
+  var form = document.getElementById("diag-form");
+  var cta = document.getElementById("diag-cta");
+  var preview = document.getElementById("diag-preview");
+  if (form && cta && preview) {
+    form.addEventListener("change", function(e){
+      var radio = e.target;
+      if (!radio || radio.name !== "sintoma" || !radio.dataset.msg) return;
+      var msg = radio.dataset.msg;
+      cta.href = "https://wa.me/584249724398?text=" + encodeURIComponent(msg);
+      preview.textContent = msg;
+    });
+    form.addEventListener("submit", function(e){ e.preventDefault(); });
+  }
+
+  /* --- 3. Reveal sutil al hacer scroll --- */
+  var items = document.querySelectorAll("[data-reveal]");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var rio = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          rio.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    items.forEach(function(el){ rio.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
