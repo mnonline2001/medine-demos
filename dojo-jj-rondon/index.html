@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dojo J.J. Rondón — Escuela de Karate-Do en Maturín</title>
+<meta name="description" content="Escuela de Karate-Do en Maturín dirigida por el Sensei José Rondón. Karate para niños y adultos: disciplina, mejora continua y excelencia. Inscripciones por WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#17181c">
+<meta property="og:title" content="Dojo J.J. Rondón — Escuela de Karate-Do en Maturín">
+<meta property="og:description" content="Karate-Do para niños y adultos en Maturín. Un dojo que forma medallistas: disciplina, mejora continua y excelencia. Pregunta horarios y mensualidad por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<meta property="og:image" content="assets/dojo-logo.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🥋%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ base ============ */
+:root{
+  --bg:#17181c;
+  --bg-2:#1d1f26;
+  --bg-3:#141519;
+  --bg-deep:#101114;
+  --body:#0c0d10;
+  --ink:#f5f4f0;
+  --mut:#adafb8;
+  --red:#d63a2f;
+  --wa:#25D366;
+  --cut:clamp(26px, 5vw, 60px);
+  --tatami:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg stroke='%23f5f4f0' stroke-opacity='0.045' stroke-width='1'%3E%3Cpath d='M0 14h28M28 42h28M14 28v28M42 0v28'/%3E%3C/g%3E%3C/svg%3E");
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{
+  background:var(--body);
+  color:var(--ink);
+  font-family:"Work Sans",system-ui,sans-serif;
+  font-size:1rem;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
+.cta:focus-visible,.fab:focus-visible{outline-color:var(--ink)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(1160px, 100% - clamp(2.2rem, 8vw, 6rem));margin-inline:auto;position:relative;z-index:1}
+
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--red);color:#fff;padding:.6em 1em;font-weight:600;transition:top .2s}
+.skip:focus{top:1rem}
+
+/* ============ tipografía ============ */
+h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight:400;letter-spacing:.015em;line-height:.95;text-transform:uppercase}
+.kicker{
+  display:inline-flex;align-items:center;gap:.65em;
+  font-size:.76rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);
+}
+.kicker::before{content:"";width:.6em;height:.6em;background:var(--red);flex:none;transform:rotate(45deg)}
+
+/* ============ franja de cinturones (firma) ============ */
+.belt{position:fixed;inset-inline:0;bottom:0;height:8px;z-index:60;background:rgba(245,244,240,.06);pointer-events:none}
+.belt__row{position:absolute;inset:0;display:flex}
+.belt__row span{flex:1}
+.belt__dim span{opacity:.15}
+.belt__fill{clip-path:inset(0 100% 0 0)}
+.b1{background:#e9e6db}.b2{background:#f2c230}.b3{background:#e8802e}.b4{background:#3f9d4e}
+.b5{background:#2f6bb3}.b6{background:#7a4b26}.b7{background:#0b0b0d;box-shadow:inset 0 0 0 1px rgba(245,244,240,.35)}
+@keyframes beltgrow{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: scroll()){
+    .belt__fill{animation:beltgrow linear both;animation-timeline:scroll(root)}
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .belt__fill{clip-path:none !important;animation:none !important}
+}
+
+/* ============ nav sticky clásica ============ */
+.nav{
+  position:sticky;top:0;z-index:80;
+  background:var(--bg);
+  border-bottom:2px solid var(--red);
+}
+.nav__in{
+  width:min(1160px, 100% - clamp(2.2rem, 8vw, 6rem));margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding-block:.6rem;
+}
+.lockup{display:flex;align-items:center;gap:.7rem;min-width:0}
+.medal{border-radius:50%;background:var(--ink);border:2px solid var(--red);flex:none}
+.medal img{border-radius:50%}
+.lockup .medal{width:44px;height:44px}
+.lockup__txt{line-height:1.15;min-width:0}
+.lockup__name{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.3rem;letter-spacing:.04em;white-space:nowrap}
+.lockup__sub{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);white-space:nowrap}
+@media (max-width:430px){.lockup__sub{display:none}.lockup__name{font-size:1.15rem}}
+
+/* ============ CTA paralelogramo ============ */
+.cta{
+  display:inline-block;background:var(--red);color:#fff;
+  font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.25rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.62em 1.5em;transform:skewX(-8deg);
+  transition:transform .25s ease,background .25s ease;
+}
+.cta>span{display:inline-block;transform:skewX(8deg)}
+.cta:hover{transform:skewX(0);background:#e2473c}
+.cta--ghost{background:transparent;border:1px solid rgba(245,244,240,.4);color:var(--ink)}
+.cta--ghost:hover{background:rgba(245,244,240,.08);border-color:var(--ink);transform:skewX(0)}
+.cta--sm{font-size:1.05rem;padding:.5em 1.1em}
+.nav .cta{font-size:1.05rem;padding:.45em 1.1em}
+
+/* ============ secciones cartel: cortes diagonales ============ */
+.cut{position:relative;isolation:isolate}
+.cut--a{clip-path:polygon(0 0, 100% var(--cut), 100% 100%, 0 calc(100% - var(--cut)))}
+.cut--b{clip-path:polygon(0 var(--cut), 100% 0, 100% calc(100% - var(--cut)), 0 100%)}
+.cut+.cut,.hero+.cut{margin-top:calc(-1 * var(--cut))}
+.sec{padding-block:calc(var(--cut) + clamp(3.4rem, 8vw, 6rem))}
+.sec{scroll-margin-top:84px}
+
+.bib{
+  position:absolute;z-index:0;top:calc(var(--cut) + .5rem);right:2vw;
+  font-family:"Bebas Neue","Arial Narrow",sans-serif;
+  font-size:clamp(7rem, 24vw, 17rem);line-height:1;
+  color:rgba(245,244,240,.05);pointer-events:none;user-select:none;
+}
+.sec-head{margin-bottom:clamp(1.8rem, 4vw, 3rem)}
+.sec-head h2{font-size:clamp(2.7rem, 8vw, 5.2rem);margin-top:.35rem}
+
+/* ============ hero ============ */
+.hero{
+  position:relative;
+  background:var(--bg) var(--tatami);
+  clip-path:polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--cut)));
+  padding:clamp(2.6rem, 7vw, 5.5rem) 0 calc(var(--cut) + clamp(3rem, 7vw, 5rem));
+  min-height:max(540px, calc(100svh - 66px));
+  display:flex;align-items:center;
+}
+.hero__art{position:absolute;z-index:0;right:0;top:4%;width:min(80vw, 400px);opacity:.15}
+@media (min-width:920px){
+  .hero__art{width:min(38vw, 480px);right:3vw;top:50%;transform:translateY(-54%);opacity:.95}
+  .hero__txt{max-width:62%}
+}
+.hero__txt{position:relative;z-index:1}
+.hero__meta{display:flex;align-items:center;gap:1rem;margin:1.4rem 0 1.6rem}
+.hero__meta .medal{width:88px;height:88px}
+.hero__meta-name{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.45rem;letter-spacing:.05em;line-height:1}
+.hero__meta-sub{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);margin-top:.35rem}
+.hero h1{font-size:clamp(3.6rem, 13vw, 9.5rem);max-width:11ch}
+.hero h1 .hl{
+  display:inline-block;background:var(--red);color:#fff;
+  padding:0 .14em;transform:skewX(-6deg);
+}
+.hero__sub{max-width:46ch;color:var(--mut);font-size:clamp(1rem, 2.6vw, 1.15rem);margin-top:1.3rem}
+.hero__sub strong{color:var(--ink);font-weight:600}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:1.1rem;margin-top:2rem;align-items:center}
+
+/* ============ 01 el dojo ============ */
+.s-dojo{background:var(--bg-2)}
+.s-dojo p{max-width:58ch;color:var(--mut);font-size:1.06rem}
+.s-dojo p+p{margin-top:1rem}
+.s-dojo p strong{color:var(--ink);font-weight:600}
+.values{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem;list-style:none}
+.values li{
+  border:1px solid rgba(245,244,240,.22);border-radius:10px;
+  padding:.6em 1.2em;
+  font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.25rem;letter-spacing:.09em;
+  position:relative;padding-left:1.6em;
+}
+.values li::before{content:"";position:absolute;left:.75em;top:50%;width:.42em;height:.42em;background:var(--red);transform:translateY(-50%) rotate(45deg)}
+
+/* ============ 02 categorías: pasillos scroll-snap ============ */
+.s-cats{background:var(--bg-3) var(--tatami)}
+.rail-hint{display:flex;align-items:center;gap:.6em;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-bottom:1rem}
+.rail-hint::after{content:"";flex:none;width:2.4em;height:1px;background:var(--red)}
+.rail{
+  display:flex;gap:clamp(.9rem, 2.5vw, 1.4rem);
+  overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;
+  margin-inline:calc(50% - 50vw);
+  padding:0.4rem max(1.4rem, calc(50vw - 580px)) 1.6rem;
+  scroll-padding-inline:max(1.4rem, calc(50vw - 580px));
+  scrollbar-color:rgba(245,244,240,.3) transparent;
+}
+.rail::-webkit-scrollbar{height:6px}
+.rail::-webkit-scrollbar-thumb{background:rgba(245,244,240,.25)}
+.rail::-webkit-scrollbar-track{background:transparent}
+.pcard{
+  flex:0 0 min(78vw, 340px);scroll-snap-align:start;
+  --cat:var(--red);
+  background:var(--cat);
+  clip-path:polygon(0 22px, 100% 0, 100% 100%, 0 100%);
+  padding:4px;
+}
+.pcard--juvenil{--cat:#f5f4f0}
+.pcard--adultos{--cat:#8a8d99}
+.pcard__in{
+  height:100%;background:var(--bg-2);
+  clip-path:polygon(0 20px, 100% 0, 100% 100%, 0 100%);
+  padding:clamp(1.6rem, 4vw, 2rem);padding-top:calc(clamp(1.6rem, 4vw, 2rem) + 16px);
+  display:flex;flex-direction:column;gap:.7rem;
+}
+.pcard__num{font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+.pcard h3{font-size:clamp(2.5rem, 7vw, 3.2rem);color:var(--cat)}
+.pcard__tag{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.3rem;letter-spacing:.06em;text-transform:uppercase}
+.pcard p{color:var(--mut);font-size:.98rem;flex:1}
+.pcard .cta{align-self:flex-start;margin-top:.6rem}
+.rail-note{color:var(--mut);font-size:.9rem;max-width:52ch}
+.rail-note strong{color:var(--ink);font-weight:600}
+
+/* ============ 03 inscripción sin adivinar ============ */
+.s-join{background:var(--bg-2)}
+.s-join .lead{max-width:52ch;color:var(--mut);font-size:1.06rem}
+.s-join .lead strong{color:var(--ink);font-weight:600}
+.inscribe{margin-top:2.4rem;max-width:760px}
+.step{border:0;margin-bottom:2rem}
+.step legend{margin-bottom:1rem}
+.step__n{display:block;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.step__q{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.7rem;letter-spacing:.05em;text-transform:uppercase}
+.chips{display:flex;flex-wrap:wrap;gap:.7rem}
+.chip{
+  position:relative;display:inline-flex;align-items:center;
+  padding:.68em 1.15em;border:1px solid rgba(245,244,240,.3);border-radius:10px;
+  font-weight:500;font-size:.98rem;cursor:pointer;
+  transition:border-color .2s ease,background .2s ease,color .2s ease;
+}
+.chip:hover{border-color:rgba(245,244,240,.65)}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip:has(input:checked){background:var(--ink);border-color:var(--ink);color:#15161a;font-weight:600}
+.chip:has(input:focus-visible){outline:2px solid var(--red);outline-offset:3px}
+
+.step--2,.compose__out{opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease,visibility .45s}
+.inscribe:has(input[name="quien"]:checked) .step--2{opacity:1;visibility:visible;transform:none}
+.inscribe:has(input[name="quien"]:checked):has(input[name="tema"]:checked) .compose__out{opacity:1;visibility:visible;transform:none}
+@supports not selector(:has(*)){
+  .step--2,.compose__out{opacity:1;visibility:visible;transform:none}
+}
+
+.out-label{font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);margin-bottom:.8rem}
+.bubble{
+  position:relative;max-width:46ch;
+  background:var(--ink);color:#191a1f;
+  padding:.95em 1.15em;border-radius:14px 14px 14px 4px;
+  font-size:1.02rem;line-height:1.5;
+  box-shadow:0 10px 26px rgba(0,0,0,.35);
+}
+.bubble::before{content:"";position:absolute;left:-7px;bottom:0;width:14px;height:14px;background:var(--ink);clip-path:polygon(100% 0, 100% 100%, 0 100%)}
+.compose__out .cta{margin-top:1.4rem}
+.fine{color:var(--mut);font-size:.85rem;margin-top:.9rem}
+
+/* ============ footer ============ */
+.footer{
+  background:var(--bg-deep) var(--tatami);
+  clip-path:polygon(0 0, 100% var(--cut), 100% 100%, 0 100%);
+  margin-top:calc(-1 * var(--cut));
+  padding:calc(var(--cut) + clamp(3rem, 7vw, 4.5rem)) 0 3.4rem;
+}
+.footer__grid{display:grid;gap:2.4rem;grid-template-columns:1fr}
+@media (min-width:760px){.footer__grid{grid-template-columns:1.4fr 1fr 1fr;gap:2rem}}
+.footer .medal{width:48px;height:48px}
+.footer__brand p{color:var(--mut);font-size:.95rem;max-width:34ch;margin-top:1rem}
+.footer h3{font-size:.72rem;font-family:"Work Sans",sans-serif;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);margin-bottom:1rem}
+.footer ul{list-style:none;display:grid;gap:.55rem}
+.footer li a{color:var(--ink);font-weight:500;transition:color .2s}
+.footer li a:hover{color:var(--red)}
+.footer li{color:var(--mut)}
+.f-wa{display:inline-flex;align-items:center;gap:.5em}
+.f-wa svg{flex:none}
+.seal{
+  margin-top:3rem;padding-top:1.4rem;
+  border-top:1px solid rgba(245,244,240,.14);
+  font-size:.82rem;color:var(--mut);
+}
+.seal a{color:var(--ink);font-weight:600}
+.seal a:hover{color:var(--red)}
+
+/* ============ FAB WhatsApp ============ */
+.fab{
+  position:fixed;right:18px;bottom:24px;z-index:70;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--wa);display:grid;place-items:center;
+  box-shadow:0 10px 26px rgba(0,0,0,.45);
+  transition:transform .2s ease;
+}
+.fab:hover{transform:scale(1.07)}
+
+/* ============ reveal ============ */
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.is-in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .js .reveal{opacity:1;transform:none}
+  .step--2,.compose__out{transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<!-- Firma: el camino del cinturón (se llena con el scroll) -->
+<div class="belt" aria-hidden="true">
+  <div class="belt__row belt__dim">
+    <span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span><span class="b5"></span><span class="b6"></span><span class="b7"></span>
+  </div>
+  <div class="belt__row belt__fill">
+    <span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span><span class="b5"></span><span class="b6"></span><span class="b7"></span>
+  </div>
+</div>
+
+<nav class="nav" aria-label="Principal">
+  <div class="nav__in">
+    <a class="lockup" href="#top">
+      <span class="medal"><img src="assets/dojo-logo.png" width="44" height="44" alt="Logo de la Escuela de Karate-Do Dojo J.J. Rondón: caricatura de un karateka lanzando una patada"></span>
+      <span class="lockup__txt">
+        <span class="lockup__name">Dojo J.J. Rondón</span><br>
+        <span class="lockup__sub">Escuela de Karate-Do · Maturín</span>
+      </span>
+    </a>
+    <a class="cta" href="https://wa.me/584262470341?text=Buenas%2C%20Sensei.%20Quiero%20informaci%C3%B3n%20sobre%20la%20escuela."><span>Escríbenos</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="hero__art" viewBox="0 0 420 420" aria-hidden="true" focusable="false">
+    <circle cx="210" cy="210" r="196" fill="none" stroke="#d63a2f" stroke-opacity=".35" stroke-width="2"/>
+    <circle cx="210" cy="210" r="150" fill="none" stroke="#f5f4f0" stroke-opacity=".1" stroke-width="1" stroke-dasharray="4 10"/>
+    <polygon points="66,318 208,196 246,232 118,352" fill="#d63a2f"/>
+    <polygon points="208,196 268,120 300,150 246,232" fill="#f5f4f0" opacity=".92"/>
+    <polygon points="300,150 344,96 362,114 318,166" fill="#d63a2f"/>
+    <polygon points="120,206 176,158 208,196 150,246" fill="#f5f4f0" opacity=".18"/>
+    <polygon points="96,262 150,214 162,228 108,276" fill="#d63a2f" opacity=".8"/>
+    <polygon points="368,74 386,58 380,84" fill="#f5f4f0" opacity=".85"/>
+    <polygon points="352,52 362,34 368,60" fill="#d63a2f"/>
+    <polygon points="386,104 406,98 392,118" fill="#d63a2f" opacity=".7"/>
+    <path d="M84 340 A180 180 0 0 1 46 220" fill="none" stroke="#f5f4f0" stroke-opacity=".25" stroke-width="3" stroke-linecap="round"/>
+    <path d="M110 366 A210 210 0 0 1 40 260" fill="none" stroke="#d63a2f" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero__txt">
+      <p class="kicker">Maturín · Monagas — Karate-Do para niños y adultos</p>
+      <div class="hero__meta">
+        <span class="medal"><img src="assets/dojo-logo.png" width="88" height="88" alt=""></span>
+        <div>
+          <p class="hero__meta-name">Escuela de Karate-Do</p>
+          <p class="hero__meta-sub">Sensei José Rondón</p>
+        </div>
+      </div>
+      <h1>Disciplina que se nota. Dentro y fuera <span class="hl">del tatami</span>.</h1>
+      <p class="hero__sub">Un dojo que <strong>forma medallistas</strong> — y algo más importante: niños con foco, respeto y constancia. <strong>Inscribe a tu hijo</strong>, o empieza tú. Los horarios y la mensualidad se preguntan por WhatsApp, sin adivinar.</p>
+      <div class="hero__ctas">
+        <a class="cta" href="#inscripcion"><span>Inscripciones por WhatsApp</span></a>
+        <a class="cta cta--ghost" href="#categorias"><span>Ver categorías</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="cut cut--b sec s-dojo" id="dojo" aria-labelledby="h-dojo">
+    <span class="bib" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">01 · El dojo</p>
+        <h2 id="h-dojo">Disciplina, mejora continua, excelencia</h2>
+      </div>
+      <div class="reveal">
+        <p>En Maturín, estado Monagas, la <strong>Escuela de Karate-Do Dojo J.J. Rondón</strong> lleva las iniciales de quien la dirige: el <strong>Sensei José Rondón</strong>. Aquí el karate se enseña como lo que es — una disciplina que forma el carácter.</p>
+        <p>La mayoría de nuestros alumnos son <strong>niños que crecen en el tatami</strong>, y también entrenan adultos que decidieron empezar. Es un dojo que <strong>forma medallistas</strong>: se entrena para competir, y para la vida.</p>
+      </div>
+      <ul class="values reveal">
+        <li>Disciplina</li>
+        <li>Mejora continua</li>
+        <li>Excelencia</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cut cut--a sec s-cats" id="categorias" aria-labelledby="h-cats">
+    <span class="bib" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">02 · Categorías</p>
+        <h2 id="h-cats">Tres pasillos, un mismo camino</h2>
+      </div>
+      <p class="rail-hint" aria-hidden="true">Desliza</p>
+    </div>
+    <div class="rail reveal" role="region" aria-label="Categorías del dojo" tabindex="0">
+      <article class="pcard pcard--infantil">
+        <div class="pcard__in">
+          <p class="pcard__num">Pasillo 01</p>
+          <h3>Infantil</h3>
+          <p class="pcard__tag">Primeros pasos y disciplina</p>
+          <p>El tatami como primera escuela: respeto, foco y confianza para los más pequeños de la casa. Aquí empieza el camino del cinturón.</p>
+          <a class="cta cta--ghost cta--sm" href="#inscripcion"><span>Preguntar horarios</span></a>
+        </div>
+      </article>
+      <article class="pcard pcard--juvenil">
+        <div class="pcard__in">
+          <p class="pcard__num">Pasillo 02</p>
+          <h3>Juvenil</h3>
+          <p class="pcard__tag">Técnica y competencia</p>
+          <p>La etapa donde el karate se pule y nacen los medallistas: más técnica, más ritmo y la mentalidad para competir.</p>
+          <a class="cta cta--ghost cta--sm" href="#inscripcion"><span>Preguntar horarios</span></a>
+        </div>
+      </article>
+      <article class="pcard pcard--adultos">
+        <div class="pcard__in">
+          <p class="pcard__num">Pasillo 03</p>
+          <h3>Adultos</h3>
+          <p class="pcard__tag">Nunca es tarde para empezar</p>
+          <p>Condición física, foco y una disciplina que te ordena la semana. Empiezas donde estás; el tatami hace el resto.</p>
+          <a class="cta cta--ghost cta--sm" href="#inscripcion"><span>Preguntar horarios</span></a>
+        </div>
+      </article>
+    </div>
+    <div class="wrap">
+      <p class="rail-note reveal"><strong>¿Horarios y mensualidad?</strong> Se preguntan en un toque, aquí abajo — el Sensei te responde directo por WhatsApp.</p>
+    </div>
+  </section>
+
+  <section class="cut cut--b sec s-join" id="inscripcion" aria-labelledby="h-join">
+    <span class="bib" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">03 · Inscripción</p>
+        <h2 id="h-join">Inscripción sin adivinar</h2>
+      </div>
+      <p class="lead reveal">Elige <strong>para quién es</strong> y <strong>qué quieres saber</strong>. Nosotros armamos el mensaje; tú solo lo envías.</p>
+
+      <form class="inscribe reveal" id="compose">
+        <fieldset class="step step--1">
+          <legend>
+            <span class="step__n">Paso 1</span>
+            <span class="step__q">¿Para quién es?</span>
+          </legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="quien" value="hijo"><span>Para mi hijo o hija</span></label>
+            <label class="chip"><input type="radio" name="quien" value="adulto"><span>Para mí (adulto)</span></label>
+            <label class="chip"><input type="radio" name="quien" value="info"><span>Solo quiero información</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step step--2">
+          <legend>
+            <span class="step__n">Paso 2</span>
+            <span class="step__q">¿Qué quieres saber?</span>
+          </legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="tema" value="horarios"><span>Horarios</span></label>
+            <label class="chip"><input type="radio" name="tema" value="mensualidad"><span>Mensualidad</span></label>
+            <label class="chip"><input type="radio" name="tema" value="prueba"><span>Clase de prueba</span></label>
+          </div>
+        </fieldset>
+
+        <div class="compose__out">
+          <p class="out-label">Tu mensaje, listo</p>
+          <p class="bubble" id="msg-preview">Buenas, Sensei. Quiero información sobre la escuela.</p>
+          <a class="cta" id="msg-send" href="https://wa.me/584262470341?text=Buenas%2C%20Sensei.%20Quiero%20informaci%C3%B3n%20sobre%20la%20escuela."><span>Enviar por WhatsApp</span></a>
+          <p class="fine">Se abre tu WhatsApp con el mensaje ya escrito — lo puedes editar antes de enviar.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="lockup" href="#top">
+          <span class="medal"><img src="assets/dojo-logo.png" width="48" height="48" alt=""></span>
+          <span class="lockup__txt">
+            <span class="lockup__name">Dojo J.J. Rondón</span><br>
+            <span class="lockup__sub">Escuela de Karate-Do · Maturín</span>
+          </span>
+        </a>
+        <p>Escuela de Karate-Do en Maturín, dirigida por el Sensei José Rondón. Disciplina, mejora continua y excelencia — para niños y adultos.</p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <ul>
+          <li>
+            <a class="f-wa" href="https://wa.me/584262470341?text=Buenas%2C%20Sensei.%20Quiero%20saber%20c%C3%B3mo%20llegar%20al%20dojo.">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Escríbenos por WhatsApp
+            </a>
+          </li>
+          <li>Maturín, estado Monagas</li>
+          <li>Escríbenos y te decimos cómo llegar.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Categorías</h3>
+        <ul>
+          <li><a href="#categorias">Infantil</a></li>
+          <li><a href="#categorias">Juvenil</a></li>
+          <li><a href="#categorias">Adultos</a></li>
+          <li><a href="#inscripcion">Inscripciones por WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="seal">Demo diseñada por <a href="https://medine.tech">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial.</p>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/584262470341?text=Buenas%2C%20Sensei.%20Vi%20la%20p%C3%A1gina%20del%20dojo%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+(function(){
+  var d = document, root = d.documentElement;
+  root.classList.add('js');
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 1. Franja de cinturones — fallback rAF si no hay animation-timeline */
+  var fill = d.querySelector('.belt__fill');
+  var native = window.CSS && CSS.supports && CSS.supports('animation-timeline: scroll()');
+  if (fill && !native && !reduce) {
+    var wait = false;
+    var upd = function(){
+      wait = false;
+      var max = root.scrollHeight - innerHeight;
+      var p = max > 0 ? Math.min(1, Math.max(0, (scrollY || root.scrollTop) / max)) : 1;
+      fill.style.clipPath = 'inset(0 ' + ((1 - p) * 100).toFixed(2) + '% 0 0)';
+    };
+    addEventListener('scroll', function(){
+      if (!wait) { wait = true; requestAnimationFrame(upd); }
+    }, { passive: true });
+    upd();
+  }
+
+  /* 2. Inscripción sin adivinar — compone el mensaje de WhatsApp */
+  var form = d.getElementById('compose');
+  if (form) {
+    var out = d.getElementById('msg-preview');
+    var cta = d.getElementById('msg-send');
+    var WHO = {
+      hijo:   'Buenas, Sensei. Quiero inscribir a mi hijo/a en el dojo.',
+      adulto: 'Buenas, Sensei. Quiero entrenar karate en el dojo.',
+      info:   'Buenas, Sensei. Quiero información sobre la escuela.'
+    };
+    var ASK = {
+      horarios:    '¿Me pasa los horarios, por favor?',
+      mensualidad: '¿Cuánto es la mensualidad?',
+      prueba:      '¿Puedo ir a una clase de prueba?'
+    };
+    form.addEventListener('change', function(){
+      var q = form.querySelector('input[name="quien"]:checked');
+      var t = form.querySelector('input[name="tema"]:checked');
+      var msg = (q ? WHO[q.value] : WHO.info) + (t ? ' ' + ASK[t.value] : '');
+      out.textContent = msg;
+      cta.href = 'https://wa.me/584262470341?text=' + encodeURIComponent(msg);
+    });
+    form.addEventListener('submit', function(e){ e.preventDefault(); });
+  }
+
+  /* 3. Reveal sutil al hacer scroll */
+  var els = d.querySelectorAll('.reveal');
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('is-in'); });
+  }
+})();
+</script>
+</body>
+</html>
