@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 510 675" role="img" aria-label="Primera Iglesia Bautista de Maturín">
+  <title>Primera Iglesia Bautista de Maturín</title>
+  <!-- Misma marca en el índigo del logo original, para fondos claros. -->
+  <g fill="none" stroke="#4e4f86" stroke-width="84" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M0 92H360A78 111 0 0 1 360 315H15" />
+    <path d="M142.5 235V645" />
+    <path d="M185 455H360A78 62 0 0 1 360 575H185" />
+  </g>
+  <path d="M0 50V22C0 6 24-2 54 0L92 6C64 14 46 30 40 50Z" fill="#4e4f86" />
+  <circle cx="145" cy="180" r="40" fill="#4e4f86" />
+</svg>

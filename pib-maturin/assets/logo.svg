@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 510 675" role="img" aria-label="Primera Iglesia Bautista de Maturín">
+  <title>Primera Iglesia Bautista de Maturín</title>
+  <!--
+    Monograma PIB reconstruido a partir del logo del atril: el trazo superior
+    forma la P, el asta vertical con su punto y su travesaño forman la i en
+    cruz, y el cuenco inferior cierra la B.
+    Versión blanca, para los fondos azules. Si la iglesia consigue el archivo
+    original, basta con reemplazar este archivo.
+  -->
+  <g fill="none" stroke="#ffffff" stroke-width="84" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M0 92H360A78 111 0 0 1 360 315H15" />
+    <path d="M142.5 235V645" />
+    <path d="M185 455H360A78 62 0 0 1 360 575H185" />
+  </g>
+  <path d="M0 50V22C0 6 24-2 54 0L92 6C64 14 46 30 40 50Z" fill="#ffffff" />
+  <circle cx="145" cy="180" r="40" fill="#ffffff" />
+</svg>
