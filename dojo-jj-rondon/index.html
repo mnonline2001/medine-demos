@@ -296,6 +296,20 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   .js .reveal{opacity:1;transform:none}
   .step--2,.compose__out{transform:none}
 }
+/* --- Galería de la escuela --- */
+.gal{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px}
+.gal figure{margin:0;border:1px solid rgba(245,244,240,.14);background:var(--bg-2);clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%)}
+.gal img{display:block;width:100%;height:260px;object-fit:cover}
+.gal figcaption{padding:10px 12px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.gal .ph{height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:18px;background:
+  repeating-linear-gradient(45deg,rgba(245,244,240,.03) 0 8px,transparent 8px 16px),var(--bg-2)}
+.gal .ph img{width:54px;height:54px;object-fit:contain;opacity:.55}
+.gal .ph p{font-size:.8rem;color:var(--mut);max-width:24ch;line-height:1.45}
+.gal-strip{margin-top:14px;border:1px solid rgba(245,244,240,.14)}
+.gal-strip img{display:block;width:100%;height:84px;object-fit:cover}
+.gal-strip figcaption{padding:8px 12px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.gal-note{margin-top:16px;font-size:.85rem;color:var(--mut)}
+@media (max-width:760px){.gal{grid-template-columns:1fr}.gal img,.gal .ph{height:220px}}
 </style>
 </head>
 <body>
@@ -424,11 +438,40 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
     </div>
   </section>
 
-  <section class="cut cut--b sec s-join" id="inscripcion" aria-labelledby="h-join">
+  <section class="cut cut--b sec s-gal" id="escuela" aria-labelledby="h-gal">
     <span class="bib" aria-hidden="true">03</span>
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="kicker">03 · Inscripción</p>
+        <p class="kicker">03 · La escuela</p>
+        <h2 id="h-gal">La escuela por dentro</h2>
+      </div>
+      <figure class="gal-strip reveal">
+        <img src="assets/dojo-trofeos-crop.jpg" alt="La pared de trofeos del dojo, con los estandartes de Fuerza y Respeto" loading="lazy">
+        <figcaption>La pared de trofeos — años formando medallistas</figcaption>
+      </figure>
+      <div class="gal reveal">
+        <figure>
+          <img src="assets/dojo-dia-del-nino.jpg" alt="Arte del dojo por el Día del Niño: dos pequeños karatecas animados con el emblema de la escuela" loading="lazy">
+          <figcaption>El dojo celebra a sus niños</figcaption>
+        </figure>
+        <figure>
+          <div class="ph"><img src="assets/dojo-logo.png" alt=""><p>Foto de la escuela — la selecciona el Sensei</p></div>
+          <figcaption>Espacio reservado</figcaption>
+        </figure>
+        <figure>
+          <div class="ph"><img src="assets/dojo-logo.png" alt=""><p>Foto de la escuela — la selecciona el Sensei</p></div>
+          <figcaption>Espacio reservado</figcaption>
+        </figure>
+      </div>
+      <p class="gal-note reveal">Galería en su primera versión: las fotos definitivas las elige y autoriza el Sensei, y se renuevan cuando él quiera con el soporte anual.</p>
+    </div>
+  </section>
+
+  <section class="cut cut--a sec s-join" id="inscripcion" aria-labelledby="h-join">
+    <span class="bib" aria-hidden="true">04</span>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">04 · Inscripción</p>
         <h2 id="h-join">Inscripción sin adivinar</h2>
       </div>
       <p class="lead reveal">Elige <strong>para quién es</strong> y <strong>qué quieres saber</strong>. Nosotros armamos el mensaje; tú solo lo envías.</p>
@@ -492,8 +535,8 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
               Escríbenos por WhatsApp
             </a>
           </li>
-          <li>Maturín, estado Monagas</li>
-          <li>Escríbenos y te decimos cómo llegar.</li>
+          <li>Av. Principal de Las Cocuizas, Maturín, Monagas</li>
+          <li><a href="https://maps.google.com/?q=9.756304,-63.155331" target="_blank" rel="noopener">Cómo llegar (Google Maps) →</a></li>
         </ul>
       </div>
       <div>
@@ -503,6 +546,11 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
           <li><a href="#categorias">Juvenil</a></li>
           <li><a href="#categorias">Adultos</a></li>
           <li><a href="#inscripcion">Inscripciones por WhatsApp</a></li>
+        </ul>
+        <h3 style="margin-top:18px">Redes</h3>
+        <ul>
+          <li aria-disabled="true" style="opacity:.55">Facebook — próximamente</li>
+          <li aria-disabled="true" style="opacity:.55">Instagram — próximamente</li>
         </ul>
       </div>
     </div>
