@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puerta de Sucre · Transporte puerta a puerta entre Sucre y Monagas</title>
+<meta name="description" content="Asoc. Civil Transporte Ejecutivo Puerta de Sucre: carritos por puesto puerta a puerta Carúpano ↔ Maturín. Te buscamos en tu casa. ★ 4.0 con 34 opiniones en Google.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Puerta de Sucre · Carritos puerta a puerta Carúpano ↔ Maturín">
+<meta property="og:description" content="Transporte ejecutivo por puesto entre Sucre y Monagas. Te buscamos en tu casa y te dejamos en tu destino. ★ 4.0 en Google.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<meta name="theme-color" content="#1e2f66">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%9A%90%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&family=Saira+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   PUERTA DE SUCRE — demo landing (Medine.tech)
+   Archetype: travel ticket / boarding pass. Light paper base, executive ink.
+   ========================================================================== */
+:root{
+  --bg:#f2f8fc;
+  --paper:#ffffff;
+  --ink:#1e2f66;
+  --ink-2:#44518a;
+  --sky:#8fc3e0;
+  --sky-line:#c7dff0;
+  --sky-soft:#e3f0f9;
+  --sun:#f2c53d;
+  --rojo:#cf3a2e;
+  --wa:#25d366;
+  --dash:rgba(30,47,102,.32);
+  --font-d:'Saira Condensed', 'Arial Narrow', sans-serif;
+  --font-t:'Rubik', system-ui, sans-serif;
+  --shadow:0 12px 30px rgba(30,47,102,.10);
+  --rail-w:84px;
+  --tab-h:60px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:24px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  font:400 1rem/1.6 var(--font-t);
+  color:var(--ink);
+  background-color:var(--bg);
+  /* subtle paper grain, own SVG data URI */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.118 0 0 0 0 0.184 0 0 0 0 0.4 0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  padding-bottom:calc(var(--tab-h) + env(safe-area-inset-bottom,0px));
+  overflow-x:clip;
+}
+@media (min-width:1024px){
+  body{padding-bottom:0;padding-left:var(--rail-w)}
+}
+::selection{background:var(--sun);color:var(--ink)}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:4px}
+.skip{
+  position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:#fff;
+  padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:500;transition:top .2s;
+}
+.skip:focus-visible{top:12px}
+.wrap{width:min(1080px,100% - 40px);margin-inline:auto}
+section{padding:clamp(56px,9vw,104px) 0;scroll-margin-top:16px}
+
+/* ------- type helpers ------- */
+.eyebrow{
+  font:600 .78rem/1.3 var(--font-t);text-transform:uppercase;letter-spacing:.24em;color:var(--ink-2);
+}
+.sec-head{margin-bottom:clamp(26px,5vw,44px)}
+.sec-code{
+  display:flex;align-items:center;gap:12px;
+  font:600 .72rem var(--font-t);text-transform:uppercase;letter-spacing:.22em;color:var(--ink-2);
+}
+.sec-code::before{content:"";width:34px;height:2px;background:var(--sun)}
+.sec-head h2{
+  font:700 clamp(1.75rem,5vw,2.7rem)/1.08 var(--font-d);text-transform:uppercase;
+  letter-spacing:.01em;margin:10px 0 8px;
+}
+.sec-sub{color:var(--ink-2);max-width:58ch}
+
+/* ------- tricolor stripe (nod to the flag-wrapped map in their logo) ------- */
+.tricolor{display:block;width:132px}
+.tricolor i{display:block;height:2px;width:100%}
+.tricolor i:nth-child(1){background:var(--sun)}
+.tricolor i:nth-child(2){background:var(--ink)}
+.tricolor i:nth-child(3){background:var(--rojo)}
+
+/* ------- big ticket surfaces ------- */
+.ticket{
+  position:relative;background:var(--paper);border:1px solid var(--sky-line);
+  border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
+}
+/* tear line with die-cut notches (page-colored circles clipped by overflow:hidden) */
+.tear{position:relative;border-top:2px dashed var(--dash)}
+.tear::before,.tear::after{
+  content:"";position:absolute;width:26px;height:26px;border-radius:50%;
+  background:var(--bg);border:1px solid var(--sky-line);top:-14px;
+}
+.tear::before{left:-13px}
+.tear::after{right:-13px}
+
+/* ------- small stubs (talones) with punched-hole left edge via mask ------- */
+.cut{filter:drop-shadow(0 12px 22px rgba(30,47,102,.12));list-style:none}
+.talon{
+  position:relative;background:var(--paper);border:1px solid var(--sky-line);border-radius:14px;
+  padding:26px 22px 26px 36px;height:100%;
+  -webkit-mask:radial-gradient(circle at 10px 50%, transparent 4px, #000 4.6px) 0 0/100% 20px repeat;
+  mask:radial-gradient(circle at 10px 50%, transparent 4px, #000 4.6px) 0 0/100% 20px repeat;
+}
+.talon h3{font:700 1.35rem/1.15 var(--font-d);text-transform:uppercase;margin:8px 0 8px}
+.talon p{color:var(--ink-2);font-size:.95rem}
+.talon-code{
+  display:inline-block;font:600 .64rem var(--font-t);text-transform:uppercase;letter-spacing:.2em;
+  color:var(--ink-2);border:1px dashed var(--dash);border-radius:6px;padding:4px 9px;
+}
+
+/* ------- ink stamp ------- */
+.sello{
+  display:inline-block;font:700 .82rem/1 var(--font-d);text-transform:uppercase;letter-spacing:.1em;
+  color:var(--rojo);border:2px solid currentColor;border-radius:8px;padding:6px 11px;
+  rotate:-6deg;background:rgba(207,58,46,.06);
+}
+
+/* ------- die-cut ticket button ------- */
+.btn-ticket{
+  position:relative;display:inline-block;border:0;cursor:pointer;text-decoration:none;text-align:center;
+  font:700 1.02rem/1 var(--font-d);text-transform:uppercase;letter-spacing:.07em;
+  color:#fff;background:var(--ink);padding:19px 36px;border-radius:10px;
+  -webkit-mask:radial-gradient(circle 9px at 0 50%, transparent 8.4px, #000 9px),
+               radial-gradient(circle 9px at 100% 50%, transparent 8.4px, #000 9px);
+  -webkit-mask-composite:source-in;
+  mask:radial-gradient(circle 9px at 0 50%, transparent 8.4px, #000 9px),
+       radial-gradient(circle 9px at 100% 50%, transparent 8.4px, #000 9px);
+  mask-composite:intersect;
+}
+.btn-ticket::after{
+  content:"";position:absolute;inset:5px 15px;border:1.5px dashed rgba(255,255,255,.45);
+  border-radius:7px;pointer-events:none;
+}
+.btn-ticket:hover{background:#2a428c}
+.btn-ticket:focus-visible{outline:none}
+.btn-ticket:focus-visible::after{border:3px solid var(--sun)}
+
+/* ==========================================================================
+   NAV — desktop: fixed side rail · mobile: thin bottom tab bar
+   ========================================================================== */
+.rail{
+  display:none;position:fixed;inset:0 auto 0 0;width:var(--rail-w);z-index:50;
+  background:var(--paper);border-right:1px solid var(--sky-line);
+  flex-direction:column;align-items:center;padding:18px 0 16px;gap:20px;
+}
+@media (min-width:1024px){.rail{display:flex}}
+.rail-logo{display:flex;flex-direction:column;align-items:center;gap:5px;text-decoration:none}
+.rail-mono{font:800 1.35rem/1 var(--font-d);color:var(--ink);letter-spacing:.04em}
+.rail-logo .tricolor{width:30px}
+.rail-links{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.rail-links a{
+  width:60px;padding:9px 0 7px;display:flex;flex-direction:column;align-items:center;gap:4px;
+  color:var(--ink-2);font:500 .55rem var(--font-t);text-transform:uppercase;letter-spacing:.06em;
+  text-decoration:none;border-radius:10px;
+}
+.rail-links a:hover{color:var(--ink)}
+.rail-links a.active{color:var(--ink);background:var(--sky-soft)}
+.rail-links svg{width:21px;height:21px}
+.rail-word{
+  writing-mode:vertical-rl;rotate:180deg;margin-block:auto;
+  font:700 .78rem var(--font-d);letter-spacing:.44em;text-transform:uppercase;color:var(--ink-2);
+}
+.rail-wa{width:44px;height:44px;border-radius:50%;background:var(--wa);display:grid;place-items:center}
+.rail-wa:hover{background:#1fbd5a}
+.rail-wa svg{width:22px;height:22px;fill:#fff}
+
+.tabbar{
+  position:fixed;inset:auto 0 0 0;z-index:50;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:rgba(255,255,255,.97);border-top:1px solid var(--sky-line);
+  height:calc(var(--tab-h) + env(safe-area-inset-bottom,0px));
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  box-shadow:0 -6px 18px rgba(30,47,102,.07);
+}
+@media (min-width:1024px){.tabbar{display:none}}
+.tabbar a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  font:500 .6rem var(--font-t);letter-spacing:.03em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;border-top:3px solid transparent;
+}
+.tabbar a.active{color:var(--ink);border-top-color:var(--sun)}
+.tabbar svg{width:20px;height:20px}
+
+/* ==========================================================================
+   HERO — the master ticket
+   ========================================================================== */
+.hero{padding-top:clamp(36px,7vw,84px)}
+.hero-ticket{display:grid;grid-template-columns:1fr}
+@media (min-width:900px){.hero-ticket{grid-template-columns:1fr 2px 216px}}
+.ht-main{padding:clamp(26px,5.5vw,52px)}
+.ht-main .tricolor{margin:12px 0 6px}
+.wordmark{
+  font:800 clamp(3.3rem,11vw,6.9rem)/.95 var(--font-d);text-transform:uppercase;
+  letter-spacing:.005em;color:#54637a;margin:6px 0 18px;
+}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .wordmark{
+    background:linear-gradient(173deg,#8b99ab 0%,#eef3f8 22%,#67788e 40%,#dbe4ec 55%,#4d5c72 74%,#a9b7c6 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 1px 0 rgba(30,47,102,.28));
+  }
+}
+.hero h1{
+  font:700 clamp(1.5rem,4.6vw,2.35rem)/1.14 var(--font-d);text-transform:uppercase;
+  letter-spacing:.015em;max-width:22ch;
+}
+.hero .lead{color:var(--ink-2);max-width:52ch;margin-top:12px}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:26px}
+.chip-rating{
+  display:inline-flex;align-items:center;gap:8px;background:var(--sun);color:var(--ink);
+  font:600 .85rem var(--font-t);padding:10px 14px;border-radius:8px;rotate:-1.5deg;
+  border:1.5px solid rgba(30,47,102,.35);
+}
+.chip-rating svg{width:15px;height:15px;fill:currentColor;flex:none}
+.pass-fields{
+  list-style:none;margin-top:30px;padding-top:20px;border-top:2px dashed var(--dash);
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px 18px;
+}
+@media (min-width:700px){.pass-fields{grid-template-columns:repeat(4,1fr)}}
+.pass-fields span{
+  display:block;font:600 .62rem var(--font-t);text-transform:uppercase;letter-spacing:.18em;color:var(--ink-2);
+}
+.pass-fields strong{font:700 1.12rem/1.2 var(--font-d);text-transform:uppercase}
+.ht-stub{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:18px 24px;background:linear-gradient(180deg,#eef6fc,#e4f0f9);
+}
+.stub-code{font:600 .62rem var(--font-t);text-transform:uppercase;letter-spacing:.2em;color:var(--ink-2)}
+.stub-route{font:800 1.7rem/1 var(--font-d);letter-spacing:.08em}
+.barcode{
+  display:block;height:40px;min-width:96px;flex:1;border-radius:2px;opacity:.85;
+  background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 7px,transparent 7px 9px,var(--ink) 9px 10px,transparent 10px 13px);
+}
+@media (min-width:900px){
+  .hero-ticket .tear{border-top:0;border-left:2px dashed var(--dash)}
+  .hero-ticket .tear::before{top:-13px;left:-14px}
+  .hero-ticket .tear::after{top:auto;bottom:-13px;left:-14px;right:auto}
+  .ht-stub{flex-direction:column;justify-content:space-between;padding:28px 16px;flex-wrap:nowrap}
+  .stub-route{writing-mode:vertical-rl;rotate:180deg;font-size:2rem}
+  .barcode{flex:none;width:100%;min-width:0}
+}
+
+/* ==========================================================================
+   HOW IT WORKS — three stubs
+   ========================================================================== */
+.stub-row{display:grid;gap:18px;list-style:none}
+@media (min-width:760px){.stub-row{grid-template-columns:repeat(3,1fr)}}
+.step-tag{
+  display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;
+  background:var(--sun);color:var(--ink);font:700 .95rem var(--font-d);
+  border:1.5px dashed rgba(30,47,102,.5);margin-bottom:10px;
+}
+
+/* ==========================================================================
+   SIGNATURE — Arma tu boleto
+   ========================================================================== */
+.sim{display:grid;gap:30px;align-items:start}
+@media (min-width:960px){.sim{grid-template-columns:1.05fr .95fr;gap:38px}}
+.steps{display:grid;gap:26px}
+.step{border:0}
+.step legend,.step-label{
+  display:flex;align-items:center;gap:10px;font:700 1.18rem/1.2 var(--font-d);
+  text-transform:uppercase;margin-bottom:12px;
+}
+.step-n{
+  display:inline-grid;place-items:center;width:27px;height:27px;border-radius:50%;flex:none;
+  background:var(--sun);color:var(--ink);font:700 .9rem var(--font-d);
+  border:1.5px dashed rgba(30,47,102,.5);
+}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{position:relative}
+.chip input{position:absolute;width:1px;height:1px;opacity:0;margin:0}
+.chip label{
+  display:inline-block;padding:12px 18px;border:1.5px solid var(--sky);border-radius:10px;
+  background:var(--paper);color:var(--ink);font:500 .95rem var(--font-t);cursor:pointer;
+}
+.chip label:hover{border-color:var(--ink)}
+.chip input:checked + label{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip input:focus-visible + label{outline:3px solid var(--ink);outline-offset:2px}
+.field-box{margin-top:12px}
+.field-box label,.mini-label{
+  display:block;font:600 .72rem var(--font-t);text-transform:uppercase;letter-spacing:.16em;
+  color:var(--ink-2);margin-bottom:6px;
+}
+.steps input[type=text],.steps input[type=date]{
+  width:100%;max-width:430px;padding:14px;border:1.5px solid var(--sky);border-radius:10px;
+  font:400 1rem var(--font-t);color:var(--ink);background:var(--paper);
+}
+.steps input[type=text]:focus-visible,.steps input[type=date]:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hint{font-size:.83rem;color:var(--ink-2);margin-top:7px}
+.sim-right{display:grid;gap:18px}
+@media (min-width:960px){.sim-right{position:sticky;top:24px}}
+.ticket-live .tl-body{padding:24px 24px 20px}
+.tl-brand{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.tl-brand strong{font:800 1.15rem/1 var(--font-d);letter-spacing:.05em;text-transform:uppercase}
+.tl-brand .stub-code{letter-spacing:.16em}
+.ticket-live .tricolor{width:100%;margin:8px 0 18px}
+.tl-body dl{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.tl-body .full{grid-column:1/-1}
+.tl-body dt{font:600 .64rem var(--font-t);text-transform:uppercase;letter-spacing:.18em;color:var(--ink-2)}
+.tl-body dd{font:700 1.3rem/1.15 var(--font-d);text-transform:uppercase;margin-top:3px}
+.tl-body dd small{display:block;font:500 .8rem var(--font-t);text-transform:none;letter-spacing:0;color:var(--ink-2)}
+.tl-body dd.txt{font:500 1rem/1.4 var(--font-t);text-transform:none}
+.tl-foot{padding:16px 24px 20px;display:flex;align-items:center;gap:16px}
+.tl-foot .stub-code{white-space:nowrap}
+@keyframes stamp{
+  0%{scale:1.5;rotate:-5deg;opacity:0}
+  60%{scale:.96;rotate:1deg;opacity:1}
+  100%{scale:1;rotate:0deg;opacity:1}
+}
+.stamped{animation:stamp .34s cubic-bezier(.2,.9,.3,1.25) both;transform-origin:left center;display:inline-block}
+.btn-big{width:100%;padding:21px 36px;font-size:1.12rem}
+.chat-preview{display:grid;gap:10px}
+.chat-note{font-size:.85rem;color:var(--ink-2)}
+.chat-bg{background:#efe7dd;border:1px solid #e2d8cb;border-radius:14px;padding:18px}
+.bubble{
+  position:relative;width:fit-content;max-width:94%;margin-left:auto;
+  background:#d9fdd3;color:#1f3d2f;padding:12px 14px;border-radius:10px;border-bottom-right-radius:2px;
+  box-shadow:0 1px 1px rgba(0,0,0,.09);font-size:.95rem;line-height:1.45;
+}
+.bubble .ticks{margin-left:8px;color:#53bdeb;font-size:.72rem;letter-spacing:-.08em}
+
+/* ==========================================================================
+   ROUTE — SVG road + car on offset-path
+   ========================================================================== */
+.route-card{padding:clamp(20px,4vw,36px)}
+.route-card .sello{position:absolute;top:18px;right:16px;z-index:2}
+.route-wrap{view-timeline:--route block}
+.route-svg{display:block;width:100%;height:auto}
+.route-svg .city-name{font:700 27px var(--font-d);fill:var(--ink);text-transform:uppercase;letter-spacing:.5px}
+.route-svg .city-state{font:600 13.5px var(--font-t);fill:var(--ink-2);text-transform:uppercase;letter-spacing:3px}
+.car{
+  offset-path:path('M90 84 C230 130 240 240 410 200 C520 174 560 150 710 216');
+  offset-rotate:auto;offset-distance:10%;
+}
+@supports not (offset-path:path('M0 0 H 10')){
+  .car{transform:translate(410px,200px)}
+}
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .car{animation:drive linear both;animation-timeline:--route;animation-range:entry 15% exit 85%}
+  }
+}
+@keyframes drive{from{offset-distance:0%}to{offset-distance:100%}}
+.route-legend{
+  display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:10px;
+  padding-top:18px;border-top:2px dashed var(--dash);
+}
+.route-stamp{
+  border:2px solid var(--ink);border-radius:8px;padding:8px 13px;background:var(--paper);
+}
+.route-stamp:first-child{rotate:-1.2deg}
+.route-stamp + .route-stamp{rotate:1.2deg}
+.route-stamp b{display:block;font:800 1.2rem/1 var(--font-d);letter-spacing:.06em}
+.route-stamp span{font:500 .74rem var(--font-t);color:var(--ink-2);text-transform:uppercase;letter-spacing:.12em}
+.route-note{color:var(--ink-2);font-size:.92rem;flex:1;min-width:220px}
+
+/* ==========================================================================
+   FAQ — perforated details
+   ========================================================================== */
+.faq-list{display:grid;gap:14px;max-width:780px}
+details.talon{padding:0}
+summary{
+  display:flex;align-items:center;gap:14px;padding:20px 22px 20px 36px;cursor:pointer;list-style:none;
+  font:700 1.2rem/1.25 var(--font-d);text-transform:uppercase;
+}
+summary::-webkit-details-marker{display:none}
+summary .talon-code{flex:none}
+summary svg{width:20px;height:20px;margin-left:auto;flex:none;transition:rotate .25s}
+details[open] summary svg{rotate:180deg}
+details .faq-a{padding:0 22px 22px 36px;color:var(--ink-2);font-size:.96rem;max-width:64ch}
+
+/* ==========================================================================
+   FOOTER — floating card over navy band
+   ========================================================================== */
+.band{background:var(--ink);padding:96px 0 34px;margin-top:26px}
+.footer-card{
+  max-width:660px;margin-inline:auto;background:var(--paper);border-radius:18px;
+  padding:clamp(30px,6vw,48px);text-align:center;box-shadow:0 22px 50px rgba(10,18,48,.45);
+  transform:translateY(-54px);position:relative;
+}
+.footer-card::before{
+  content:"";position:absolute;inset:10px;border:1.5px dashed var(--sky-line);border-radius:12px;pointer-events:none;
+}
+.footer-card > *{position:relative}
+.fv{font:800 clamp(2rem,7vw,3rem)/1 var(--font-d);text-transform:uppercase;letter-spacing:.02em}
+.footer-card .fv + p{color:var(--ink-2);margin:10px auto 22px;max-width:38ch}
+.addr{
+  display:flex;align-items:flex-start;justify-content:center;gap:8px;margin-top:20px;
+  color:var(--ink-2);font-size:.9rem;
+}
+.addr svg{width:17px;height:17px;flex:none;margin-top:2px;stroke:var(--rojo)}
+.foot-dash{border-top:2px dashed var(--dash);margin:22px auto 18px;max-width:340px}
+.seal{font-size:.8rem;color:var(--ink-2)}
+.seal a{color:var(--ink);font-weight:600}
+.muestra{font-size:.74rem;color:var(--ink-2);margin-top:6px}
+.band-line{
+  text-align:center;color:#b9d5e8;font-size:.78rem;letter-spacing:.06em;margin-top:-14px;
+}
+
+/* ==========================================================================
+   FAB + toast
+   ========================================================================== */
+.fab{
+  position:fixed;right:16px;bottom:calc(var(--tab-h) + env(safe-area-inset-bottom,0px) + 14px);
+  z-index:60;width:56px;height:56px;border-radius:50%;background:var(--wa);
+  display:grid;place-items:center;box-shadow:0 8px 20px rgba(37,211,102,.42);
+}
+.fab:hover{background:#1fbd5a}
+.fab svg{width:30px;height:30px;fill:#fff}
+.fab:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+@media (min-width:1024px){.fab{right:22px;bottom:22px}}
+.toast{
+  position:fixed;left:50%;translate:-50% 0;z-index:70;
+  bottom:calc(var(--tab-h) + env(safe-area-inset-bottom,0px) + 86px);
+  background:var(--ink);color:#fff;padding:12px 18px;border-radius:10px;font-size:.9rem;
+  max-width:min(90vw,420px);text-align:center;box-shadow:var(--shadow);
+  opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;
+}
+.toast.show{opacity:1;visibility:visible}
+@media (min-width:1024px){.toast{bottom:98px}}
+
+/* ==========================================================================
+   Reveals: scroll-driven when supported, IntersectionObserver otherwise
+   ========================================================================== */
+@keyframes rise{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .reveal{animation:rise .7s ease both;animation-timeline:view();animation-range:entry 5% entry 45%}
+  }
+  @supports not (animation-timeline:view()){
+    .js .reveal{opacity:0;translate:0 18px;transition:opacity .55s ease,translate .55s ease}
+    .js .reveal.is-visible{opacity:1;translate:0 0}
+  }
+}
+
+/* ==========================================================================
+   Reduced motion: static car, no stamps, no reveals
+   ========================================================================== */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .car{animation:none !important;offset-distance:46% !important}
+  .stamped{animation:none !important}
+  .reveal{opacity:1 !important;translate:none !important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- Desktop side rail -->
+<nav class="rail" aria-label="Navegación principal">
+  <a class="rail-logo" href="#inicio" aria-label="Puerta de Sucre — inicio">
+    <span class="rail-mono">PS</span>
+    <span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span>
+  </a>
+  <div class="rail-links">
+    <a href="#inicio" data-spy>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M10 20v-5h4v5"/></svg>
+      <span>Inicio</span>
+    </a>
+    <a href="#como-funciona" data-spy>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h8a3.5 3.5 0 0 1 0 7H9a3.5 3.5 0 0 0 0 7h8"/></svg>
+      <span>Cómo</span>
+    </a>
+    <a href="#reservar" data-spy>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v2a2 2 0 0 0 0 4v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-2a2 2 0 0 0 0-4Z"/><path d="M15 8v1.6M15 11.2v1.6M15 14.4V16"/></svg>
+      <span>Reservar</span>
+    </a>
+    <a href="#faq" data-spy>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.5a2.4 2.4 0 1 1 3.7 2c-.8.55-1.3 1-1.3 2"/><path d="M12 16.8h.01"/></svg>
+      <span>FAQ</span>
+    </a>
+  </div>
+  <span class="rail-word" aria-hidden="true">Puerta de Sucre</span>
+  <a class="rail-wa" data-wa href="#reservar" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  </a>
+</nav>
+
+<main id="contenido">
+
+  <!-- ============ 00 · HERO ============ -->
+  <section id="inicio" class="hero">
+    <div class="wrap">
+      <article class="ticket hero-ticket reveal">
+        <div class="ht-main">
+          <p class="eyebrow">Asoc. Civil Transporte Ejecutivo</p>
+          <span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span>
+          <p class="wordmark">Puerta<br>de Sucre</p>
+          <h1>Viaja puerta a puerta entre Sucre y Monagas</h1>
+          <p class="lead">Carritos por puesto entre Carúpano y Maturín: te buscamos en tu casa, pagas solo tu puesto y te dejamos en la puerta de tu destino.</p>
+          <div class="hero-cta">
+            <a class="btn-ticket" href="#reservar">Arma tu boleto</a>
+            <span class="chip-rating">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3 6.2 20.4l1.1-6.5L2.6 9.3l6.5-.9Z"/></svg>
+              4.0 · 34 opiniones en Google
+            </span>
+          </div>
+          <ul class="pass-fields" aria-label="Datos del servicio">
+            <li><span>Servicio</span><strong>Puerta a puerta</strong></li>
+            <li><span>Modalidad</span><strong>Por puesto</strong></li>
+            <li><span>Ruta</span><strong>CAR ↔ MAT</strong></li>
+            <li><span>Tarifa</span><strong>Por WhatsApp</strong></li>
+          </ul>
+        </div>
+        <div class="tear" aria-hidden="true"></div>
+        <div class="ht-stub" aria-hidden="true">
+          <span class="stub-code">Serie PS-2026</span>
+          <span class="stub-route">CAR ↔ MAT</span>
+          <span class="sello">¡Feliz Viaje!</span>
+          <span class="barcode"></span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 01 · CÓMO FUNCIONA ============ -->
+  <section id="como-funciona">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="sec-code">01 · PS-2026</p>
+        <h2>¿Cómo funciona el puerta a puerta?</h2>
+        <p class="sec-sub">Nuestros traslados entre ciudades son sencillos: sales de tu casa y llegas hasta la puerta de tu destino.</p>
+      </header>
+      <ol class="stub-row">
+        <li class="cut reveal">
+          <div class="talon">
+            <span class="step-tag" aria-hidden="true">1</span>
+            <span class="talon-code">Talón 01</span>
+            <h3>Te buscamos en tu casa</h3>
+            <p>Nos pasas tu dirección y el carrito llega a tu puerta. La recogida a domicilio tiene un costo adicional — te lo decimos claro por WhatsApp antes de salir.</p>
+          </div>
+        </li>
+        <li class="cut reveal">
+          <div class="talon">
+            <span class="step-tag" aria-hidden="true">2</span>
+            <span class="talon-code">Talón 02</span>
+            <h3>Pagas solo tu puesto</h3>
+            <p>No alquilas el carro completo: apartas los puestos que necesitas y ya. La tarifa de cada puesto se confirma por WhatsApp.</p>
+          </div>
+        </li>
+        <li class="cut reveal">
+          <div class="talon">
+            <span class="step-tag" aria-hidden="true">3</span>
+            <span class="talon-code">Talón 03</span>
+            <h3>Compartes el carrito</h3>
+            <p>Viajas con otros pasajeros que van por la misma ruta; por eso el puesto sale más económico que un carro privado.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 02 · FIRMA: ARMA TU BOLETO ============ -->
+  <section id="reservar">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="sec-code">02 · Reserva</p>
+        <h2>Arma tu boleto</h2>
+        <p class="sec-sub">Elige tu viaje y mira cómo tu boleto se estampa en vivo. Al final te lo enviamos por WhatsApp, ordenadito.</p>
+      </header>
+      <div class="sim">
+        <form class="steps" id="sim-form">
+          <fieldset class="step reveal">
+            <legend><span class="step-n" aria-hidden="true">1</span> ¿Hacia dónde viajas?</legend>
+            <div class="chips">
+              <span class="chip">
+                <input type="radio" name="ruta" id="ruta-cm" value="cm" checked>
+                <label for="ruta-cm">Carúpano → Maturín</label>
+              </span>
+              <span class="chip">
+                <input type="radio" name="ruta" id="ruta-mc" value="mc">
+                <label for="ruta-mc">Maturín → Carúpano</label>
+              </span>
+            </div>
+          </fieldset>
+          <fieldset class="step reveal">
+            <legend><span class="step-n" aria-hidden="true">2</span> ¿Qué día?</legend>
+            <div class="chips">
+              <span class="chip">
+                <input type="radio" name="dia" id="dia-manana" value="manana" checked>
+                <label for="dia-manana">Mañana</label>
+              </span>
+              <span class="chip">
+                <input type="radio" name="dia" id="dia-semana" value="semana">
+                <label for="dia-semana">Esta semana</label>
+              </span>
+              <span class="chip">
+                <input type="radio" name="dia" id="dia-elegir" value="elegir">
+                <label for="dia-elegir">Elegir fecha</label>
+              </span>
+            </div>
+            <div class="field-box" id="date-box" hidden>
+              <label for="fecha">Elige la fecha</label>
+              <input type="date" id="fecha" name="fecha">
+            </div>
+          </fieldset>
+          <fieldset class="step reveal">
+            <legend><span class="step-n" aria-hidden="true">3</span> ¿Cuántos puestos?</legend>
+            <div class="chips">
+              <span class="chip">
+                <input type="radio" name="puestos" id="p1" value="1" checked>
+                <label for="p1">1</label>
+              </span>
+              <span class="chip">
+                <input type="radio" name="puestos" id="p2" value="2">
+                <label for="p2">2</label>
+              </span>
+              <span class="chip">
+                <input type="radio" name="puestos" id="p3" value="3">
+                <label for="p3">3</label>
+              </span>
+              <span class="chip">
+                <input type="radio" name="puestos" id="p4" value="4">
+                <label for="p4">4</label>
+              </span>
+            </div>
+          </fieldset>
+          <div class="step reveal">
+            <label class="step-label" for="direccion"><span class="step-n" aria-hidden="true">4</span> ¿Dónde te buscamos?</label>
+            <input type="text" id="direccion" name="direccion" autocomplete="street-address" maxlength="120">
+            <p class="hint">Escribe tu dirección en la ciudad de salida — tu casa, tu trabajo o el punto que prefieras.</p>
+          </div>
+        </form>
+        <div class="sim-right">
+          <aside class="ticket ticket-live reveal" aria-label="Vista previa de tu boleto">
+            <div class="tl-body">
+              <div class="tl-brand">
+                <strong>Puerta de Sucre</strong>
+                <span class="stub-code">Boleto por puesto</span>
+              </div>
+              <span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span>
+              <dl>
+                <div class="full">
+                  <dt>Ruta</dt>
+                  <dd id="tl-ruta"><span class="st" id="tl-ruta-code">CAR → MAT</span><small id="tl-ruta-name">Carúpano → Maturín</small></dd>
+                </div>
+                <div>
+                  <dt>Día</dt>
+                  <dd><span class="st" id="tl-dia">Mañana</span></dd>
+                </div>
+                <div>
+                  <dt>Puestos</dt>
+                  <dd><span class="st" id="tl-puestos">1 puesto</span></dd>
+                </div>
+                <div class="full">
+                  <dt>Recogida</dt>
+                  <dd class="txt"><span class="st" id="tl-recogida">Por confirmar</span></dd>
+                </div>
+                <div class="full">
+                  <dt>Tarifa</dt>
+                  <dd class="txt">Se confirma por WhatsApp</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="tear" aria-hidden="true"></div>
+            <div class="tl-foot" aria-hidden="true">
+              <span class="barcode"></span>
+              <span class="stub-code">PS-2026 · CAR/MAT</span>
+            </div>
+          </aside>
+          <button type="button" class="btn-ticket btn-big" id="btn-apartar">Apartar mi puesto por WhatsApp</button>
+          <div class="chat-preview" id="chat-preview" hidden>
+            <p class="chat-note">Así le llega tu reserva al equipo — clarita y ordenada:</p>
+            <div class="chat-bg">
+              <p class="bubble" aria-live="polite"><span id="bubble-text"></span><span class="ticks" aria-hidden="true">✓✓</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · LA RUTA ============ -->
+  <section id="ruta">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="sec-code">03 · La ruta</p>
+        <h2>Carúpano ↔ Maturín, sin escalas para ti</h2>
+        <p class="sec-sub">Sin paradas fijas: te recogemos y te dejamos donde nos digas.</p>
+      </header>
+      <div class="ticket route-card reveal">
+        <span class="sello" aria-hidden="true">Puerta a puerta</span>
+        <div class="route-wrap">
+          <svg class="route-svg" viewBox="0 0 800 300" role="img" aria-label="Ruta ilustrada entre Carúpano, en el estado Sucre, y Maturín, en el estado Monagas">
+            <path d="M90 84 C230 130 240 240 410 200 C520 174 560 150 710 216" fill="none" stroke="#dcecf7" stroke-width="14" stroke-linecap="round"/>
+            <path d="M90 84 C230 130 240 240 410 200 C520 174 560 150 710 216" fill="none" stroke="#1e2f66" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 11"/>
+            <g>
+              <circle cx="90" cy="84" r="14" fill="none" stroke="#8fc3e0" stroke-width="1.5" stroke-dasharray="3 4"/>
+              <circle cx="90" cy="84" r="8.5" fill="#ffffff" stroke="#1e2f66" stroke-width="2.5"/>
+              <circle cx="90" cy="84" r="3.2" fill="#cf3a2e"/>
+              <text class="city-name" x="64" y="48">Carúpano</text>
+              <text class="city-state" x="65" y="66">Estado Sucre</text>
+            </g>
+            <g>
+              <circle cx="710" cy="216" r="14" fill="none" stroke="#8fc3e0" stroke-width="1.5" stroke-dasharray="3 4"/>
+              <circle cx="710" cy="216" r="8.5" fill="#ffffff" stroke="#1e2f66" stroke-width="2.5"/>
+              <circle cx="710" cy="216" r="3.2" fill="#cf3a2e"/>
+              <text class="city-name" x="736" y="256" text-anchor="end">Maturín</text>
+              <text class="city-state" x="736" y="274" text-anchor="end">Estado Monagas</text>
+            </g>
+            <g class="car" aria-hidden="true">
+              <rect x="-22" y="-17" width="44" height="15" rx="6" fill="#1e2f66"/>
+              <rect x="-16" y="-14" width="12" height="8" rx="2" fill="#8fc3e0"/>
+              <rect x="-1" y="-14" width="11" height="8" rx="2" fill="#8fc3e0"/>
+              <rect x="-20" y="-5.5" width="40" height="2.5" fill="#f2c53d"/>
+              <circle cx="-12" cy="0" r="5" fill="#1e2f66" stroke="#f2f8fc" stroke-width="1.6"/>
+              <circle cx="12" cy="0" r="5" fill="#1e2f66" stroke="#f2f8fc" stroke-width="1.6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="route-legend">
+          <span class="route-stamp"><b>CAR</b><span>Carúpano · Sucre</span></span>
+          <span class="route-stamp"><b>MAT</b><span>Maturín · Monagas</span></span>
+          <p class="route-note">El viaje empieza en tu puerta y termina en la puerta que nos digas, en cualquiera de las dos ciudades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · POR QUÉ ============ -->
+  <section id="por-que">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="sec-code">04 · Confianza</p>
+        <h2>Por qué viajar con Puerta de Sucre</h2>
+        <p class="sec-sub">Un viaje entre ciudades se hace con gente seria — y con papeles.</p>
+      </header>
+      <ul class="stub-row">
+        <li class="cut reveal">
+          <div class="talon">
+            <span class="talon-code">Sello 01</span>
+            <h3>Asociación formal</h3>
+            <p>Somos una asociación civil registrada, con RIF y oficina física en Carúpano. Transporte en Carúpano con cara, nombre y dirección.</p>
+          </div>
+        </li>
+        <li class="cut reveal">
+          <div class="talon">
+            <span class="talon-code">Sello 02</span>
+            <h3>4.0★ en Google</h3>
+            <p>Nuestra ficha de Google acumula 34 opiniones de pasajeros, con 4.0 estrellas. Búscanos antes de reservar: nos gusta que llegues con confianza.</p>
+          </div>
+        </li>
+        <li class="cut reveal">
+          <div class="talon">
+            <span class="talon-code">Sello 03</span>
+            <h3>Puerta a puerta de verdad</h3>
+            <p>Nuestros carritos no te dejan a mitad de camino: salen de tu puerta y llegan a la puerta que nos digas, en Sucre o en Monagas.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 05 · FAQ ============ -->
+  <section id="faq">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="sec-code">05 · Preguntas</p>
+        <h2>Preguntas frecuentes</h2>
+        <p class="sec-sub">Lo que la gente pregunta antes de apartar su puesto.</p>
+      </header>
+      <div class="faq-list">
+        <div class="cut reveal">
+          <details class="talon">
+            <summary>
+              <span class="talon-code">FAQ 01</span>
+              ¿Esto es un taxi?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-a">Somos mejor: un carrito compartido puerta a puerta. Te buscamos en tu casa igual que un taxi, pero pagas solo tu puesto y compartes el viaje con otros pasajeros — por eso sale mejor que un taxi privado para traslados entre ciudades.</p>
+          </details>
+        </div>
+        <div class="cut reveal">
+          <details class="talon">
+            <summary>
+              <span class="talon-code">FAQ 02</span>
+              ¿Cuánto cuesta el viaje?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-a">Cada puesto se cotiza por WhatsApp según la ruta y el punto de recogida. La recogida a domicilio tiene su costo adicional y también se te confirma antes de salir, sin sorpresas.</p>
+          </details>
+        </div>
+        <div class="cut reveal">
+          <details class="talon">
+            <summary>
+              <span class="talon-code">FAQ 03</span>
+              ¿Dónde están ubicados?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-a">Nuestra oficina queda en la Av. Rómulo Gallegos con C. Güiria, en Carúpano. Igual el viaje empieza donde estés tú: te buscamos en tu puerta.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER: tarjeta flotante sobre banda azul ============ -->
+<footer id="contacto" class="band">
+  <div class="wrap">
+    <div class="footer-card reveal">
+      <p class="fv">¡Feliz Viaje! <span aria-hidden="true">🚐</span></p>
+      <p>Aparta tu puesto puerta a puerta entre Sucre y Monagas. Te respondemos por WhatsApp.</p>
+      <a class="btn-ticket" data-wa data-wa-text="Hola 🙌 Quiero información para apartar un puesto puerta a puerta." href="#reservar">Escríbenos por WhatsApp</a>
+      <p class="addr">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Av. Rómulo Gallegos con C. Güiria, Carúpano, estado Sucre
+      </p>
+      <div class="foot-dash" aria-hidden="true"></div>
+      <p class="seal"><a href="https://medine.tech" rel="noopener">Demo diseñada por Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</p>
+      <p class="muestra">Página de muestra — contenido ilustrativo.</p>
+    </div>
+    <p class="band-line">Asoc. Civil Transporte Ejecutivo «Puerta de Sucre» · Carúpano, estado Sucre, Venezuela</p>
+  </div>
+</footer>
+
+<!-- Mobile bottom tab bar -->
+<nav class="tabbar" aria-label="Secciones">
+  <a href="#inicio" data-spy>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M10 20v-5h4v5"/></svg>
+    <span>Inicio</span>
+  </a>
+  <a href="#como-funciona" data-spy>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h8a3.5 3.5 0 0 1 0 7H9a3.5 3.5 0 0 0 0 7h8"/></svg>
+    <span>Cómo funciona</span>
+  </a>
+  <a href="#reservar" data-spy>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v2a2 2 0 0 0 0 4v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-2a2 2 0 0 0 0-4Z"/><path d="M15 8v1.6M15 11.2v1.6M15 14.4V16"/></svg>
+    <span>Reservar</span>
+  </a>
+  <a href="#faq" data-spy>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.5a2.4 2.4 0 1 1 3.7 2c-.8.55-1.3 1-1.3 2"/><path d="M12 16.8h.01"/></svg>
+    <span>FAQ</span>
+  </a>
+</nav>
+
+<!-- FAB WhatsApp -->
+<a class="fab" data-wa data-wa-text="Hola 🙌 Quiero información sobre sus traslados puerta a puerta." href="#reservar" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+  document.documentElement.classList.add('js');
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var supportsSDA = !!(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()'));
+
+  /* ---------- toast ---------- */
+  var toast = document.getElementById('toast');
+  var toastTimer;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 3400);
+  }
+
+  /* ---------- WhatsApp wiring ---------- */
+  // Definir WA_PUERTA (58XXXXXXXXXX) antes de enviar la demo.
+  var WA_PUERTA = "";
+  var WA_BASE = "https://wa.me/" + WA_PUERTA;
+
+  document.querySelectorAll('a[data-wa]').forEach(function(a){
+    var txt = a.getAttribute('data-wa-text') || 'Hola 🙌 Quiero información sobre sus traslados puerta a puerta.';
+    if (WA_PUERTA){
+      a.href = WA_BASE + '?text=' + encodeURIComponent(txt);
+      a.target = '_blank';
+      a.rel = 'noopener';
+    } else {
+      a.href = '#reservar';
+      a.addEventListener('click', function(){
+        showToast('El número se conecta al publicar la página.');
+      });
+    }
+  });
+
+  /* ---------- signature: live ticket builder ---------- */
+  var form = document.getElementById('sim-form');
+  var dir = document.getElementById('direccion');
+  var fecha = document.getElementById('fecha');
+  var dateBox = document.getElementById('date-box');
+  var out = {
+    rutaCode: document.getElementById('tl-ruta-code'),
+    rutaName: document.getElementById('tl-ruta-name'),
+    dia: document.getElementById('tl-dia'),
+    puestos: document.getElementById('tl-puestos'),
+    recogida: document.getElementById('tl-recogida')
+  };
+  var RUTAS = {
+    cm: { code:'CAR → MAT', name:'Carúpano → Maturín' },
+    mc: { code:'MAT → CAR', name:'Maturín → Carúpano' }
+  };
+
+  if (fecha){
+    var now = new Date();
+    fecha.min = now.getFullYear() + '-' +
+      String(now.getMonth()+1).padStart(2,'0') + '-' +
+      String(now.getDate()).padStart(2,'0');
+  }
+
+  function cap(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  function chosenDate(){
+    return fecha && fecha.value ? new Date(fecha.value + 'T12:00:00') : null;
+  }
+
+  function dayInfo(){
+    var v = form.elements.dia.value;
+    if (v === 'manana') return { ticket:'Mañana', msg:'para mañana' };
+    if (v === 'semana') return { ticket:'Esta semana', msg:'para esta semana' };
+    var d = chosenDate();
+    if (d){
+      var corto = d.toLocaleDateString('es-VE', { weekday:'short', day:'numeric', month:'short' }).replace(',', '');
+      var largo = d.toLocaleDateString('es-VE', { weekday:'long', day:'numeric', month:'long' }).replace(',', '');
+      return { ticket: cap(corto), msg: 'para el ' + largo };
+    }
+    return { ticket:'Por elegir', msg:'para la fecha que te confirmo por aquí' };
+  }
+
+  function stamp(el, text){
+    if (el.textContent === text) return;
+    el.textContent = text;
+    if (reduced.matches) return;
+    el.classList.remove('stamped');
+    void el.offsetWidth; /* restart the animation */
+    el.classList.add('stamped');
+  }
+
+  function render(withStamp){
+    var ruta = RUTAS[form.elements.ruta.value];
+    var n = form.elements.puestos.value;
+    var d = dayInfo();
+    var rec = dir.value.trim() || 'Por confirmar';
+    dateBox.hidden = form.elements.dia.value !== 'elegir';
+    if (withStamp){
+      stamp(out.rutaCode, ruta.code);
+      stamp(out.rutaName, ruta.name);
+      stamp(out.dia, d.ticket);
+      stamp(out.puestos, n + (n === '1' ? ' puesto' : ' puestos'));
+      stamp(out.recogida, rec);
+    } else {
+      out.recogida.textContent = rec;
+    }
+  }
+
+  form.addEventListener('change', function(){ render(true); });
+  dir.addEventListener('input', function(){ render(false); });
+  form.addEventListener('submit', function(e){ e.preventDefault(); });
+
+  function buildMsg(){
+    var ruta = RUTAS[form.elements.ruta.value];
+    var n = form.elements.puestos.value;
+    var msg = 'Hola 🙌 Quiero apartar ' + n + ' ' + (n === '1' ? 'puesto' : 'puestos') +
+      ' ' + ruta.name + ' ' + dayInfo().msg + '.';
+    var d = dir.value.trim();
+    msg += d ? ' Recogida en: ' + d : ' Ahorita te paso la dirección de recogida.';
+    return msg;
+  }
+
+  var btn = document.getElementById('btn-apartar');
+  var preview = document.getElementById('chat-preview');
+  var bubbleText = document.getElementById('bubble-text');
+  btn.addEventListener('click', function(){
+    var msg = buildMsg();
+    bubbleText.textContent = msg;
+    preview.hidden = false;
+    preview.scrollIntoView({ block:'nearest', behavior: reduced.matches ? 'auto' : 'smooth' });
+    if (!WA_PUERTA){
+      showToast('El número se conecta al publicar la página.');
+      return;
+    }
+    window.open(WA_BASE + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+  });
+
+  render(false);
+
+  /* ---------- reveals: IO fallback when scroll-driven animations are missing ---------- */
+  if (!supportsSDA && !reduced.matches && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else if (!supportsSDA){
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* ---------- route car: JS scroll progress when scroll-driven animations are missing ---------- */
+  var car = document.querySelector('.car');
+  var routeWrap = document.querySelector('.route-wrap');
+  var supportsOffset = !!(window.CSS && CSS.supports && CSS.supports("offset-path", "path('M0 0 H 10')"));
+  if (car && routeWrap && !supportsSDA && !reduced.matches && supportsOffset){
+    var ticking = false;
+    var driveCar = function(){
+      ticking = false;
+      var r = routeWrap.getBoundingClientRect();
+      var vh = window.innerHeight || 1;
+      var p = (vh - r.top) / (vh + r.height);
+      p = Math.max(0, Math.min(1, p));
+      car.style.offsetDistance = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', function(){
+      if (!ticking){ ticking = true; requestAnimationFrame(driveCar); }
+    }, { passive:true });
+    driveCar();
+  }
+
+  /* ---------- scroll spy for rail + tab bar ---------- */
+  var spyLinks = document.querySelectorAll('a[data-spy]');
+  if ('IntersectionObserver' in window && spyLinks.length){
+    var bySection = new Map();
+    spyLinks.forEach(function(l){
+      var sec = document.querySelector(l.getAttribute('href'));
+      if (!sec) return;
+      if (!bySection.has(sec)) bySection.set(sec, []);
+      bySection.get(sec).push(l);
+    });
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        spyLinks.forEach(function(l){
+          l.classList.remove('active');
+          l.removeAttribute('aria-current');
+        });
+        bySection.get(e.target).forEach(function(l){
+          l.classList.add('active');
+          l.setAttribute('aria-current', 'true');
+        });
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    bySection.forEach(function(_, sec){ spy.observe(sec); });
+  }
+})();
+</script>
+</body>
+</html>
