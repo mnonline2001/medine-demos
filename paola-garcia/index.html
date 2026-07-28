@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Paola García — Creadora de contenido · Demo Medine.tech</title>
+<meta name="description" content="Landing personal de Paola García: videos, patrocinantes, agenda y comunidad — administrada por ella misma desde su teléfono. Demo de Medine.tech.">
+<meta property="og:title" content="Paola García — Creadora de contenido">
+<meta property="og:description" content="Su página personal: videos, patrocinantes, agenda y comunidad, todo administrado desde su teléfono. Demo de diseño por Medine.tech.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0b14">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E✨%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&amp;family=Outfit:wght@300;400;600;800&amp;display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PAOLA GARCÍA — marquesina neón de estudio
+   Demo de venta · Medine.tech · un solo archivo
+   ============================================================ */
+:root{
+  --negro:#0b0b14;
+  --panel:#12121e;
+  --borde:#26263a;
+  --oro:#f5c542;
+  --azul:#2e7bff;
+  --rosa:#ff3e9a;
+  --rojo:#ff2e44;
+  --blanco:#f7f5ef;
+  --tinta-suave:#bdbacb;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{
+  background:var(--negro);
+  color:var(--blanco);
+  font-family:"Outfit",system-ui,sans-serif;
+  font-weight:400;
+  line-height:1.65;
+  font-size:1rem;
+}
+/* glitter sutil de fondo (SVG propio, data-URI) */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='210' height='210'%3E%3Ccircle cx='18' cy='34' r='1.1' fill='%23f5c542' opacity='.55'/%3E%3Ccircle cx='92' cy='12' r='.9' fill='%23ff3e9a' opacity='.5'/%3E%3Ccircle cx='160' cy='58' r='1' fill='%232e7bff' opacity='.5'/%3E%3Ccircle cx='58' cy='96' r='.8' fill='%23f7f5ef' opacity='.4'/%3E%3Ccircle cx='196' cy='140' r='1.1' fill='%23f5c542' opacity='.45'/%3E%3Ccircle cx='120' cy='176' r='.9' fill='%23ff3e9a' opacity='.45'/%3E%3Ccircle cx='30' cy='168' r='1' fill='%232e7bff' opacity='.45'/%3E%3Cpath d='M142 100l1.6 4 4 1.6-4 1.6-1.6 4-1.6-4-4-1.6 4-1.6z' fill='%23f7f5ef' opacity='.35'/%3E%3Cpath d='M70 20l1.3 3.2 3.2 1.3-3.2 1.3-1.3 3.2-1.3-3.2-3.2-1.3 3.2-1.3z' fill='%23f5c542' opacity='.4'/%3E%3C/svg%3E");
+}
+main,footer,.cinta{position:relative;z-index:1}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px;border-radius:4px}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+.salto{
+  position:absolute;left:-999px;top:0;z-index:99;
+  background:var(--panel);color:var(--blanco);padding:.6rem 1rem;
+}
+.salto:focus{left:8px;top:8px}
+
+/* ---------- tipografía display ---------- */
+.bungee{font-family:"Bungee",cursive}
+h1,h2,h3{font-family:"Bungee",cursive;font-weight:400;line-height:1.1;text-transform:uppercase}
+h2{font-size:clamp(1.5rem,5.4vw,2.6rem);margin-bottom:.4em}
+h3{font-size:1rem;letter-spacing:.04em}
+
+/* ---------- neón: capas de glow (text-shadow multicapa) ---------- */
+.neon-rosa{
+  color:#ffd9ec;
+  text-shadow:0 0 2px #fff,0 0 10px var(--rosa),0 0 26px var(--rosa),0 0 64px rgba(255,62,154,.55);
+}
+.neon-oro{
+  color:#fdedbd;
+  text-shadow:0 0 2px #fff,0 0 10px var(--oro),0 0 26px rgba(245,197,66,.9),0 0 60px rgba(245,197,66,.5);
+}
+.neon-azul{
+  color:#d9e6ff;
+  text-shadow:0 0 2px #fff,0 0 10px var(--azul),0 0 26px var(--azul),0 0 60px rgba(46,123,255,.55);
+}
+
+/* ---------- controles fijos (interruptores de letrero) ---------- */
+.hamb{
+  position:fixed;top:14px;left:14px;z-index:70;
+  width:48px;height:48px;border-radius:14px;cursor:pointer;
+  background:rgba(18,18,30,.88);border:1px solid var(--borde);
+  display:grid;place-items:center;gap:0;
+  box-shadow:0 0 0 1px rgba(46,123,255,.15),0 0 18px rgba(46,123,255,.18);
+}
+.hamb span{
+  display:block;width:20px;height:2px;background:var(--blanco);
+  border-radius:2px;transition:transform .3s,opacity .3s;margin:2.5px 0;
+}
+#nav-toggle:focus-visible + .hamb{outline:2px solid var(--oro);outline-offset:3px}
+body:has(#nav-toggle:checked) .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body:has(#nav-toggle:checked) .hamb span:nth-child(2){opacity:0}
+body:has(#nav-toggle:checked) .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.edit-switch{
+  position:fixed;top:14px;right:14px;z-index:50;cursor:pointer;
+  display:flex;align-items:center;gap:9px;
+  padding:11px 15px;border-radius:999px;
+  background:rgba(18,18,30,.88);border:1px solid var(--rosa);
+  font-family:"Bungee",cursive;font-size:.68rem;letter-spacing:.05em;
+  color:var(--blanco);
+  box-shadow:0 0 0 1px rgba(255,62,154,.2),0 0 14px rgba(255,62,154,.28),inset 0 0 8px rgba(255,62,154,.12);
+  transition:box-shadow .3s;
+}
+.edit-switch .sw{
+  width:30px;height:16px;border-radius:99px;border:1px solid var(--rosa);
+  position:relative;flex:none;
+}
+.edit-switch .sw::after{
+  content:"";position:absolute;left:2px;top:2px;width:10px;height:10px;
+  border-radius:50%;background:var(--blanco);transition:transform .25s,background .25s;
+}
+#modo-edicion:focus-visible + .edit-switch{outline:2px solid var(--oro);outline-offset:3px}
+#modo-edicion:checked + .edit-switch{
+  box-shadow:0 0 0 1px rgba(255,62,154,.5),0 0 26px rgba(255,62,154,.6),inset 0 0 12px rgba(255,62,154,.3);
+}
+#modo-edicion:checked + .edit-switch .sw::after{transform:translateX(14px);background:var(--rosa)}
+
+/* ---------- overlay de navegación a pantalla completa ---------- */
+.overlay{
+  position:fixed;inset:0;z-index:60;
+  background:rgba(6,6,12,.97);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.1rem;
+  opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;
+  padding:5rem 1.5rem 3rem;text-align:center;
+}
+body:has(#nav-toggle:checked) .overlay{opacity:1;visibility:visible}
+body:has(#nav-toggle:checked){overflow:hidden}
+.overlay .marca{
+  font-family:"Bungee",cursive;font-size:.8rem;letter-spacing:.12em;
+  margin-bottom:1.2rem;
+}
+.overlay nav{display:flex;flex-direction:column;gap:1rem}
+.overlay nav a{
+  font-family:"Bungee",cursive;text-decoration:none;
+  font-size:clamp(1.45rem,6.5vw,3rem);line-height:1.15;
+  transition:text-shadow .25s;
+}
+.overlay nav a:hover{text-shadow:0 0 2px #fff,0 0 14px currentColor,0 0 40px currentColor}
+.overlay .overlay-wa{margin-top:1.6rem}
+
+/* ---------- botón-letrero (CTA principal) ---------- */
+.btn-letrero{
+  display:inline-block;font-family:"Bungee",cursive;text-transform:uppercase;
+  font-size:.95rem;letter-spacing:.05em;text-decoration:none;text-align:center;
+  color:var(--oro);background:transparent;cursor:pointer;
+  padding:.95rem 1.7rem;border:2px solid var(--oro);border-radius:10px;
+  box-shadow:0 0 0 1px rgba(245,197,66,.25),0 0 14px rgba(245,197,66,.3),0 0 40px rgba(245,197,66,.15),inset 0 0 12px rgba(245,197,66,.15);
+  transition:box-shadow .3s,color .3s,background .3s;
+}
+.btn-letrero:hover,.btn-letrero:focus-visible{
+  color:#fdedbd;background:rgba(245,197,66,.07);
+  box-shadow:0 0 0 1px rgba(245,197,66,.55),0 0 24px rgba(245,197,66,.6),0 0 70px rgba(245,197,66,.3),inset 0 0 18px rgba(245,197,66,.28);
+}
+.btn-letrero--rosa{
+  color:var(--rosa);border-color:var(--rosa);
+  box-shadow:0 0 0 1px rgba(255,62,154,.25),0 0 14px rgba(255,62,154,.3),0 0 40px rgba(255,62,154,.15),inset 0 0 12px rgba(255,62,154,.15);
+}
+.btn-letrero--rosa:hover,.btn-letrero--rosa:focus-visible{
+  color:#ffd9ec;background:rgba(255,62,154,.07);
+  box-shadow:0 0 0 1px rgba(255,62,154,.55),0 0 24px rgba(255,62,154,.6),0 0 70px rgba(255,62,154,.3),inset 0 0 18px rgba(255,62,154,.28);
+}
+
+/* ---------- HERO: el letrero ---------- */
+.hero{
+  min-height:100svh;position:relative;overflow:clip;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:6.5rem 1.4rem 4rem;
+}
+/* capas de glow del estudio: gradientes + mask-image para difuminar */
+.hero .glow-capa{
+  position:absolute;inset:-10%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(38% 30% at 78% 18%, rgba(46,123,255,.28), transparent 70%),
+    radial-gradient(42% 34% at 12% 68%, rgba(255,62,154,.22), transparent 70%),
+    radial-gradient(30% 24% at 60% 88%, rgba(245,197,66,.14), transparent 70%);
+  -webkit-mask-image:radial-gradient(120% 100% at 50% 40%, #000 40%, transparent 92%);
+  mask-image:radial-gradient(120% 100% at 50% 40%, #000 40%, transparent 92%);
+}
+.letrero{
+  position:relative;max-width:920px;
+  transform:rotate(-1.2deg);
+  padding:2rem 1.2rem 2.2rem;
+}
+/* marco de bombillos de marquesina */
+.letrero::before{
+  content:"";position:absolute;inset:0;border-radius:18px;
+  border:4px dotted rgba(245,197,66,.4);
+  box-shadow:0 0 22px rgba(245,197,66,.12),inset 0 0 26px rgba(11,11,20,.8);
+  pointer-events:none;
+}
+.hero .pre-titulo{
+  font-family:"Bungee",cursive;font-size:.72rem;letter-spacing:.28em;
+  color:var(--tinta-suave);margin-bottom:1rem;
+}
+.hero .pre-titulo .punto{
+  display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--rojo);vertical-align:1px;margin-right:8px;
+  box-shadow:0 0 8px var(--rojo),0 0 20px rgba(255,46,68,.6);
+  animation:latido 2.4s ease-in-out infinite;
+}
+@keyframes latido{50%{opacity:.35}}
+h1{
+  font-size:clamp(3.1rem,14.5vw,8.75rem);
+  line-height:.95;letter-spacing:.01em;
+}
+h1 .linea{display:block}
+h1 .linea--paola{animation:encender 2.3s linear both}
+h1 .linea--garcia{animation:encender 2.3s linear .35s both}
+@keyframes encender{
+  0%,11%,15%,31%,35%,52%{opacity:.12;text-shadow:none}
+  12%,32%,54%,100%{opacity:1}
+}
+.hero .rol{
+  margin-top:1.3rem;font-size:1.08rem;font-weight:300;max-width:34ch;
+  color:var(--blanco);
+}
+.hero .rol strong{font-weight:600;color:var(--oro)}
+.hero .cta-fila{
+  margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;
+}
+.hero .enlace-videos{
+  font-weight:600;text-decoration:none;color:var(--azul);
+  border-bottom:1px solid rgba(46,123,255,.5);padding-bottom:2px;
+}
+.hero .enlace-videos:hover{color:#8db4ff}
+/* chips de redes */
+.chips-redes{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2.2rem}
+.social-chip{
+  display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;
+  font-family:"Outfit",sans-serif;font-weight:600;font-size:.86rem;
+  color:var(--blanco);background:var(--panel);
+  border:1px solid var(--borde);border-radius:999px;padding:.55rem 1rem;
+  transition:border-color .25s,box-shadow .25s;
+}
+.social-chip svg{width:16px;height:16px;flex:none}
+.social-chip:hover{border-color:var(--rosa);box-shadow:0 0 12px rgba(255,62,154,.35)}
+/* sticker decorativo del estudio */
+.sticker-estudio{
+  position:absolute;right:4%;bottom:7%;transform:rotate(4deg);
+  font-family:"Bungee",cursive;font-size:.62rem;letter-spacing:.14em;
+  color:var(--azul);border:1.5px solid var(--azul);border-radius:8px;
+  padding:.45rem .7rem;
+  box-shadow:0 0 10px rgba(46,123,255,.35),inset 0 0 8px rgba(46,123,255,.15);
+}
+
+/* ---------- cintas marquee ---------- */
+.cinta{
+  overflow:clip;border-block:1px solid var(--borde);
+  background:rgba(18,18,30,.6);
+  padding-block:.7rem;
+}
+.cinta__drift{width:max-content}
+.cinta__track{
+  display:flex;width:max-content;white-space:nowrap;
+  animation:correr 26s linear infinite;
+}
+.cinta:hover .cinta__track{animation-play-state:paused}
+.cinta__grupo{
+  font-family:"Bungee",cursive;font-size:.88rem;letter-spacing:.1em;
+  padding-right:1.2rem;
+}
+@keyframes correr{to{transform:translateX(-50%)}}
+.cinta--rosa .cinta__grupo{color:var(--rosa);text-shadow:0 0 10px rgba(255,62,154,.5)}
+.cinta--azul .cinta__grupo{color:var(--azul);text-shadow:0 0 10px rgba(46,123,255,.5)}
+.cinta--oro .cinta__grupo{color:var(--oro);text-shadow:0 0 10px rgba(245,197,66,.45)}
+/* deriva scroll-driven: la cinta entera se desplaza un poco al hacer scroll */
+@supports (animation-timeline: view()){
+  .cinta__drift{
+    animation:deriva linear both;
+    animation-timeline:view();
+    animation-range:entry 0% exit 100%;
+  }
+  @keyframes deriva{from{transform:translateX(0)}to{transform:translateX(-70px)}}
+}
+
+/* ---------- sets (secciones) ---------- */
+.set{padding:4.2rem 1.4rem}
+.contenedor{max-width:1080px;margin-inline:auto}
+.set-rotulo{
+  display:inline-block;font-family:"Bungee",cursive;font-size:.68rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  padding:.45rem .8rem;border-radius:8px;margin-bottom:1.1rem;
+  border:1.5px solid currentColor;
+}
+.set-rotulo--rosa{color:var(--rosa);box-shadow:0 0 10px rgba(255,62,154,.3),inset 0 0 8px rgba(255,62,154,.12)}
+.set-rotulo--azul{color:var(--azul);box-shadow:0 0 10px rgba(46,123,255,.3),inset 0 0 8px rgba(46,123,255,.12)}
+.set-rotulo--oro{color:var(--oro);box-shadow:0 0 10px rgba(245,197,66,.3),inset 0 0 8px rgba(245,197,66,.12)}
+.nota-mecanismo{
+  color:var(--tinta-suave);font-size:.98rem;max-width:52ch;margin-bottom:2rem;
+}
+.nota-mecanismo strong{color:var(--blanco);font-weight:600}
+
+/* ---------- reveals (scroll-driven con fallback IO) ---------- */
+@supports (animation-timeline: view()){
+  .reveal{
+    animation:aparecer .9s both;
+    animation-timeline:view();
+    animation-range:entry 4% entry 42%;
+  }
+}
+@keyframes aparecer{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+html.io .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+html.io .reveal.in{opacity:1;transform:none}
+
+/* ---------- SET 01: En el aire (videos) ---------- */
+.tv-grid{display:grid;gap:1.4rem}
+.pantalla{
+  position:relative;border-radius:14px;overflow:hidden;
+  aspect-ratio:16/10;
+  background:linear-gradient(160deg,#1b1b30 0%,#101020 55%,#0c0c18 100%);
+  border:2px solid var(--azul);
+  box-shadow:0 0 0 1px rgba(46,123,255,.2),0 0 18px rgba(46,123,255,.3),0 0 50px rgba(46,123,255,.12),inset 0 0 24px rgba(46,123,255,.1);
+}
+.pantalla::before{ /* scanlines */
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(247,245,239,.03) 3px 4px);
+}
+.pantalla .play{
+  position:absolute;inset:0;display:grid;place-items:center;
+}
+.pantalla .play svg{width:64px;height:64px;filter:drop-shadow(0 0 12px rgba(245,197,66,.55))}
+.pantalla .placa{
+  position:absolute;left:0;right:0;bottom:0;
+  display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.6rem .9rem;background:rgba(11,11,20,.82);
+  border-top:1px solid var(--borde);
+}
+.pantalla .placa .nombre{font-family:"Bungee",cursive;font-size:.68rem;letter-spacing:.08em}
+.chip-auto{
+  font-size:.68rem;font-weight:600;color:var(--oro);
+  border:1px solid rgba(245,197,66,.5);border-radius:999px;padding:.14rem .55rem;
+  white-space:nowrap;
+}
+.pantalla--grande{transform:rotate(-1deg)}
+.tv-par{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;align-items:start}
+.tv-par .pantalla{aspect-ratio:4/5}
+.tv-par .pantalla .play svg{width:44px;height:44px}
+.tv-par .pantalla:nth-child(1){transform:rotate(1.6deg)}
+.tv-par .pantalla:nth-child(2){transform:rotate(-1.2deg) translateY(14px)}
+.tv-par .pantalla .placa{flex-direction:column;align-items:flex-start;gap:.25rem}
+
+/* ---------- SET 02: bio ---------- */
+.bio-carta{
+  position:relative;max-width:620px;
+  background:var(--panel);border:2px solid var(--rosa);border-radius:16px;
+  padding:1.8rem 1.5rem;transform:rotate(-.8deg);
+  box-shadow:0 0 0 1px rgba(255,62,154,.2),0 0 20px rgba(255,62,154,.25),0 0 60px rgba(255,62,154,.08),inset 0 0 18px rgba(255,62,154,.06);
+}
+.bio-carta p{margin-bottom:1rem}
+.bio-carta p:last-child{margin-bottom:0}
+.bio-carta .firma{font-family:"Bungee",cursive;font-size:.85rem;color:var(--rosa)}
+
+/* ---------- SET 03: patrocinantes ---------- */
+.carrusel{
+  display:flex;gap:1.1rem;overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:1rem .2rem 1.4rem;
+  scrollbar-width:thin;scrollbar-color:var(--borde) transparent;
+}
+.marca-card{
+  flex:0 0 232px;scroll-snap-align:center;
+  min-height:150px;border-radius:14px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;
+  text-align:center;padding:1.2rem;
+}
+.marca-card--wordmark{
+  background:var(--panel);border:2px solid var(--oro);transform:rotate(-1.4deg);
+  box-shadow:0 0 0 1px rgba(245,197,66,.2),0 0 16px rgba(245,197,66,.25),inset 0 0 14px rgba(245,197,66,.08);
+}
+.marca-card--wordmark.girada{transform:rotate(1.2deg);border-color:var(--azul);
+  box-shadow:0 0 0 1px rgba(46,123,255,.2),0 0 16px rgba(46,123,255,.25),inset 0 0 14px rgba(46,123,255,.08);
+}
+.marca-card .wordmark{font-family:"Bungee",cursive;font-size:1.15rem;color:var(--oro)}
+.marca-card.girada .wordmark{font-family:"Outfit",sans-serif;font-weight:800;letter-spacing:.3em;font-size:1rem;color:var(--azul);text-transform:uppercase}
+.marca-card .tipo{font-size:.7rem;color:var(--tinta-suave);letter-spacing:.14em;text-transform:uppercase}
+.marca-card--slot{
+  border:2px dashed rgba(245,197,66,.55);color:var(--oro);
+  background:rgba(245,197,66,.03);transform:rotate(.8deg);
+}
+.marca-card--slot:nth-child(odd){transform:rotate(-1deg)}
+.marca-card--slot .mas{font-size:2rem;line-height:1;font-family:"Bungee",cursive}
+.marca-card--slot .texto{font-family:"Bungee",cursive;font-size:.8rem;letter-spacing:.06em}
+
+/* ---------- SET 04: cifras (stat tiles) ---------- */
+.aviso-muestra{
+  display:inline-block;font-size:.78rem;font-weight:600;color:var(--oro);
+  border:1px solid rgba(245,197,66,.55);border-radius:999px;
+  padding:.35rem .9rem;margin-bottom:1.6rem;
+}
+.kpi-fila{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.stat-tile{
+  background:var(--panel);border:1px solid var(--borde);border-left:3px solid var(--oro);
+  border-radius:12px;padding:1.1rem 1.1rem 1rem;position:relative;
+}
+.stat-tile .valor{
+  font-family:"Outfit",sans-serif;font-weight:600;font-size:2.1rem;line-height:1.1;
+  color:var(--blanco);
+}
+.stat-tile .etiqueta{font-size:.85rem;color:var(--tinta-suave);margin-top:.2rem}
+.stat-tile .tag{
+  position:absolute;top:.55rem;right:.6rem;font-size:.6rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave);
+  border:1px solid var(--borde);border-radius:999px;padding:.08rem .45rem;
+}
+.cifras-pie{margin-top:1.4rem;font-size:.9rem;color:var(--tinta-suave);max-width:52ch}
+
+/* ---------- SET 05: agenda ---------- */
+.agenda-lista{list-style:none;border-top:1px solid var(--borde)}
+.agenda-item{
+  display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.1rem;
+  padding:1.1rem .2rem;border-bottom:1px solid var(--borde);align-items:center;
+}
+.agenda-item .fecha{
+  font-family:"Bungee",cursive;font-size:.95rem;color:var(--oro);
+  text-shadow:0 0 10px rgba(245,197,66,.35);white-space:nowrap;
+}
+.agenda-item .que{font-weight:600}
+.agenda-item .donde{grid-column:2;font-size:.88rem;color:var(--tinta-suave)}
+.chip-ejemplo{
+  display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--tinta-suave);
+  border:1px solid var(--borde);border-radius:999px;padding:.08rem .5rem;
+  margin-left:.5rem;vertical-align:2px;
+}
+
+/* ---------- SET 06: reseñas ---------- */
+.resenas{display:grid;gap:1.4rem}
+.resena{
+  position:relative;background:var(--panel);border-radius:16px;
+  padding:1.7rem 1.4rem 1.4rem;max-width:560px;
+}
+.resena--rosa{
+  border:2px solid var(--rosa);transform:rotate(1.1deg);
+  box-shadow:0 0 0 1px rgba(255,62,154,.2),0 0 18px rgba(255,62,154,.25),inset 0 0 14px rgba(255,62,154,.06);
+}
+.resena--azul{
+  border:2px solid var(--azul);transform:rotate(-1.3deg);margin-left:auto;
+  box-shadow:0 0 0 1px rgba(46,123,255,.2),0 0 18px rgba(46,123,255,.25),inset 0 0 14px rgba(46,123,255,.06);
+}
+.resena .comilla{
+  position:absolute;top:-.6rem;left:1rem;font-family:"Bungee",cursive;
+  font-size:2.4rem;line-height:1;color:var(--oro);
+  text-shadow:0 0 12px rgba(245,197,66,.5);
+}
+.resena .quien{
+  margin-top:.9rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--tinta-suave);
+}
+
+/* ---------- SET 07: ayuda social (bloque sobrio) ---------- */
+.set--corazon{
+  background:linear-gradient(170deg,#141020 0%,#12121e 60%,#0b0b14 100%);
+  border-block:1px solid var(--borde);
+}
+.corazon-caja{max-width:640px}
+.corazon-caja .regla{
+  width:64px;height:2px;background:var(--oro);border:none;margin:1.2rem 0 1.4rem;
+  box-shadow:0 0 10px rgba(245,197,66,.4);
+}
+.corazon-caja p{color:var(--blanco);font-weight:300;font-size:1.05rem;margin-bottom:1rem}
+.corazon-caja p strong{font-weight:600;color:var(--oro)}
+
+/* ---------- SET 08: comunidad ---------- */
+.comunidad-caja{max-width:620px}
+.form-lista{margin-top:1.6rem}
+.form-lista .campo{display:flex;flex-wrap:wrap;gap:.8rem}
+.form-lista label{
+  display:block;font-size:.78rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--tinta-suave);margin-bottom:.5rem;width:100%;
+}
+.form-lista input[type="email"]{
+  flex:1 1 210px;min-width:0;font:inherit;color:var(--blanco);
+  background:var(--panel);border:1px solid var(--borde);border-radius:10px;
+  padding:.9rem 1rem;
+}
+.form-lista input[type="email"]:focus-visible{outline:2px solid var(--oro);outline-offset:2px}
+.form-lista button{flex:0 0 auto}
+.form-ok{
+  display:none;margin-top:1rem;padding:.9rem 1.1rem;border-radius:10px;
+  border:1px solid rgba(245,197,66,.5);color:var(--oro);font-size:.95rem;
+  background:rgba(245,197,66,.05);
+}
+.form-ok.visible{display:block}
+
+/* ---------- footer ---------- */
+footer .cinta{border-bottom:none}
+.footer-info{
+  padding:2.6rem 1.4rem 6.5rem;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:1.2rem;
+}
+.footer-info .chips-redes{margin-top:0;justify-content:center}
+.sello{
+  font-size:.82rem;color:var(--tinta-suave);max-width:46ch;
+}
+.sello a{color:var(--oro);text-decoration:none;border-bottom:1px solid rgba(245,197,66,.4)}
+.sello a:hover{color:#fdedbd}
+.legal{font-size:.75rem;color:var(--tinta-suave)}
+
+/* ---------- modo edición (✏️): checkbox + :has() ---------- */
+.editable{position:relative}
+.editable::after{
+  content:"✏️ " attr(data-edit);
+  position:absolute;top:-.85rem;right:-.3rem;z-index:5;
+  font-family:"Outfit",sans-serif;font-size:.7rem;font-weight:600;
+  letter-spacing:.04em;color:var(--blanco);white-space:nowrap;
+  background:var(--panel);border:1.5px solid var(--rosa);border-radius:999px;
+  padding:.28rem .7rem;
+  box-shadow:0 0 0 1px rgba(255,62,154,.3),0 0 14px rgba(255,62,154,.5);
+  opacity:0;transform:scale(.75);transform-origin:top right;
+  transition:opacity .3s,transform .3s;pointer-events:none;
+}
+body:has(#modo-edicion:checked) .editable{
+  outline:2px dashed rgba(255,62,154,.65);outline-offset:7px;border-radius:8px;
+}
+body:has(#modo-edicion:checked) .editable::after{opacity:1;transform:scale(1)}
+.edit-panel{
+  position:fixed;left:16px;bottom:16px;z-index:45;
+  width:min(340px,calc(100vw - 110px));
+  background:var(--panel);border:2px solid var(--rosa);border-radius:16px;
+  padding:1.1rem 1.2rem;
+  box-shadow:0 0 0 1px rgba(255,62,154,.3),0 0 24px rgba(255,62,154,.4),0 12px 40px rgba(0,0,0,.5);
+  opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .35s,transform .35s,visibility .35s;
+}
+body:has(#modo-edicion:checked) .edit-panel{opacity:1;visibility:visible;transform:none}
+.edit-panel h3{font-size:.8rem;color:var(--rosa);margin-bottom:.5rem}
+.edit-panel p{font-size:.88rem;line-height:1.5}
+.edit-panel p + p{margin-top:.5rem}
+.edit-panel .clave{color:var(--oro)}
+
+/* ---------- FAB WhatsApp ---------- */
+.fab-wa{
+  position:fixed;right:16px;bottom:16px;z-index:40;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;text-decoration:none;
+  box-shadow:0 4px 14px rgba(0,0,0,.45),0 0 20px rgba(37,211,102,.35);
+  transition:transform .25s,box-shadow .25s;
+}
+.fab-wa:hover{transform:scale(1.06);box-shadow:0 6px 18px rgba(0,0,0,.5),0 0 30px rgba(37,211,102,.5)}
+.fab-wa svg{width:30px;height:30px;fill:#fff}
+
+/* ---------- aviso (toast) ---------- */
+.aviso{
+  position:fixed;left:50%;bottom:86px;transform:translate(-50%,14px);z-index:80;
+  background:var(--panel);border:1px solid var(--oro);border-radius:10px;
+  color:var(--blanco);font-size:.86rem;padding:.7rem 1.1rem;
+  box-shadow:0 0 16px rgba(245,197,66,.3),0 8px 30px rgba(0,0,0,.5);
+  opacity:0;visibility:hidden;transition:opacity .3s,transform .3s,visibility .3s;
+  max-width:calc(100vw - 32px);text-align:center;
+}
+.aviso.visible{opacity:1;visibility:visible;transform:translate(-50%,0)}
+
+/* ---------- desktop ---------- */
+@media (min-width:760px){
+  .set{padding:6.5rem 2rem}
+  .hero{padding-inline:2.5rem}
+  .letrero{padding:3rem 2.6rem 3.2rem}
+  .tv-grid{grid-template-columns:1.35fr 1fr;align-items:start}
+  .tv-par .pantalla:nth-child(2){transform:rotate(-1.2deg) translateY(26px)}
+  .kpi-fila{grid-template-columns:repeat(4,1fr)}
+  .agenda-item{grid-template-columns:110px 1fr auto}
+  .agenda-item .donde{grid-column:auto;text-align:right}
+  .resenas{grid-template-columns:1fr 1fr;align-items:start}
+  .resena--azul{transform:rotate(-1.3deg) translateY(30px)}
+  .edit-panel{left:24px;bottom:24px}
+  .fab-wa{right:24px;bottom:24px}
+}
+
+/* ---------- prefers-reduced-motion: se apaga el show ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  h1 .linea--paola,h1 .linea--garcia{animation:none}
+  .hero .pre-titulo .punto{animation:none}
+  .cinta__track{animation:none}
+  .cinta__drift{animation:none !important}
+  .reveal{animation:none !important;opacity:1 !important;transform:none !important}
+  html.io .reveal{opacity:1;transform:none;transition:none}
+  .btn-letrero,.fab-wa,.editable::after,.edit-panel,.aviso,.social-chip{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="salto" href="#aire">Saltar al contenido</a>
+
+<!-- navegación: hamburguesa + overlay a pantalla completa -->
+<input type="checkbox" id="nav-toggle" class="sr-only">
+<label for="nav-toggle" class="hamb" aria-label="Abrir o cerrar el menú">
+  <span></span><span></span><span></span>
+</label>
+<div class="overlay" id="menu">
+  <p class="marca neon-rosa">Paola García</p>
+  <nav aria-label="Secciones de la página">
+    <a class="neon-rosa" href="#aire">En el aire</a>
+    <a class="neon-azul" href="#quien">Quién es Paola</a>
+    <a class="neon-oro" href="#patrocinio">Patrocinantes</a>
+    <a class="neon-rosa" href="#cifras">Cifras</a>
+    <a class="neon-azul" href="#agenda">Agenda</a>
+    <a class="neon-oro" href="#comunidad">Comunidad</a>
+  </nav>
+  <a class="btn-letrero overlay-wa" data-wa href="#patrocinio">Escríbeme por WhatsApp</a>
+</div>
+
+<!-- interruptor del modo edición (checkbox + :has, sin JS) -->
+<input type="checkbox" id="modo-edicion" class="sr-only">
+<label for="modo-edicion" class="edit-switch"><span class="sw" aria-hidden="true"></span>✏️ Modo edición</label>
+
+<main>
+  <!-- 01 · HERO: el letrero de neón -->
+  <header class="hero">
+    <div class="glow-capa" aria-hidden="true"></div>
+    <div class="letrero">
+      <p class="pre-titulo"><span class="punto" aria-hidden="true"></span>Estudio · En el aire</p>
+      <h1>
+        <span class="linea linea--paola neon-rosa">Paola</span>
+        <span class="linea linea--garcia neon-oro">García</span>
+      </h1>
+      <p class="rol">Creadora de contenido venezolana. Video, comunidad y show en <strong>YouTube</strong>, Instagram y TikTok.</p>
+      <div class="cta-fila">
+        <a class="btn-letrero" href="#patrocinio">Trabaja conmigo</a>
+        <a class="enlace-videos" href="#aire">Ver mis videos ↓</a>
+      </div>
+      <div class="chips-redes editable" data-edit="Tus redes">
+        <button type="button" class="social-chip" data-social>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg>
+          YouTube
+        </button>
+        <button type="button" class="social-chip" data-social>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </button>
+        <button type="button" class="social-chip" data-social>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="17" r="3.5"/><path d="M12.5 17V4.5c.8 2.6 2.8 4.4 5.5 4.9"/></svg>
+          TikTok
+        </button>
+      </div>
+    </div>
+    <p class="sticker-estudio" aria-hidden="true">Set · PG</p>
+  </header>
+
+  <div class="cinta cinta--rosa" role="presentation">
+    <div class="cinta__drift">
+      <div class="cinta__track">
+        <span class="cinta__grupo">Paola García ✦ video ✦ comunidad ✦ show ✦ Paola García ✦ video ✦ comunidad ✦ show ✦ Paola García ✦ video ✦ comunidad ✦ show ✦ Paola García ✦ video ✦ comunidad ✦ show ✦&nbsp;</span>
+        <span class="cinta__grupo" aria-hidden="true">Paola García ✦ video ✦ comunidad ✦ show ✦ Paola García ✦ video ✦ comunidad ✦ show ✦ Paola García ✦ video ✦ comunidad ✦ show ✦ Paola García ✦ video ✦ comunidad ✦ show ✦&nbsp;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 · EN EL AIRE: últimos videos -->
+  <section class="set" id="aire" aria-labelledby="t-aire">
+    <div class="contenedor">
+      <p class="set-rotulo set-rotulo--azul reveal">Set 01 · El canal</p>
+      <h2 id="t-aire" class="reveal">En el aire</h2>
+      <p class="nota-mecanismo reveal"><strong>Tus últimos videos aparecen aquí solos</strong>, conectados a tu canal: subes a YouTube y esta vitrina se actualiza con la portada y el título reales. Nada que copiar, nada que pegar.</p>
+      <div class="tv-grid editable reveal" data-edit="Tus videos">
+        <div class="pantalla pantalla--grande">
+          <span class="play" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="none" stroke="#f5c542" stroke-width="2.5"/><path d="M26 20l18 12-18 12z" fill="#f5c542"/></svg>
+          </span>
+          <div class="placa">
+            <span class="nombre">Video más reciente</span>
+            <span class="chip-auto">se actualiza solo</span>
+          </div>
+        </div>
+        <div class="tv-par">
+          <div class="pantalla">
+            <span class="play" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="none" stroke="#f5c542" stroke-width="2.5"/><path d="M26 20l18 12-18 12z" fill="#f5c542"/></svg>
+            </span>
+            <div class="placa">
+              <span class="nombre">El video anterior</span>
+              <span class="chip-auto">se actualiza solo</span>
+            </div>
+          </div>
+          <div class="pantalla">
+            <span class="play" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="none" stroke="#f5c542" stroke-width="2.5"/><path d="M26 20l18 12-18 12z" fill="#f5c542"/></svg>
+            </span>
+            <div class="placa">
+              <span class="nombre">Dos videos atrás</span>
+              <span class="chip-auto">se actualiza solo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · QUIÉN ES PAOLA -->
+  <section class="set" id="quien" aria-labelledby="t-quien">
+    <div class="contenedor">
+      <p class="set-rotulo set-rotulo--rosa reveal">Set 02 · Detrás de cámara</p>
+      <h2 id="t-quien" class="reveal">Quién es Paola</h2>
+      <div class="bio-carta editable reveal" data-edit="Tu bio">
+        <p>Hola, soy Paola. Hago contenido para la gente que me acompaña en YouTube, Instagram y TikTok: video, risa y comunidad, con acento venezolano.</p>
+        <p>Este texto es de muestra: tu bio la escribes tú, con tus palabras — y la cambias el día que quieras desde tu teléfono, sin pedirle permiso a nadie.</p>
+        <p class="firma">— Paola</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cinta cinta--oro" role="presentation">
+    <div class="cinta__drift">
+      <div class="cinta__track">
+        <span class="cinta__grupo">Tu marca en el show ✦ patrocina ✦ hablemos ✦ Tu marca en el show ✦ patrocina ✦ hablemos ✦ Tu marca en el show ✦ patrocina ✦ hablemos ✦ Tu marca en el show ✦ patrocina ✦ hablemos ✦&nbsp;</span>
+        <span class="cinta__grupo" aria-hidden="true">Tu marca en el show ✦ patrocina ✦ hablemos ✦ Tu marca en el show ✦ patrocina ✦ hablemos ✦ Tu marca en el show ✦ patrocina ✦ hablemos ✦ Tu marca en el show ✦ patrocina ✦ hablemos ✦&nbsp;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 · PATROCINANTES -->
+  <section class="set" id="patrocinio" aria-labelledby="t-patrocinio">
+    <div class="contenedor">
+      <p class="set-rotulo set-rotulo--oro reveal">Set 03 · Los aliados</p>
+      <h2 id="t-patrocinio" class="reveal">Patrocinantes</h2>
+      <p class="nota-mecanismo reveal">Aquí brillan las marcas que patrocinan tu contenido. <strong>Los logos los subes tú desde el panel</strong> — y los cupos vacíos invitan al próximo aliado.</p>
+      <div class="carrusel editable reveal" data-edit="Tus patrocinantes" tabindex="0" aria-label="Carrusel de patrocinantes">
+        <div class="marca-card marca-card--wordmark">
+          <span class="wordmark">Marca Aliada</span>
+          <span class="tipo">Wordmark de muestra</span>
+        </div>
+        <div class="marca-card marca-card--slot">
+          <span class="mas" aria-hidden="true">+</span>
+          <span class="texto">Tu marca aquí</span>
+        </div>
+        <div class="marca-card marca-card--wordmark girada">
+          <span class="wordmark">Aliada Dos</span>
+          <span class="tipo">Wordmark de muestra</span>
+        </div>
+        <div class="marca-card marca-card--slot">
+          <span class="mas" aria-hidden="true">+</span>
+          <span class="texto">Tu marca aquí</span>
+        </div>
+        <div class="marca-card marca-card--slot">
+          <span class="mas" aria-hidden="true">+</span>
+          <span class="texto">Tu marca aquí</span>
+        </div>
+      </div>
+      <p class="nota-mecanismo reveal" style="margin-top:.6rem">¿Tienes una marca y quieres estar en el show?</p>
+      <a class="btn-letrero btn-letrero--rosa reveal" data-wa href="#patrocinio">Hablemos por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- 05 · CIFRAS QUE CONVENCEN -->
+  <section class="set" id="cifras" aria-labelledby="t-cifras">
+    <div class="contenedor">
+      <p class="set-rotulo set-rotulo--rosa reveal">Set 04 · Kit de patrocinio</p>
+      <h2 id="t-cifras" class="reveal">Cifras que convencen</h2>
+      <p class="aviso-muestra reveal">Cifras de muestra — se conectan a tus redes reales</p>
+      <div class="kpi-fila reveal">
+        <div class="stat-tile">
+          <span class="tag">muestra</span>
+          <p class="valor">128 K</p>
+          <p class="etiqueta">Suscriptores</p>
+        </div>
+        <div class="stat-tile">
+          <span class="tag">muestra</span>
+          <p class="valor">1,4 M</p>
+          <p class="etiqueta">Vistas mensuales</p>
+        </div>
+        <div class="stat-tile">
+          <span class="tag">muestra</span>
+          <p class="valor">460 K</p>
+          <p class="etiqueta">Alcance en redes</p>
+        </div>
+        <div class="stat-tile">
+          <span class="tag">muestra</span>
+          <p class="valor">8,2 %</p>
+          <p class="etiqueta">Interacción promedio</p>
+        </div>
+      </div>
+      <p class="cifras-pie reveal">Cuando la página esté publicada, estos números salen de tus estadísticas reales — el kit de patrocinio que una marca quiere ver, siempre al día y sin que tengas que tocarlo.</p>
+    </div>
+  </section>
+
+  <!-- 06 · AGENDA -->
+  <section class="set" id="agenda" aria-labelledby="t-agenda">
+    <div class="contenedor">
+      <p class="set-rotulo set-rotulo--azul reveal">Set 05 · Próximas funciones</p>
+      <h2 id="t-agenda" class="reveal">Agenda</h2>
+      <p class="nota-mecanismo reveal">Encuentros, grabaciones, apariciones: <strong>tú las publicas desde tu panel</strong> — agregas fecha y lugar, y salen aquí. Estas filas son la estructura, con datos de ejemplo.</p>
+      <ul class="agenda-lista editable reveal" data-edit="Tu agenda">
+        <li class="agenda-item">
+          <span class="fecha">14 Sep</span>
+          <span class="que">Encuentro con la comunidad<span class="chip-ejemplo">ejemplo</span></span>
+          <span class="donde">Fecha y lugar de ejemplo</span>
+        </li>
+        <li class="agenda-item">
+          <span class="fecha">03 Oct</span>
+          <span class="que">Grabación con invitados<span class="chip-ejemplo">ejemplo</span></span>
+          <span class="donde">Fecha y lugar de ejemplo</span>
+        </li>
+        <li class="agenda-item">
+          <span class="fecha">21 Oct</span>
+          <span class="que">Evento con marca aliada<span class="chip-ejemplo">ejemplo</span></span>
+          <span class="donde">Fecha y lugar de ejemplo</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 07 · LO QUE DICEN -->
+  <section class="set" id="resenas" aria-labelledby="t-resenas">
+    <div class="contenedor">
+      <p class="set-rotulo set-rotulo--oro reveal">Set 06 · El aplauso</p>
+      <h2 id="t-resenas" class="reveal">Lo que dicen</h2>
+      <div class="resenas editable reveal" data-edit="Tus reseñas">
+        <blockquote class="resena resena--rosa">
+          <span class="comilla" aria-hidden="true">“</span>
+          <p>Aquí va la reseña de una marca que trabajó contigo: cómo fue la campaña, el trato, los resultados. Este texto es de muestra — las reseñas reales las publicas tú.</p>
+          <footer class="quien">Reseña de muestra · una marca</footer>
+        </blockquote>
+        <blockquote class="resena resena--azul">
+          <span class="comilla" aria-hidden="true">“</span>
+          <p>Y aquí, el cariño de tu comunidad: ese comentario de un video que quieras dejar fijo en tu página. También de muestra, también lo eliges tú.</p>
+          <footer class="quien">Reseña de muestra · tu comunidad</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 · AYUDA SOCIAL (bloque sobrio) -->
+  <section class="set set--corazon" id="ayuda" aria-labelledby="t-ayuda">
+    <div class="contenedor">
+      <div class="corazon-caja editable reveal" data-edit="Tu causa">
+        <p class="set-rotulo set-rotulo--oro">Set 07 · El corazón</p>
+        <h2 id="t-ayuda">Ayuda social</h2>
+        <hr class="regla">
+        <p>Detrás del show hay una causa. Este espacio queda listo para la labor social que te mueve: <strong>tú cuentas de qué se trata</strong>, a quién ayuda y cómo tu comunidad puede sumarse.</p>
+        <p>Sin neón, sin ruido — solo lo que importa, con tus palabras.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cinta cinta--azul" role="presentation">
+    <div class="cinta__drift">
+      <div class="cinta__track">
+        <span class="cinta__grupo">Mi comunidad es mía ✦ únete a la lista ✦ Mi comunidad es mía ✦ únete a la lista ✦ Mi comunidad es mía ✦ únete a la lista ✦ Mi comunidad es mía ✦ únete a la lista ✦&nbsp;</span>
+        <span class="cinta__grupo" aria-hidden="true">Mi comunidad es mía ✦ únete a la lista ✦ Mi comunidad es mía ✦ únete a la lista ✦ Mi comunidad es mía ✦ únete a la lista ✦ Mi comunidad es mía ✦ únete a la lista ✦&nbsp;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09 · MI COMUNIDAD ES MÍA -->
+  <section class="set" id="comunidad" aria-labelledby="t-comunidad">
+    <div class="contenedor">
+      <div class="comunidad-caja">
+        <p class="set-rotulo set-rotulo--rosa reveal">Set 08 · La lista</p>
+        <h2 id="t-comunidad" class="reveal">Mi comunidad es mía</h2>
+        <p class="nota-mecanismo reveal">Si una red se cae o te cierran una cuenta, pierdes el alcance — pero no a tu gente, si tu gente está en <strong>tu lista</strong>. Estos correos son tuyos, no de la plataforma.</p>
+        <form class="form-lista reveal">
+          <div class="campo">
+            <label for="correo">Tu correo</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" required>
+            <button type="submit" class="btn-letrero">Unirme a la lista</button>
+          </div>
+          <p class="form-ok" role="status">Listo. En tu página real, ese correo se guarda en tu lista — esto se activa al publicarla.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 10 · FOOTER: marquesina de contacto -->
+<footer>
+  <div class="cinta cinta--rosa" role="presentation">
+    <div class="cinta__drift">
+      <div class="cinta__track">
+        <span class="cinta__grupo">Trabaja con Paola ✦ WhatsApp ✦ YouTube ✦ Instagram ✦ TikTok ✦ Trabaja con Paola ✦ WhatsApp ✦ YouTube ✦ Instagram ✦ TikTok ✦ Trabaja con Paola ✦ WhatsApp ✦ YouTube ✦ Instagram ✦ TikTok ✦&nbsp;</span>
+        <span class="cinta__grupo" aria-hidden="true">Trabaja con Paola ✦ WhatsApp ✦ YouTube ✦ Instagram ✦ TikTok ✦ Trabaja con Paola ✦ WhatsApp ✦ YouTube ✦ Instagram ✦ TikTok ✦ Trabaja con Paola ✦ WhatsApp ✦ YouTube ✦ Instagram ✦ TikTok ✦&nbsp;</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-info">
+    <div class="chips-redes editable" data-edit="Tus redes">
+      <button type="button" class="social-chip" data-social>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg>
+        YouTube
+      </button>
+      <button type="button" class="social-chip" data-social>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </button>
+      <button type="button" class="social-chip" data-social>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="17" r="3.5"/><path d="M12.5 17V4.5c.8 2.6 2.8 4.4 5.5 4.9"/></svg>
+        TikTok
+      </button>
+    </div>
+    <p class="sello">Demo — Medine.tech · <a href="https://medine.tech" rel="noopener">Demo diseñada por Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial.</p>
+    <p class="legal">© 2026 Paola García · Página de muestra; contenido ilustrativo.</p>
+  </div>
+</footer>
+
+<!-- mini-panel del modo edición -->
+<aside class="edit-panel" aria-label="Cómo funcionará tu panel de administración">
+  <h3>Así funcionará tu panel</h3>
+  <p>Entras desde tu teléfono, cambias el video o el patrocinante, guardas — y la página se actualiza sola. <span class="clave">Sin programadores, sin esperar a nadie.</span></p>
+  <p>El acceso va escondido en tu página real: solo tú lo conoces.</p>
+</aside>
+
+<!-- FAB WhatsApp -->
+<a class="fab-wa editable" data-edit="Tu WhatsApp" data-wa href="#patrocinio" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- aviso pequeño -->
+<p class="aviso" role="status" aria-live="polite"></p>
+
+<script>
+// Definir WA_PAOLA (58XXXXXXXXXX) antes de enviar la demo a la clienta.
+const WA_PAOLA = "";
+const WA_MSG = "Hola, Paola. Te escribo por un patrocinio.";
+const movimientoOk = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// --- aviso pequeño (toast) ---
+const avisoEl = document.querySelector(".aviso");
+let avisoTimer = null;
+function aviso(msg){
+  avisoEl.textContent = msg;
+  avisoEl.classList.add("visible");
+  clearTimeout(avisoTimer);
+  avisoTimer = setTimeout(() => avisoEl.classList.remove("visible"), 3400);
+}
+
+// --- WhatsApp: todos los href se construyen concatenando ---
+document.querySelectorAll("[data-wa]").forEach((el) => {
+  if (WA_PAOLA) {
+    el.setAttribute("href", "https://wa.me/" + WA_PAOLA + "?text=" + encodeURIComponent(WA_MSG));
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener");
+  } else {
+    el.setAttribute("href", "#patrocinio");
+    el.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      cerrarMenu();
+      document.getElementById("patrocinio").scrollIntoView({ behavior: movimientoOk ? "smooth" : "auto" });
+      aviso("El número se conecta al publicar la página");
+    });
+  }
+});
+
+// --- chips de redes: los enlaces reales se conectan al publicar ---
+document.querySelectorAll("[data-social]").forEach((el) => {
+  el.addEventListener("click", () => {
+    aviso("Tus redes se conectan a tus perfiles reales al publicar la página");
+  });
+});
+
+// --- formulario de la lista (decorativo en la demo) ---
+const formLista = document.querySelector(".form-lista");
+formLista.addEventListener("submit", (ev) => {
+  ev.preventDefault();
+  formLista.querySelector(".form-ok").classList.add("visible");
+});
+
+// --- menú overlay: cerrar al elegir sección o con Escape ---
+const navToggle = document.getElementById("nav-toggle");
+function cerrarMenu(){ navToggle.checked = false; }
+document.querySelectorAll(".overlay nav a").forEach((a) => a.addEventListener("click", cerrarMenu));
+document.addEventListener("keydown", (ev) => {
+  if (ev.key === "Escape") cerrarMenu();
+});
+
+// --- reveals: scroll-driven nativo; si no hay soporte, IntersectionObserver ---
+if (!CSS.supports("animation-timeline: view()")) {
+  document.documentElement.classList.add("io");
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+}
+</script>
+</body>
+</html>
