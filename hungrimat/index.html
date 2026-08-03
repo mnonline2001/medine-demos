@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferretería Hungrimat — Alto Paramaconi, Maturín</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Ferretería e Inversiones Hungrimat, C.A. — pinturas Everest, cemento, herramientas, bombas de agua y materiales de construcción en Av. Principal Alto Paramaconi, Maturín. Sistema de apartado y atención directa por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<meta property="og:title" content="Ferretería Hungrimat — Alto Paramaconi, Maturín">
+<meta property="og:description" content="Pinturas, cemento, herramientas y materiales de construcción en Maturín. Aparta tu material y págalo a tu ritmo. Escríbenos por WhatsApp.">
+<meta property="og:image" content="./assets/hungrimat-logo-fb-720.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/hungrimat-logo-ig-avatar-150.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Hungrimat — sales demo. Wood-dark base, sticky chapters I–IV.
+   Palette sampled from the real logo / facade.
+   ============================================================ */
+:root{
+  --wood-900:#1B1310;
+  --wood-800:#241A14;
+  --wood-700:#2E211A;
+  --wood-real:#78553F;      /* sampled facade brown */
+  --pine-200:#E0C9A8;       /* light slat top */
+  --pine-400:#C4A47E;       /* light slat bottom */
+  --humo:#F4F2EE;
+  --verde:#47C049;
+  --teja:#D8410A;
+  --teja-lo:#CE3C07;
+  --teja-hi:#E75613;
+  --teja-txt:#F0630F;        /* lightened teja: AA for small text on wood-900 */
+  --tinta:#0C0C0B;
+  --wa:#25D366;
+  --steel-hi:#CFCCC6;
+  --steel-lo:#9C9992;
+  --steel-ink:#1A1815;
+  --rule:rgba(244,242,238,.16);
+  --shell:min(1180px,100% - 2.4rem);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --screw:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9.5' fill='%23a8874f'/%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke='%235a4224' stroke-width='1.6'/%3E%3Cpath d='M6.5 14.6 17.5 9.4' stroke='%235a4224' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  --rivet:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23726f69'/%3E%3Ccircle cx='12' cy='11.2' r='7.4' fill='%23bcb8b1'/%3E%3Ccircle cx='9.8' cy='9.2' r='2.4' fill='%23e9e6e0'/%3E%3C/svg%3E");
+  --veta:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cg fill='none' stroke='%23F4F2EE' stroke-opacity='.075'%3E%3Cpath d='M0 .5H140M0 46.5H140M0 92.5H140'/%3E%3C/g%3E%3Cg fill='none' stroke='%23F4F2EE' stroke-opacity='.038'%3E%3Cpath d='M0 14c34 5 70-5 140 3M0 30c46-7 82 6 140-2M0 62c28 6 74-6 140 4M0 78c52-5 92 5 140-2M0 108c34 6 80-7 140 3M0 126c46-6 86 7 140 0'/%3E%3C/g%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip;scroll-behavior:smooth}
+body{
+  margin:0;overflow-x:clip;
+  background:var(--wood-900);
+  background-image:var(--veta);
+  color:var(--humo);
+  font-family:"Asap",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:clamp(1rem,.96rem + .2vw,1.09rem);
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;font-family:"Alfa Slab One",Georgia,serif;font-weight:400;line-height:.99;letter-spacing:-.005em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--verde);outline-offset:3px;border-radius:2px}
+
+/* ---------- shared bits ---------- */
+.shell{width:var(--shell);margin-inline:auto}
+.eyebrow{
+  font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--verde);margin:0 0 .9rem;display:flex;align-items:center;gap:.7rem;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule);max-width:120px}
+.tbar{position:relative;width:150px;height:7px;background:var(--teja);margin:1.5rem 0 1.4rem}
+.tbar::after{content:"";position:absolute;right:12px;top:7px;width:7px;height:24px;background:var(--teja)}
+.tbar--sm{width:96px;height:6px;margin:1rem 0 1rem}
+.tbar--sm::after{height:17px;width:6px;right:9px;top:6px}
+.lede{color:rgba(244,242,238,.82);max-width:52ch}
+.mono{font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.label{font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,242,238,.55)}
+
+/* CTA — bevelled metal bar */
+.bar{
+  --bg1:var(--teja-hi);--bg2:var(--teja-lo);
+  display:inline-flex;align-items:center;gap:.7rem;
+  padding:1rem 1.5rem;border:0;border-radius:2px;
+  background:linear-gradient(180deg,var(--bg1) 0%,var(--teja) 46%,var(--bg2) 100%);
+  color:var(--tinta);
+  font:700 1.2rem/1.05 "Asap",sans-serif;letter-spacing:.01em;
+  text-decoration:none;cursor:pointer;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -2px 0 rgba(0,0,0,.34),inset 2px 0 0 rgba(255,255,255,.14),inset -2px 0 0 rgba(0,0,0,.16);
+  transition:transform .18s var(--ease),filter .18s var(--ease);
+}
+.bar:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.bar:active{transform:translateY(1px);filter:brightness(.95)}
+.bar svg{width:1.25em;height:1.25em;flex:none;fill:currentColor}
+.bar--xl{padding:1.25rem 2rem;font-size:clamp(1.25rem,1.05rem + 1vw,1.7rem)}
+.bar--full{width:100%;justify-content:center;text-align:center}
+
+/* ---------- top nav: wordmark chip + hardware button ---------- */
+.brandchip{
+  position:fixed;top:14px;left:14px;z-index:60;
+  background:var(--humo);padding:.5rem .7rem;border-radius:2px;
+  box-shadow:0 6px 18px rgba(0,0,0,.45),inset 0 0 0 1px rgba(12,12,11,.12);
+  line-height:0;transition:transform .2s var(--ease);
+}
+.brandchip img{width:auto;height:30px}
+.brandchip:hover{transform:translateY(-1px)}
+.herraje{
+  position:fixed;top:14px;right:14px;z-index:60;
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.62rem .9rem .62rem .72rem;border:1px solid rgba(244,242,238,.22);border-radius:2px;
+  background:linear-gradient(180deg,#3a2b21,#241a14);
+  color:var(--humo);font:700 .76rem/1 "Asap",sans-serif;letter-spacing:.2em;text-transform:uppercase;
+  cursor:pointer;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 6px 18px rgba(0,0,0,.42);
+}
+.herraje svg{width:22px;height:22px;flex:none}
+.herraje:hover{border-color:var(--verde)}
+.herraje:hover .nut{transform:rotate(30deg)}
+.nut{transform-origin:50% 50%;transition:transform .45s var(--ease)}
+
+/* ---------- right drawer ---------- */
+.scrim{position:fixed;inset:0;z-index:70;background:rgba(12,10,9,.55);opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s}
+.scrim[data-open="true"]{opacity:1;visibility:visible}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;z-index:80;width:min(320px,86vw);
+  background:linear-gradient(180deg,#2E211A,#1B1310);
+  border-left:6px solid var(--teja);
+  box-shadow:-24px 0 48px rgba(0,0,0,.5);
+  transform:translateX(102%);transition:transform .38s var(--ease);
+  display:flex;flex-direction:column;padding:1.1rem 1.3rem 1.6rem;overflow-y:auto;
+}
+.drawer[data-open="true"]{transform:translateX(0)}
+.drawer__top{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.4rem}
+.drawer__x{
+  background:none;border:1px solid rgba(244,242,238,.24);border-radius:2px;color:var(--humo);
+  width:38px;height:38px;font-size:1.1rem;cursor:pointer;line-height:1;flex:none;
+}
+.drawer__x:hover{border-color:var(--teja);color:var(--teja-txt)}
+.drawer nav{display:flex;flex-direction:column}
+.drawer nav a{
+  display:flex;align-items:baseline;gap:.85rem;padding:.85rem 0;text-decoration:none;
+  border-bottom:1px solid var(--rule);
+}
+.drawer nav a span.num{font-family:"Alfa Slab One",serif;font-size:.95rem;color:var(--teja-txt);min-width:2.1rem}
+.drawer nav a span.txt{font-weight:600;letter-spacing:.02em}
+.drawer nav a:hover span.txt{color:var(--verde)}
+.drawer__social{margin-top:1.4rem;display:flex;flex-direction:column;gap:.55rem}
+.drawer__social a{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-size:.94rem;color:rgba(244,242,238,.82)}
+.drawer__social a:hover{color:var(--verde)}
+.drawer__social svg{width:18px;height:18px;fill:currentColor;flex:none}
+.drawer .bar{margin-top:1.5rem;font-size:1.05rem;padding:.9rem 1.1rem}
+
+/* ---------- chapter rail counter ---------- */
+.rail{
+  position:fixed;left:14px;top:50%;transform:translateY(-50%);z-index:40;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  font:700 .7rem/1 "Asap",sans-serif;letter-spacing:.18em;color:rgba(244,242,238,.5);
+  pointer-events:none;
+}
+.rail__now{font-family:"Alfa Slab One",serif;font-size:1.35rem;letter-spacing:0;color:var(--teja-txt)}
+.rail__bar{width:2px;height:74px;background:var(--rule);position:relative;overflow:hidden}
+.rail__fill{position:absolute;inset:0 0 auto;height:25%;background:var(--verde);transition:transform .4s var(--ease);transform-origin:top}
+@media (max-width:1080px){.rail{display:none}}
+
+/* ---------- sticky chapters ---------- */
+main{position:relative}
+.chapter{
+  position:sticky;top:0;min-height:100svh;
+  display:flex;align-items:center;
+  padding:5.5rem 0 4.5rem;
+  background:var(--wood-900);background-image:var(--veta);
+  border-top:1px solid rgba(244,242,238,.08);
+  overflow:hidden;
+}
+#cap-i{z-index:1;border-top:0}
+#cap-ii{z-index:2;background-color:var(--wood-800)}
+#cap-iii{z-index:3}
+#cap-iv{z-index:4;background-color:var(--wood-800)}
+.chapter__ghost{
+  position:absolute;right:-2vw;top:50%;transform:translateY(-50%);
+  font-family:"Alfa Slab One",serif;font-size:min(38vh,20rem);line-height:.8;
+  color:rgba(244,242,238,.035);pointer-events:none;user-select:none;z-index:0;
+}
+.chapter .shell{position:relative;z-index:1;width:var(--shell)}
+.chapter h2{font-size:clamp(1.85rem,1.3rem + 2.4vw,3.35rem)}
+
+/* ---------- CHAPTER I — hero ---------- */
+.hero{display:grid;gap:2.4rem}
+.hero h1{
+  font-size:clamp(2.35rem,1.2rem + 4.6vw,4.9rem);
+  letter-spacing:-.018em;margin:.2rem 0 0;
+}
+.hero h1 em{font-style:normal;color:var(--verde)}
+.hero__meta{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1.4rem;align-items:center}
+.pill{
+  border:1px solid var(--rule);padding:.34rem .7rem;border-radius:2px;
+  font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:rgba(244,242,238,.78);
+}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.9rem 1.1rem;align-items:center;margin-top:1.9rem}
+.linkq{color:var(--humo);text-decoration:none;font-weight:600;border-bottom:2px solid var(--teja);padding-bottom:2px}
+.linkq:hover{color:var(--verde);border-color:var(--verde)}
+
+/* before / after slider */
+.ba{
+  --pos:50%;
+  position:relative;aspect-ratio:5/4;width:100%;
+  border:1px solid rgba(244,242,238,.2);border-radius:2px;overflow:hidden;
+  box-shadow:0 26px 60px rgba(0,0,0,.5);
+  background:var(--wood-700);touch-action:pan-y;
+}
+.ba__side{position:absolute;inset:0;display:flex;flex-direction:column}
+.ba__b{clip-path:inset(0 0 0 var(--pos))}
+.ba__sign{width:100%;height:auto;flex:none;border-bottom:2px solid rgba(12,12,11,.5)}
+.ba__a .ba__sign{filter:grayscale(1) sepia(.62) saturate(1.55) hue-rotate(-12deg) brightness(.82) contrast(1.06)}
+.ba__wall{
+  flex:1;position:relative;
+  background:
+    repeating-linear-gradient(90deg,rgba(0,0,0,.34) 0 5px,rgba(255,255,255,.045) 5px 11px),
+    linear-gradient(180deg,#3b2a20,#221812);
+}
+.ba__wall::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:16%;
+  background:linear-gradient(180deg,#6b625a,#4a443e);
+  box-shadow:inset 0 2px 0 rgba(0,0,0,.35);
+}
+.ba__vitrina{
+  flex:1;position:relative;padding:.8rem;display:flex;align-items:center;justify-content:flex-end;
+  background:
+    repeating-linear-gradient(135deg,rgba(255,255,255,.09) 0 2px,transparent 2px 12px),
+    linear-gradient(180deg,#4FCD51,#37A339);
+}
+/* the mock sits in the right half so it still reads at the default 50% split */
+.ba__stack{width:min(100%,48%);display:flex;flex-direction:column;gap:.42rem;position:relative;z-index:2}
+.ba__open{
+  position:absolute;left:.55rem;top:50%;transform:translateY(-50%) rotate(180deg);
+  writing-mode:vertical-rl;
+  font:700 clamp(.52rem,.34rem + .5vw,.72rem)/1 "Asap",sans-serif;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--tinta);opacity:.62;white-space:nowrap;z-index:1;
+}
+.ba__card{
+  background:var(--humo);color:var(--tinta);border-radius:2px;padding:.5rem .65rem;
+  box-shadow:0 3px 10px rgba(0,0,0,.24);display:flex;align-items:center;gap:.55rem;
+  font-size:clamp(.66rem,.5rem + .55vw,.86rem);font-weight:700;line-height:1.15;
+}
+.ba__card--logo{justify-content:center;padding:.45rem}
+.ba__card--logo img{height:clamp(20px,4.4vw,32px);width:auto}
+.ba__card svg{width:1.1em;height:1.1em;flex:none;fill:var(--wa)}
+.ba__hours{display:flex;flex-direction:column;gap:.42rem}
+.ba__hours .ba__card{justify-content:space-between;gap:.4rem;font-weight:600}
+.ba__hours b{font-size:.92em;letter-spacing:.06em;color:#2e6b30;flex:none}
+.ba__tag{
+  position:absolute;top:.7rem;z-index:3;
+  font:700 .62rem/1 "Asap",sans-serif;letter-spacing:.18em;text-transform:uppercase;
+  padding:.36rem .55rem;border-radius:2px;
+}
+.ba__tag--a{left:.7rem;background:rgba(27,19,16,.82);color:var(--humo);border:1px solid rgba(244,242,238,.3)}
+.ba__tag--b{right:.7rem;background:var(--tinta);color:var(--humo)}
+.ba__handle{
+  position:absolute;top:0;bottom:0;left:var(--pos);width:3px;background:var(--teja);
+  transform:translateX(-1.5px);z-index:4;pointer-events:none;
+  box-shadow:0 0 0 1px rgba(12,12,11,.35);
+}
+.ba__grip{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(180deg,var(--teja-hi),var(--teja-lo));
+  border:3px solid var(--humo);
+  display:flex;align-items:center;justify-content:center;gap:2px;
+  box-shadow:0 6px 16px rgba(0,0,0,.5);color:var(--tinta);
+}
+.ba__grip svg{width:26px;height:14px;fill:currentColor}
+.ba__range{
+  position:absolute;inset:0;z-index:5;width:100%;height:100%;margin:0;
+  opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none;background:transparent;
+}
+.ba__range::-webkit-slider-thumb{-webkit-appearance:none;width:56px;height:100%;cursor:ew-resize}
+.ba__range::-moz-range-thumb{width:56px;height:220px;border:0;opacity:0;cursor:ew-resize}
+.ba__range:focus-visible ~ .ba__handle .ba__grip{outline:3px solid var(--humo);outline-offset:3px}
+.ba__hint{margin-top:.7rem;font-size:.78rem;color:rgba(244,242,238,.6);display:flex;align-items:flex-start;gap:.45rem}
+.ba__hint svg{width:15px;height:9px;fill:var(--teja);flex:none;margin-top:.5em}
+
+/* ---------- CHAPTER II — slats ---------- */
+.grid-ii{display:grid;gap:.85rem;margin-top:1.8rem}
+.slat{
+  position:relative;border-radius:3px;
+  background:linear-gradient(180deg,var(--pine-200),var(--pine-400));
+  color:#241A14;padding:1.05rem 1.25rem 1.05rem 1.25rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(90,66,36,.3);
+  display:flex;flex-wrap:wrap;gap:.9rem 1rem;align-items:center;
+}
+.slat::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:var(--screw),var(--screw),var(--screw),var(--screw);
+  background-repeat:no-repeat;background-size:11px 11px;
+  background-position:9px 9px,calc(100% - 9px) 9px,9px calc(100% - 9px),calc(100% - 9px) calc(100% - 9px);
+  opacity:.85;
+}
+.slat::after{
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:3px;
+  background:repeating-linear-gradient(90deg,rgba(120,85,63,.09) 0 1px,transparent 1px 7px);
+}
+.slat__body{position:relative;z-index:1;flex:1 1 175px;min-width:0}
+.slat__num{font:700 .66rem/1 "Asap",sans-serif;letter-spacing:.2em;color:#5A3110}
+.slat h3{font-family:"Asap",sans-serif;font-weight:700;font-size:1.06rem;letter-spacing:.05em;text-transform:uppercase;margin:.28rem 0 .3rem;line-height:1.15}
+.slat p{font-size:.93rem;line-height:1.5;color:#3a2b20}
+.slat__shots{position:relative;z-index:1;display:flex;gap:.5rem;flex:none}
+.shot{
+  width:clamp(58px,15vw,84px);border:1px solid rgba(36,26,20,.55);border-radius:2px;overflow:hidden;
+  background:#1B1310;box-shadow:0 3px 9px rgba(60,40,25,.35);
+}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:50% 0%}
+.shot--paint{aspect-ratio:320/385}
+.shot--seda{aspect-ratio:320/430}
+.shot--saw{aspect-ratio:640/560}
+.note-ii{margin-top:1.15rem;font-size:.88rem;color:rgba(244,242,238,.66);max-width:60ch}
+
+/* ---------- CHAPTER III — three differentials ---------- */
+.vent{display:grid;gap:0;margin-top:1.6rem;border-top:1px solid var(--rule)}
+.vent__row{
+  display:grid;gap:.35rem 2.4rem;padding:1.5rem 0;border-bottom:1px solid var(--rule);
+  position:relative;
+}
+.vent__row h3{
+  font-size:clamp(1.5rem,1.05rem + 2vw,2.6rem);color:var(--verde);line-height:1.02;
+}
+.vent__row p{color:rgba(244,242,238,.84);max-width:46ch}
+.vent__k{font:700 .68rem/1 "Asap",sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--teja-txt);margin-bottom:.55rem}
+.vent__cta{margin-top:1.9rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+
+/* ---------- CHAPTER IV — contact ---------- */
+.contact{display:grid;gap:2rem;margin-top:1.5rem}
+.dl{display:grid;gap:1.05rem;margin:0}
+.dl div{border-left:3px solid var(--teja);padding-left:.9rem}
+.dl dt{font:700 .68rem/1 "Asap",sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--verde);margin-bottom:.3rem}
+.dl dd{margin:0;font-size:1.06rem;line-height:1.45}
+.dl dd a{text-decoration:none;border-bottom:1px solid rgba(244,242,238,.4)}
+.dl dd a:hover{color:var(--verde);border-color:var(--verde)}
+.hours-row{display:flex;justify-content:space-between;gap:1rem;max-width:24rem;border-bottom:1px dotted rgba(244,242,238,.24);padding:.18rem 0}
+.croquis{border:1px solid var(--rule);border-radius:2px;background:rgba(12,10,9,.35);padding:.75rem}
+.croquis svg{width:100%;height:auto;display:block}
+.croquis figcaption{margin-top:.55rem;font-size:.74rem;letter-spacing:.06em;color:rgba(244,242,238,.55)}
+.closing{margin-top:2.2rem;display:grid;gap:.9rem;justify-items:start}
+.closing p{font-size:1.02rem;color:rgba(244,242,238,.8)}
+
+/* ---------- footer: riveted steel plate ---------- */
+.plate{
+  position:relative;z-index:5;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 1px,rgba(0,0,0,.05) 1px 3px),
+    linear-gradient(180deg,var(--steel-hi) 0%,#B7B3AC 34%,#A8A49D 62%,var(--steel-lo) 100%);
+  color:var(--steel-ink);
+  border-top:3px solid #7d7a74;
+  padding:2.6rem 0 2rem;
+}
+.plate::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:var(--rivet),var(--rivet),var(--rivet),var(--rivet);
+  background-repeat:no-repeat;background-size:17px 17px;
+  background-position:15px 15px,calc(100% - 15px) 15px,15px calc(100% - 15px),calc(100% - 15px) calc(100% - 15px);
+}
+.plate a{color:var(--steel-ink)}
+.plate__grid{display:grid;gap:1.6rem;text-shadow:0 1px 0 rgba(255,255,255,.5),0 -1px 0 rgba(0,0,0,.22)}
+.plate h2{font-size:clamp(1.25rem,1rem + 1.1vw,1.75rem);letter-spacing:-.01em}
+.plate .rif{font-weight:700;letter-spacing:.14em;font-size:.8rem;text-transform:uppercase;margin-top:.4rem}
+.plate__col h3{font-family:"Asap",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.5rem;color:#2F2C27}
+.plate__col p,.plate__col li{font-size:.94rem;line-height:1.5}
+.plate ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.plate__soc a{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-weight:600}
+.plate__soc a:hover{color:#000;text-decoration:underline;text-underline-offset:3px}
+.plate__soc svg{width:17px;height:17px;fill:currentColor;flex:none}
+.seal{
+  margin-top:1.9rem;padding-top:1rem;border-top:1px solid rgba(26,24,21,.28);
+  font-size:.78rem;line-height:1.5;color:#2B2823;
+  text-shadow:0 1px 0 rgba(255,255,255,.45);
+  display:flex;flex-wrap:wrap;gap:.35rem .6rem;align-items:baseline;
+}
+.seal a{font-weight:700;text-decoration:none;border-bottom:1px solid rgba(26,24,21,.45)}
+.seal a:hover{color:#000}
+
+/* ---------- WhatsApp FAB ---------- */
+.fab{
+  position:fixed;right:16px;bottom:16px;z-index:50;
+  width:58px;height:58px;border-radius:50%;
+  background:var(--wa);color:#07310f;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 26px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .2s var(--ease);
+}
+.fab svg{width:31px;height:31px;fill:#07310f}
+.fab:hover{transform:scale(1.06)}
+
+/* ---------- reveals (only when JS is running: no-JS keeps content visible) ---------- */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv[data-in="true"]{opacity:1;transform:none}
+.js .rv:nth-child(2){transition-delay:.06s}
+.js .rv:nth-child(3){transition-delay:.12s}
+.js .rv:nth-child(4){transition-delay:.18s}
+.js .rv:nth-child(5){transition-delay:.24s}
+
+/* ---------- responsive up ---------- */
+@media (min-width:640px){
+  .ba{aspect-ratio:16/9}
+}
+@media (min-width:760px){
+  .ba__vitrina{padding:1.05rem 1.2rem}
+  .ba__stack{gap:.6rem}
+  .grid-ii{grid-template-columns:1fr 1fr}
+  .slat--wide{grid-column:1 / -1}
+  .contact{grid-template-columns:1.05fr .95fr;align-items:start;gap:2.6rem}
+  .plate__grid{grid-template-columns:1.3fr 1fr 1fr;gap:2.2rem}
+  .vent__row{
+    grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+    grid-template-areas:"k desc" "title desc";
+    align-items:start;
+  }
+  .vent__k{grid-area:k;margin-bottom:.2rem}
+  .vent__row h3{grid-area:title}
+  .vent__row p{grid-area:desc;align-self:center}
+}
+@media (min-width:1000px){
+  .ba{aspect-ratio:5/4}
+  .hero{grid-template-columns:1.08fr .92fr;align-items:center;gap:3.4rem}
+  .chapter{padding:5.2rem 0 4.2rem}
+  .grid-ii{gap:1rem}
+}
+
+/* ---------- graceful degradation ---------- */
+@media (max-width:900px){
+  .chapter{position:relative;top:auto;min-height:auto;padding:4.2rem 0 3.6rem}
+  .chapter__ghost{font-size:9rem;top:auto;bottom:-1.5rem;right:-.5rem;transform:none}
+}
+@media (max-height:880px) and (min-width:901px){
+  .chapter{padding:4.4rem 0 3.2rem}
+  .chapter h2{font-size:clamp(1.7rem,1.2rem + 1.9vw,2.6rem)}
+  .tbar{margin:1.1rem 0 1rem}
+}
+@media (max-height:720px) and (min-width:901px){
+  .chapter{position:relative;top:auto;min-height:auto;padding:4.2rem 0 3.4rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .chapter{position:relative;top:auto;min-height:auto;padding:4.5rem 0}
+  .js .rv{opacity:1;transform:none}
+  .ba{--pos:50%!important}
+  .ba__range{display:none}
+  .ba__grip{display:none}
+  .rv{opacity:1;transform:none}
+}
+</style>
+<script>document.documentElement.className += " js";</script>
+</head>
+<body>
+
+<a class="brandchip" href="#cap-i" aria-label="Ferretería Hungrimat — inicio">
+  <img src="./assets/hungrimat-logo-lockup-reel-feb2025.png" alt="Ferretería e Inversiones Hungrimat" width="570" height="285">
+</a>
+
+<button class="herraje" id="btn-menu" aria-expanded="false" aria-controls="drawer">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+    <g class="nut">
+      <path d="M12 2.6 20.1 7.3v9.4L12 21.4 3.9 16.7V7.3z" fill="none" stroke="#F4F2EE" stroke-width="1.7" stroke-linejoin="round"/>
+      <circle cx="12" cy="12" r="3.5" fill="none" stroke="#D8410A" stroke-width="1.7"/>
+    </g>
+  </svg>
+  Menú
+</button>
+
+<div class="scrim" id="scrim" data-open="false" hidden></div>
+
+<aside class="drawer" id="drawer" data-open="false" aria-label="Navegación" aria-hidden="true" inert>
+  <div class="drawer__top">
+    <span class="label">Hungrimat</span>
+    <button class="drawer__x" id="btn-close" aria-label="Cerrar menú">&#10005;</button>
+  </div>
+  <nav>
+    <a href="#cap-i" data-close><span class="num">I</span><span class="txt">El mostrador</span></a>
+    <a href="#cap-ii" data-close><span class="num">II</span><span class="txt">Lo que hay</span></a>
+    <a href="#cap-iii" data-close><span class="num">III</span><span class="txt">Como te conviene</span></a>
+    <a href="#cap-iv" data-close><span class="num">IV</span><span class="txt">A un mensaje</span></a>
+  </nav>
+  <div class="drawer__social">
+    <a href="https://instagram.com/ferreteria_hungrimat" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+      @ferreteria_hungrimat
+    </a>
+    <a href="https://facebook.com/ferreteriahungrimat" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      /ferreteriahungrimat
+    </a>
+  </div>
+  <a class="bar" href="https://wa.me/584148781283?text=Hola%20Hungrimat%20%F0%9F%91%8B%20vi%20su%20p%C3%A1gina%20y%20necesito%3A" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Escríbenos
+  </a>
+</aside>
+
+<div class="rail" aria-hidden="true">
+  <span class="rail__now" id="rail-now">I</span>
+  <span class="rail__bar"><span class="rail__fill" id="rail-fill"></span></span>
+  <span>IV</span>
+</div>
+
+<main>
+
+  <!-- ================= CAPÍTULO I ================= -->
+  <section class="chapter" id="cap-i" aria-labelledby="h1">
+    <span class="chapter__ghost" aria-hidden="true">I</span>
+    <div class="shell hero">
+      <div>
+        <p class="eyebrow">Cap. I — El mostrador</p>
+        <h1 id="h1">La ferretería de Alto Paramaconi, <em>ahora a un mensaje</em></h1>
+        <div class="tbar" aria-hidden="true"></div>
+        <p class="lede">Ferretería e Inversiones Hungrimat, C.A. Pinturas, cemento, herramientas y materiales de construcción en Maturín. Pregunta por lo que necesitas y te lo confirmamos por WhatsApp.</p>
+        <div class="hero__meta">
+          <span class="pill">Av. Principal Alto Paramaconi</span>
+          <span class="pill">Maturín, Monagas</span>
+          <span class="pill mono">L–V 7:30 am – 5:30 pm</span>
+        </div>
+        <div class="hero__cta">
+          <a class="bar" href="https://wa.me/584148781283?text=Hola%20Hungrimat%20%F0%9F%91%8B%20vi%20su%20p%C3%A1gina%20y%20necesito%3A" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Escríbenos por WhatsApp
+          </a>
+          <a class="linkq" href="#cap-ii">Ver lo que hay en el mostrador</a>
+        </div>
+      </div>
+
+      <figure style="margin:0">
+        <div class="ba" id="ba">
+          <div class="ba__side ba__a">
+            <img class="ba__sign" src="./assets/hungrimat-fachada-letrero-feb2025.jpg" alt="Letrero de Ferretería e Inversiones Hungrimat en su fachada de Alto Paramaconi" width="640" height="145">
+            <div class="ba__wall"></div>
+            <span class="ba__tag ba__tag--a">La ferretería de siempre</span>
+          </div>
+          <div class="ba__side ba__b">
+            <img class="ba__sign" src="./assets/hungrimat-fachada-letrero-feb2025.jpg" alt="" aria-hidden="true" width="640" height="145">
+            <div class="ba__vitrina">
+              <span class="ba__open" aria-hidden="true">Abierto a un mensaje</span>
+              <div class="ba__stack">
+              <div class="ba__card ba__card--logo">
+                <img src="./assets/hungrimat-logo-lockup-reel-feb2025.png" alt="" aria-hidden="true" width="570" height="285">
+              </div>
+              <div class="ba__card">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                <span>0414-878-1283</span>
+              </div>
+              <div class="ba__hours">
+                <div class="ba__card"><b>LUN–VIE</b><span class="mono">7:30 am – 5:30 pm</span></div>
+                <div class="ba__card"><b>SÁBADO</b><span class="mono">7:30 am – 4:30 pm</span></div>
+              </div>
+              </div>
+            </div>
+            <span class="ba__tag ba__tag--b">Ahora a un mensaje</span>
+          </div>
+          <input class="ba__range" id="ba-range" type="range" min="0" max="100" value="50" step="1"
+                 aria-label="Arrastra para comparar la fachada de siempre con la vitrina digital">
+          <div class="ba__handle" aria-hidden="true">
+            <span class="ba__grip">
+              <svg viewBox="0 0 26 14"><path d="M7.6 1 1 7l6.6 6 1.4-1.5L4.8 8h16.4l-4.2 3.5L18.4 13 25 7l-6.6-6L17 2.5 21.2 6H4.8L9 2.5z"/></svg>
+            </span>
+          </div>
+        </div>
+        <figcaption class="ba__hint">
+          <svg viewBox="0 0 26 14" aria-hidden="true"><path d="M7.6 1 1 7l6.6 6 1.4-1.5L4.8 8h16.4l-4.2 3.5L18.4 13 25 7l-6.6-6L17 2.5 21.2 6H4.8L9 2.5z"/></svg>
+          Arrastra la manija: la misma ferretería, con la puerta abierta.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= CAPÍTULO II ================= -->
+  <section class="chapter" id="cap-ii" aria-labelledby="h-ii">
+    <span class="chapter__ghost" aria-hidden="true">II</span>
+    <div class="shell">
+      <p class="eyebrow rv">Cap. II — Lo que hay</p>
+      <h2 id="h-ii" class="rv">Lo que consigues en el mostrador</h2>
+      <div class="tbar tbar--sm rv" aria-hidden="true"></div>
+      <p class="lede rv">Marcas y materiales que manejamos a diario. Pregúntanos por disponibilidad y te confirmamos en el momento.</p>
+
+      <div class="grid-ii">
+        <article class="slat slat--wide rv">
+          <div class="slat__body">
+            <p class="slat__num">01</p>
+            <h3>Pinturas Everest</h3>
+            <p>Pinta OK caucho mate y PintaMax Seda caucho satinado para interiores. También manejamos pintura a granel cuando el metraje es grande.</p>
+          </div>
+          <div class="slat__shots">
+            <span class="shot shot--paint"><img src="./assets/hungrimat-producto-pintaok-diamadre-2024-05.jpg" alt="Cuñete de Pinta OK caucho mate para interiores" width="320" height="568" loading="lazy"></span>
+            <span class="shot shot--seda"><img src="./assets/hungrimat-producto-pintamax-2024-09.jpg" alt="Cuñete de PintaMax Seda caucho satinado de Pinturas Everest" width="320" height="569" loading="lazy"></span>
+          </div>
+        </article>
+
+        <article class="slat rv">
+          <div class="slat__body">
+            <p class="slat__num">02</p>
+            <h3>Cemento</h3>
+            <p>Portland gris tipo I para tus mezclas y cemento plástico IPA para frisos y remates.</p>
+          </div>
+        </article>
+
+        <article class="slat rv">
+          <div class="slat__body">
+            <p class="slat__num">03</p>
+            <h3>Herramientas</h3>
+            <p>Trozadoras Skil para cortar metal, dentro de nuestra línea de herramientas de obra.</p>
+          </div>
+          <div class="slat__shots">
+            <span class="shot shot--saw"><img src="./assets/hungrimat-producto-trozadora-skil-2024-05.jpg" alt="Trozadora Skil para corte de metales" width="640" height="1138" loading="lazy"></span>
+          </div>
+        </article>
+
+        <article class="slat rv">
+          <div class="slat__body">
+            <p class="slat__num">04</p>
+            <h3>Bombas de agua Conti</h3>
+            <p>Las mismas que publicamos con 30 días de garantía. Dinos tu caso y te orientamos.</p>
+          </div>
+        </article>
+
+        <article class="slat rv">
+          <div class="slat__body">
+            <p class="slat__num">05</p>
+            <h3>Construcción</h3>
+            <p>Hierros, tubos, tanques y materiales de construcción para levantar o para reparar.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="note-ii rv">¿No ves lo tuyo en la lista? Escríbenos igual: en el mostrador entra más de lo que cabe aquí.</p>
+    </div>
+  </section>
+
+  <!-- ================= CAPÍTULO III ================= -->
+  <section class="chapter" id="cap-iii" aria-labelledby="h-iii">
+    <span class="chapter__ghost" aria-hidden="true">III</span>
+    <div class="shell">
+      <p class="eyebrow rv">Cap. III — Como te conviene</p>
+      <h2 id="h-iii" class="rv">Tres maneras de ponértelo fácil</h2>
+      <div class="tbar tbar--sm rv" aria-hidden="true"></div>
+
+      <div class="vent">
+        <div class="vent__row rv">
+          <p class="vent__k">Pago</p>
+          <h3>Sistema de apartado</h3>
+          <p>Aparta tu material y págalo a tu ritmo: queda separado para ti hasta que lo completes. Escríbenos y te explicamos cómo funciona con lo que necesitas.</p>
+        </div>
+        <div class="vent__row rv">
+          <p class="vent__k">Respaldo</p>
+          <h3>Garantía de 30 días</h3>
+          <p>Es la garantía que publicamos en nuestras bombas de agua Conti. Compras con respaldo, no a la buena de Dios.</p>
+        </div>
+        <div class="vent__row rv">
+          <p class="vent__k">Atención</p>
+          <h3>WhatsApp directo</h3>
+          <p>Nada de formularios ni de esperar correo. Escribes al 0414-878-1283, preguntas por lo tuyo y te lo confirmamos ya.</p>
+        </div>
+      </div>
+
+      <div class="vent__cta rv">
+        <a class="bar" href="https://wa.me/584148781283?text=Hola%20Hungrimat%20%F0%9F%91%8B%20vi%20su%20p%C3%A1gina%20y%20necesito%3A" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Aparta tu material
+        </a>
+        <a class="linkq" href="#cap-iv">Cómo llegar al local</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAPÍTULO IV ================= -->
+  <section class="chapter" id="cap-iv" aria-labelledby="h-iv">
+    <span class="chapter__ghost" aria-hidden="true">IV</span>
+    <div class="shell">
+      <p class="eyebrow rv">Cap. IV — A un mensaje</p>
+      <h2 id="h-iv" class="rv">Estamos en Alto Paramaconi</h2>
+      <div class="tbar tbar--sm rv" aria-hidden="true"></div>
+
+      <div class="contact">
+        <div class="rv">
+          <dl class="dl">
+            <div>
+              <dt>Dirección</dt>
+              <dd>Av. Principal Alto Paramaconi<br>Maturín, estado Monagas</dd>
+            </div>
+            <div>
+              <dt>Horario</dt>
+              <dd>
+                <span class="hours-row"><span>Lunes a viernes</span><span class="mono">7:30 am – 5:30 pm</span></span>
+                <span class="hours-row"><span>Sábado</span><span class="mono">7:30 am – 4:30 pm</span></span>
+              </dd>
+            </div>
+            <div>
+              <dt>WhatsApp</dt>
+              <dd><a href="https://wa.me/584148781283?text=Hola%20Hungrimat%20%F0%9F%91%8B%20vi%20su%20p%C3%A1gina%20y%20necesito%3A" target="_blank" rel="noopener">0414-878-1283</a></dd>
+            </div>
+          </dl>
+
+          <div class="closing">
+            <p>Dinos qué vas a hacer y te decimos qué te hace falta. Si prefieres, apártalo y lo buscas cuando puedas.</p>
+            <a class="bar bar--xl" href="https://wa.me/584148781283?text=Hola%20Hungrimat%20%F0%9F%91%8B%20vi%20su%20p%C3%A1gina%20y%20necesito%3A" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Escríbenos por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <figure class="croquis rv" style="margin:0">
+          <svg viewBox="0 0 420 300" role="img" aria-label="Croquis referencial: Hungrimat sobre la Av. Principal Alto Paramaconi, Maturín">
+            <rect width="420" height="300" fill="#20170F"/>
+            <g stroke="#F4F2EE" stroke-opacity=".08" stroke-width="1">
+              <path d="M0 60h420M0 120h420M0 180h420M0 240h420M70 0v300M140 0v300M210 0v300M280 0v300M350 0v300"/>
+            </g>
+            <!-- avenida principal -->
+            <path d="M-10 210 C 90 200, 150 150, 250 140 S 400 108, 432 96" stroke="#78553F" stroke-width="26" fill="none" stroke-linecap="round"/>
+            <path d="M-10 210 C 90 200, 150 150, 250 140 S 400 108, 432 96" stroke="#D8410A" stroke-width="2" fill="none" stroke-dasharray="12 12"/>
+            <!-- calles secundarias -->
+            <path d="M120 300 L150 175" stroke="#5c4433" stroke-width="12" fill="none" stroke-linecap="round"/>
+            <path d="M300 20 L285 128" stroke="#5c4433" stroke-width="12" fill="none" stroke-linecap="round"/>
+            <path d="M40 40 L96 196" stroke="#5c4433" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <!-- manzanas -->
+            <g fill="#F4F2EE" fill-opacity=".05">
+              <rect x="30" y="90" width="52" height="42" rx="2"/>
+              <rect x="176" y="196" width="70" height="46" rx="2"/>
+              <rect x="318" y="176" width="62" height="52" rx="2"/>
+              <rect x="196" y="42" width="64" height="40" rx="2"/>
+            </g>
+            <!-- marcador Hungrimat -->
+            <g>
+              <path d="M243 96c0-11 9-20 20-20s20 9 20 20c0 14-20 34-20 34s-20-20-20-34z" fill="#47C049" stroke="#0C0C0B" stroke-width="2"/>
+              <circle cx="263" cy="96" r="7" fill="#0C0C0B"/>
+            </g>
+            <rect x="188" y="34" width="150" height="30" fill="#F4F2EE" rx="2"/>
+            <text x="199" y="54" font-family="Asap, sans-serif" font-size="15" font-weight="700" fill="#0C0C0B">HUNGRIMAT</text>
+            <rect x="326" y="40" width="6" height="18" fill="#D8410A"/>
+            <text x="18" y="272" font-family="Asap, sans-serif" font-size="13" font-weight="700" fill="#F4F2EE" fill-opacity=".82">AV. PRINCIPAL ALTO PARAMACONI</text>
+            <text x="18" y="290" font-family="Asap, sans-serif" font-size="11" fill="#F4F2EE" fill-opacity=".5">MATURÍN · MONAGAS</text>
+          </svg>
+          <figcaption>Croquis referencial dibujado para esta demo — no está a escala. Escríbenos y te damos la referencia exacta.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="plate">
+  <div class="shell plate__grid">
+    <div class="plate__col">
+      <h2>Ferretería e Inversiones Hungrimat, C.A.</h2>
+      <p class="rif">RIF J-30860276-0</p>
+    </div>
+    <div class="plate__col">
+      <h3>Dónde y cuándo</h3>
+      <p>Av. Principal Alto Paramaconi<br>Maturín, estado Monagas</p>
+      <p style="margin-top:.5rem">Lun a vie 7:30 am – 5:30 pm<br>Sábado 7:30 am – 4:30 pm</p>
+    </div>
+    <div class="plate__col plate__soc">
+      <h3>Escríbenos</h3>
+      <ul>
+        <li>
+          <a href="https://wa.me/584148781283?text=Hola%20Hungrimat%20%F0%9F%91%8B%20vi%20su%20p%C3%A1gina%20y%20necesito%3A" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp 0414-878-1283
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/ferreteria_hungrimat" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+            @ferreteria_hungrimat
+          </a>
+        </li>
+        <li>
+          <a href="https://facebook.com/ferreteriahungrimat" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            /ferreteriahungrimat
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="shell seal">
+    <span>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a></span>
+    <span>·</span>
+    <span>Esta es una propuesta de diseño — no es el sitio oficial de Ferretería Hungrimat.</span>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/584148781283?text=Hola%20Hungrimat%20%F0%9F%91%8B%20vi%20su%20p%C3%A1gina%20y%20necesito%3A" target="_blank" rel="noopener" aria-label="Escribir a Hungrimat por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  /* ---- drawer ---- */
+  var drawer = document.getElementById("drawer");
+  var scrim = document.getElementById("scrim");
+  var btnMenu = document.getElementById("btn-menu");
+  var btnClose = document.getElementById("btn-close");
+
+  function setDrawer(open) {
+    drawer.setAttribute("data-open", open ? "true" : "false");
+    drawer.setAttribute("aria-hidden", open ? "false" : "true");
+    if (open) { drawer.removeAttribute("inert"); } else { drawer.setAttribute("inert", ""); }
+    scrim.setAttribute("data-open", open ? "true" : "false");
+    if (open) { scrim.hidden = false; } else { window.setTimeout(function () { if (scrim.getAttribute("data-open") === "false") scrim.hidden = true; }, 320); }
+    btnMenu.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open) { btnClose.focus(); } else { btnMenu.focus(); }
+  }
+  btnMenu.addEventListener("click", function () { setDrawer(drawer.getAttribute("data-open") !== "true"); });
+  btnClose.addEventListener("click", function () { setDrawer(false); });
+  scrim.addEventListener("click", function () { setDrawer(false); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && drawer.getAttribute("data-open") === "true") setDrawer(false);
+  });
+  Array.prototype.forEach.call(drawer.querySelectorAll("[data-close]"), function (a) {
+    a.addEventListener("click", function () { setDrawer(false); });
+  });
+
+  /* ---- before / after slider ---- */
+  var ba = document.getElementById("ba");
+  var range = document.getElementById("ba-range");
+  if (ba && range && !reduce.matches) {
+    var paint = function () { ba.style.setProperty("--pos", range.value + "%"); };
+    range.addEventListener("input", paint);
+    range.addEventListener("change", paint);
+    paint();
+  }
+
+  /* ---- chapter counter + reveals ---- */
+  var romans = ["I", "II", "III", "IV"];
+  var chapters = Array.prototype.slice.call(document.querySelectorAll(".chapter"));
+  var now = document.getElementById("rail-now");
+  var fill = document.getElementById("rail-fill");
+
+  if ("IntersectionObserver" in window) {
+    var live = {};
+    var chapterObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var i = chapters.indexOf(en.target);
+        if (i < 0) return;
+        if (en.isIntersecting) { live[i] = true; } else { delete live[i]; }
+      });
+      var keys = Object.keys(live).map(Number);
+      if (!keys.length) return;
+      var top = Math.max.apply(null, keys);
+      if (now) now.textContent = romans[top] || "I";
+      if (fill) fill.style.transform = "scaleY(" + ((top + 1) / chapters.length) + ")";
+    }, { rootMargin: "-50% 0px -50% 0px", threshold: 0 });
+    chapters.forEach(function (c) { chapterObs.observe(c); });
+
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.setAttribute("data-in", "true"); revealObs.unobserve(en.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: .12 });
+    Array.prototype.forEach.call(document.querySelectorAll(".rv"), function (el) { revealObs.observe(el); });
+    /* safety net: nothing stays hidden if the observer never fires */
+    window.setTimeout(function () {
+      Array.prototype.forEach.call(document.querySelectorAll(".rv"), function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 1.4) el.setAttribute("data-in", "true");
+      });
+    }, 2500);
+  } else {
+    Array.prototype.forEach.call(document.querySelectorAll(".rv"), function (el) { el.setAttribute("data-in", "true"); });
+  }
+})();
+</script>
+</body>
+</html>

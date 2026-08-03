@@ -1,0 +1,1251 @@
+<!doctype html>
+<html lang="es-VE" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FESIRCA — Ferretería Siria | Maturín</title>
+<meta name="description" content="Ferretería Siria, C.A. (FESIRCA) en Maturín, Monagas. Ferretería general, plomería, herrería, electricidad e iluminación, pinturas y solventes, herramientas y maquinaria, accesorios para baño y equipos de emergencia. Desde 1994 contigo.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E0E10">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<meta property="og:site_name" content="FESIRCA — Ferretería Siria, C.A.">
+<meta property="og:title" content="FESIRCA — Ferretería Siria | Maturín">
+<meta property="og:description" content="Todo lo de tu obra en un solo mostrador. Ferretería general, plomería, herrería, electricidad, pinturas y maquinaria en Maturín. Desde 1994 contigo.">
+<meta property="og:image" content="./assets/fesirca-logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="./assets/fesirca-logo.png">
+<link rel="apple-touch-icon" href="./assets/fesirca-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Staatliches&amp;display=swap">
+<script>document.documentElement.className='js';</script>
+<style>
+/* ============ tokens ============ */
+:root{
+  --negro:#0E0E10; --carbon:#141417; --carbon-2:#1a1a1f; --carbon-3:#232329;
+  --blanco:#F9F9F9; --cromo:#888888;
+  --rojo:#D13438; --rojo-h:#E04146;
+  --verde:#35A572;
+  --led:#D9CF6A;
+  --kraft:#E8E1D1; --kraft-s:#C3BBA6;
+  --papel:#F2EDE2; --tinta:#17171A;
+  --line:rgba(249,249,249,.11);
+  --line-2:rgba(249,249,249,.18);
+  --display:"Staatliches","Barlow Condensed",Impact,system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --pad:clamp(18px,5.2vw,72px);
+  --maxw:1260px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{max-width:100%}
+body{max-width:100%;overflow-x:hidden}
+body{
+  margin:0;background:var(--negro);color:var(--blanco);
+  font-family:var(--body);font-size:clamp(15px,.55vw + 14px,17px);line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,dl,figure,blockquote{margin:0}
+ul{list-style:none;padding:0}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--led);outline-offset:3px;border-radius:1px}
+::selection{background:var(--rojo);color:#fff}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+[id]{scroll-margin-top:clamp(84px,14vh,120px)}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ============ shared type ============ */
+.eyebrow{
+  font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;
+  color:var(--cromo);display:flex;align-items:center;gap:.7em;flex-wrap:wrap;
+}
+.eyebrow .dot{width:5px;height:5px;background:var(--rojo);flex:0 0 auto}
+.h2{
+  font-family:var(--display);font-weight:400;line-height:.94;letter-spacing:.012em;
+  font-size:clamp(2.2rem,6.4vw,4.6rem);text-wrap:balance;
+}
+.lede{color:#cfcfd2;font-size:clamp(1rem,.5vw + .92rem,1.16rem);max-width:56ch}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+
+/* ============ price-tag CTA ============ */
+.tag{
+  --tag-bg:var(--rojo);
+  position:relative;display:inline-flex;align-items:center;gap:.6em;
+  padding:.86em 1.35em .86em 2.5em;background:var(--tag-bg);color:#fff;
+  font-family:var(--display);font-size:1.06rem;letter-spacing:.045em;line-height:1;
+  text-decoration:none;text-transform:uppercase;
+  clip-path:polygon(18px 0,100% 0,100% 100%,18px 100%,0 50%);
+  transition:background .22s ease,transform .22s ease;
+}
+.tag::before{
+  content:"";position:absolute;left:15px;top:50%;width:9px;height:9px;margin-top:-4.5px;
+  border-radius:50%;background:var(--negro);box-shadow:inset 0 1px 2px rgba(0,0,0,.9);
+}
+.tag:hover,.tag:focus-visible{background:var(--rojo-h);transform:translateY(-2px)}
+.tag svg{width:17px;height:17px;flex:0 0 auto}
+.tag--ghost{
+  --tag-bg:transparent;color:var(--blanco);
+  box-shadow:none;border:0;padding-left:1.35em;clip-path:none;
+  font-family:var(--body);font-size:.94rem;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--line-2);
+  padding-block:.5em;
+}
+.tag--ghost::before{display:none}
+.tag--ghost:hover,.tag--ghost:focus-visible{background:transparent;border-bottom-color:var(--led);color:var(--led)}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,2.4vw,26px)}
+
+/* ============ fixed chrome: wordmark ============ */
+.brand{
+  position:fixed;z-index:60;top:clamp(12px,2vw,20px);left:clamp(12px,2vw,20px);
+  background:var(--negro);border:1px solid var(--line-2);padding:.44em .78em .34em;
+  text-decoration:none;display:block;
+}
+.brand__mark{
+  position:relative;display:block;font-family:var(--display);font-weight:400;
+  font-size:clamp(1.2rem,3.4vw,1.6rem);letter-spacing:.10em;line-height:1;color:var(--blanco);
+}
+.brand__mark::after{
+  content:"";position:absolute;inset:-3px -1px;pointer-events:none;
+  background:repeating-linear-gradient(90deg,transparent 0 15px,var(--negro) 15px 16.6px);
+}
+.brand__sub{
+  display:block;font-size:.53rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--cromo);margin-top:.28em;
+}
+@media (max-width:420px){.brand__sub{display:none}}
+
+/* ============ fixed chrome: hang-tag nav ============ */
+.hangtag{position:fixed;z-index:70;top:0;right:clamp(12px,2.4vw,26px)}
+.hangtag__cord{margin:0 auto;display:block}
+.hangtag__cord path{stroke:#83838c;transition:stroke .25s ease}
+.hangtag__btn{
+  position:relative;display:block;margin-top:-3px;padding:0;
+}
+.hangtag__face{
+  position:relative;width:66px;padding:14px 4px 20px;background:var(--rojo);
+  clip-path:polygon(0 0,100% 0,100% 78%,50% 100%,0 78%);
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),background .22s ease;
+  box-shadow:0 10px 22px rgba(0,0,0,.5);
+}
+.hangtag__eye{width:9px;height:9px;border-radius:50%;background:var(--negro);box-shadow:inset 0 1px 2px rgba(0,0,0,.8)}
+.hangtag__txt{
+  font-family:var(--display);font-size:.86rem;letter-spacing:.09em;color:#fff;line-height:1;
+}
+.hangtag__bars{display:block;width:20px;height:7px;position:relative}
+.hangtag__bars::before,.hangtag__bars::after{
+  content:"";position:absolute;left:0;right:0;height:1.6px;background:#fff;transition:transform .28s ease
+}
+.hangtag__bars::before{top:0}.hangtag__bars::after{bottom:0}
+.hangtag__btn:hover .hangtag__face{background:var(--rojo-h)}
+.hangtag[data-open="true"] .hangtag__bars::before{transform:translateY(2.7px) rotate(21deg)}
+.hangtag[data-open="true"] .hangtag__bars::after{transform:translateY(-2.7px) rotate(-21deg)}
+.hangtag__panel{
+  position:absolute;top:calc(100% + 12px);right:0;width:min(80vw,300px);
+  background:var(--carbon);border:1px solid var(--line-2);border-top:2px solid var(--led);
+  padding:14px 0 8px;box-shadow:0 26px 60px rgba(0,0,0,.72);
+  opacity:0;visibility:hidden;transform:translateY(-10px) scale(.985);transform-origin:top right;
+  transition:opacity .24s ease,transform .28s cubic-bezier(.2,.8,.2,1),visibility 0s linear .28s;
+}
+.hangtag[data-open="true"] .hangtag__panel{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.hangtag__panel .ttl{
+  font-family:var(--body);font-size:.62rem;font-weight:600;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--cromo);padding:0 18px 9px;margin:0;
+}
+.hangtag__panel a{
+  display:flex;align-items:baseline;gap:10px;padding:.52em 18px;text-decoration:none;
+  font-size:.95rem;color:#e6e6e8;transition:background .18s ease,color .18s ease;
+}
+.hangtag__panel a:hover{background:rgba(217,207,106,.09);color:var(--led)}
+.hangtag__panel a .n{font-family:var(--display);font-size:.82rem;color:var(--rojo);letter-spacing:.06em;min-width:1.6em}
+.hangtag__panel .sep{height:1px;background:var(--line);margin:9px 18px}
+.hangtag__panel .ic{width:15px;height:15px;flex:0 0 auto;align-self:center;color:var(--led)}
+.scrim{
+  position:fixed;inset:0;z-index:55;background:rgba(6,6,8,.62);backdrop-filter:blur(2px);
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
+}
+.scrim.is-on{opacity:1;pointer-events:auto}
+.hangtag:has([aria-expanded="true"]) .hangtag__face{transform:rotate(2.5deg) translateY(3px)}
+.hangtag:has(.hangtag__panel a:focus-visible) .hangtag__cord path{stroke:var(--led)}
+
+/* ============ FAB instagram ============ */
+.fab{
+  position:fixed;z-index:65;right:clamp(14px,3vw,26px);bottom:clamp(14px,3vw,26px);
+  width:56px;height:56px;border-radius:50%;background:var(--rojo);color:#fff;
+  display:grid;place-items:center;text-decoration:none;
+  box-shadow:0 12px 30px rgba(0,0,0,.55),0 0 0 5px rgba(209,52,56,.15);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),background .22s ease;
+}
+.fab svg{width:26px;height:26px}
+.fab:hover,.fab:focus-visible{background:var(--rojo-h);transform:translateY(-3px) scale(1.04)}
+
+/* ============ tool-wall pattern ============ */
+.toolwall{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+
+/* ============ hero ============ */
+.hero{position:relative;overflow:hidden;padding-top:clamp(96px,17vh,168px);padding-bottom:clamp(48px,7vh,90px)}
+.hero__bg{position:absolute;inset:0;pointer-events:none}
+.hero__ledframe{
+  position:absolute;left:clamp(10px,4.5vw,64px);right:clamp(10px,4.5vw,64px);
+  top:clamp(70px,12vh,120px);bottom:clamp(30px,10vh,90px);
+  border-top:2px solid var(--led);border-right:2px solid var(--led);
+  box-shadow:0 0 30px rgba(217,207,106,.26);opacity:.82;
+}
+.hero__ledframe::after{
+  content:"";position:absolute;left:-2px;top:0;width:2px;height:26%;background:var(--led);
+  box-shadow:0 0 26px rgba(217,207,106,.4);
+}
+.hero__vig{
+  position:absolute;inset:0;
+  background:radial-gradient(115% 78% at 50% 4%,rgba(217,207,106,.09),transparent 58%),
+             radial-gradient(120% 90% at 50% 100%,rgba(0,0,0,.85),transparent 62%);
+}
+.hero__inner{position:relative;z-index:1}
+.hero__eyebrow{margin-bottom:clamp(16px,2.6vh,26px)}
+.hero h1{
+  font-family:var(--display);font-weight:400;text-transform:none;
+  font-size:clamp(2.65rem,10.6vw,8.4rem);line-height:.9;letter-spacing:.004em;
+  text-wrap:balance;margin-bottom:clamp(18px,3vh,30px);
+}
+.hero h1 .l{display:block}
+.hero h1 .l--2{color:#e9e6d8}
+.hero h1 .since{
+  display:block;font-family:var(--body);font-weight:600;
+  font-size:clamp(.72rem,1.5vw,.92rem);letter-spacing:.26em;text-transform:uppercase;
+  color:var(--led);margin-top:clamp(12px,1.8vh,20px);
+}
+.hero__split{
+  display:grid;gap:clamp(30px,5vw,58px);align-items:start;
+  padding-top:clamp(22px,3.4vh,34px);border-top:1px solid var(--line);
+}
+@media (min-width:920px){.hero__split{grid-template-columns:1fr minmax(400px,462px)}}
+.hero__aside{display:flex;flex-direction:column;gap:clamp(20px,3vw,28px)}
+
+/* seal (logo plate) */
+.seal{
+  display:flex;align-items:center;gap:16px;padding:12px 16px 12px 12px;
+  background:var(--negro);border:1px solid var(--line-2);border-left:2px solid var(--led);
+  max-width:420px;
+}
+.seal__logo{width:62px;height:62px;flex:0 0 auto}
+.seal__k{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cromo)}
+.seal__v{display:block;font-family:var(--display);font-size:1.16rem;letter-spacing:.05em;color:var(--blanco);line-height:1.2}
+.seal__n{display:block;font-size:.79rem;color:var(--cromo);line-height:1.4}
+
+/* stats band */
+.stats{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);max-width:460px;
+}
+.stats li{background:var(--negro);padding:13px 15px}
+.stats__n{
+  display:block;font-family:var(--display);font-size:clamp(1.5rem,4.4vw,1.92rem);
+  letter-spacing:.035em;line-height:1;color:var(--led);
+}
+.stats__k{display:block;font-size:.71rem;line-height:1.35;color:var(--cromo);margin-top:5px}
+
+/* ============ ticket (paper) ============ */
+.ticket{filter:drop-shadow(0 20px 30px rgba(0,0,0,.62));transform:rotate(-1.1deg)}
+@media (max-width:600px){.ticket{transform:rotate(-.6deg)}}
+.paper{
+  --zw:14px;--zh:7px;
+  background:linear-gradient(178deg,#FBF7EE,var(--papel) 34%,#E7E0D2);
+  color:var(--tinta);padding:clamp(24px,4vw,32px) clamp(18px,3.4vw,28px);
+  -webkit-mask:
+    conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50% 100%/var(--zw) var(--zh) repeat-x,
+    conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) 50% 0/var(--zw) var(--zh) repeat-x,
+    linear-gradient(#000 0 0) 50% 50%/100% calc(100% - var(--zh) * 2) no-repeat;
+  mask:
+    conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50% 100%/var(--zw) var(--zh) repeat-x,
+    conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) 50% 0/var(--zw) var(--zh) repeat-x,
+    linear-gradient(#000 0 0) 50% 50%/100% calc(100% - var(--zh) * 2) no-repeat;
+}
+.tk__head{text-align:center;margin-bottom:14px}
+.tk__biz{font-family:var(--display);font-size:1.24rem;letter-spacing:.07em;line-height:1.1}
+.tk__meta{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#5f5a51;margin-top:3px}
+.tk__dash{height:0;border-top:1.5px dashed #b6ae9c;margin:13px 0}
+.tk__title{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#6b6559;font-weight:600;margin-bottom:9px}
+.tk__list{display:flex;flex-direction:column;gap:7px;font-size:clamp(.93rem,2.5vw,1rem)}
+.tk__row{display:flex;align-items:baseline;gap:9px;min-height:1.6em}
+.tk__txt{flex:1 1 auto;font-variant-numeric:tabular-nums}
+.tk__ok{flex:0 0 auto;color:var(--verde);display:inline-flex;align-self:center;transition:opacity .3s ease,transform .3s ease}
+.tk__ok svg{width:17px;height:17px}
+.tk--anim .tk__row:not(.is-ok) .tk__ok{opacity:0;transform:scale(.6)}
+.tk__row.is-typing .tk__txt::after{
+  content:"";display:inline-block;width:.55em;height:1.05em;margin-left:2px;
+  background:var(--tinta);vertical-align:-.18em;animation:caret .82s steps(1,end) infinite;
+}
+@keyframes caret{0%,49%{opacity:1}50%,100%{opacity:0}}
+.tk__foot{font-size:.95rem;font-style:italic;color:#4a463f}
+.tk__note{font-size:.63rem;letter-spacing:.19em;text-transform:uppercase;color:#7a7365;text-align:center}
+.ticket-say{margin-top:clamp(22px,3.4vw,30px)}
+.ticket-say p{
+  font-family:var(--display);font-size:clamp(1.4rem,3.4vw,1.86rem);line-height:1.06;
+  letter-spacing:.015em;margin-bottom:clamp(16px,2.4vw,22px);text-wrap:balance;
+}
+
+/* ============ directorio ============ */
+.dir{padding-block:clamp(56px,9vh,110px) clamp(38px,6vh,72px);background:var(--negro);border-top:1px solid var(--line)}
+.dir__head{margin-bottom:clamp(26px,4vh,44px)}
+.dir__head .h2{margin-top:.34em;max-width:18ch}
+.dir__list{border-top:1px solid var(--line)}
+.dir__item{
+  display:grid;grid-template-columns:auto 1fr;gap:6px 16px;align-items:baseline;
+  padding:clamp(13px,2vh,17px) 0;border-bottom:1px solid var(--line);
+  transition:background .2s ease,padding-left .25s cubic-bezier(.2,.8,.2,1);
+}
+.dir__item:hover{background:rgba(217,207,106,.045);padding-left:10px}
+.dir__n{font-family:var(--display);font-size:.94rem;color:var(--rojo);letter-spacing:.08em}
+.dir__name{font-family:var(--display);font-size:clamp(1.16rem,3.1vw,1.72rem);letter-spacing:.028em;line-height:1.08}
+.dir__d{grid-column:2;font-size:.9rem;color:var(--cromo);line-height:1.45}
+@media (min-width:800px){
+  .dir__item{grid-template-columns:auto minmax(0,1fr) minmax(0,1.05fr);gap:16px 26px}
+  .dir__d{grid-column:3;justify-self:start;align-self:baseline}
+}
+
+/* brand wall */
+.brands{
+  margin-top:clamp(26px,4vh,42px);display:flex;align-items:center;
+  gap:12px 22px;flex-wrap:wrap;
+}
+.brands__k{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cromo)}
+.brands__list{display:flex;flex-wrap:wrap;gap:8px 10px}
+.brands__list li{
+  font-family:var(--display);font-size:1.02rem;letter-spacing:.075em;color:#d6d2c3;
+  border:1px solid var(--line-2);padding:.3em .85em .2em;line-height:1.2;
+}
+
+/* ============ aisles / shelves ============ */
+.aisles{padding-block:clamp(22px,3vh,44px) clamp(56px,9vh,110px)}
+.aisles__head{margin-bottom:clamp(34px,5vh,58px)}
+.aisles__head .h2{max-width:22ch}
+.aisles__head .h2{margin-top:.34em}
+.aisles__head p{margin-top:.9em}
+.aisle{margin-bottom:clamp(50px,8vh,96px)}
+.aisle:last-child{margin-bottom:0}
+.aisle__head{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:18px;flex-wrap:wrap;margin-bottom:clamp(20px,3vh,30px);
+}
+.aisle--flip .aisle__head{flex-direction:row-reverse}
+.aisle__note{font-size:.95rem;color:var(--cromo);max-width:42ch;padding-top:22px;flex:1 1 260px}
+.aisle--flip .aisle__note{text-align:right}
+@media (max-width:640px){
+  /* en columna, flex-basis pasa a ser ALTO: hay que neutralizarlo */
+  .aisle__head,.aisle--flip .aisle__head{flex-direction:column;gap:12px}
+  .aisle__note,.aisle--flip .aisle__note{flex:0 0 auto;text-align:left;padding-top:0;max-width:none}
+}
+.aisle__ask{
+  display:block;width:fit-content;margin-top:.65em;color:var(--led);text-decoration:none;
+  font-weight:600;font-size:.84rem;letter-spacing:.05em;
+  border-bottom:1px solid rgba(217,207,106,.38);padding-bottom:1px;
+  transition:border-color .2s ease,transform .2s ease;
+}
+.aisle__ask::after{content:" \2192"}
+.aisle__ask:hover{border-bottom-color:var(--led);transform:translateX(2px)}
+@media (min-width:641px){.aisle--flip .aisle__ask{margin-left:auto}}
+
+/* hanging aisle label */
+.hang{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;margin-top:-6px}
+.hang__cord path{stroke:#7c7c85}
+.hang__plate{
+  font-size:1rem;font-weight:400;position:relative;background:var(--kraft);color:var(--tinta);
+  display:flex;align-items:center;gap:12px;padding:9px 18px 9px 10px;
+  box-shadow:0 10px 24px rgba(0,0,0,.55),inset 0 -2px 0 var(--kraft-s);
+}
+.hang__plate::before,.hang__plate::after{
+  content:"";position:absolute;top:6px;width:6px;height:6px;border-radius:50%;
+  background:#5d5648;box-shadow:inset 0 1px 1px rgba(0,0,0,.6);
+}
+.hang__plate::before{left:8px}.hang__plate::after{right:8px}
+.hang__n{
+  background:var(--rojo);color:#fff;font-family:var(--display);font-size:.95rem;
+  letter-spacing:.06em;padding:.24em .55em .18em;line-height:1;
+}
+.hang__k{display:block;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:#6d6759}
+.hang__name{
+  display:block;font-family:var(--display);font-size:clamp(1.06rem,2.9vw,1.44rem);
+  letter-spacing:.04em;line-height:1.06;
+}
+/* shelf */
+.shelf{position:relative}
+.shelf__goods{
+  position:relative;z-index:2;display:grid;gap:8px;align-items:end;
+  padding:clamp(14px,2.4vw,22px) 0 0;
+  background:radial-gradient(125% 62% at 50% 100%,rgba(217,207,106,.075),transparent 64%);
+}
+@media (min-width:860px){
+  .shelf__goods{grid-template-columns:var(--cols,repeat(3,1fr));gap:clamp(14px,1.6vw,22px)}
+}
+.shelf__board{position:relative;z-index:1;height:30px;margin-top:-1px}
+.board__led{
+  position:absolute;top:0;left:0;right:0;height:2px;transform-origin:left center;
+  background:linear-gradient(90deg,transparent,var(--led) 8%,var(--led) 92%,transparent);
+  box-shadow:0 0 16px rgba(217,207,106,.45),0 0 40px rgba(217,207,106,.16);
+}
+.board__face{
+  position:absolute;top:2px;left:0;right:0;height:12px;
+  background:linear-gradient(180deg,#31313a,#1b1b21 62%,#0f0f12);
+  border-bottom:1px solid #08080a;
+}
+.board__brace{position:absolute;top:14px}
+.board__brace--l{left:6%}
+.board__brace--r{right:6%;transform:scaleX(-1)}
+/* boxes */
+.box{
+  position:relative;background:var(--carbon);border:1px solid #26262c;
+  display:flex;flex-direction:column;
+  transition:opacity .3s ease,transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s ease;
+}
+.box::after{
+  content:"";position:absolute;left:6%;right:6%;bottom:-6px;height:10px;z-index:-1;
+  background:radial-gradient(ellipse at 50% 0%,rgba(0,0,0,.8),transparent 72%);
+}
+.box:hover{border-color:#3a3a44;transform:translateY(-3px)}
+.box__lid{
+  display:block;height:13px;flex:0 0 auto;
+  background:linear-gradient(180deg,#33333c,#232329);
+  border-bottom:1px solid #0d0d10;box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+}
+.box__body{padding:clamp(13px,2vw,17px);display:flex;flex-direction:column;gap:11px;flex:1 1 auto}
+.box__frame{
+  position:relative;border:1px solid rgba(217,207,106,.34);background:#0b0b0d;overflow:hidden;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.7),0 0 22px rgba(217,207,106,.07);
+}
+.box__ph{width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center var(--op,60%)}
+.box__art{width:100%;aspect-ratio:5/4;display:block}
+@media (min-width:860px){
+  .box{min-height:240px}
+  .box--tall .box__ph,.box--tall .box__art{aspect-ratio:auto;height:clamp(230px,22vw,300px)}
+}
+.box__note{font-size:.87rem;color:var(--cromo);line-height:1.45}
+.box__chips{display:flex;flex-wrap:wrap;gap:6px}
+.box__chip{
+  font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;
+  color:#d8d3bd;border:1px solid rgba(217,207,106,.3);padding:.24em .6em;
+}
+.box__label{
+  position:relative;margin:0 clamp(13px,2vw,17px) clamp(13px,2vw,17px);
+  background:var(--kraft);color:var(--tinta);padding:.5em 1.15em .5em .6em;
+  font-weight:600;font-size:.88rem;line-height:1.28;
+  box-shadow:0 3px 9px rgba(0,0,0,.42);
+}
+.box__label::after{
+  content:"";position:absolute;top:0;right:0;width:15px;height:15px;
+  background:linear-gradient(45deg,var(--kraft-s) 0 50%,var(--carbon) 50% 100%);
+}
+.box--wide .box__label{font-family:var(--display);font-size:1.2rem;font-weight:400;letter-spacing:.03em}
+/* note box (kraft) */
+.box--note{background:var(--carbon-2);border-color:rgba(217,207,106,.26)}
+.box--note .box__lid{background:linear-gradient(180deg,#3b382c,#26251d)}
+.box--note .box__body{gap:14px;justify-content:center}
+.box--note h4{
+  margin:0;font-family:var(--display);font-weight:400;letter-spacing:.02em;
+  font-size:clamp(1.14rem,2.6vw,1.4rem);line-height:1.08;
+}
+.box--note p{font-size:.88rem;color:#b9b5a6}
+.box--note::after{background:radial-gradient(ellipse at 50% 0%,rgba(0,0,0,.8),transparent 72%)}
+/* :has() — focus a box, its shelf-mates recede */
+.shelf__goods:has(.box:hover) .box:not(:hover){opacity:.5}
+.shelf__goods:has(.box:focus-within) .box:not(:focus-within){opacity:.5}
+
+/* ============ mostrador ============ */
+.counter{position:relative;padding-block:clamp(56px,9vh,110px);border-top:1px solid var(--line);overflow:hidden}
+.counter__bg{position:absolute;inset:0;pointer-events:none;opacity:.85}
+.counter__inner{position:relative;z-index:1}
+.counter__head{margin-bottom:clamp(28px,4.4vh,46px)}
+.counter__head .h2{margin-top:.34em;max-width:16ch}
+.panel{
+  background:var(--carbon);border:1px solid #26262c;display:flex;flex-direction:column;
+  position:relative;
+}
+.panel::after{
+  content:"";position:absolute;left:5%;right:5%;bottom:-9px;height:13px;z-index:-1;
+  background:radial-gradient(ellipse at 50% 0%,rgba(0,0,0,.85),transparent 72%);
+}
+.panel__lid{
+  display:block;height:13px;background:linear-gradient(180deg,#33333c,#232329);
+  border-bottom:1px solid #0d0d10;box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+}
+.panel__body{padding:clamp(20px,3vw,30px);display:flex;flex-direction:column;gap:clamp(16px,2.4vw,22px);flex:1 1 auto}
+.panel h3{
+  font-family:var(--display);font-weight:400;font-size:clamp(1.34rem,3.2vw,1.72rem);
+  letter-spacing:.03em;line-height:1.06;
+}
+.panel h3 + p{margin-top:.5em}
+.addr{font-size:clamp(1rem,2.4vw,1.1rem);line-height:1.5}
+.addr strong{font-weight:600;color:var(--blanco)}
+.addr span{display:block;color:var(--cromo);font-size:.93rem}
+.rows{display:flex;flex-direction:column;gap:9px}
+.row{display:flex;align-items:baseline;gap:9px;font-size:.95rem}
+.row__k{flex:0 0 auto;color:var(--cromo)}
+.row__dots{flex:1 1 auto;border-bottom:1px dotted rgba(249,249,249,.24);transform:translateY(-4px);min-width:14px}
+.row__v{flex:0 0 auto;font-weight:600;font-variant-numeric:tabular-nums}
+.row--off .row__v{color:var(--cromo);font-weight:400}
+.chan{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--line)}
+.chan a,.chan div{
+  display:flex;align-items:center;gap:12px;padding:.72em 0;border-bottom:1px solid var(--line);
+  text-decoration:none;font-size:.98rem;transition:color .2s ease,padding-left .25s cubic-bezier(.2,.8,.2,1);
+}
+.chan a:hover{color:var(--led);padding-left:8px}
+.chan .ic{width:17px;height:17px;flex:0 0 auto;color:var(--led)}
+.chan .k{flex:0 0 auto;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cromo);min-width:74px}
+.chan .v{font-weight:600;font-variant-numeric:tabular-nums}
+.counter__cta{margin-top:clamp(30px,4.6vh,50px);display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,2.4vw,26px)}
+
+/* ============ footer ticket ============ */
+.foot{padding-block:clamp(52px,8vh,96px) clamp(90px,12vh,120px);border-top:1px solid var(--line)}
+.receipt{
+  width:min(100%,420px);margin-inline:auto;
+  filter:drop-shadow(0 22px 34px rgba(0,0,0,.7));
+}
+.receipt .paper{padding:clamp(26px,4.4vw,34px) clamp(20px,3.6vw,28px)}
+.rc__top{display:flex;align-items:center;gap:13px;justify-content:center;text-align:left}
+.rc__logo{width:46px;height:46px;flex:0 0 auto}
+.rc__biz{font-family:var(--display);font-size:1.18rem;letter-spacing:.055em;line-height:1.1}
+.rc__biz span{display:block;font-family:var(--body);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#6b6559;margin-top:2px}
+.rc__rows{display:flex;flex-direction:column;gap:10px;font-size:.9rem}
+.rc__row{display:grid;grid-template-columns:82px 1fr;gap:10px;align-items:baseline}
+.rc__k{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#7a7365;font-weight:600}
+.rc__v{line-height:1.42}
+.rc__v a{color:var(--tinta);text-decoration:none;border-bottom:1px solid #b6ae9c}
+.rc__v a:hover{border-bottom-color:var(--rojo);color:#8c2226}
+.rc__v em{font-style:normal;color:#6b6559}
+.rc__social{display:flex;align-items:center;gap:8px}
+.rc__social svg{width:16px;height:16px}
+.rc__thanks{
+  text-align:center;font-family:var(--display);font-size:1.02rem;letter-spacing:.11em;line-height:1.3;
+}
+.rc__seal{text-align:center;font-size:.7rem;line-height:1.55;color:#5f5a51}
+.rc__seal a{color:#8c2226;text-decoration:none;border-bottom:1px solid rgba(140,34,38,.4);font-weight:600}
+.rc__seal a:hover{border-bottom-color:#8c2226}
+.rc__barcode{
+  height:34px;margin-top:4px;
+  background:repeating-linear-gradient(90deg,var(--tinta) 0 2px,transparent 2px 4px,var(--tinta) 4px 5px,transparent 5px 9px,var(--tinta) 9px 12px,transparent 12px 14px);
+  opacity:.78;
+}
+.rc__code{text-align:center;font-size:.6rem;letter-spacing:.34em;color:#6b6559;margin-top:5px}
+
+/* ============ reveal + scroll-driven ============ */
+.js [data-reveal]{opacity:0;transform:translateY(20px)}
+.js [data-reveal].is-in{
+  opacity:1;transform:none;
+  transition:opacity .62s ease var(--d,0s),transform .68s cubic-bezier(.2,.75,.2,1) var(--d,0s);
+}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    /* la luz del estante sube con el scroll — nunca baja de visible */
+    .board__led{animation:ledOn linear both;animation-timeline:view();animation-range:entry 6% entry 92%}
+    @keyframes ledOn{
+      from{transform:scaleX(.94);opacity:.42;filter:saturate(.6)}
+      to{transform:scaleX(1);opacity:1;filter:none}
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .js [data-reveal]{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<a class="sr" href="#pasillos">Saltar al catálogo</a>
+
+<!-- pared de herramientas (patrón propio, como la pared del local) -->
+<svg width="0" height="0" style="position:absolute;pointer-events:none" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="tw-glyphs" fill="none" stroke="#F9F9F9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- llave -->
+      <g transform="translate(10,14) rotate(-18)">
+        <path d="M7 25 21 11"/><circle cx="24.5" cy="7.5" r="5"/>
+        <path d="M8.6 27.4a3.6 3.6 0 1 1-5-5"/>
+      </g>
+      <!-- martillo -->
+      <g transform="translate(96,8) rotate(16)">
+        <path d="M5 27 17 15"/><path d="M15 13l5-5 8 8-5 5-3-3-2 2z"/>
+      </g>
+      <!-- destornillador -->
+      <g transform="translate(24,92) rotate(-42)">
+        <path d="M16 4v10"/><rect x="12" y="14" width="8" height="13" rx="2"/><path d="M14.6 2h2.8"/>
+      </g>
+      <!-- bombillo -->
+      <g transform="translate(104,74)">
+        <circle cx="16" cy="13" r="7"/><path d="M12.6 20.5h6.8M13.6 23.5h4.8M14.8 26.5h2.4"/>
+      </g>
+      <!-- tuerca -->
+      <g transform="translate(150,20) rotate(12)">
+        <path d="M16 4l10 6v12l-10 6-10-6V10z"/><circle cx="16" cy="16" r="4.6"/>
+      </g>
+      <!-- rodillo de pintura -->
+      <g transform="translate(146,110) rotate(-10)">
+        <rect x="4" y="5" width="16" height="7" rx="1.6"/><path d="M20 8.5h5v7h-6.5"/>
+        <path d="M18.5 15.5v3a2.2 2.2 0 0 1-2.2 2.2H15"/><path d="M15 20.7V29"/>
+      </g>
+      <!-- serrucho -->
+      <g transform="translate(88,150) rotate(6)">
+        <path d="M3 11h24"/><path d="M3 11l3 5 3-5 3 5 3-5 3 5 3-5 3 5 3-5"/><path d="M27 11V6.5h-5"/>
+      </g>
+      <!-- alicate -->
+      <g transform="translate(18,158) rotate(24)">
+        <path d="M10 28 20 12M22 28 12 12"/><circle cx="16" cy="10" r="2.4"/>
+        <path d="M12 12a5.6 5.6 0 0 1 8 0"/>
+      </g>
+    </g>
+    <pattern id="toolwall" width="200" height="200" patternUnits="userSpaceOnUse">
+      <use href="#tw-glyphs"/>
+    </pattern>
+  </defs>
+</svg>
+
+<div class="scrim" id="scrim" hidden></div>
+
+<a class="brand" href="#inicio" aria-label="FESIRCA — Ferretería Siria, ir al inicio">
+  <span class="brand__mark">FESIRCA</span>
+  <span class="brand__sub">Ferretería Siria, C.A.</span>
+</a>
+
+<div class="hangtag" id="hangtag" data-open="false">
+  <svg class="hangtag__cord" width="34" height="30" viewBox="0 0 34 30" aria-hidden="true" focusable="false">
+    <path d="M6 0c0 11 11 6 11 15" fill="none" stroke-width="1.3"/>
+    <path d="M28 0c0 11-11 6-11 15" fill="none" stroke-width="1.3"/>
+  </svg>
+  <button class="hangtag__btn" id="hangbtn" type="button" aria-expanded="false" aria-controls="hangmenu">
+    <span class="hangtag__face">
+      <span class="hangtag__eye" aria-hidden="true"></span>
+      <span class="hangtag__bars" aria-hidden="true"></span>
+      <span class="hangtag__txt">MENÚ</span>
+    </span>
+    <span class="sr">Abrir el menú de pasillos</span>
+  </button>
+  <nav class="hangtag__panel" id="hangmenu" aria-label="Pasillos de la tienda">
+    <p class="ttl">Recorre los pasillos</p>
+    <a href="#pasillo-01"><span class="n">01</span> Iluminación</a>
+    <a href="#pasillo-02"><span class="n">02</span> Plomería y baño</a>
+    <a href="#pasillo-03"><span class="n">03</span> Pinturas</a>
+    <a href="#pasillo-04"><span class="n">04</span> Herramientas y maquinaria</a>
+    <a href="#pasillo-05"><span class="n">05</span> Electricidad</a>
+    <a href="#mostrador"><span class="n">·</span> El mostrador</a>
+    <div class="sep" role="presentation"></div>
+    <a href="tel:+582916414551">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2.1 1.9 18.8 18.8 0 0 1-8.2-2.9 18.5 18.5 0 0 1-5.7-5.7A18.8 18.8 0 0 1 2.6 4.7 1.9 1.9 0 0 1 4.5 2.6h2.8a1.9 1.9 0 0 1 1.9 1.6c.12.9.35 1.8.68 2.65a1.9 1.9 0 0 1-.43 2L8.3 10a15 15 0 0 0 5.7 5.7l1.15-1.15a1.9 1.9 0 0 1 2-.43c.85.33 1.75.56 2.65.68a1.9 1.9 0 0 1 1.7 1.9z"/></svg>
+      0291-641-4551
+    </a>
+    <a href="https://ig.me/m/fesirca" target="_blank" rel="noopener">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg>
+      @fesirca
+    </a>
+  </nav>
+</div>
+
+<a class="fab" href="https://ig.me/m/fesirca" target="_blank" rel="noopener" aria-label="Escríbenos por mensaje directo en Instagram, @fesirca">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg>
+</a>
+
+<main>
+<header class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true">
+    <svg class="toolwall" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#toolwall)" opacity=".07"/></svg>
+    <div class="hero__ledframe"></div>
+    <div class="hero__vig"></div>
+  </div>
+
+  <div class="wrap hero__inner">
+    <p class="eyebrow hero__eyebrow">
+      <span class="dot" aria-hidden="true"></span> Ferretería Siria, C.A.
+      <span class="dot" aria-hidden="true"></span> Maturín, Monagas
+      <span class="dot" aria-hidden="true"></span> RIF J-30232701-6
+    </p>
+
+    <h1>
+      <span class="l">Todo lo de tu obra</span>
+      <span class="l l--2">en un solo mostrador</span>
+      <span class="since">Desde 1994 contigo</span>
+    </h1>
+
+    <div class="hero__split">
+      <div class="hero__aside">
+        <p class="lede">Ferretería general, plomería, herrería, electricidad e iluminación, pinturas y solventes, herramientas y maquinaria, accesorios para baño y equipos de emergencia. Traes la lista, nosotros te la resolvemos —sin dar vueltas por media Maturín.</p>
+
+        <div class="seal">
+          <img class="seal__logo" src="./assets/fesirca-logo.png" alt="Logotipo de Ferretería Siria, C.A. (FESIRCA)" width="320" height="320" decoding="async">
+          <span>
+            <span class="seal__k">Canal oficial</span>
+            <span class="seal__v">RIF J-30232701-6</span>
+            <span class="seal__n">Calle Carvajal con Calle Artigas, Mercado Viejo</span>
+          </span>
+        </div>
+
+        <ul class="stats">
+          <li><span class="stats__n">1994</span><span class="stats__k">Año en que abrimos en Maturín</span></li>
+          <li><span class="stats__n">8</span><span class="stats__k">Departamentos bajo el mismo techo</span></li>
+          <li><span class="stats__n">6</span><span class="stats__k">Días abiertos a la semana</span></li>
+          <li><span class="stats__n">2</span><span class="stats__k">Líneas fijas para atenderte</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__ticket">
+        <div class="ticket" data-reveal>
+          <div class="paper" id="ticket">
+            <div class="tk__head">
+              <p class="tk__biz">FERRETERÍA SIRIA, C.A.</p>
+              <p class="tk__meta">Mostrador · Maturín</p>
+            </div>
+            <div class="tk__dash" role="presentation"></div>
+            <p class="tk__title">Lista de pedido</p>
+            <ul class="tk__list">
+              <li class="tk__row">
+                <span class="tk__txt">2 × tubo PVC 1/2</span>
+                <span class="tk__ok" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 8.7 6.2 12.3 13.5 3.9"/></svg></span>
+              </li>
+              <li class="tk__row">
+                <span class="tk__txt">1 × llave lavamanos MA Faucet</span>
+                <span class="tk__ok" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 8.7 6.2 12.3 13.5 3.9"/></svg></span>
+              </li>
+              <li class="tk__row">
+                <span class="tk__txt">3 × spot VËRT</span>
+                <span class="tk__ok" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 8.7 6.2 12.3 13.5 3.9"/></svg></span>
+              </li>
+            </ul>
+            <div class="tk__dash" role="presentation"></div>
+            <p class="tk__foot">— listo en minutos, sin dar vueltas</p>
+            <div class="tk__dash" role="presentation"></div>
+            <p class="tk__note">Pregunta por disponibilidad</p>
+          </div>
+        </div>
+
+        <div class="ticket-say" data-reveal style="--d:.1s">
+          <p>Tu lista de obra, resuelta en una llamada</p>
+          <div class="cta-row">
+            <a class="tag" href="tel:+582916414551">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2.1 1.9 18.8 18.8 0 0 1-8.2-2.9 18.5 18.5 0 0 1-5.7-5.7A18.8 18.8 0 0 1 2.6 4.7 1.9 1.9 0 0 1 4.5 2.6h2.8a1.9 1.9 0 0 1 1.9 1.6c.12.9.35 1.8.68 2.65a1.9 1.9 0 0 1-.43 2L8.3 10a15 15 0 0 0 5.7 5.7l1.15-1.15a1.9 1.9 0 0 1 2-.43c.85.33 1.75.56 2.65.68a1.9 1.9 0 0 1 1.7 1.9z"/></svg>
+              Llámanos y léenos tu lista
+            </a>
+            <a class="tag tag--ghost" href="https://ig.me/m/fesirca" target="_blank" rel="noopener">O escríbenos al DM</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="dir" id="directorio">
+  <div class="wrap">
+    <div class="dir__head" data-reveal>
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Directorio de la tienda</p>
+      <h2 class="h2">Ocho departamentos, un solo mostrador</h2>
+    </div>
+    <ul class="dir__list">
+      <li class="dir__item" data-reveal><span class="dir__n">01</span><span class="dir__name">Ferretería general</span><span class="dir__d">Lo de todos los días, resuelto donde mismo.</span></li>
+      <li class="dir__item" data-reveal><span class="dir__n">02</span><span class="dir__name">Plomería</span><span class="dir__d">Desde el tubo PVC hasta la pieza que te falta.</span></li>
+      <li class="dir__item" data-reveal><span class="dir__n">03</span><span class="dir__name">Herrería</span><span class="dir__d">Atendemos al taller y a quien trabaja el hierro.</span></li>
+      <li class="dir__item" data-reveal><span class="dir__n">04</span><span class="dir__name">Electricidad e iluminación</span><span class="dir__d">Comercial y hogar, con lo que pide cada instalación.</span></li>
+      <li class="dir__item" data-reveal><span class="dir__n">05</span><span class="dir__name">Pinturas y solventes</span><span class="dir__d">Titan en caucho, esmalte y fondo, con sus solventes.</span></li>
+      <li class="dir__item" data-reveal><span class="dir__n">06</span><span class="dir__name">Herramientas y maquinaria</span><span class="dir__d">Soldadoras NOVA, desmalezadoras y lo que mueve el trabajo.</span></li>
+      <li class="dir__item" data-reveal><span class="dir__n">07</span><span class="dir__name">Accesorios para baño</span><span class="dir__d">Griferías MA Faucet para terminar el baño completo.</span></li>
+      <li class="dir__item" data-reveal><span class="dir__n">08</span><span class="dir__name">Equipos de emergencia</span><span class="dir__d">Pregúntanos qué tenemos disponible en tienda.</span></li>
+    </ul>
+
+    <div class="brands" data-reveal>
+      <p class="brands__k">Marcas que manejamos</p>
+      <ul class="brands__list">
+        <li>Titan</li><li>NOVA</li><li>MA Faucet</li><li>VËRT</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="aisles" id="pasillos">
+  <div class="wrap">
+    <div class="aisles__head" data-reveal>
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> El anaquel</p>
+      <h2 class="h2">Recorre los pasillos sin salir de casa</h2>
+      <p class="lede">Así está surtido el local por dentro. No publicamos precios: llámanos con lo que necesitas y te confirmamos disponibilidad al momento.</p>
+    </div>
+
+    <!-- PASILLO 01 -->
+    <article class="aisle" id="pasillo-01" style="--cols:1.25fr 1fr 1fr">
+      <div class="aisle__head">
+        <div class="hang" data-reveal>
+          <svg class="hang__cord" width="30" height="24" viewBox="0 0 30 24" aria-hidden="true" focusable="false">
+            <path d="M15 2c0 6-8 7-6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M15 2c0 6 8 7 6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="15" cy="2" r="2" fill="#9a9aa2" stroke="none"/>
+          </svg>
+          <h3 class="hang__plate"><span class="hang__n">01</span><span><span class="hang__k">Pasillo</span><span class="hang__name">Iluminación</span></span></h3>
+        </div>
+        <p class="aisle__note" data-reveal style="--d:.08s">Spots, iluminación de local y de casa. Si la vas a instalar hoy, pregúntala hoy. <a class="aisle__ask" href="tel:+582916414551">Consultar por teléfono</a></p>
+      </div>
+      <div class="shelf">
+        <div class="shelf__goods">
+          <article class="box box--photo box--tall" data-reveal>
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body">
+              <div class="box__frame">
+                <img class="box__ph" src="./assets/fesirca-foto-2-lamparas-vert-mostrador.jpg" alt="Dos cajas de lámpara spot superficial VËRT sobre el mostrador de FESIRCA, con la pared negra del local al fondo" width="900" height="1125" loading="lazy" decoding="async" style="--op:74%">
+              </div>
+              <p class="box__note">Tal cual la tenemos en el mostrador.</p>
+            </div>
+            <p class="box__label">Lámpara spot superficial VËRT</p>
+          </article>
+          <article class="box" data-reveal style="--d:.07s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Para el local, el taller o la oficina que necesita luz pareja todo el día.</p></div>
+            <p class="box__label">Iluminación comercial</p>
+          </article>
+          <article class="box" data-reveal style="--d:.14s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Lo de la casa, sin complicarte: dinos dónde va y te decimos qué llevar.</p></div>
+            <p class="box__label">Iluminación de hogar</p>
+          </article>
+        </div>
+        <div class="shelf__board" aria-hidden="true">
+          <span class="board__led"></span><span class="board__face"></span>
+          <svg class="board__brace board__brace--l" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+          <svg class="board__brace board__brace--r" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+        </div>
+      </div>
+    </article>
+
+    <!-- PASILLO 02 -->
+    <article class="aisle aisle--flip" id="pasillo-02" style="--cols:1fr 1.25fr 1fr 1fr">
+      <div class="aisle__head">
+        <div class="hang" data-reveal>
+          <svg class="hang__cord" width="30" height="24" viewBox="0 0 30 24" aria-hidden="true" focusable="false">
+            <path d="M15 2c0 6-8 7-6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M15 2c0 6 8 7 6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="15" cy="2" r="2" fill="#9a9aa2" stroke="none"/>
+          </svg>
+          <h3 class="hang__plate"><span class="hang__n">02</span><span><span class="hang__k">Pasillo</span><span class="hang__name">Plomería y baño</span></span></h3>
+        </div>
+        <p class="aisle__note" data-reveal style="--d:.08s">Griferías MA Faucet y lo que pide la instalación, pieza por pieza. <a class="aisle__ask" href="tel:+582916414551">Consultar por teléfono</a></p>
+      </div>
+      <div class="shelf">
+        <div class="shelf__goods">
+          <article class="box" data-reveal>
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Grifería de baño MA Faucet, la referencia que muchos vienen buscando.</p></div>
+            <p class="box__label">Llave de lavamanos MA Faucet BPL-1040</p>
+          </article>
+          <article class="box box--photo box--tall" data-reveal style="--d:.07s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body">
+              <div class="box__frame">
+                <img class="box__ph" src="./assets/fesirca-foto-1-manilla-pared-marca.jpg" alt="Manilla de pared cromada MA Faucet MET-411 junto a su caja, sobre el mostrador de FESIRCA" width="856" height="856" loading="lazy" decoding="async" style="--op:58%">
+              </div>
+              <p class="box__note">Agua fría, cromada. En tienda.</p>
+            </div>
+            <p class="box__label">Manilla de pared MA Faucet MET-411</p>
+          </article>
+          <article class="box" data-reveal style="--d:.14s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Desde el tubo PVC hasta la pieza que te falta para cerrar el trabajo.</p></div>
+            <p class="box__label">Plomería</p>
+          </article>
+          <article class="box" data-reveal style="--d:.21s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Para terminar el baño completo sin salir a buscar el detalle final.</p></div>
+            <p class="box__label">Accesorios para baño</p>
+          </article>
+        </div>
+        <div class="shelf__board" aria-hidden="true">
+          <span class="board__led"></span><span class="board__face"></span>
+          <svg class="board__brace board__brace--l" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+          <svg class="board__brace board__brace--r" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+        </div>
+      </div>
+    </article>
+
+    <!-- PASILLO 03 -->
+    <article class="aisle" id="pasillo-03" style="--cols:1.2fr 1fr 1.15fr">
+      <div class="aisle__head">
+        <div class="hang" data-reveal>
+          <svg class="hang__cord" width="30" height="24" viewBox="0 0 30 24" aria-hidden="true" focusable="false">
+            <path d="M15 2c0 6-8 7-6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M15 2c0 6 8 7 6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="15" cy="2" r="2" fill="#9a9aa2" stroke="none"/>
+          </svg>
+          <h3 class="hang__plate"><span class="hang__n">03</span><span><span class="hang__k">Pasillo</span><span class="hang__name">Pinturas</span></span></h3>
+        </div>
+        <p class="aisle__note" data-reveal style="--d:.08s">Titan en caucho, esmalte y fondo, con sus solventes. <a class="aisle__ask" href="tel:+582916414551">Consultar por teléfono</a></p>
+      </div>
+      <div class="shelf">
+        <div class="shelf__goods">
+          <article class="box box--tall" data-reveal>
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body">
+              <div class="box__frame">
+                <svg class="box__art" viewBox="0 0 200 160" role="img" aria-label="Ilustración de una lata de pintura junto a un rodillo">
+                  <g fill="none" stroke="#D9CF6A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".62">
+                    <ellipse cx="72" cy="58" rx="34" ry="8.5"/>
+                    <path d="M38 58v66a8 8 0 0 0 8 8h52a8 8 0 0 0 8-8V58"/>
+                    <path d="M42 54c6-14 54-14 60 0"/>
+                    <path d="M50 84h44v26H50z"/>
+                    <rect x="128" y="30" width="52" height="17" rx="2"/>
+                    <path d="M128 38.5h52"/>
+                    <path d="M154 47v10h-10v10"/>
+                    <rect x="139" y="67" width="10" height="42" rx="4"/>
+                  </g>
+                  <g fill="none" stroke="#D13438" stroke-width="1.8" stroke-linecap="round" opacity=".78">
+                    <path d="M50 96h44"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="box__chips"><span class="box__chip">Caucho</span><span class="box__chip">Esmalte</span><span class="box__chip">Fondo</span></div>
+            </div>
+            <p class="box__label">Pinturas Titan</p>
+          </article>
+          <article class="box" data-reveal style="--d:.07s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Lo que acompaña a la pintura, para que no tengas que salir a buscarlo aparte.</p></div>
+            <p class="box__label">Solventes</p>
+          </article>
+          <article class="box box--note" data-reveal style="--d:.14s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body">
+              <h4>¿No sabes cuánto te rinde?</h4>
+              <p>Llámanos con las medidas del área y te decimos qué llevar antes de que arranques.</p>
+              <p><a class="tag" href="tel:+582916414551">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2.1 1.9 18.8 18.8 0 0 1-8.2-2.9 18.5 18.5 0 0 1-5.7-5.7A18.8 18.8 0 0 1 2.6 4.7 1.9 1.9 0 0 1 4.5 2.6h2.8a1.9 1.9 0 0 1 1.9 1.6c.12.9.35 1.8.68 2.65a1.9 1.9 0 0 1-.43 2L8.3 10a15 15 0 0 0 5.7 5.7l1.15-1.15a1.9 1.9 0 0 1 2-.43c.85.33 1.75.56 2.65.68a1.9 1.9 0 0 1 1.7 1.9z"/></svg>
+                0291-641-4551</a></p>
+            </div>
+          </article>
+        </div>
+        <div class="shelf__board" aria-hidden="true">
+          <span class="board__led"></span><span class="board__face"></span>
+          <svg class="board__brace board__brace--l" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+          <svg class="board__brace board__brace--r" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+        </div>
+      </div>
+    </article>
+
+    <!-- PASILLO 04 -->
+    <article class="aisle aisle--flip" id="pasillo-04" style="--cols:1fr 1fr 1.3fr">
+      <div class="aisle__head">
+        <div class="hang" data-reveal>
+          <svg class="hang__cord" width="30" height="24" viewBox="0 0 30 24" aria-hidden="true" focusable="false">
+            <path d="M15 2c0 6-8 7-6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M15 2c0 6 8 7 6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="15" cy="2" r="2" fill="#9a9aa2" stroke="none"/>
+          </svg>
+          <h3 class="hang__plate"><span class="hang__n">04</span><span><span class="hang__k">Pasillo</span><span class="hang__name">Herramientas y maquinaria</span></span></h3>
+        </div>
+        <p class="aisle__note" data-reveal style="--d:.08s">Soldadoras NOVA, desmalezadoras y lo que mueve el taller. <a class="aisle__ask" href="tel:+582916414551">Consultar por teléfono</a></p>
+      </div>
+      <div class="shelf">
+        <div class="shelf__goods">
+          <article class="box" data-reveal>
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Para el monte que no perdona. Pregúntanos cuál tenemos en tienda.</p></div>
+            <p class="box__label">Desmalezadoras</p>
+          </article>
+          <article class="box" data-reveal style="--d:.07s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Atendemos al taller y a quien trabaja el hierro, con lo de siempre y lo puntual.</p></div>
+            <p class="box__label">Herrería</p>
+          </article>
+          <article class="box box--photo box--tall" data-reveal style="--d:.14s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body">
+              <div class="box__frame">
+                <img class="box__ph" src="./assets/fesirca-foto-3-soldadora-nova-local.jpg" alt="Caja de la soldadora eléctrica NOVA NAMMA130 sobre el mostrador de FESIRCA, con la pared de herramientas del local al fondo" width="900" height="1125" loading="lazy" decoding="async" style="--op:62%">
+              </div>
+              <p class="box__note">Máquina de soldar eléctrica. En el local, lista para llevar.</p>
+            </div>
+            <p class="box__label">Soldadora NOVA NAMMA130</p>
+          </article>
+        </div>
+        <div class="shelf__board" aria-hidden="true">
+          <span class="board__led"></span><span class="board__face"></span>
+          <svg class="board__brace board__brace--l" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+          <svg class="board__brace board__brace--r" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+        </div>
+      </div>
+    </article>
+
+    <!-- PASILLO 05 -->
+    <article class="aisle" id="pasillo-05" style="--cols:1.2fr 1fr 1fr">
+      <div class="aisle__head">
+        <div class="hang" data-reveal>
+          <svg class="hang__cord" width="30" height="24" viewBox="0 0 30 24" aria-hidden="true" focusable="false">
+            <path d="M15 2c0 6-8 7-6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M15 2c0 6 8 7 6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="15" cy="2" r="2" fill="#9a9aa2" stroke="none"/>
+          </svg>
+          <h3 class="hang__plate"><span class="hang__n">05</span><span><span class="hang__k">Pasillo</span><span class="hang__name">Electricidad</span></span></h3>
+        </div>
+        <p class="aisle__note" data-reveal style="--d:.08s">Para el comercio y para la casa, más equipos de emergencia. <a class="aisle__ask" href="tel:+582916414551">Consultar por teléfono</a></p>
+      </div>
+      <div class="shelf">
+        <div class="shelf__goods">
+          <article class="box box--tall" data-reveal>
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body">
+              <div class="box__frame">
+                <svg class="box__art" viewBox="0 0 200 160" role="img" aria-label="Ilustración de un bombillo y una toma de corriente">
+                  <g fill="none" stroke="#D9CF6A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".62">
+                    <circle cx="66" cy="62" r="26"/>
+                    <path d="M54 90h24M56.5 99h19M60 108h12"/>
+                    <path d="M66 22v-9M40 36l-6.5-6.5M92 36l6.5-6.5M32 62h-9M100 62h9"/>
+                    <rect x="128" y="52" width="46" height="60" rx="5"/>
+                    <circle cx="143" cy="76" r="4"/><circle cx="159" cy="76" r="4"/>
+                    <path d="M143 90h16"/>
+                  </g>
+                  <g fill="none" stroke="#D13438" stroke-width="1.8" stroke-linecap="round" opacity=".72">
+                    <path d="M66 48v14l8 6"/>
+                  </g>
+                </svg>
+              </div>
+              <p class="box__note">Para el local que no puede parar: pregúntanos por lo que necesita tu instalación.</p>
+            </div>
+            <p class="box__label">Electricidad comercial</p>
+          </article>
+          <article class="box" data-reveal style="--d:.07s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Lo de la casa, resuelto en el mismo viaje.</p></div>
+            <p class="box__label">Electricidad de hogar</p>
+          </article>
+          <article class="box" data-reveal style="--d:.14s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Pregúntanos qué tenemos disponible antes de venir.</p></div>
+            <p class="box__label">Equipos de emergencia</p>
+          </article>
+        </div>
+        <div class="shelf__board" aria-hidden="true">
+          <span class="board__led"></span><span class="board__face"></span>
+          <svg class="board__brace board__brace--l" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+          <svg class="board__brace board__brace--r" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+        </div>
+      </div>
+    </article>
+
+    <!-- ESTANTE BAJO -->
+    <article class="aisle" style="--cols:1.6fr 1fr">
+      <div class="aisle__head">
+        <div class="hang" data-reveal>
+          <svg class="hang__cord" width="30" height="24" viewBox="0 0 30 24" aria-hidden="true" focusable="false">
+            <path d="M15 2c0 6-8 7-6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M15 2c0 6 8 7 6.5 12" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="15" cy="2" r="2" fill="#9a9aa2" stroke="none"/>
+          </svg>
+          <h3 class="hang__plate"><span class="hang__n">·</span><span><span class="hang__k">Estante bajo</span><span class="hang__name">Ferretería general</span></span></h3>
+        </div>
+        <p class="aisle__note" data-reveal style="--d:.08s">Lo que siempre hace falta, donde siempre ha estado. <a class="aisle__ask" href="tel:+582916414551">Consultar por teléfono</a></p>
+      </div>
+      <div class="shelf">
+        <div class="shelf__goods">
+          <article class="box box--wide" data-reveal>
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body"><p class="box__note">Treinta años atendiendo el mismo mostrador en el Mercado Viejo. Si es de ferretería y lo necesitas hoy, empieza por preguntarnos: te ahorras la vuelta.</p></div>
+            <p class="box__label">Ferretería general · Desde 1994</p>
+          </article>
+          <article class="box box--note" data-reveal style="--d:.07s">
+            <span class="box__lid" aria-hidden="true"></span>
+            <div class="box__body">
+              <h4>¿Ya tienes la lista?</h4>
+              <p>Léenosla por teléfono y te confirmamos qué hay disponible al momento.</p>
+              <p><a class="tag" href="tel:+582916414551">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2.1 1.9 18.8 18.8 0 0 1-8.2-2.9 18.5 18.5 0 0 1-5.7-5.7A18.8 18.8 0 0 1 2.6 4.7 1.9 1.9 0 0 1 4.5 2.6h2.8a1.9 1.9 0 0 1 1.9 1.6c.12.9.35 1.8.68 2.65a1.9 1.9 0 0 1-.43 2L8.3 10a15 15 0 0 0 5.7 5.7l1.15-1.15a1.9 1.9 0 0 1 2-.43c.85.33 1.75.56 2.65.68a1.9 1.9 0 0 1 1.7 1.9z"/></svg>
+                Llamar ahora</a></p>
+            </div>
+          </article>
+        </div>
+        <div class="shelf__board" aria-hidden="true">
+          <span class="board__led"></span><span class="board__face"></span>
+          <svg class="board__brace board__brace--l" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+          <svg class="board__brace board__brace--r" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="counter" id="mostrador">
+  <div class="counter__bg" aria-hidden="true">
+    <svg class="toolwall" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#toolwall)" opacity=".05"/></svg>
+  </div>
+  <div class="wrap counter__inner">
+    <div class="counter__head" data-reveal>
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Caja · El mostrador</p>
+      <h2 class="h2">Pásate por Carvajal con Artigas</h2>
+    </div>
+
+    <div class="shelf">
+    <div class="shelf__goods" style="--cols:1.05fr 1fr">
+      <div class="panel" data-reveal>
+        <span class="panel__lid" aria-hidden="true"></span>
+        <div class="panel__body">
+          <h3>Dónde estamos</h3>
+          <p class="addr">
+            <strong>Calle Carvajal con Calle Artigas</strong>
+            <span>Sector Mercado Viejo · Maturín, estado Monagas</span>
+          </p>
+          <div>
+            <h3>Horario</h3>
+            <div class="rows" style="margin-top:.8em">
+              <p class="row"><span class="row__k">Lunes a viernes</span><span class="row__dots" aria-hidden="true"></span><span class="row__v">9:00 am – 5:00 pm</span></p>
+              <p class="row"><span class="row__k">Sábado</span><span class="row__dots" aria-hidden="true"></span><span class="row__v">9:00 am – 1:00 pm</span></p>
+              <p class="row row--off"><span class="row__k">Domingo</span><span class="row__dots" aria-hidden="true"></span><span class="row__v">Cerrado</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" data-reveal style="--d:.1s">
+        <span class="panel__lid" aria-hidden="true"></span>
+        <div class="panel__body">
+          <h3>Canales oficiales</h3>
+          <p class="box__note">Estos son nuestros únicos canales de venta. Cualquier duda, confírmala directo por aquí.</p>
+          <div class="chan">
+            <a href="tel:+582916414551">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2.1 1.9 18.8 18.8 0 0 1-8.2-2.9 18.5 18.5 0 0 1-5.7-5.7A18.8 18.8 0 0 1 2.6 4.7 1.9 1.9 0 0 1 4.5 2.6h2.8a1.9 1.9 0 0 1 1.9 1.6c.12.9.35 1.8.68 2.65a1.9 1.9 0 0 1-.43 2L8.3 10a15 15 0 0 0 5.7 5.7l1.15-1.15a1.9 1.9 0 0 1 2-.43c.85.33 1.75.56 2.65.68a1.9 1.9 0 0 1 1.7 1.9z"/></svg>
+              <span class="k">Teléfono</span><span class="v">0291-641-4551</span>
+            </a>
+            <a href="tel:+582916412345">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2.1 1.9 18.8 18.8 0 0 1-8.2-2.9 18.5 18.5 0 0 1-5.7-5.7A18.8 18.8 0 0 1 2.6 4.7 1.9 1.9 0 0 1 4.5 2.6h2.8a1.9 1.9 0 0 1 1.9 1.6c.12.9.35 1.8.68 2.65a1.9 1.9 0 0 1-.43 2L8.3 10a15 15 0 0 0 5.7 5.7l1.15-1.15a1.9 1.9 0 0 1 2-.43c.85.33 1.75.56 2.65.68a1.9 1.9 0 0 1 1.7 1.9z"/></svg>
+              <span class="k">Teléfono</span><span class="v">0291-641-2345</span>
+            </a>
+            <a href="https://www.instagram.com/fesirca/" target="_blank" rel="noopener">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg>
+              <span class="k">Instagram</span><span class="v">@fesirca</span>
+            </a>
+            <div>
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8.5L12 3l8 5.5V21z"/><path d="M9.5 21v-6h5v6"/></svg>
+              <span class="k">Tienda</span><span class="v">Carvajal con Artigas</span>
+            </div>
+            <div>
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M7 9.5h10M7 14.5h6"/></svg>
+              <span class="k">RIF</span><span class="v">J-30232701-6</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shelf__board" aria-hidden="true">
+      <span class="board__led"></span><span class="board__face"></span>
+      <svg class="board__brace board__brace--l" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+      <svg class="board__brace board__brace--r" width="22" height="26" viewBox="0 0 22 26" focusable="false"><path d="M2 0v23h19" fill="none" stroke="#3a3a44" stroke-width="2"/><path d="M3.6 2.6 20 22" fill="none" stroke="#2b2b33" stroke-width="1.3"/><circle cx="6" cy="18" r="1.1" fill="#4c4c56"/></svg>
+    </div>
+    </div>
+
+    <div class="counter__cta" data-reveal>
+      <a class="tag" href="tel:+582916414551">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2.1 1.9 18.8 18.8 0 0 1-8.2-2.9 18.5 18.5 0 0 1-5.7-5.7A18.8 18.8 0 0 1 2.6 4.7 1.9 1.9 0 0 1 4.5 2.6h2.8a1.9 1.9 0 0 1 1.9 1.6c.12.9.35 1.8.68 2.65a1.9 1.9 0 0 1-.43 2L8.3 10a15 15 0 0 0 5.7 5.7l1.15-1.15a1.9 1.9 0 0 1 2-.43c.85.33 1.75.56 2.65.68a1.9 1.9 0 0 1 1.7 1.9z"/></svg>
+        Llámanos y léenos tu lista
+      </a>
+      <a class="tag tag--ghost" href="https://ig.me/m/fesirca" target="_blank" rel="noopener">Escríbenos al DM de Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="receipt" data-reveal>
+      <div class="paper">
+        <div class="rc__top">
+          <img class="rc__logo" src="./assets/fesirca-logo.png" alt="" width="320" height="320" loading="lazy" decoding="async">
+          <p class="rc__biz">FESIRCA<span>Ferretería Siria, C.A.</span></p>
+        </div>
+        <div class="tk__dash" role="presentation"></div>
+        <div class="rc__rows">
+          <p class="rc__row"><span class="rc__k">Dirección</span><span class="rc__v">Calle Carvajal con Calle Artigas<br>Sector Mercado Viejo, Maturín, Monagas</span></p>
+          <p class="rc__row"><span class="rc__k">Horario</span><span class="rc__v">Lun a vie 9:00 am – 5:00 pm<br>Sábado 9:00 am – 1:00 pm<br><em>Domingo cerrado</em></span></p>
+          <p class="rc__row"><span class="rc__k">Teléfonos</span><span class="rc__v"><a href="tel:+582916414551">0291-641-4551</a><br><a href="tel:+582916412345">0291-641-2345</a></span></p>
+          <p class="rc__row"><span class="rc__k">Instagram</span><span class="rc__v rc__social">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg>
+            <a href="https://www.instagram.com/fesirca/" target="_blank" rel="noopener">@fesirca</a></span></p>
+          <p class="rc__row"><span class="rc__k">RIF</span><span class="rc__v">J-30232701-6</span></p>
+        </div>
+        <div class="tk__dash" role="presentation"></div>
+        <p class="rc__thanks">GRACIAS POR SU VISITA<br>DESDE 1994</p>
+        <div class="rc__barcode" role="presentation"></div>
+        <p class="rc__code">FESIRCA · MATURÍN · MONAGAS</p>
+        <div class="tk__dash" role="presentation"></div>
+        <p class="rc__seal">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var reduce = mq.matches;
+
+  /* ---- hang-tag nav ---- */
+  var tag = document.getElementById("hangtag");
+  var btn = document.getElementById("hangbtn");
+  var scrim = document.getElementById("scrim");
+  function setOpen(open){
+    tag.setAttribute("data-open", open ? "true" : "false");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if(open){ scrim.hidden = false; requestAnimationFrame(function(){ scrim.classList.add("is-on"); }); }
+    else { scrim.classList.remove("is-on"); setTimeout(function(){ if(tag.getAttribute("data-open") !== "true") scrim.hidden = true; }, 320); }
+  }
+  btn.addEventListener("click", function(){ setOpen(btn.getAttribute("aria-expanded") !== "true"); });
+  scrim.addEventListener("click", function(){ setOpen(false); });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && btn.getAttribute("aria-expanded") === "true"){ setOpen(false); btn.focus(); }
+  });
+  tag.querySelectorAll(".hangtag__panel a").forEach(function(a){
+    a.addEventListener("click", function(){ setOpen(false); });
+  });
+  document.addEventListener("click", function(e){
+    if(btn.getAttribute("aria-expanded") === "true" && !tag.contains(e.target)) setOpen(false);
+  });
+
+  /* ---- reveal on scroll ---- */
+  var targets = document.querySelectorAll("[data-reveal]");
+  if(reduce || !("IntersectionObserver" in window)){
+    targets.forEach(function(el){ el.classList.add("is-in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("is-in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    targets.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- firma: la cotización que se arma sola ---- */
+  var ticket = document.getElementById("ticket");
+  if(ticket && !reduce && "IntersectionObserver" in window){
+    var rows = Array.prototype.slice.call(ticket.querySelectorAll(".tk__row"));
+    var full = rows.map(function(r){ return r.querySelector(".tk__txt").textContent; });
+    ticket.style.minHeight = ticket.offsetHeight + "px";
+    ticket.classList.add("tk--anim");
+    rows.forEach(function(r){ r.querySelector(".tk__txt").textContent = ""; });
+
+    var typeRow = function(i){
+      if(i >= rows.length){ ticket.style.minHeight = ""; return; }
+      var el = rows[i].querySelector(".tk__txt"), txt = full[i], n = 0;
+      rows[i].classList.add("is-typing");
+      var timer = setInterval(function(){
+        n++;
+        el.textContent = txt.slice(0, n);
+        if(n >= txt.length){
+          clearInterval(timer);
+          rows[i].classList.remove("is-typing");
+          rows[i].classList.add("is-ok");
+          setTimeout(function(){ typeRow(i + 1); }, 300);
+        }
+      }, 26);
+    };
+
+    var tio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ tio.disconnect(); setTimeout(function(){ typeRow(0); }, 380); }
+      });
+    }, { threshold: 0.35 });
+    tio.observe(ticket);
+  }
+})();
+</script>
+
+</body>
+</html>
