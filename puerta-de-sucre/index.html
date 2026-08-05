@@ -90,6 +90,16 @@ section{padding:clamp(56px,9vw,104px) 0;scroll-margin-top:16px}
 .tricolor i:nth-child(2){background:var(--ink)}
 .tricolor i:nth-child(3){background:var(--rojo)}
 
+/* ------- brand mark: the state of Sucre wrapped in the flag ------- */
+/* 3.45:1, so it always sits as a wide band — never crop it to a square. */
+.marca{display:block;height:auto;flex:none}
+.marca-stub{width:min(134px,100%)}
+.marca-tl{width:78px}
+.marca-foot{width:138px;margin:0 auto 16px}
+/* Nav is only 84px wide: the tricolour bands would muddy, so the mark goes solid —
+   and without evenodd, so the gulf fills in instead of reading as a broken edge. */
+.rail-mapa{display:block;width:56px;height:auto;fill:var(--ink)}
+
 /* ------- big ticket surfaces ------- */
 .ticket{
   position:relative;background:var(--paper);border:1px solid var(--sky-line);
@@ -232,9 +242,11 @@ section{padding:clamp(56px,9vw,104px) 0;scroll-margin-top:16px}
 .hero{padding-top:clamp(36px,7vw,84px)}
 .hero-ticket{
   display:grid;grid-template-columns:1fr;
-  /* Venezuela silhouette watermark — own simplified SVG, navy ink baked at 7% opacity */
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 160'%3E%3Cpath d='M18 38 26 52 30 44 34 52 38 42 48 26 56 24 58 34 78 40 100 38 118 34 138 30 168 26 184 28 172 34 176 44 170 58 162 80 166 100 150 116 136 110 128 124 112 150 100 134 88 138 80 120 60 116 52 96 36 92 30 72 20 58 Z' fill='none' stroke='%231e2f66' stroke-opacity='.07' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:46% 44%;background-size:min(540px,82%);
+  /* Sucre state silhouette watermark — the real administrative outline (OSM),
+     simplified to 107 points, with the Gulf of Cariaco carved back in as its own
+     subpath so the Araya and Paria peninsulas read at a glance. Navy at 8%. */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 57.9'%3E%3Cpath d='M132.8 0 137.6 1.6 171.9 5.1 191.7 2.4 195.6 1 198.4 2.6 200 5.6 199 9.5 193.4 12.2 190.2 16.9 183 18.3 168.9 18.3 167.3 21.6 162.3 25.2 156.2 24.7 152.5 25.5 138.2 22.5 134 23.7 140.7 31.5 142.1 35.8 141.9 38.5 139.6 39.7 138.3 41.9 140.8 52 136.5 55.5 132.5 56 129.9 54.1 128.2 55.2 127.6 57.9 125.4 57.8 123.9 54.7 122.4 56.6 119.8 56.1 119.9 53.4 117.4 54.8 115.5 53.3 114.1 55.3 109.4 51.4 107.9 45.6 105.8 46.9 104.1 44.9 102.3 46 101.7 48.4 99.1 49.8 96.9 48.1 96.7 46.2 88.7 44.9 87.2 42.4 84.5 42.9 83.8 41.2 82.1 41.5 82.4 39.7 78.8 39.1 78.4 38 73.6 40.2 73.8 42.2 72.2 42.7 70.6 46 69 44.5 65.4 44.2 57.4 47.8 57.1 49.8 55.5 50.2 54 52.8 50.4 52.5 43.7 54.2 43.4 52.6 37.8 51.6 36.7 53.2 26.4 55.8 21 55.8 19.9 53.3 15.7 54.5 12.8 53.2 11.7 50.5 8.7 51.1 8.8 46.5 5.6 46.1 2.4 41.8 3.4 38.2 0 33.3 2.2 30.1 20.2 25.8 15 13.9 16.5 10.6 20.5 7.5 22.9 7.4 30.3 10.4 35.9 8.3 39.1 8.8 40.6 7.5 43.9 8.1 46.2 9.8 51.2 6.8 53.1 4.3 54.8 4.2 59.9 8.1 72.4 9.8 78.7 5.4 81.8 6.2 85.8 5.2 93.7 6.5 100.2 2.8 104.8 4.1 113 3 118.9 5 132.8 0ZM37.1 16.7 39.2 16.8 37.5 18.2 44 17.8 47.2 19.8 53.7 20 62.1 25.1 65.4 24 66.6 24.5 65.3 24.6 63.8 26 60.1 26.2 53.8 28.2 52.2 27.6 49.8 28 47.3 27 38.8 28.4 34.5 27.5 32.5 25.3 28.1 25.2 26.8 25.9 24.2 23.2 26 19.8 31.3 17.9 32.5 18.8 36.8 18.2 36.2 17.7 37.1 16.7Z' fill='none' stroke='%231e2f66' stroke-opacity='.08' stroke-width='1' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:50% 46%;background-size:min(560px,86%);
 }
 @media (min-width:900px){.hero-ticket{grid-template-columns:1fr 2px 216px}}
 .ht-main{padding:clamp(26px,5.5vw,52px)}
@@ -342,6 +354,7 @@ section{padding:clamp(56px,9vw,104px) 0;scroll-margin-top:16px}
 @media (min-width:960px){.sim-right{position:sticky;top:24px}}
 .ticket-live .tl-body{padding:24px 24px 20px}
 .tl-brand{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.tl-id{display:flex;align-items:center;gap:10px}
 .tl-brand strong{font:800 1.15rem/1 var(--font-d);letter-spacing:.05em;text-transform:uppercase}
 .tl-brand .stub-code{letter-spacing:.16em}
 .ticket-live .tricolor{width:100%;margin:8px 0 18px}
@@ -520,6 +533,7 @@ details .faq-a{padding:0 22px 22px 36px;color:var(--ink-2);font-size:.96rem;max-
 <!-- Desktop side rail -->
 <nav class="rail" aria-label="Navegación principal">
   <a class="rail-logo" href="#inicio" aria-label="Puerta de Sucre — inicio">
+    <svg class="rail-mapa" viewBox="0 0 200 57.9" aria-hidden="true" focusable="false"><use href="#ps-mapa"/></svg>
     <span class="rail-mono">PS</span>
     <span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span>
   </a>
@@ -549,9 +563,24 @@ details .faq-a{padding:0 22px 22px 36px;color:var(--ink-2);font-size:.96rem;max-
 
 <main id="contenido">
 
-<!-- Shared defs: corner flourish for the invitation frames (used 8×) -->
+<!-- Shared defs: corner flourish for the invitation frames (used 8×) + brand mark -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
+    <!-- Sucre wrapped in the flag: their own logo drapes the tricolour over a map,
+         so the mark does the same with the state they are named after. Hard-stop
+         gradient instead of a clipPath — one path, three crisp bands. -->
+    <linearGradient id="ps-bandera" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2c53d"/><stop offset=".3333" stop-color="#f2c53d"/>
+      <stop offset=".3333" stop-color="#1e2f66"/><stop offset=".6667" stop-color="#1e2f66"/>
+      <stop offset=".6667" stop-color="#cf3a2e"/><stop offset="1" stop-color="#cf3a2e"/>
+    </linearGradient>
+    <!-- Same outline as the hero watermark: OSM administrative boundary of Sucre,
+         second subpath = Gulf of Cariaco (evenodd punches it out when filled). -->
+    <path id="ps-mapa" d="M132.8 0 137.6 1.6 171.9 5.1 191.7 2.4 195.6 1 198.4 2.6 200 5.6 199 9.5 193.4 12.2 190.2 16.9 183 18.3 168.9 18.3 167.3 21.6 162.3 25.2 156.2 24.7 152.5 25.5 138.2 22.5 134 23.7 140.7 31.5 142.1 35.8 141.9 38.5 139.6 39.7 138.3 41.9 140.8 52 136.5 55.5 132.5 56 129.9 54.1 128.2 55.2 127.6 57.9 125.4 57.8 123.9 54.7 122.4 56.6 119.8 56.1 119.9 53.4 117.4 54.8 115.5 53.3 114.1 55.3 109.4 51.4 107.9 45.6 105.8 46.9 104.1 44.9 102.3 46 101.7 48.4 99.1 49.8 96.9 48.1 96.7 46.2 88.7 44.9 87.2 42.4 84.5 42.9 83.8 41.2 82.1 41.5 82.4 39.7 78.8 39.1 78.4 38 73.6 40.2 73.8 42.2 72.2 42.7 70.6 46 69 44.5 65.4 44.2 57.4 47.8 57.1 49.8 55.5 50.2 54 52.8 50.4 52.5 43.7 54.2 43.4 52.6 37.8 51.6 36.7 53.2 26.4 55.8 21 55.8 19.9 53.3 15.7 54.5 12.8 53.2 11.7 50.5 8.7 51.1 8.8 46.5 5.6 46.1 2.4 41.8 3.4 38.2 0 33.3 2.2 30.1 20.2 25.8 15 13.9 16.5 10.6 20.5 7.5 22.9 7.4 30.3 10.4 35.9 8.3 39.1 8.8 40.6 7.5 43.9 8.1 46.2 9.8 51.2 6.8 53.1 4.3 54.8 4.2 59.9 8.1 72.4 9.8 78.7 5.4 81.8 6.2 85.8 5.2 93.7 6.5 100.2 2.8 104.8 4.1 113 3 118.9 5 132.8 0ZM37.1 16.7 39.2 16.8 37.5 18.2 44 17.8 47.2 19.8 53.7 20 62.1 25.1 65.4 24 66.6 24.5 65.3 24.6 63.8 26 60.1 26.2 53.8 28.2 52.2 27.6 49.8 28 47.3 27 38.8 28.4 34.5 27.5 32.5 25.3 28.1 25.2 26.8 25.9 24.2 23.2 26 19.8 31.3 17.9 32.5 18.8 36.8 18.2 36.2 17.7 37.1 16.7Z"/>
+    <g id="ps-marca">
+      <use href="#ps-mapa" fill="url(#ps-bandera)" fill-rule="evenodd"/>
+      <use href="#ps-mapa" fill="none" stroke="#1e2f66" stroke-width="1.5" stroke-linejoin="round"/>
+    </g>
     <g id="esq-flor">
       <path d="M2.5 25.5V10.5Q2.5 2.5 10.5 2.5H25.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
       <path d="M7 25.5V12.8Q7 7 12.8 7H25.5" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".65"/>
@@ -587,6 +616,7 @@ details .faq-a{padding:0 22px 22px 36px;color:var(--ink-2);font-size:.96rem;max-
         </div>
         <div class="tear" aria-hidden="true"></div>
         <div class="ht-stub" aria-hidden="true">
+          <svg class="marca marca-stub" viewBox="0 0 200 57.9" focusable="false"><use href="#ps-marca"/></svg>
           <span class="stub-code num-boleto">Boleto PS-0001</span>
           <span class="stub-route">CAR ↔ MAT</span>
           <span class="sello">¡Feliz Viaje!</span>
@@ -714,7 +744,10 @@ details .faq-a{padding:0 22px 22px 36px;color:var(--ink-2);font-size:.96rem;max-
           <aside class="ticket ticket-live reveal" aria-label="Vista previa de tu boleto">
             <div class="tl-body">
               <div class="tl-brand">
-                <strong>Puerta de Sucre</strong>
+                <span class="tl-id">
+                  <svg class="marca marca-tl" viewBox="0 0 200 57.9" aria-hidden="true" focusable="false"><use href="#ps-marca"/></svg>
+                  <strong>Puerta de Sucre</strong>
+                </span>
                 <span class="stub-code">Boleto por puesto</span>
               </div>
               <span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -908,6 +941,7 @@ details .faq-a{padding:0 22px 22px 36px;color:var(--ink-2);font-size:.96rem;max-
 <footer id="contacto" class="band">
   <div class="wrap">
     <div class="footer-card reveal">
+      <svg class="marca marca-foot" viewBox="0 0 200 57.9" aria-hidden="true" focusable="false"><use href="#ps-marca"/></svg>
       <p class="fv">¡Feliz Viaje! <span aria-hidden="true">🚐</span></p>
       <p>Aparta tu puesto puerta a puerta entre Sucre y Monagas. Te respondemos por WhatsApp.</p>
       <a class="btn-ticket" data-wa data-wa-text="Hola 🙌 Quiero información para apartar un puesto puerta a puerta." href="#reservar">Escríbenos por WhatsApp</a>
