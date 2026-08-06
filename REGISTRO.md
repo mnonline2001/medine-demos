@@ -19,6 +19,24 @@ Base: `https://mnonline2001.github.io/medine-demos/<slug>/`
 | FerreStock 365 C.A. — ferretería y construcción (Av. Bella Vista, Maturín) | `ferrestock-365` | crema papel #F8FAEC + carbón #2E3233; rojo FerreStock #CD3436 solo donde se vende; subrayado marcador #E52226 | IBM Plex Mono + IBM Plex Sans; utilitaria precisa; base clara | tablero de inventario (kárdex): renglones FS-001…FS-008 con códigos mono, zebra y hairlines | tablero split-flap CSS 3D + rAF rotando categorías + buscador "¿qué necesitas hoy?" que filtra y arma el wa.me | doble barra utilitaria (franja de estado + barra sticky) / footer-kárdex de 7 filas | filas de tabla que en móvil se vuelven fichas apiladas (container queries); CTA cinta "PÍDELO YA" con muescas | 2026-08-03 | por enviar (E1) — sin horario (no publicado) ni precios de producto |
 | Acero al Mayor C.A. — acero y hierro al mayor (Av. Bella Vista, Maturín) | `acero-al-mayor` | carbón #141414/#232122 + plata #EBECEE + azul #024E80; naranja #F17106 solo specs/CTA y verde #007000 solo precios (semántica de sus propios flyers) | Anton + Sora (peso variable); industrial pesado; base oscura | manifiesto de carga B2B: bloques con bordes-viga, remaches SVG y numerales gigantes | presupuestador por lote: steppers desde el mínimo de compra real + total en variable-font width + toggle Divisa/Bs con tasa editable → wa.me armado | sin barra: placa soldada + placa-CTA fijas, índice numerado dentro del hero / footer-albarán con croquis SVG | filas de manifiesto con chips-pill MEDIDA/MÍNIMO/PRECIO; CTA botón-lingote biselado (clip-path) | 2026-08-03 | por enviar (E1) — ⚠️ validar por llamada antes: IG dormido ~23 meses y el número solo consta en directorios de terceros |
 
+## Tarjetas de vista previa (og:image)
+
+Cada demo lleva `preview.png` de 1200×630 y su generador `preview.source.html`
+al lado, para rehacerla sin rediseñarla (Chrome headless a 1200×630).
+
+Dos reglas que se aprendieron a la mala el 2026-08-06:
+
+- **La URL de `og:image` tiene que ser absoluta.** Las seis demos que ya traían
+  la etiqueta apuntaban a `./assets/logo.jpg`; WhatsApp y Facebook no resuelven
+  rutas relativas, así que ninguna previsualizaba con imagen.
+- **El logo cuadrado no sirve de tarjeta.** Con una imagen 1:1 el chat muestra
+  una miniatura al lado del texto; para la tarjeta grande hace falta 1200×630 y
+  `twitter:card = summary_large_image`.
+
+Las cifras de las tarjetas (★ de Google) salen de la matriz de presencia del
+cockpit, no de la memoria. Hungrimat no tiene ficha de Google: su tarjeta lidera
+con el apartado y pago a plazos, no con una estrella que no tiene.
+
 ## Notas de unicidad
 
 - Los DIEZ campos de la fila importan: una demo nueva no puede repetir arquetipo, firma,
