@@ -2,52 +2,61 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>preview 1200x630 — ingrid-marcano</title>
+<title>preview 1200x630 — ingrid-marcano v3</title>
 <!-- Generar:  chrome --headless=new --window-size=1200,630 --screenshot=preview.png preview.source.html -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,300&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:1200px;height:630px;overflow:hidden}
-body{
-  background:#FBF8F3;color:#241E1A;
-  font-family:"Newsreader",Georgia,serif;
-  display:grid;grid-template-columns:1fr 430px;
-}
-.left{padding:56px 52px;display:flex;flex-direction:column}
-.bar{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#7A6B5E}
-.name{font-size:96px;line-height:.94;letter-spacing:-.035em;font-weight:400;margin-top:22px}
-.name em{display:block;font-style:italic;font-weight:300;color:#0A6FA0}
-.role{display:flex;align-items:center;gap:11px;margin-top:24px;font-size:22px;color:#5C5048}
-.role i{width:9px;height:9px;border-radius:50%;background:#1F8A4C;box-shadow:0 0 0 5px rgba(31,138,76,.15)}
-.role b{font-weight:500;color:#241E1A}
-.lede{margin-top:20px;font-size:24px;line-height:1.4;color:#5C5048;max-width:26ch}
-.lede b{color:#241E1A;font-weight:500}
-.sum{margin-top:auto;display:flex;align-items:center;gap:14px;font-size:18px;color:#7A6B5E;font-style:italic}
-.sum span{font-style:normal;font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.1em;color:#7A6B5E}
-.right{position:relative;background:#F2EBE1;display:grid;place-items:center}
-.frame{position:relative;width:330px;height:470px;border-radius:190px 190px 16px 16px;overflow:hidden;background:linear-gradient(165deg,#E9DCC9,#F2EBE1);box-shadow:0 20px 44px -24px rgba(36,30,26,.45)}
-.frame img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
-.fb{position:absolute;inset:0;display:grid;place-items:center;font-style:italic;font-size:120px;color:#0A6FA0;opacity:.3}
-.tag{position:absolute;left:34px;bottom:64px;z-index:3;background:#241E1A;color:#FBF8F3;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:9px 15px;border-radius:100px}
-.tag i{font-style:normal;color:#23BAFF}
+body{background:#F6F9FB;color:#0E2233;font-family:"Instrument Sans",sans-serif;display:grid;grid-template-columns:1.15fr .85fr;align-items:center}
+.left{padding:56px 0 56px 56px}
+.k{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#0A6FA0}
+h1{font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:52px;line-height:1.1;letter-spacing:-.02em;margin-top:20px;max-width:20ch}
+h1 em{font-style:italic;color:#0A6FA0}
+.sub{margin-top:18px;font-size:20px;line-height:1.5;color:#48606F;max-width:38ch}
+.sub b{color:#0E2233;font-weight:600}
+.who{display:flex;align-items:center;gap:14px;margin-top:34px}
+.who img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:50% 10%}
+.who b{display:block;font-size:17px;font-weight:600}
+.who small{display:block;font-size:14px;color:#6E8494}
+.right{padding:40px 56px 40px 0}
+.win{background:#fff;border:1px solid #D9E4EC;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(14,34,51,.45)}
+.bar{display:flex;align-items:center;gap:8px;padding:11px 14px;background:#EDF3F7;border-bottom:1px solid #D9E4EC}
+.dots{display:flex;gap:5px}
+.dots i{width:9px;height:9px;border-radius:50%;background:#CBD8E1;display:block}
+.url{flex:1;background:#fff;border:1px solid #D9E4EC;border-radius:100px;padding:5px 12px;font-size:12px;color:#6E8494;text-align:center}
+.bod{padding:18px}
+.h{background:linear-gradient(135deg,#0C1D2B,#16405C);border-radius:11px;padding:20px;color:#fff}
+.h p{font-family:"Newsreader",serif;font-size:22px;line-height:1.2}
+.h span{display:inline-block;margin-top:13px;background:#23BAFF;color:#0C1D2B;font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:100px}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.c{background:#EDF3F7;border-radius:9px;padding:12px;min-height:58px}
+.c b{display:block;height:7px;width:58%;background:#C6D6E1;border-radius:4px;margin-bottom:7px}
+.c i{display:block;height:5px;background:#DAE5EC;border-radius:4px;margin-bottom:5px}
+.ok{margin-top:10px;height:36px;background:#F5EADA;border-radius:9px;display:flex;align-items:center;padding:0 14px;font-size:12.5px;color:#8A6B42;font-weight:500}
 </style>
 </head>
 <body>
   <div class="left">
-    <p class="bar">Maturín, Venezuela · en MedineTech desde 2019</p>
-    <h1 class="name">Ingrid<em>Marcano</em></h1>
-    <p class="role"><i></i><b>Soluciones digitales</b>&nbsp;en MedineTech · vengo de QA</p>
-    <p class="lede">Ayudo a negocios que todavía no existen en internet <b>a que los encuentren</b>.</p>
-    <p class="sum">Cinco promesas, las cinco cumplidas <span>mnonline2001.github.io</span></p>
+    <p class="k">Soluciones digitales · MedineTech</p>
+    <h1>Landing pages que funcionan <em>a la primera</em>.</h1>
+    <p class="sub">Optimizadas con IA y precisión técnica: <b>veloces, medibles y diseñadas para convertir</b>. Arma la tuya en el demo interactivo.</p>
+    <div class="who">
+      <img src="assets/ingrid.jpg" alt="">
+      <span><b>Ingrid Marcano</b><small>mnonline2001.github.io · Maturín</small></span>
+    </div>
   </div>
   <div class="right">
-    <div class="frame">
-      <div class="fb">IM</div>
-      <img src="assets/ingrid.jpg" alt="">
+    <div class="win">
+      <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">tunegocio.com</span></div>
+      <div class="bod">
+        <div class="h"><p>Tu negocio, por fin<br>con dónde mandarlos.</p><span>Escríbenos por WhatsApp</span></div>
+        <div class="row"><div class="c"><b></b><i></i><i></i></div><div class="c"><b></b><i></i><i></i></div><div class="c"><b></b><i></i><i></i></div></div>
+        <div class="ok">Todo revisado antes de publicar ✓</div>
+      </div>
     </div>
-    <div class="tag"><i>●</i> Medine.tech</div>
   </div>
 </body>
 </html>
