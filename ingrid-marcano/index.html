@@ -172,6 +172,13 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
 .tags li{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;border:1px solid var(--line);background:#fff;padding:6px 10px;border-radius:2px}
 .tags li i{font-style:normal;color:var(--blue-deep)}
 
+/* bitácora de años — misma familia visual que la salida de la suite */
+.log{list-style:none;padding:0;margin:0 0 22px;border-top:1px solid var(--line)}
+.log li{display:grid;gap:3px 18px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.5;color:var(--ink-soft)}
+@container (min-width:560px){.log li{grid-template-columns:126px 1fr;align-items:baseline}}
+.log .yr{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.07em;color:var(--blue-deep);white-space:nowrap}
+.log b{color:var(--ink);font-weight:500}
+
 /* ── SERVICIOS ── */
 /* misma geometría de esquina cortada que los bloques .blk — el sistema continúa aquí */
 .serv{background:var(--ink);color:#E8EEF2;padding:clamp(26px,5vw,54px);margin-block:clamp(40px,7vw,80px);position:relative;container-type:inline-size;
@@ -238,7 +245,7 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
 <section class="hero wrap">
   <div class="hero__grid">
     <div>
-      <p class="eyebrow">Maturín, Venezuela · disponible</p>
+      <p class="eyebrow">Maturín, Venezuela · en MedineTech desde 2019</p>
       <h1><span class="ln">Ingrid</span><span class="ln">Marcano</span></h1>
       <p class="role"><span class="dot" aria-hidden="true"></span><b>Soluciones digitales</b> en MedineTech<span style="color:var(--mute)">· vengo de QA</span></p>
       <p class="lede">Ayudo a negocios que todavía no existen en internet <b>a que los encuentren</b>. Vengo de QA, así que sé cómo se rompe lo que vendo.</p>
@@ -283,10 +290,17 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
   <div class="case__grid">
     <p class="case__n"><b>01</b>De dónde vengo</p>
     <div>
-      <h2>Vengo de QA: mi trabajo era encontrar lo que se rompe.</h2>
-      <p class="assert">expect(fallo).toBeFoundBefore(cliente)</p>
-      <p>Entré a MedineTech como <b>QA</b>, probando un producto financiero que está en producción todos los días. Encontrar el fallo antes de que lo encuentre el cliente: fácil de decir, difícil de hacer.</p>
-      <p>Ese trabajo me dejó una costumbre que hoy uso vendiendo: <b>nada se entrega porque «debería funcionar»</b>. Se entrega cuando hay evidencia de que funciona. Y me enseñó a leer el negocio detrás del software — qué falla le cuesta plata al cliente y cuál solo incomoda.</p>
+      <h2>Siete años viendo cambiar el software, desde adentro.</h2>
+      <p class="assert">git log --since=2019 --author="Ingrid Marcano"</p>
+      <ul class="log">
+        <li><span class="yr">2019</span><span>Entro a la empresa <b>sin ningún conocimiento técnico</b>. Todavía se llamaba mnonline. Empiezo por lo básico: la terminología, la terminal.</span></li>
+        <li><span class="yr">2022</span><span><b>QA manual.</b> Validaba el producto a mano, pantalla por pantalla, antes de que llegara al cliente.</span></li>
+        <li><span class="yr">Después</span><span>Se suman herramientas para escribir pruebas automatizadas. El trabajo deja de ser solo mirar y pasa a ser construir.</span></li>
+        <li><span class="yr">2024 · 2025</span><span><b>Entra la IA y lo potencia todo.</b> Con ella entiendo del desarrollo cosas que por mi cuenta no había podido.</span></li>
+        <li><span class="yr">2026</span><span>Me muevo a ventas. Y ahora <b>cada semana puede traer un cambio</b>: nadie sabe del todo hacia dónde va esto.</span></li>
+      </ul>
+      <p>Ese recorrido es justo lo que traigo a una conversación de ventas. <b>No soy programadora</b>, y sé muy bien lo que se siente estar frente a algo técnico que no entiendes — que es donde está la mayoría de los dueños de negocio.</p>
+      <p style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:10px">Herramientas con las que he trabajado</p>
       <ul class="tags">
         <li><i>▹</i> Playwright</li><li><i>▹</i> Pruebas end-to-end</li><li><i>▹</i> Pruebas manuales</li>
         <li><i>▹</i> Integración continua</li><li><i>▹</i> Linear</li><li><i>▹</i> Sentry</li>
