@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ingrid Marcano — QA Engineer en MedineTech</title>
-<meta name="description" content="Ingrid Marcano, QA Engineer en MedineTech. Automatización de pruebas end-to-end con Playwright. También ayudo a negocios a tener su presencia digital.">
+<title>Ingrid Marcano — Soluciones digitales en MedineTech</title>
+<meta name="description" content="Ingrid Marcano. Ayudo a negocios a existir en internet, desde MedineTech. Vengo de QA: mi trabajo era encontrar el fallo antes de que lo encontrara el cliente.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Ingrid Marcano">
 <link rel="canonical" href="https://mnonline2001.github.io/medine-demos/ingrid-marcano/">
 
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Ingrid Marcano — QA Engineer en MedineTech">
-<meta property="og:description" content="Pruebo software para que no falle donde duele: en producción. Y ayudo a negocios a existir en internet.">
+<meta property="og:title" content="Ingrid Marcano — Soluciones digitales en MedineTech">
+<meta property="og:description" content="Ayudo a negocios a existir en internet. Vengo de QA, así que sé cómo se rompe lo que vendo.">
 <meta property="og:url" content="https://mnonline2001.github.io/medine-demos/ingrid-marcano/">
 <meta property="og:image" content="https://mnonline2001.github.io/medine-demos/ingrid-marcano/preview.png">
 <meta property="og:locale" content="es_VE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ingrid Marcano — QA Engineer en MedineTech">
-<meta name="twitter:description" content="Pruebo software para que no falle donde duele: en producción.">
+<meta name="twitter:title" content="Ingrid Marcano — Soluciones digitales en MedineTech">
+<meta name="twitter:description" content="Ayudo a negocios a existir en internet. Vengo de QA, así que sé cómo se rompe lo que vendo.">
 <meta name="twitter:image" content="https://mnonline2001.github.io/medine-demos/ingrid-marcano/preview.png">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230C1822'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='52' font-weight='700' fill='%2323BAFF' text-anchor='middle'%3EIM%3C/text%3E%3C/svg%3E">
@@ -33,10 +33,10 @@
   "name": "Ingrid Marcano",
   "url": "https://mnonline2001.github.io/medine-demos/ingrid-marcano/",
   "image": "https://mnonline2001.github.io/medine-demos/ingrid-marcano/assets/ingrid.jpg",
-  "jobTitle": "QA Engineer",
+  "jobTitle": "Asesora comercial en soluciones digitales",
   "worksFor": { "@type": "Organization", "name": "MedineTech", "url": "https://medine.tech" },
   "email": "mailto:imarcano@medine.tech",
-  "knowsAbout": ["Quality Assurance", "Automatización de pruebas", "Playwright", "Pruebas end-to-end", "Presencia digital para negocios"],
+  "knowsAbout": ["Presencia digital para negocios", "Páginas web para comercios", "Venta consultiva", "Quality Assurance", "Pruebas de software", "Playwright"],
   "knowsLanguage": ["es", "en"],
   "sameAs": [
     "https://github.com/mnonline2001",
@@ -67,6 +67,8 @@ img{max-width:100%;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:2px}
 .wrap{width:min(1180px,100%);margin-inline:auto;padding-inline:var(--pad)}
+/* el nav fijo mide 75px (59px encogido): sin esto, cada ancla aterriza debajo de la barra */
+section[id]{scroll-margin-top:96px}
 .mono{font-family:var(--mono)}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
 
@@ -171,11 +173,15 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
 .tags li i{font-style:normal;color:var(--blue-deep)}
 
 /* ── SERVICIOS ── */
-.serv{background:var(--ink);color:#E8EEF2;border-radius:4px;padding:clamp(26px,5vw,54px);margin-block:clamp(40px,7vw,80px);position:relative;overflow:hidden}
-.serv::after{content:"";position:absolute;right:-90px;bottom:-90px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(35,186,255,.28),transparent 68%)}
-.serv .eyebrow{color:var(--blue)}
-.serv h2{color:#fff;max-width:18ch;margin-top:12px}
-.serv p{color:#A8BAC6;max-width:56ch;position:relative;z-index:1}
+/* misma geometría de esquina cortada que los bloques .blk — el sistema continúa aquí */
+.serv{background:var(--ink);color:#E8EEF2;padding:clamp(26px,5vw,54px);margin-block:clamp(40px,7vw,80px);position:relative;container-type:inline-size;
+  clip-path:polygon(30px 0,100% 0,100% 100%,0 100%,0 30px)}
+.serv::before{content:"";position:absolute;left:0;top:30px;width:30px;height:1.5px;background:var(--blue);transform:rotate(-45deg);transform-origin:left center}
+.serv .case__n{color:#8FA3AF}
+.serv .case__n b{color:var(--blue)}
+.serv .assert{background:rgba(255,255,255,.07);color:#D5E1E9;border-left-color:var(--blue)}
+.serv h2{color:#fff;max-width:20ch}
+.serv p{color:#A8BAC6;max-width:56ch}
 .serv .btn{--b:var(--blue);color:var(--ink);border-color:var(--blue);font-weight:700}
 .serv .btn--ghost{background:transparent;color:#fff;border-color:#3B5060}
 .serv-list{list-style:none;padding:0;margin:22px 0 26px;display:grid;gap:10px;position:relative;z-index:1}
@@ -215,11 +221,11 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
 
 <header class="nav" id="nav">
   <div class="wrap nav__in">
-    <a class="mark" href="#top"><span class="mark__sq">IM</span><span class="mark__t">Ingrid Marcano<small>QA · MedineTech</small></span></a>
+    <a class="mark" href="#top"><span class="mark__sq">IM</span><span class="mark__t">Ingrid Marcano<small>MedineTech</small></span></a>
     <nav class="idx" aria-label="Secciones">
-      <a href="#quien"><i>01</i>Quién soy</a>
-      <a href="#trabajo"><i>02</i>Cómo trabajo</a>
-      <a href="#stack"><i>03</i>Stack</a>
+      <a href="#quien"><i>01</i>De dónde vengo</a>
+      <a href="#ahora"><i>02</i>Qué hago ahora</a>
+      <a href="#trabajo"><i>03</i>Cómo trabajo</a>
       <a href="#fuera"><i>04</i>Fuera del teclado</a>
       <a href="#servicios"><i>05</i>Tu negocio</a>
     </nav>
@@ -234,8 +240,8 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
     <div>
       <p class="eyebrow">Maturín, Venezuela · disponible</p>
       <h1><span class="ln">Ingrid</span><span class="ln">Marcano</span></h1>
-      <p class="role"><span class="dot" aria-hidden="true"></span><b>QA Engineer</b> en MedineTech</p>
-      <p class="lede">Pruebo software para que <b>no falle donde duele: en producción</b>. Y ayudo a negocios que todavía no existen en internet a que los encuentren.</p>
+      <p class="role"><span class="dot" aria-hidden="true"></span><b>Soluciones digitales</b> en MedineTech<span style="color:var(--mute)">· vengo de QA</span></p>
+      <p class="lede">Ayudo a negocios que todavía no existen en internet <b>a que los encuentren</b>. Vengo de QA, así que sé cómo se rompe lo que vendo.</p>
       <div class="actions">
         <button class="btn" id="run" type="button">▶ Correr la suite</button>
         <a class="btn btn--ghost" href="#servicios">Ver qué hago por tu negocio</a>
@@ -246,7 +252,7 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
         <div class="shot__fb" aria-hidden="true">IM</div>
         <img src="assets/ingrid.jpg" alt="Retrato de Ingrid Marcano" width="740" height="987" onerror="this.remove()">
       </div>
-      <figcaption class="shot__tag"><i>●</i> QA · MedineTech</figcaption>
+      <figcaption class="shot__tag"><i>●</i> MedineTech</figcaption>
     </figure>
   </div>
 
@@ -256,9 +262,9 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
     <div class="suite__body">
       <div class="suite__list" id="list">
         <div class="tc" data-s="idle"><span class="tc__s" aria-hidden="true"></span><span class="tc__t">entrega con evidencia, no con «confía en mí»</span></div>
-        <div class="tc" data-s="idle"><span class="tc__s" aria-hidden="true"></span><span class="tc__t">documenta lo que prueba y lo deja reproducible</span></div>
-        <div class="tc" data-s="idle"><span class="tc__s" aria-hidden="true"></span><span class="tc__t">automatiza el camino crítico, no todo por moda</span></div>
-        <div class="tc" data-s="idle"><span class="tc__s" aria-hidden="true"></span><span class="tc__t">habla con el negocio, no solo con el código</span></div>
+        <div class="tc" data-s="idle"><span class="tc__s" aria-hidden="true"></span><span class="tc__t">prueba lo que vende antes de venderlo</span></div>
+        <div class="tc" data-s="idle"><span class="tc__s" aria-hidden="true"></span><span class="tc__t">no promete lo que no puede sostener</span></div>
+        <div class="tc" data-s="idle"><span class="tc__s" aria-hidden="true"></span><span class="tc__t">habla el idioma del negocio, no solo el del código</span></div>
         <div class="tc" data-s="idle"><span class="tc__s" aria-hidden="true"></span><span class="tc__t">usa lo que vende — esta página es su propio caso</span></div>
       </div>
       <div class="term" id="term" role="status" aria-live="polite"><p class="d">$ presiona «Correr la suite» para ejecutar</p></div>
@@ -275,42 +281,49 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
 
 <section class="case wrap rev" id="quien">
   <div class="case__grid">
-    <p class="case__n"><b>01</b>Quién soy</p>
+    <p class="case__n"><b>01</b>De dónde vengo</p>
     <div>
-      <h2>QA en MedineTech, y aprendiendo en voz alta.</h2>
-      <p class="assert">expect(ingrid).toBe('QA que rompe cosas antes que el usuario')</p>
-      <p>Trabajo como <b>QA Engineer en MedineTech</b>, probando un producto financiero que está en producción todos los días. Mi trabajo es sencillo de decir y difícil de hacer: encontrar el fallo antes de que lo encuentre el cliente.</p>
-      <p>Vengo entrando al mundo del testing automatizado y no lo escondo — <b>aprendo rápido y documento todo lo que aprendo</b>. Estoy formándome también en inglés técnico y en programación con agentes de IA, porque la herramienta que uso hoy no va a ser la de dentro de dos años.</p>
+      <h2>Vengo de QA: mi trabajo era encontrar lo que se rompe.</h2>
+      <p class="assert">expect(fallo).toBeFoundBefore(cliente)</p>
+      <p>Entré a MedineTech como <b>QA</b>, probando un producto financiero que está en producción todos los días. Encontrar el fallo antes de que lo encuentre el cliente: fácil de decir, difícil de hacer.</p>
+      <p>Ese trabajo me dejó una costumbre que hoy uso vendiendo: <b>nada se entrega porque «debería funcionar»</b>. Se entrega cuando hay evidencia de que funciona. Y me enseñó a leer el negocio detrás del software — qué falla le cuesta plata al cliente y cuál solo incomoda.</p>
+      <ul class="tags">
+        <li><i>▹</i> Playwright</li><li><i>▹</i> Pruebas end-to-end</li><li><i>▹</i> Pruebas manuales</li>
+        <li><i>▹</i> Integración continua</li><li><i>▹</i> Linear</li><li><i>▹</i> Sentry</li>
+        <li><i>▹</i> Git &amp; GitHub</li><li><i>▹</i> HTML · CSS · JavaScript</li><li><i>▹</i> Agentes de IA</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="case wrap rev" id="ahora">
+  <div class="case__grid">
+    <p class="case__n"><b>02</b>Qué hago ahora</p>
+    <div>
+      <h2>Ayudo a negocios a existir en internet.</h2>
+      <p class="assert">expect(negocio).toBeFound({ cuando: 'lo buscan por su nombre' })</p>
+      <p>Desde MedineTech acompaño a comercios y emprendedores que <b>ya tienen clientes pero no tienen dónde mandarlos</b>: todo vive en un Instagram y en un chat de WhatsApp que se responde uno por uno.</p>
+      <p>Mi trabajo es entender qué vende de verdad ese negocio y convertirlo en algo que se pueda enseñar.</p>
+      <div class="blocks blocks--3">
+        <div class="blk"><h3>Escucho primero</h3><p>Antes de proponer nada pregunto qué le cuesta tiempo y qué le cuesta plata. La mitad de las veces el problema no era la página.</p></div>
+        <div class="blk"><h3>Enseño antes de cobrar</h3><p>Prefiero mostrar algo hecho a describirlo. Si no te sirve, no perdiste nada.</p></div>
+        <div class="blk"><h3>Publico, no entrego archivos</h3><p>El trabajo termina cuando está en internet y funcionando, no cuando está en tu correo.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="case wrap rev" id="trabajo">
   <div class="case__grid">
-    <p class="case__n"><b>02</b>Cómo trabajo</p>
+    <p class="case__n"><b>03</b>Cómo trabajo</p>
     <div>
       <h2>Evidencia antes que opinión.</h2>
-      <p class="assert">expect(reporte).toContain('pasos, evidencia, resultado esperado')</p>
+      <p class="assert">expect(promesa).toBeBackedBy(evidencia)</p>
       <div class="blocks blocks--3">
-        <div class="blk"><h3>Reproducible</h3><p>Un bug que no se puede repetir no está reportado, está adivinado. Pasos exactos, datos y entorno.</p></div>
-        <div class="blk"><h3>Escrito</h3><p>Cada caso queda documentado donde el equipo lo puede leer, no en mi cabeza ni en un chat perdido.</p></div>
-        <div class="blk"><h3>Priorizado</h3><p>No todo bug es urgente. Primero lo que le cuesta plata o confianza al negocio.</p></div>
+        <div class="blk"><h3>Con evidencia</h3><p>Lo que digo que funciona, te lo enseño funcionando. Sin «confía en mí».</p></div>
+        <div class="blk"><h3>Escrito</h3><p>Lo acordado queda por escrito donde los dos lo podamos leer, no en un chat que se pierde.</p></div>
+        <div class="blk"><h3>Priorizado</h3><p>No todo es urgente. Primero lo que te cuesta plata o clientes; el resto puede esperar.</p></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="case wrap rev" id="stack">
-  <div class="case__grid">
-    <p class="case__n"><b>03</b>Stack</p>
-    <div>
-      <h2>Con qué me la paso todo el día.</h2>
-      <p class="assert">import { test, expect } from '@playwright/test'</p>
-      <ul class="tags">
-        <li><i>▹</i> Playwright</li><li><i>▹</i> Pruebas end-to-end</li><li><i>▹</i> Pruebas manuales</li>
-        <li><i>▹</i> Integración continua</li><li><i>▹</i> Linear</li><li><i>▹</i> Sentry</li>
-        <li><i>▹</i> Git &amp; GitHub</li><li><i>▹</i> HTML · CSS · JavaScript</li><li><i>▹</i> Agentes de IA</li>
-      </ul>
     </div>
   </div>
 </section>
@@ -332,8 +345,11 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
 
 <section class="wrap" id="servicios">
   <div class="serv rev">
-    <p class="eyebrow">05 — Tu negocio</p>
+   <div class="case__grid">
+    <p class="case__n"><b>05</b>Tu negocio</p>
+    <div>
     <h2>¿Tu negocio todavía no aparece cuando lo buscan?</h2>
+    <p class="assert">expect(tuNegocio).toBeFound('Google')  // ← esto es lo que arreglo</p>
     <p>Le pasa a casi todos los comercios: tienen Instagram, responden precios por DM uno por uno, y cuando alguien los busca en Google no encuentra nada. Yo les armo la página que les faltaba — con su marca, sus productos y su WhatsApp de por medio.</p>
     <ul class="serv-list">
       <li>Página propia, rápida y pensada para el teléfono</li>
@@ -346,11 +362,13 @@ h2{font-size:clamp(26px,4.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin
       <a class="btn" href="https://wa.me/584248282089?text=Hola%20Ingrid%2C%20quiero%20una%20p%C3%A1gina%20para%20mi%20negocio.%20%C2%BFHablamos%3F">Cotizar por WhatsApp</a>
       <a class="btn btn--ghost" href="mailto:imarcano@medine.tech?subject=Quiero%20una%20p%C3%A1gina%20para%20mi%20negocio">Escribirme por correo</a>
     </div>
+    </div>
+   </div>
   </div>
 </section>
 
 <footer class="foot wrap">
-  <p class="foot__sum"><span>resumen de ejecución</span><span><b>5 passed</b></span><span>0 failed</span><span>0 skipped</span><span class="mono">— Ingrid Marcano, QA</span></p>
+  <p class="foot__sum"><span>resumen de ejecución</span><span><b>5 passed</b></span><span>0 failed</span><span>0 skipped</span><span class="mono">— Ingrid Marcano · MedineTech</span></p>
   <ul class="chan">
     <li><a href="https://wa.me/584248282089?text=Hola%20Ingrid%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20conversar%20contigo."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.3.4c-.1.1-.3.3-.1.6.1.2.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.7-.8c.2-.2.3-.2.5-.1l1.8.9c.2.1.4.2.4.3.1.1.1.5-.1 1.1Z"/></svg><span class="k">WhatsApp</span><span class="v">+58 424 828 2089</span></a></li>
     <li><a href="mailto:imarcano@medine.tech"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v.3l-10 5.6-10-5.6v-.3Zm0 2.6V18a1.5 1.5 0 0 0 1.5 1.5h17A1.5 1.5 0 0 0 22 18V8.1l-9.5 5.3a1 1 0 0 1-1 0L2 8.1Z"/></svg><span class="k">Correo</span><span class="v">imarcano@medine.tech</span></a></li>
