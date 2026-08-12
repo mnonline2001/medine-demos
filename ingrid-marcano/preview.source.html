@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>preview 1200x630 — ingrid-marcano</title>
+<!-- Generar:  chrome --headless=new --window-size=1200,630 --screenshot=preview.png preview.source.html -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{
+  background:#0C1822;color:#fff;
+  font-family:"Space Grotesk",system-ui,sans-serif;
+  display:grid;grid-template-columns:1fr 430px;
+}
+.mono{font-family:"JetBrains Mono",monospace}
+.left{padding:52px 48px;display:flex;flex-direction:column;position:relative}
+.left::after{content:"";position:absolute;left:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(35,186,255,.22),transparent 68%)}
+.bar{display:flex;align-items:center;gap:12px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#8FA3AF}
+.bar b{color:#23BAFF;font-weight:400}
+.name{font-size:92px;line-height:.9;letter-spacing:-.045em;font-weight:700;margin-top:26px;position:relative;z-index:1}
+.name span{display:block;color:#23BAFF}
+.role{display:flex;align-items:center;gap:11px;margin-top:22px;font-family:"JetBrains Mono",monospace;font-size:19px;color:#D5E1E9;position:relative;z-index:1}
+.role i{width:9px;height:9px;border-radius:50%;background:#16A34A;box-shadow:0 0 0 5px rgba(22,163,74,.18)}
+.tests{margin-top:auto;display:grid;gap:9px;position:relative;z-index:1}
+.t{display:flex;align-items:center;gap:11px;font-family:"JetBrains Mono",monospace;font-size:15.5px;color:#A8BAC6}
+.t em{font-style:normal;color:#5BE49B;font-weight:700}
+.sum{margin-top:20px;display:flex;align-items:baseline;gap:16px;font-family:"JetBrains Mono",monospace;position:relative;z-index:1}
+.sum b{font-size:30px;color:#5BE49B}
+.sum span{font-size:16px;color:#6B7A85}
+.right{position:relative;background:linear-gradient(160deg,#E6DFD2,#C9D4DB);overflow:hidden}
+.right img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.fb{position:absolute;inset:0;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:150px;font-weight:700;color:#0B7FB4;opacity:.32}
+.right::before{content:"";position:absolute;inset:0;z-index:2;box-shadow:inset 26px 0 46px -26px rgba(12,24,34,.85)}
+.tag{position:absolute;left:-1px;bottom:34px;z-index:3;background:#0C1822;color:#fff;font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:11px 16px}
+.tag i{font-style:normal;color:#23BAFF}
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="bar"><b>ingrid.spec.ts</b><span>·</span><span>completado</span></div>
+    <h1 class="name">Ingrid<span>Marcano</span></h1>
+    <p class="role"><i></i>QA Engineer en MedineTech</p>
+    <div class="tests">
+      <p class="t"><em>✓</em> entrega con evidencia, no con «confía en mí»</p>
+      <p class="t"><em>✓</em> automatiza el camino crítico</p>
+      <p class="t"><em>✓</em> usa lo que vende</p>
+    </div>
+    <p class="sum"><b>5 passed</b><span>0 failed</span><span>mnonline2001.github.io</span></p>
+  </div>
+  <div class="right">
+    <div class="fb">IM</div>
+    <img src="assets/ingrid.jpg" alt="" onerror="this.remove()">
+    <div class="tag"><i>●</i> QA · Medine.tech</div>
+  </div>
+</body>
+</html>
