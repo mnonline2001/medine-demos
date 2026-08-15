@@ -16,10 +16,24 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Termostato en 17 grados: Silvio Centeno, técnico en aire acondicionado en Maturín">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9D%84%EF%B8%8F%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="preload" href="./assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/permanent-marker-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face{
+    font-family:"Archivo";
+    font-style:normal;
+    font-weight:400 900;
+    font-stretch:100% 125%;
+    font-display:swap;
+    src:url("./assets/fonts/archivo-var-latin.woff2") format("woff2");
+  }
+  @font-face{
+    font-family:"Permanent Marker";
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url("./assets/fonts/permanent-marker-latin.woff2") format("woff2");
+  }
   :root{
     --navy:#101b33;
     --ink:#131313;
