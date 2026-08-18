@@ -37,6 +37,7 @@
   --red-press:#c22f24;  /* CTA hover: white text stays >= 5.6:1 (the old #e2473c was 4.04:1) */
   --wa:#25D366;
   --cut:clamp(26px, 5vw, 60px);
+  --nav-h:98px; /* two-row sticky nav on small screens (lockup + section links) */
   --tatami:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg stroke='%23f5f4f0' stroke-opacity='0.045' stroke-width='1'%3E%3Cpath d='M0 14h28M28 42h28M14 28v28M42 0v28'/%3E%3C/g%3E%3C/svg%3E");
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -94,8 +95,35 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 }
 .nav__in{
   width:min(1160px, 100% - clamp(2.2rem, 8vw, 6rem));margin-inline:auto;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 1rem;
   padding-block:.6rem;
+}
+/* v2: section links visible in the bar (meeting feedback, 17-Aug).
+   Small screens: a second, horizontally scrollable row under the lockup —
+   no hamburger, the sections are seen at once. ≥900px: inline, centered. */
+.nav__links{
+  list-style:none;order:3;flex-basis:100%;
+  display:flex;gap:.75rem;margin-top:.1rem;
+  overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain;
+  padding-inline:.4em;margin-inline:-.4em;
+}
+.nav__links::-webkit-scrollbar{display:none}
+.nav__links li{flex:none}
+.nav__links a{
+  display:block;padding:.5em .4em;margin-inline:-.4em;
+  font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--mut);white-space:nowrap;
+  border-bottom:2px solid transparent;
+  transition:color .2s ease,border-color .2s ease;
+}
+.nav__links a:hover{color:var(--ink)}
+.nav__links a[aria-current]{color:var(--ink);border-bottom-color:var(--red)}
+.nav__links a:focus-visible{outline-offset:-3px}
+@media (min-width:900px){
+  :root{--nav-h:66px}
+  .nav__links{order:0;flex:1;flex-basis:auto;justify-content:center;gap:1.7rem;margin-top:0;overflow:visible;padding-inline:0;margin-inline:0}
+  .nav__links a{margin-inline:0;padding-inline:.15em;font-size:.72rem;letter-spacing:.16em}
+  .nav__links a:focus-visible{outline-offset:3px}
 }
 .lockup{display:flex;align-items:center;gap:.7rem;min-width:0}
 .medal{border-radius:50%;background:var(--ink);border:2px solid var(--red);flex:none}
@@ -126,7 +154,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .cut--b{clip-path:polygon(0 var(--cut), 100% 0, 100% calc(100% - var(--cut)), 0 100%)}
 .cut+.cut,.hero+.cut{margin-top:calc(-1 * var(--cut))}
 .sec{padding-block:calc(var(--cut) + clamp(3.4rem, 8vw, 6rem))}
-.sec{scroll-margin-top:84px}
+.sec,[id]{scroll-margin-top:calc(var(--nav-h) + 18px)}
 
 .bib{
   position:absolute;z-index:0;top:calc(var(--cut) + .5rem);right:2vw;
@@ -143,7 +171,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   background:var(--bg) var(--tatami);
   clip-path:polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--cut)));
   padding:clamp(2.6rem, 7vw, 5.5rem) 0 calc(var(--cut) + clamp(3rem, 7vw, 5rem));
-  min-height:max(540px, calc(100svh - 66px));
+  min-height:max(540px, calc(100svh - var(--nav-h)));
   display:flex;align-items:center;
 }
 .hero__art{position:absolute;z-index:0;right:0;top:4%;width:min(80vw, 400px);opacity:.15}
@@ -346,6 +374,12 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
         <span class="lockup__sub">Escuela de Karate-Do · Maturín</span>
       </span>
     </a>
+    <ul class="nav__links">
+      <li><a href="#dojo">El dojo</a></li>
+      <li><a href="#categorias">Categorías</a></li>
+      <li><a href="#escuela">La escuela</a></li>
+      <li><a href="#inscripcion">Inscripción</a></li>
+    </ul>
     <a class="cta" href="https://wa.me/584262470341?text=Buenas%2C%20Sensei.%20Quiero%20informaci%C3%B3n%20sobre%20la%20escuela."><span>Escríbenos</span></a>
   </div>
 </nav>
@@ -632,6 +666,24 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
     els.forEach(function(el){ io.observe(el); });
   } else {
     els.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  /* 4. Nav: marca la sección visible (aria-current) */
+  var navLinks = d.querySelectorAll('.nav__links a[href^="#"]');
+  if (navLinks.length && 'IntersectionObserver' in window) {
+    var byId = {};
+    navLinks.forEach(function(a){
+      var sec = d.getElementById(a.getAttribute('href').slice(1));
+      if (sec) byId[sec.id] = a;
+    });
+    var nio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        navLinks.forEach(function(a){ a.removeAttribute('aria-current'); });
+        byId[en.target.id].setAttribute('aria-current', 'true');
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    Object.keys(byId).forEach(function(id){ nio.observe(d.getElementById(id)); });
   }
 })();
 </script>
