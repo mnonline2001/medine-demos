@@ -276,6 +276,15 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .sensei::before{content:"";position:absolute;inset-inline:0;top:0;height:3px;background:var(--red)}
 .sensei .kicker{margin-bottom:.9rem}
 .sensei h3{font-size:clamp(2.2rem,6vw,2.9rem);line-height:.95}
+/* optional portrait (only if the Sensei picks and authorises one) */
+.sensei__head{display:flex;gap:1.1rem;align-items:flex-end;margin-bottom:1rem}
+.sensei__head .kicker{margin-bottom:.6rem}
+.sensei__photo{
+  flex:none;width:clamp(104px,30%,140px);height:auto;aspect-ratio:4/5;object-fit:cover;
+  border:1px solid rgba(245,244,240,.22);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%);
+  filter:saturate(.85) contrast(1.04);
+}
 .s-dojo .sensei__role{color:var(--ink);font-weight:600;font-size:1rem;margin-top:.5rem}
 .s-dojo .sensei p{font-size:1rem}
 .s-dojo .sensei__pending{margin-top:1.2rem;padding-top:1rem;border-top:1px dashed rgba(245,244,240,.22);font-size:.9rem;font-style:italic}
@@ -557,8 +566,15 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
              trajectory, philosophy). Humble tone by his own rule: no ranks, no Dan.
              Show it to him before publishing. Photo only if he picks and authorises one. -->
         <aside class="sensei reveal" id="sensei" aria-labelledby="h-sensei">
-          <p class="kicker">El Sensei</p>
-          <h3 id="h-sensei">Sensei José Rondón</h3>
+          <div class="sensei__head">
+            <!-- MOCK ONLY (not in git): sensei-mock.jpg is a crop of a casual selfie, used to
+                 validate the layout. Replace with the photo he picks and authorises. -->
+            <img class="sensei__photo" src="assets/sensei-mock.jpg" width="400" height="500" alt="Retrato del Sensei José Rondón" loading="lazy">
+            <div>
+              <p class="kicker">El Sensei</p>
+              <h3 id="h-sensei">Sensei José Rondón</h3>
+            </div>
+          </div>
           <p class="sensei__role">Dirige la Escuela de Karate-Do Dojo J.J. Rondón, en Maturín.</p>
           <p>Enseña karate a niños y adultos con una idea sencilla: la excelencia se demuestra en el tatami, con constancia, respeto y trabajo bien hecho.</p>
           <p class="sensei__pending">Su trayectoria y sus años de enseñanza, contados por él mismo, se suman aquí apenas los comparta.</p>
@@ -738,7 +754,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
               Escríbenos por WhatsApp
             </a>
           </li>
-          <li>Av. Principal de Las Cocuizas, Maturín, Monagas</li>
+          <li>Av. Principal de Las Cocuizas, diagonal a la iglesia Santo Domingo de Guzmán. Maturín 6201, Monagas</li>
           <li><a href="https://maps.google.com/?q=9.756304,-63.155331" target="_blank" rel="noopener">Cómo llegar (Google Maps) →</a></li>
         </ul>
       </div>
