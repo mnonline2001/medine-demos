@@ -239,9 +239,12 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .chip:has(input:checked){background:var(--ink);border-color:var(--ink);color:#15161a;font-weight:600}
 .chip:has(input:focus-visible){outline:2px solid var(--red);outline-offset:3px}
 
+/* v2: "Solo quiero información" comes pre-checked, so step 2 and the ready
+   message are visible on arrival (meeting feedback, 17-Aug). Both unlock as
+   soon as any step-1 option is checked. */
 .step--2,.compose__out{opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease,visibility .45s}
-.inscribe:has(input[name="quien"]:checked) .step--2{opacity:1;visibility:visible;transform:none}
-.inscribe:has(input[name="quien"]:checked):has(input[name="tema"]:checked) .compose__out{opacity:1;visibility:visible;transform:none}
+.inscribe:has(input[name="quien"]:checked) .step--2,
+.inscribe:has(input[name="quien"]:checked) .compose__out{opacity:1;visibility:visible;transform:none}
 @supports not selector(:has(*)){
   .step--2,.compose__out{opacity:1;visibility:visible;transform:none}
 }
@@ -493,7 +496,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
           <div class="chips">
             <label class="chip"><input type="radio" name="quien" value="hijo"><span>Para mi hijo o hija</span></label>
             <label class="chip"><input type="radio" name="quien" value="adulto"><span>Para mí (adulto)</span></label>
-            <label class="chip"><input type="radio" name="quien" value="info"><span>Solo quiero información</span></label>
+            <label class="chip"><input type="radio" name="quien" value="info" checked><span>Solo quiero información</span></label>
           </div>
         </fieldset>
 
