@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>sweetceleste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=block" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1200px;height:630px;overflow:hidden;font-family:'DM Sans',sans-serif;color:#4c433c}
+.card{position:relative;width:1200px;height:630px;display:grid;grid-template-columns:1fr 470px;overflow:hidden;
+  background:linear-gradient(120deg,#F7F6F2 0%,#F3F2EE 55%,#EAF3EE 100%)}
+.card::before{content:"";position:absolute;inset:0;z-index:1;opacity:.5;background-image:radial-gradient(circle, rgba(206,59,137,.35) 1.4px, transparent 2px);background-size:30px 30px}
+.content{padding:58px 34px 58px 68px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:3}
+.eyebrow{font:700 15px 'DM Sans';text-transform:uppercase;letter-spacing:.24em;color:#6C5E55;display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.eyebrow::before{content:"";width:30px;height:3px;background:#CCE6DD;border-radius:3px}
+.wordmark{font:400 84px/.94 'DM Serif Display',serif;color:#2f2a26;letter-spacing:-.01em}
+.wordmark span{color:#CE3B89}
+.claim{font:500 23px/1.45 'DM Sans';color:#6C5E55;margin-top:20px;max-width:24ch}
+.foot{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:30px}
+.chip{display:inline-flex;align-items:center;gap:9px;background:#CE3B89;color:#fff;font:700 18px 'DM Sans';padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(206,59,137,.3)}
+.ig{font:500 18px 'DM Sans';color:#4c433c;background:#fff;border:1.5px solid #E6DFD6;padding:12px 20px;border-radius:12px}
+.ig b{color:#CE3B89}
+.seal{position:absolute;left:68px;bottom:26px;font:500 14px 'DM Sans';color:#948577;letter-spacing:.03em}
+.panel{position:relative;overflow:hidden;border-left:4px solid #CE3B89}
+.panel img{width:100%;height:100%;object-fit:cover;display:block}
+.tagpan{position:absolute;left:26px;bottom:28px;background:rgba(47,42,38,.86);color:#fff;font:700 16px 'DM Sans';padding:11px 16px;border-radius:10px}
+.tagpan span{color:#CCE6DD}
+</style></head><body>
+<div class="card">
+  <div class="content">
+    <p class="eyebrow">Repostería &amp; candy bar · Maturín</p>
+    <p class="wordmark">Sweet<span>Celeste</span></p>
+    <p class="claim">Combos y candy bar por encargo, con un mensaje.</p>
+    <div class="foot"><span class="chip">Cotizar por WhatsApp</span><span class="ig"><b>@</b>sweetceleste_maturin</span></div>
+    <p class="seal">Propuesta de diseño · Medine.tech</p>
+  </div>
+  <div class="panel">
+    <img src="assets/sc-torta-2niveles-rosas.webp" alt="Torta de dos niveles con rosas — SweetCeleste">
+    <span class="tagpan"><span>🍰</span> Hecho en Maturín</span>
+  </div>
+</div>
+</body></html>

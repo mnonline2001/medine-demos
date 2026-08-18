@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YiYi's · Tres leches y tortas frías en Maturín</title>
+<meta name="description" content="YiYi's: tres leches frías, tortas personalizadas, la nueva LONG CAKE y ponquesitos hechos en casa en Maturín. Cotiza y agenda tu pedido por WhatsApp.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://mnonline2001.github.io/medine-demos/yiyis/">
+<link rel="icon" href="./assets/yiyis-logo-profile.jpg">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YiYi's">
+<meta property="og:locale" content="es_VE">
+<meta property="og:url" content="https://mnonline2001.github.io/medine-demos/yiyis/">
+<meta property="og:title" content="YiYi's · Tres leches y tortas frías en Maturín">
+<meta property="og:description" content="Tres leches frías, tortas personalizadas, la nueva LONG CAKE y ponquesitos hechos en casa en Maturín. Cotiza y agenda por WhatsApp.">
+<meta property="og:image" content="https://mnonline2001.github.io/medine-demos/yiyis/preview.png">
+<meta property="og:image:alt" content="Tres leches fría de YiYi's coronada con muchas fresas">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YiYi's · Tres leches y tortas frías en Maturín">
+<meta name="twitter:description" content="Tres leches frías, tortas personalizadas, LONG CAKE y ponquesitos hechos en casa en Maturín. Pide por WhatsApp.">
+<meta name="twitter:image" content="https://mnonline2001.github.io/medine-demos/yiyis/preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "YiYi's",
+  "image": "https://mnonline2001.github.io/medine-demos/yiyis/assets/yiyis-hero-tresleches-fresas.jpg",
+  "url": "https://mnonline2001.github.io/medine-demos/yiyis/",
+  "telephone": "+584148775559",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Maturín",
+    "addressRegion": "Monagas",
+    "addressCountry": "VE"
+  },
+  "areaServed": { "@type": "City", "name": "Maturín" },
+  "sameAs": ["https://www.instagram.com/yiyis.mat/"],
+  "servesCuisine": ["Repostería", "Tres leches"],
+  "priceRange": "$$"
+}
+</script>
+
+<style>
+:root{
+  --blush:#F2E1E3;
+  --blush-deep:#EBD1D6;
+  --card:#FCF4F5;
+  --ink:#4A171B;
+  --ink-soft:#6E4340;
+  --magenta:#D16192;      /* decorative fills only, never text on light */
+  --cta:#A82B63;          /* white text passes AA */
+  --cta-dark:#8C1F50;
+  --rosa-prof:#B6517A;
+  --rosa-claro:#F4AFCC;
+  --fresa:#A83719;
+  --madera:#896C67;
+  --madera-deep:#5A1918;
+  --wa:#25D366;
+  --cream:#FBF3F4;
+  --line: rgba(90,25,24,.14);
+  --rule: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='34'%3E%3Cline x1='0' y1='33' x2='48' y2='33' stroke='%23D16192' stroke-opacity='0.13' stroke-width='1' stroke-dasharray='3 6'/%3E%3C/svg%3E");
+  --dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'%3E%3Ccircle cx='4' cy='4' r='1.4' fill='%23D16192' fill-opacity='0.16'/%3E%3C/svg%3E");
+  --sh:0 14px 34px rgba(90,25,24,.14);
+  --sh-soft:0 8px 20px rgba(90,25,24,.10);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Fredoka',system-ui,sans-serif;
+  font-weight:400;
+  color:var(--ink);
+  background-color:var(--blush);
+  background-image:var(--dots);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;line-height:1.05;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:20px}
+.eyebrow{
+  font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--fresa);display:inline-flex;align-items:center;gap:.5rem;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--fresa);border-radius:2px;display:inline-block}
+.script{font-family:'Caveat',cursive;font-weight:700;line-height:.95}
+.sec-num{
+  font-family:'Fredoka';font-weight:700;font-size:.78rem;color:var(--fresa);
+  letter-spacing:.14em;
+}
+:focus-visible{outline:3px solid var(--cta);outline-offset:3px;border-radius:6px}
+
+/* ---------- CTA pill w/ hand-drawn underline ---------- */
+.pill{
+  display:inline-flex;align-items:center;gap:.55rem;
+  background:var(--cta);color:#fff;font-weight:600;font-size:1rem;
+  padding:.82rem 1.5rem;border-radius:999px;border:0;cursor:pointer;
+  box-shadow:0 8px 18px rgba(140,31,80,.30);
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  position:relative;
+}
+.pill:hover{transform:translateY(-2px);background:var(--cta-dark);box-shadow:0 12px 24px rgba(140,31,80,.36)}
+.pill svg{width:19px;height:19px;flex:none}
+.pill.ghost{
+  background:transparent;color:var(--ink);border:2px solid var(--rosa-prof);
+  box-shadow:none;padding:.72rem 1.3rem;
+}
+.pill.ghost:hover{background:var(--cream);transform:translateY(-2px)}
+.underline-wrap{display:inline-block;position:relative}
+.underline-wrap svg{position:absolute;left:2%;bottom:-13px;width:96%;height:12px;color:var(--magenta)}
+
+/* ---------- Recipe-card header nav ---------- */
+.rc-nav{position:sticky;top:0;z-index:60;padding:27px 16px 0;background:linear-gradient(180deg,var(--blush) 62%,transparent)}
+.rc-bar{
+  position:relative;max-width:1120px;margin-inline:auto;
+  background:var(--card);
+  border:1.5px solid var(--line);
+  border-top:none;
+  border-radius:0 0 20px 20px;
+  box-shadow:var(--sh-soft);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 16px;
+}
+.rc-bar::before{ /* the index-card tab */
+  content:"Recetario";
+  position:absolute;top:-1px;left:24px;transform:translateY(-100%);
+  font-family:'Caveat';font-weight:700;font-size:1.02rem;color:var(--ink);
+  background:var(--rosa-claro);
+  padding:3px 16px 6px;border-radius:12px 12px 0 0;
+  border:1.5px solid var(--line);border-bottom:none;line-height:1;
+}
+.brandlink{display:flex;align-items:center;gap:11px;min-width:0}
+.brandlink img{width:42px;height:42px;border-radius:50%;flex:none;box-shadow:0 2px 6px rgba(90,25,24,.18)}
+.brand-tt{display:flex;flex-direction:column;line-height:1;min-width:0}
+.brand-name{font-family:'Caveat';font-weight:700;font-size:1.55rem;color:var(--rosa-prof)}
+.brand-sub{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-links{display:flex;gap:18px}
+.nav-links a{font-weight:500;font-size:.94rem;color:var(--ink);padding:4px 2px;border-bottom:2px solid transparent}
+.nav-links a:hover{border-color:var(--magenta)}
+.wa-chip{
+  display:inline-flex;align-items:center;gap:.45rem;background:var(--wa);color:#0a2e18;
+  font-weight:600;font-size:.9rem;padding:.5rem .9rem;border-radius:999px;
+  box-shadow:0 4px 10px rgba(37,211,102,.28);border:1.5px solid rgba(10,46,24,.12);
+}
+.wa-chip svg{width:17px;height:17px}
+.wa-chip:hover{transform:translateY(-1px)}
+
+/* ---------- Hero ---------- */
+.hero{padding:34px 0 20px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero-head .script-tag{font-size:2.2rem;color:var(--rosa-prof);display:block;transform:rotate(-4deg);margin-bottom:6px}
+.hero h1{font-size:clamp(2.6rem,7.4vw,4.6rem);color:var(--ink)}
+.hero h1 .b{display:block;color:var(--magenta);font-size:1.16em}
+.hero h1 .c{display:block}
+.hero-lead{margin-top:20px;font-size:1.12rem;color:var(--ink-soft);max-width:34ch}
+.hero-lead b{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.recipe-meta{
+  display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:26px;padding-top:18px;
+  border-top:1.5px dashed var(--line);
+}
+.recipe-meta span{
+  font-size:.82rem;color:var(--ink-soft);display:inline-flex;align-items:center;gap:.4rem;
+}
+.recipe-meta b{color:var(--ink);font-weight:600}
+.recipe-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--magenta)}
+
+/* hero photo as recipe card */
+.recipe-photo{
+  position:relative;background:var(--card);padding:14px 14px 54px;
+  border:1.5px solid var(--line);border-radius:14px;
+  box-shadow:var(--sh);transform:rotate(2.2deg);
+}
+.recipe-photo::before{
+  content:"Ficha 01";
+  position:absolute;top:-14px;left:20px;font-family:'Caveat';font-weight:700;
+  font-size:1.05rem;color:var(--ink);background:var(--rosa-claro);
+  padding:2px 14px 4px;border-radius:10px 10px 0 0;border:1.5px solid var(--line);border-bottom:none;
+}
+.recipe-photo img{border-radius:8px;aspect-ratio:3/3.4;object-fit:cover;width:100%}
+.recipe-photo figcaption{
+  position:absolute;left:20px;right:16px;bottom:14px;font-family:'Caveat';
+  font-weight:600;font-size:1.28rem;color:var(--ink);
+}
+.tape{
+  position:absolute;width:104px;height:26px;background:rgba(244,175,204,.62);
+  top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg);
+  border:1px dashed rgba(140,31,80,.35);border-radius:3px;
+}
+
+/* ---------- section shell ---------- */
+section{padding:56px 0}
+.sec-head{margin-bottom:30px}
+.sec-head h2{font-size:clamp(1.9rem,4.6vw,2.9rem);color:var(--ink);margin-top:10px}
+.sec-head .lede{margin-top:12px;color:var(--ink-soft);max-width:56ch;font-size:1.05rem}
+
+/* ---------- Signature: corte de tres leches ---------- */
+.corte{background:
+   linear-gradient(180deg, rgba(252,244,245,.7), rgba(252,244,245,.7)),
+   var(--rule);
+   border-block:1.5px solid var(--line)}
+.slice-wrap{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.slice{
+  position:relative;background:var(--card);border:1.5px solid var(--line);
+  border-radius:16px;padding:18px;box-shadow:var(--sh);
+}
+.slice-plate{
+  border-radius:12px;overflow:hidden;border:1.5px solid rgba(90,25,24,.10);
+  display:flex;flex-direction:column;background:#fff;
+}
+.layer{position:relative;transition:transform .5s ease, filter .5s ease, opacity .5s ease}
+.layer .band{display:block}
+.l-fresas .band{height:52px;background:
+   radial-gradient(circle at 12% 60%, #C4432B 0 15px, transparent 16px),
+   radial-gradient(circle at 30% 45%, #A83719 0 17px, transparent 18px),
+   radial-gradient(circle at 50% 62%, #C4432B 0 16px, transparent 17px),
+   radial-gradient(circle at 70% 44%, #A83719 0 18px, transparent 19px),
+   radial-gradient(circle at 88% 60%, #C4432B 0 15px, transparent 16px),
+   linear-gradient(180deg,#8C1F16,#A83719)}
+.l-crema .band{height:46px;background:
+   radial-gradient(circle at 16% 0, #fff 0 12px, transparent 13px),
+   radial-gradient(circle at 42% 0, #fff 0 14px, transparent 15px),
+   radial-gradient(circle at 68% 0, #fff 0 12px, transparent 13px),
+   radial-gradient(circle at 92% 0, #fff 0 13px, transparent 14px),
+   linear-gradient(180deg,#FFFDFB,#FBEFE7)}
+.l-empape .band{height:58px;background:
+   linear-gradient(180deg,#F6E7D3,#EAD3B4);
+   position:relative}
+.l-empape .band::after{content:"";position:absolute;inset:0;background:
+   radial-gradient(circle at 20% 30%, rgba(255,255,255,.85) 0 3px, transparent 4px),
+   radial-gradient(circle at 44% 66%, rgba(255,255,255,.7) 0 2.5px, transparent 3px),
+   radial-gradient(circle at 63% 34%, rgba(255,255,255,.8) 0 3px, transparent 4px),
+   radial-gradient(circle at 82% 60%, rgba(255,255,255,.7) 0 2.5px, transparent 3px),
+   radial-gradient(circle at 33% 80%, rgba(255,255,255,.7) 0 2px, transparent 3px)}
+.l-bizcocho .band{height:74px;background:
+   linear-gradient(180deg,#EAD0A6,#DDBB86);
+   position:relative}
+.l-bizcocho .band::after{content:"";position:absolute;inset:0;opacity:.5;background:
+   radial-gradient(circle at 18% 40%, rgba(255,255,255,.6) 0 2px, transparent 3px),
+   radial-gradient(circle at 40% 70%, rgba(120,80,40,.25) 0 3px, transparent 4px),
+   radial-gradient(circle at 62% 35%, rgba(255,255,255,.5) 0 2px, transparent 3px),
+   radial-gradient(circle at 80% 66%, rgba(120,80,40,.22) 0 3px, transparent 4px)}
+.slice-caption{font-family:'Caveat';font-weight:600;font-size:1.2rem;color:var(--ink-soft);text-align:center;margin-top:12px}
+
+/* ingredient legend / reveal labels */
+.capas{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.capa{
+  display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+  padding:14px 16px;background:var(--card);border:1.5px solid var(--line);
+  border-radius:12px;border-left:5px solid var(--sw);
+  transition:transform .45s ease, opacity .45s ease;
+}
+.capa .n{font-weight:700;color:var(--fresa);font-size:.92rem;font-variant-numeric:tabular-nums}
+.capa h3{font-size:1.12rem;color:var(--ink);margin-bottom:2px}
+.capa p{font-size:.92rem;color:var(--ink-soft)}
+.capa[data-l="1"]{--sw:#DDBB86}
+.capa[data-l="2"]{--sw:#EAD3B4}
+.capa[data-l="3"]{--sw:#F0C9CE}
+.capa[data-l="4"]{--sw:#A83719}
+
+/* scroll-reveal (progressive; static if JS off) */
+.animate .layer{opacity:.35;transform:translateY(6px)}
+.animate .layer.seen{opacity:1;transform:none}
+.animate .capa{opacity:.28;transform:translateX(10px)}
+.animate .capa.seen{opacity:1;transform:none}
+
+/* ---------- Carta / recetario ---------- */
+.fichas{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.ficha{
+  position:relative;background:var(--card);border:1.5px solid var(--line);
+  border-radius:14px;padding:16px 16px 18px;box-shadow:var(--sh-soft);
+  display:flex;flex-direction:column;gap:12px;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.ficha:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.ficha .tab{
+  position:absolute;top:-13px;left:18px;font-size:.66rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
+  background:var(--rosa-claro);padding:3px 12px 4px;border-radius:9px 9px 0 0;
+  border:1.5px solid var(--line);border-bottom:none;
+}
+.ficha .badge{
+  position:absolute;top:12px;right:12px;background:var(--fresa);color:#fff;
+  font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 10px;border-radius:999px;box-shadow:0 4px 10px rgba(168,55,25,.3);
+}
+.ficha-photo{border-radius:10px;overflow:hidden;border:1.5px solid rgba(90,25,24,.10);background:#fff}
+.ficha-photo img{width:100%;aspect-ratio:4/3.5;object-fit:cover}
+.ficha h3{font-size:1.32rem;color:var(--ink)}
+.ficha .note{font-family:'Caveat';font-weight:600;font-size:1.16rem;color:var(--rosa-prof);line-height:1.1}
+.ficha p{font-size:.95rem;color:var(--ink-soft)}
+.ficha .variants{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.ficha .variants a{
+  font-size:.86rem;font-weight:500;color:var(--ink);background:var(--blush);
+  border:1.5px solid var(--line);border-radius:999px;padding:.32rem .78rem;
+}
+.ficha .variants a:hover{background:var(--rosa-claro);border-color:var(--rosa-prof)}
+.ficha .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:6px}
+.ficha .price-note{font-size:.82rem;color:var(--ink-soft)}
+.pedir{
+  display:inline-flex;align-items:center;gap:.4rem;background:var(--cta);color:#fff;
+  font-weight:600;font-size:.9rem;padding:.5rem .95rem;border-radius:999px;
+  box-shadow:0 5px 12px rgba(140,31,80,.26);white-space:nowrap;
+}
+.pedir:hover{background:var(--cta-dark);transform:translateY(-1px)}
+.pedir svg{width:15px;height:15px}
+/* spans */
+.ficha.big{grid-column:span 4}
+.ficha.long{grid-column:span 2}
+.ficha.perso{grid-column:span 3}
+.ficha.ponque{grid-column:span 3}
+/* illustrated recipe-card tiles */
+.illus{border-radius:10px;aspect-ratio:4/2.2;border:1.5px solid rgba(90,25,24,.10);
+  background:linear-gradient(135deg,var(--cream),var(--blush));display:flex;align-items:center;justify-content:center}
+.illus svg{width:78px;height:78px}
+
+/* ---------- Arma tu antojo ---------- */
+.antojo{background:linear-gradient(180deg,var(--blush-deep),var(--blush))}
+.antojo-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:start}
+.builder{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--sh)}
+.builder fieldset{border:none;margin:0 0 22px;padding:0}
+.builder legend{
+  font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--fresa);margin-bottom:12px;padding:0;
+}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opts input{position:absolute;opacity:0;width:1px;height:1px}
+.opts label{
+  display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;
+  background:var(--blush);border:1.5px solid var(--line);border-radius:999px;
+  padding:.52rem 1rem;font-size:.95rem;font-weight:500;color:var(--ink);
+  transition:all .16s ease;
+}
+.opts label:hover{border-color:var(--rosa-prof)}
+.opts input:checked + label{background:var(--cta);color:#fff;border-color:var(--cta);box-shadow:0 5px 12px rgba(140,31,80,.24)}
+.opts input:focus-visible + label{outline:3px solid var(--cta);outline-offset:2px}
+
+/* nota de pedido preview */
+.nota-card{
+  position:relative;background:var(--card);border:1.5px solid var(--line);
+  border-radius:14px;padding:22px 22px 24px;box-shadow:var(--sh);
+  background-image:var(--rule);background-position:0 44px;
+}
+.nota-card::before{
+  content:"Nota de pedido";position:absolute;top:-13px;left:18px;
+  font-family:'Caveat';font-weight:700;font-size:1.05rem;color:var(--ink);
+  background:var(--rosa-claro);padding:2px 14px 4px;border-radius:10px 10px 0 0;
+  border:1.5px solid var(--line);border-bottom:none;
+}
+.nota-card h3{font-size:1.15rem;color:var(--ink);margin-bottom:14px}
+.nota-line{font-family:'Caveat';font-weight:600;font-size:1.42rem;color:var(--ink);margin:2px 0;min-height:1.5em}
+.nota-line .k{color:var(--rosa-prof)}
+.nota-line em{color:var(--madera);font-style:normal;font-weight:500}
+.nota-hint{margin-top:16px;font-size:.86rem;color:var(--ink-soft)}
+.builder .send{margin-top:6px;width:100%;justify-content:center}
+/* :has() — dim send until both chosen */
+.builder .send{opacity:.5;pointer-events:none}
+.builder:has(input[name="prod"]:checked):has(input[name="size"]:checked) .send,
+.builder.ready .send{opacity:1;pointer-events:auto}
+.needsel{font-size:.84rem;color:var(--ink-soft);margin-top:10px;text-align:center}
+.builder:has(input[name="prod"]:checked):has(input[name="size"]:checked) .needsel,
+.builder.ready .needsel{display:none}
+
+/* ---------- valores / hecho con amor ---------- */
+.valores{background:var(--card);border-block:1.5px solid var(--line)}
+.val-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+.val{background:var(--blush);border:1.5px solid var(--line);border-radius:14px;padding:20px 18px}
+.val .ic{width:42px;height:42px;color:var(--cta);margin-bottom:12px}
+.val h3{font-size:1.06rem;color:var(--ink);margin-bottom:6px}
+.val p{font-size:.92rem;color:var(--ink-soft)}
+.story{text-align:center;max-width:60ch;margin:38px auto 0}
+.story .script{font-size:2rem;color:var(--rosa-prof);display:block;transform:rotate(-2deg)}
+.story p{margin-top:10px;color:var(--ink-soft)}
+
+/* ---------- contacto ---------- */
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.contacto-card{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--sh-soft)}
+.cinfo{display:flex;flex-direction:column;gap:16px;margin:20px 0 24px}
+.cinfo li{display:flex;gap:12px;align-items:flex-start;list-style:none}
+.cinfo svg{width:22px;height:22px;color:var(--cta);flex:none;margin-top:2px}
+.cinfo b{display:block;color:var(--ink);font-weight:600}
+.cinfo span{color:var(--ink-soft);font-size:.94rem}
+.contacto-photo{border-radius:16px;overflow:hidden;border:1.5px solid var(--line);box-shadow:var(--sh);transform:rotate(-1.6deg)}
+.contacto-photo img{aspect-ratio:4/4.4;object-fit:cover;width:100%}
+
+/* ---------- footer: nota de pedido ---------- */
+.nota-footer{background:var(--madera-deep);color:#F6E7E9;padding:52px 0 30px;position:relative}
+.nota-footer .wrap{position:relative}
+.nf-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px;align-items:start}
+.nf-brand{display:flex;flex-direction:column;gap:12px}
+.nf-brand .row{display:flex;align-items:center;gap:12px}
+.nf-brand img{width:52px;height:52px;border-radius:50%;box-shadow:0 3px 8px rgba(0,0,0,.35)}
+.nf-brand .bn{font-family:'Caveat';font-weight:700;font-size:1.9rem;color:#F9C9DA}
+.nf-brand .bs{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#E6B7BE}
+.nf-brand .script{font-size:1.6rem;color:#F4AFCC;transform:rotate(-3deg)}
+.nf-col h4{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#E8A9B3;margin:0 0 14px;font-weight:600}
+.nf-col a,.nf-col p{color:#F1DBDE;font-size:.95rem;display:block;margin-bottom:9px}
+.nf-col a:hover{color:#fff;text-decoration:underline}
+.socials{display:flex;gap:12px;margin-top:4px}
+.socials a{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff;
+}
+.socials a:hover{background:rgba(244,175,204,.22)}
+.socials svg{width:20px;height:20px}
+.nf-rule{height:1px;background:rgba(255,255,255,.16);margin:30px 0 18px}
+.seal{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:space-between;font-size:.82rem;color:#E4C4C8}
+.seal a{color:#F9C9DA;font-weight:600}
+.seal a:hover{text-decoration:underline}
+
+/* ---------- WhatsApp FAB ---------- */
+.wa-fab{
+  position:fixed;right:18px;bottom:18px;z-index:80;
+  width:60px;height:60px;border-radius:50%;background:var(--wa);
+  display:grid;place-items:center;box-shadow:0 10px 26px rgba(20,90,50,.4);
+  border:2px solid #fff;transition:transform .18s ease;
+}
+.wa-fab:hover{transform:scale(1.06)}
+.wa-fab svg{width:32px;height:32px;color:#fff}
+.wa-fab .ping{position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ping 2.4s ease-out infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.5);opacity:0}}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .recipe-photo{max-width:420px;margin-inline:auto}
+  .slice-wrap{grid-template-columns:1fr;gap:24px}
+  .fichas{grid-template-columns:repeat(2,1fr)}
+  .ficha.big,.ficha.long,.ficha.perso,.ficha.ponque{grid-column:span 2}
+  .antojo-grid{grid-template-columns:1fr}
+  .val-grid{grid-template-columns:repeat(2,1fr)}
+  .contacto-grid{grid-template-columns:1fr}
+  .nf-top{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+}
+@media (max-width:560px){
+  .wrap{padding-inline:16px}
+  .hero h1{font-size:clamp(2.4rem,10vw,3.2rem)}
+  .fichas{grid-template-columns:1fr}
+  .ficha.big,.ficha.long,.ficha.perso,.ficha.ponque{grid-column:span 1}
+  .val-grid{grid-template-columns:1fr}
+  .nf-top{grid-template-columns:1fr}
+  .brand-sub{display:none}
+  .recipe-meta{gap:6px 8px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none !important}
+  .animate .layer,.animate .capa{opacity:1 !important;transform:none !important}
+  .pill,.ficha,.wa-fab{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV: recipe-card header bar -->
+<header class="rc-nav">
+  <nav class="rc-bar" aria-label="Principal">
+    <a class="brandlink" href="#top" aria-label="YiYi's, inicio">
+      <img src="./assets/yiyis-logo-profile.jpg" alt="Logo de YiYi's, repostería casera">
+      <span class="brand-tt">
+        <span class="brand-name">YiYi'S</span>
+        <span class="brand-sub">Arte &amp; Dulzura</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#corte">El corte</a>
+        <a href="#carta">La carta</a>
+        <a href="#antojo">Arma tu antojo</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a class="wa-chip" href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20una%20tres%20leches%20fr%C3%ADa%20%F0%9F%8D%93" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </nav>
+</header>
+
+<a id="top"></a>
+
+<main>
+<!-- HERO -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="hero-head">
+      <span class="script script-tag">Arte &amp; Dulzura</span>
+      <h1 id="h1">
+        <span class="a">YiYi's</span>
+        <span class="b script">tres leches frías</span>
+        <span class="c">hechas en Maturín</span>
+      </h1>
+      <p class="hero-lead">Nuestra <b>tres leches fría</b> es la consentida de la casa: bizcocho empapadito, crema y muchas fresas. También tortas personalizadas, la nueva <b>LONG CAKE</b> y ponquesitos, hechos con amor por encargo.</p>
+      <div class="hero-cta">
+        <span class="underline-wrap">
+          <a class="pill" href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20una%20tres%20leches%20fr%C3%ADa%20%F0%9F%8D%93" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Pide por WhatsApp
+          </a>
+          <svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C40 2, 80 12, 120 6 S180 2, 198 7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </span>
+        <a class="pill ghost" href="#carta">Ver la carta</a>
+      </div>
+      <div class="recipe-meta">
+        <span><span class="dot"></span>Origen: <b>hecho en casa</b></span>
+        <span><span class="dot"></span>Zona: <b>Maturín, Monagas</b></span>
+        <span><span class="dot"></span>Se sirve: <b>frío 🍓</b></span>
+        <span><span class="dot"></span>Pedidos: <b>por encargo</b></span>
+      </div>
+    </div>
+
+    <figure class="recipe-photo">
+      <span class="tape" aria-hidden="true"></span>
+      <img src="./assets/yiyis-hero-tresleches-fresas.jpg" alt="Tres leches fría de YiYi's coronada con muchas fresas en rosetón, borde de crema y lazo fucsia" loading="eager">
+      <figcaption>tres leches con muchas fresas 🍓</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 01 CORTE DE TRES LECHES -->
+<section id="corte" class="corte" aria-labelledby="corte-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01 — La firma</span>
+      <h2 id="corte-h">El corte de la tres leches</h2>
+      <p class="lede">Lo que la hace inolvidable está por dentro. Baja despacio y mira capa por capa: así se arma cada porción de nuestra tres leches fría.</p>
+    </div>
+    <div class="slice-wrap" id="slice">
+      <figure class="slice">
+        <div class="slice-plate" aria-hidden="true">
+          <div class="layer l-fresas" data-l="4"><span class="band"></span></div>
+          <div class="layer l-crema" data-l="3"><span class="band"></span></div>
+          <div class="layer l-empape" data-l="2"><span class="band"></span></div>
+          <div class="layer l-bizcocho" data-l="1"><span class="band"></span></div>
+        </div>
+        <figcaption class="slice-caption">un corte, cuatro capas, cero prisa</figcaption>
+      </figure>
+      <ol class="capas">
+        <li class="capa" data-l="4"><span class="n">04</span><div><h3>Fresas frescas</h3><p>Rebanadas encima como un rosetón, brillantes y jugosas. La firma visual de la casa.</p></div></li>
+        <li class="capa" data-l="3"><span class="n">03</span><div><h3>Crema batida</h3><p>Una capa suave que sella el bizcocho y corona el borde. Ligera, no empalaga.</p></div></li>
+        <li class="capa" data-l="2"><span class="n">02</span><div><h3>Bañado en tres leches</h3><p>El secreto: el bizcocho absorbe las tres leches hasta quedar húmedo y fresquito.</p></div></li>
+        <li class="capa" data-l="1"><span class="n">01</span><div><h3>Bizcocho esponjoso</h3><p>La base recién horneada, aireada, lista para empaparse. Aquí empieza todo.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 02 LA CARTA -->
+<section id="carta" aria-labelledby="carta-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02 — El recetario</span>
+      <h2 id="carta-h">La carta de YiYi's</h2>
+      <p class="lede">Todo se hace por encargo y se cotiza a tu gusto. Elige lo que se te antoje y escríbenos: te pasamos precio, tamaños y disponibilidad al momento.</p>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha big">
+        <span class="tab">Lo consentido</span>
+        <span class="badge">Más pedida</span>
+        <div class="ficha-photo">
+          <img src="./assets/yiyis-tresleches-tradicional-fresas.jpg" alt="Tres leches tradicional con fresas de YiYi's, en envase con lazo fucsia y borde de crema" loading="lazy">
+        </div>
+        <h3>Tres leches frías</h3>
+        <p class="note">bizcocho empapadito, crema y fresas 🍓</p>
+        <p>Nuestra especialidad, siempre fresca. Elige tu versión favorita:</p>
+        <div class="variants">
+          <a href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Quiero%20cotizar%20una%20tres%20leches%20fr%C3%ADa%20con%20fresas%20%F0%9F%8D%93" target="_blank" rel="noopener">Con fresas</a>
+          <a href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Quiero%20cotizar%20una%20tres%20leches%20fr%C3%ADa%20de%20chocolate%20%F0%9F%8D%AB" target="_blank" rel="noopener">De chocolate</a>
+          <a href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Quiero%20cotizar%20una%20tres%20leches%20fr%C3%ADa%20tradicional%20con%20fresas%20%F0%9F%8D%93" target="_blank" rel="noopener">Tradicional</a>
+        </div>
+        <div class="foot">
+          <span class="price-note">Cotiza tu tamaño por WhatsApp</span>
+          <a class="pedir" href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Quiero%20cotizar%20una%20tres%20leches%20fr%C3%ADa%20con%20fresas%20%F0%9F%8D%93" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043z"/></svg>
+            Pedir
+          </a>
+        </div>
+      </article>
+
+      <article class="ficha long">
+        <span class="tab">Nuevo formato</span>
+        <span class="badge">Nuevo</span>
+        <div class="ficha-photo">
+          <img src="./assets/yiyis-longcake.jpg" alt="LONG CAKE de YiYi's, torta alargada con crema, flores lilas y velas doradas" loading="lazy">
+        </div>
+        <h3>LONG CAKE</h3>
+        <p class="note">nuestro formato más nuevo ✨</p>
+        <p>Torta alargada para compartir, ideal para celebraciones. Recién estrenada en la casa.</p>
+        <div class="foot">
+          <span class="price-note">Cotiza por WhatsApp</span>
+          <a class="pedir" href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Me%20interesa%20la%20nueva%20LONG%20CAKE%20%E2%9C%A8%20%C2%BFme%20pueden%20cotizar%3F" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043z"/></svg>
+            Pedir
+          </a>
+        </div>
+      </article>
+
+      <article class="ficha perso">
+        <span class="tab">Para tu ocasión</span>
+        <div class="illus" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#B6517A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 54h40V32a4 4 0 00-4-4H16a4 4 0 00-4 4z"/>
+            <path d="M12 40c3 0 3 3 6 3s3-3 6-3 3 3 6 3 3-3 6-3 3 3 6 3 3-3 6-3"/>
+            <path d="M32 28V16"/><path d="M32 12a3 3 0 013 3c0 2-3 3-3 3s-3-1-3-3a3 3 0 013-3z" fill="#F4AFCC"/>
+            <path d="M22 28v-5M42 28v-5"/>
+          </svg>
+        </div>
+        <h3>Tortas personalizadas</h3>
+        <p class="note">tu idea, hecha torta 🎀</p>
+        <p>Cumpleaños, bautizos, detalles: diseñamos el sabor, el tamaño y la decoración contigo.</p>
+        <div class="foot">
+          <span class="price-note">Cuéntanos tu idea por WhatsApp</span>
+          <a class="pedir" href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Quiero%20una%20torta%20personalizada%2C%20%C2%BFc%C3%B3mo%20la%20cotizamos%3F" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043z"/></svg>
+            Pedir
+          </a>
+        </div>
+      </article>
+
+      <article class="ficha ponque">
+        <span class="tab">Para el antojo</span>
+        <div class="illus" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#B6517A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 34h24l-3 20H23z"/>
+            <path d="M18 34h28" />
+            <path d="M20 34a12 12 0 0124 0" fill="#F4AFCC" stroke="#B6517A"/>
+            <path d="M32 14v-3M32 11a2.5 2.5 0 012.5 2.5c0 1.6-2.5 2.5-2.5 2.5s-2.5-.9-2.5-2.5A2.5 2.5 0 0132 11z" fill="#A83719" stroke="#A83719"/>
+          </svg>
+        </div>
+        <h3>Ponquesitos</h3>
+        <p class="note">del tamaño perfecto ☺️</p>
+        <p>Porciones individuales para compartir, sorprender o darte un gusto sin culpa.</p>
+        <div class="foot">
+          <span class="price-note">Cotiza por WhatsApp</span>
+          <a class="pedir" href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Quiero%20cotizar%20unos%20ponquesitos%20%E2%98%BA%EF%B8%8F" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043z"/></svg>
+            Pedir
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 03 ARMA TU ANTOJO -->
+<section id="antojo" class="antojo" aria-labelledby="antojo-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03 — Sin vueltas</span>
+      <h2 id="antojo-h">Arma tu antojo</h2>
+      <p class="lede">Sabemos que todo empieza por el chat. Aquí adelantas el pedido en dos toques: elige y te llevamos directo a WhatsApp con tu nota lista.</p>
+    </div>
+    <div class="antojo-grid">
+      <form class="builder" id="builder" aria-label="Arma tu pedido">
+        <fieldset>
+          <legend>1 · ¿Qué se te antoja?</legend>
+          <div class="opts">
+            <input type="radio" id="p1" name="prod" value="Tres leches fría con fresas">
+            <label for="p1">Tres leches con fresas</label>
+            <input type="radio" id="p2" name="prod" value="Tres leches fría de chocolate">
+            <label for="p2">Tres leches de chocolate</label>
+            <input type="radio" id="p3" name="prod" value="Tres leches fría tradicional">
+            <label for="p3">Tres leches tradicional</label>
+            <input type="radio" id="p4" name="prod" value="LONG CAKE">
+            <label for="p4">LONG CAKE</label>
+            <input type="radio" id="p5" name="prod" value="Torta personalizada">
+            <label for="p5">Torta personalizada</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>2 · ¿De qué tamaño?</legend>
+          <div class="opts">
+            <input type="radio" id="s1" name="size" value="personal">
+            <label for="s1">Personal</label>
+            <input type="radio" id="s2" name="size" value="mediana">
+            <label for="s2">Mediana</label>
+            <input type="radio" id="s3" name="size" value="familiar">
+            <label for="s3">Familiar</label>
+            <input type="radio" id="s4" name="size" value="para evento">
+            <label for="s4">Para evento</label>
+          </div>
+        </fieldset>
+        <a class="pill send" id="sendOrder" href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Quiero%20cotizar%20una%20tres%20leches%20fr%C3%ADa%20%F0%9F%8D%93" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043z"/></svg>
+          Enviar mi antojo por WhatsApp
+        </a>
+        <p class="needsel">Elige un dulce y un tamaño para armar tu nota.</p>
+      </form>
+
+      <aside class="nota-card" aria-live="polite">
+        <h3>Así queda tu nota</h3>
+        <p class="nota-line"><span class="k">Quiero:</span> <span id="outProd"><em>elige tu dulce…</em></span></p>
+        <p class="nota-line"><span class="k">Tamaño:</span> <span id="outSize"><em>elige el tamaño…</em></span></p>
+        <p class="nota-line" style="color:var(--rosa-prof)">con mucho cariño, YiYi's</p>
+        <p class="nota-hint">Sin compromiso: al enviar coordinamos precio, fecha y entrega por WhatsApp.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 04 HECHO CON AMOR -->
+<section class="valores" aria-labelledby="val-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">04 — Hecho con amor</span>
+      <h2 id="val-h">Por qué se siente casero</h2>
+    </div>
+    <div class="val-grid">
+      <div class="val">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5C1 9 3 6 6 6c2 0 3 1.5 3 1.5S10 6 12 6s3 1.5 3 1.5S16 6 18 6c3 0 5 3 3.5 6.5C19 16.65 12 21 12 21z"/></svg>
+        <h3>Hecho en casa</h3>
+        <p>Cada torta se hornea por encargo, no en serie. Se nota en el sabor.</p>
+      </div>
+      <div class="val">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3>Recién hecha</h3>
+        <p>Preparamos tu pedido fresco para la fecha que necesites.</p>
+      </div>
+      <div class="val">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        <h3>Coordinamos entrega</h3>
+        <p>Acordamos por WhatsApp cómo recibes tu pedido en Maturín.</p>
+      </div>
+      <div class="val">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 7.7l5.4-.8z"/></svg>
+        <h3>A tu gusto</h3>
+        <p>Sabores, tamaños y decoración: se adaptan a tu ocasión.</p>
+      </div>
+    </div>
+    <div class="story">
+      <span class="script">Arte &amp; Dulzura, en cada porción</span>
+      <p>YiYi's nace en Maturín de las ganas de endulzar los momentos importantes. Lo que empezó como un antojo se volvió la tres leches que todos piden — y ahora también LONG CAKE, tortas personalizadas y ponquesitos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 CONTACTO -->
+<section id="contacto" aria-labelledby="cont-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">05 — Hagamos el pedido</span>
+      <h2 id="cont-h">Escríbele a YiYi's</h2>
+      <p class="lede">Cotización y pedidos siempre por WhatsApp. Cuéntanos qué celebras y lo hacemos realidad.</p>
+    </div>
+    <div class="contacto-grid">
+      <div class="contacto-card">
+        <ul class="cinfo">
+          <li>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <div><b>WhatsApp</b><span>+58 414-8775559 · cotización y pedidos</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <div><b>Instagram</b><span>@yiyis.mat · mira nuestras creaciones</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><b>Ubicación</b><span>Maturín, Monagas · repostería casera por encargo</span></div>
+          </li>
+        </ul>
+        <span class="underline-wrap">
+          <a class="pill" href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Escribo%20desde%20su%20p%C3%A1gina%20para%20hacer%20un%20pedido%20%F0%9F%8D%B0" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043z"/></svg>
+            Cotiza por WhatsApp
+          </a>
+          <svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C40 2, 80 12, 120 6 S180 2, 198 7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <figure class="contacto-photo">
+        <img src="./assets/yiyis-tresleches-tradicional-fresas.jpg" alt="Tres leches tradicional con fresas de YiYi's lista para llevar, con lazo fucsia" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER: nota de pedido -->
+<footer class="nota-footer">
+  <div class="wrap">
+    <div class="nf-top">
+      <div class="nf-brand">
+        <div class="row">
+          <img src="./assets/yiyis-logo-profile.jpg" alt="Logo de YiYi's">
+          <div>
+            <div class="bn">YiYi'S</div>
+            <div class="bs">Arte &amp; Dulzura</div>
+          </div>
+        </div>
+        <span class="script">hecho con amor, en Maturín 🍓</span>
+      </div>
+      <div class="nf-col">
+        <h4>Pedidos</h4>
+        <a href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20Escribo%20desde%20su%20p%C3%A1gina%20para%20hacer%20un%20pedido%20%F0%9F%8D%B0" target="_blank" rel="noopener">WhatsApp +58 414-8775559</a>
+        <p>Cotización y pedidos por WhatsApp</p>
+        <p>Maturín, Monagas · Venezuela</p>
+      </div>
+      <div class="nf-col">
+        <h4>Síguenos</h4>
+        <div class="socials">
+          <a href="https://www.instagram.com/yiyis.mat/" target="_blank" rel="noopener" aria-label="Instagram de YiYi's, @yiyis.mat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/584148775559" target="_blank" rel="noopener" aria-label="WhatsApp de YiYi's">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="nf-rule"></div>
+    <div class="seal">
+      <span>© 2026 YiYi's · Repostería casera en Maturín</span>
+      <span>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a class="wa-fab" href="https://wa.me/584148775559?text=%C2%A1Hola%20YiYi%27s%21%20%F0%9F%8D%93%20Quiero%20cotizar%20una%20tres%20leches%20fr%C3%ADa%2C%20%C2%BFme%20ayudan%3F" target="_blank" rel="noopener" aria-label="Escríbele a YiYi's por WhatsApp">
+  <span class="ping" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- Signature: cross-section reveal (progressive enhancement) --- */
+  var slice = document.getElementById('slice');
+  if (slice && 'IntersectionObserver' in window && !reduce){
+    slice.classList.add('animate');
+    var items = slice.querySelectorAll('.layer, .capa');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('seen'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.35, rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* --- Arma tu antojo: build prefilled wa.me --- */
+  var form = document.getElementById('builder');
+  if (form){
+    var outProd = document.getElementById('outProd');
+    var outSize = document.getElementById('outSize');
+    var send = document.getElementById('sendOrder');
+    var base = 'https://wa.me/584148775559?text=';
+    function upd(){
+      var p = form.querySelector('input[name="prod"]:checked');
+      var s = form.querySelector('input[name="size"]:checked');
+      outProd.innerHTML = p ? p.value : '<em>elige tu dulce…</em>';
+      outSize.innerHTML = s ? ('tamaño ' + s.value) : '<em>elige el tamaño…</em>';
+      form.classList.toggle('ready', !!(p && s));
+      if (p && s){
+        var msg = "¡Hola YiYi's! Quiero cotizar: " + p.value + " (tamaño " + s.value + "). ¿Me pasan precio y disponibilidad? 🍓";
+        send.setAttribute('href', base + encodeURIComponent(msg));
+      } else {
+        send.setAttribute('href', base + encodeURIComponent("¡Hola YiYi's! Quiero cotizar una tres leches fría 🍓"));
+      }
+    }
+    form.addEventListener('change', upd);
+    upd();
+  }
+})();
+</script>
+
+</body>
+</html>
