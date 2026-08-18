@@ -214,7 +214,20 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .values a::after{content:"→";font-family:"Work Sans",system-ui,sans-serif;font-size:.85em;color:var(--mut);transition:transform .2s ease,color .2s ease}
 .values a:hover{border-color:var(--ink);background:rgba(245,244,240,.06)}
 .values a:hover::after{transform:translateX(3px);color:var(--ink)}
+@media (max-width:480px){.values{gap:.6rem}.values a{font-size:1.15rem;padding:.55em .9em .55em 1.5em;gap:.45em}}
 .values-hint{margin-top:.9rem;font-size:.9rem}
+
+/* v2: highlighted note — the dojo welcomes neurodivergent kids (meeting request).
+   Welcome + practical next step only; no medical or therapeutic claims. */
+.note{
+  margin-top:2.2rem;padding:1.2rem 1.3rem 1.4rem;
+  border-left:4px solid var(--red);background:rgba(245,244,240,.045);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%);
+}
+.s-dojo .note__t{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.6rem;letter-spacing:.05em;text-transform:uppercase;line-height:1;color:var(--ink)}
+.s-dojo .note p+p{margin-top:.7rem}
+.s-dojo .note p{font-size:1rem}
+.note .cta{margin-top:1.1rem}
 
 /* v2: "El día a día" — how the three values look on a normal week */
 .daily{margin-top:clamp(2.8rem,6vw,4.5rem);padding-top:clamp(2rem,4vw,3rem);border-top:1px solid rgba(245,244,240,.14)}
@@ -289,6 +302,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .pcard h3{font-size:clamp(2.5rem, 7vw, 3.2rem);color:var(--cat)}
 .pcard__tag{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.3rem;letter-spacing:.06em;text-transform:uppercase}
 .pcard p{color:var(--mut);font-size:.98rem;flex:1}
+.pcard .pcard__note{flex:0;font-size:.9rem;color:var(--ink);padding-left:.9em;border-left:2px solid var(--red)}
 .pcard .cta{align-self:flex-start;margin-top:.6rem}
 .rail-note{color:var(--mut);font-size:.9rem;max-width:52ch}
 .rail-note strong{color:var(--ink);font-weight:600}
@@ -313,6 +327,14 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .chip input{position:absolute;opacity:0;pointer-events:none}
 .chip:has(input:checked){background:var(--ink);border-color:var(--ink);color:#15161a;font-weight:600}
 .chip:has(input:focus-visible){outline:2px solid var(--red);outline-offset:3px}
+/* v2: optional add-on, only shown when the message is for a son/daughter */
+.chips--opt{display:none;margin-top:.8rem}
+.inscribe:has(input[name="quien"][value="hijo"]:checked) .chips--opt{display:flex}
+@supports not selector(:has(*)){.chips--opt{display:flex}}
+.chip--check{font-size:.92rem;font-weight:400;border-style:dashed}
+.chip--check::before{content:"";width:.9em;height:.9em;margin-right:.6em;border:1px solid rgba(245,244,240,.55);border-radius:3px;flex:none}
+.chip--check:has(input:checked){border-style:solid}
+.chip--check:has(input:checked)::before{background:var(--red);border-color:var(--red)}
 
 /* v2: "Solo quiero información" comes pre-checked, so step 2 and the ready
    message are visible on arrival (meeting feedback, 17-Aug). Both unlock as
@@ -487,6 +509,14 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
             <li><a href="#dia-excelencia">Excelencia<span class="sr">: cómo se vive en el día a día</span></a></li>
           </ul>
           <p class="values-hint reveal">Toca un valor para ver cómo se entrena en el día a día del dojo.</p>
+
+          <!-- v2-pending: the Sensei asked to highlight this. Wording is welcome + next step
+               only — no medical/therapeutic promises. He validates the final text. -->
+          <aside class="note reveal" aria-labelledby="h-neuro">
+            <p class="note__t" id="h-neuro">Aquí también entrenan niños neurodivergentes</p>
+            <p>El dojo los recibe con las mismas reglas y el mismo respeto que a todos — cada uno a su ritmo. Si tu hijo o hija necesita alguna adaptación, cuéntaselo al Sensei por WhatsApp para que la primera clase empiece bien.</p>
+            <a class="cta cta--ghost cta--sm" href="#inscripcion" data-preset="hijo-adapt"><span>Contárselo al Sensei</span></a>
+          </aside>
         </div>
 
         <!-- v2-pending: bio copy comes ONLY from what the Sensei sends (years teaching,
@@ -546,6 +576,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
           <h3>Infantil</h3>
           <p class="pcard__tag">Primeros pasos y disciplina</p>
           <p>El tatami como primera escuela: respeto, foco y confianza para los más pequeños de la casa. Aquí empieza el camino del cinturón.</p>
+          <p class="pcard__note">Niños neurodivergentes: bienvenidos, a su ritmo.</p>
           <a class="cta cta--ghost cta--sm" href="#inscripcion"><span>Preguntar horarios</span></a>
         </div>
       </article>
@@ -621,6 +652,9 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
             <label class="chip"><input type="radio" name="quien" value="hijo"><span>Para mi hijo o hija</span></label>
             <label class="chip"><input type="radio" name="quien" value="adulto"><span>Para mí (adulto)</span></label>
             <label class="chip"><input type="radio" name="quien" value="info" checked><span>Solo quiero información</span></label>
+          </div>
+          <div class="chips chips--opt">
+            <label class="chip chip--check"><input type="checkbox" name="adapt" value="1"><span>Mi hijo/a es neurodivergente o necesita alguna adaptación</span></label>
           </div>
         </fieldset>
 
@@ -735,14 +769,31 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
       mensualidad: '¿Cuánto es la mensualidad?',
       prueba:      '¿Puedo ir a una clase de prueba?'
     };
-    form.addEventListener('change', function(){
+    var ADAPT = 'Mi hijo/a es neurodivergente; me gustaría saber cómo lo acompañan en clase.';
+    var update = function(){
       var q = form.querySelector('input[name="quien"]:checked');
       var t = form.querySelector('input[name="tema"]:checked');
-      var msg = (q ? WHO[q.value] : WHO.info) + (t ? ' ' + ASK[t.value] : '');
+      var a = form.querySelector('input[name="adapt"]:checked');
+      var msg = (q ? WHO[q.value] : WHO.info)
+              + (t ? ' ' + ASK[t.value] : '')
+              + (a && q && q.value === 'hijo' ? ' ' + ADAPT : '');
       out.textContent = msg;
       cta.href = 'https://wa.me/584262470341?text=' + encodeURIComponent(msg);
-    });
+    };
+    form.addEventListener('change', update);
     form.addEventListener('submit', function(e){ e.preventDefault(); });
+    update(); /* browsers may restore a previous choice on reload */
+
+    /* Links with data-preset pre-fill the composer (e.g. the neurodivergent note) */
+    d.querySelectorAll('[data-preset="hijo-adapt"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        var hijo = form.querySelector('input[name="quien"][value="hijo"]');
+        var adapt = form.querySelector('input[name="adapt"]');
+        if (hijo) hijo.checked = true;
+        if (adapt) adapt.checked = true;
+        update();
+      });
+    });
   }
 
   /* 3. Reveal sutil al hacer scroll */
