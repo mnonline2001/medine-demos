@@ -200,13 +200,37 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .s-dojo p+p{margin-top:1rem}
 .s-dojo p strong{color:var(--ink);font-weight:600}
 .values{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem;list-style:none}
-.values li{
+/* v2: the value chips are real links now (people clicked them in the meeting) →
+   they jump to "El día a día", where each value is shown as routine. */
+.values a{
+  display:inline-flex;align-items:center;gap:.55em;
   border:1px solid rgba(245,244,240,.22);border-radius:10px;
-  padding:.6em 1.2em;
+  padding:.6em 1.2em .6em 1.6em;
   font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.25rem;letter-spacing:.09em;
-  position:relative;padding-left:1.6em;
+  position:relative;
+  transition:border-color .2s ease,background .2s ease;
 }
-.values li::before{content:"";position:absolute;left:.75em;top:50%;width:.42em;height:.42em;background:var(--red);transform:translateY(-50%) rotate(45deg)}
+.values a::before{content:"";position:absolute;left:.75em;top:50%;width:.42em;height:.42em;background:var(--red);transform:translateY(-50%) rotate(45deg)}
+.values a::after{content:"→";font-family:"Work Sans",system-ui,sans-serif;font-size:.85em;color:var(--mut);transition:transform .2s ease,color .2s ease}
+.values a:hover{border-color:var(--ink);background:rgba(245,244,240,.06)}
+.values a:hover::after{transform:translateX(3px);color:var(--ink)}
+.values-hint{margin-top:.9rem;font-size:.9rem}
+
+/* v2: "El día a día" — how the three values look on a normal week */
+.daily{margin-top:clamp(2.8rem,6vw,4.5rem);padding-top:clamp(2rem,4vw,3rem);border-top:1px solid rgba(245,244,240,.14)}
+.daily h3{font-size:clamp(2.1rem,6vw,3rem);margin-top:.35rem}
+.s-dojo .daily__lead{margin-top:1rem;max-width:62ch}
+.daily__grid{display:grid;gap:1rem;margin-top:1.8rem}
+@media (min-width:760px){.daily__grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.daily__card{
+  background:var(--bg);border:1px solid rgba(245,244,240,.16);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%);
+  padding:1.3rem 1.4rem 1.5rem;
+  scroll-margin-top:calc(var(--nav-h) + 18px);
+}
+.daily__card h4{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight:400;font-size:1.65rem;letter-spacing:.06em;text-transform:uppercase;line-height:1;display:flex;align-items:center;gap:.5em}
+.daily__card h4::before{content:"";width:.42em;height:.42em;background:var(--red);transform:rotate(45deg);flex:none}
+.s-dojo .daily__card p{font-size:.97rem;margin-top:.7rem}
 
 /* v2: inline links that must read as links (name of the Sensei → bio) */
 .lnk{color:inherit;text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:.22em;transition:color .2s ease,text-decoration-color .2s ease}
@@ -457,11 +481,12 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
             <p>En Maturín, estado Monagas, la <strong>Escuela de Karate-Do Dojo J.J. Rondón</strong> lleva las iniciales de quien la dirige: el <strong><a class="lnk" href="#sensei">Sensei José Rondón</a></strong>. Aquí el karate se enseña como lo que es — una disciplina que forma el carácter.</p>
             <p>La mayoría de nuestros alumnos son <strong>niños que crecen en el tatami</strong>, y también entrenan adultos que decidieron empezar. Es un dojo que <strong>forma medallistas</strong>: se entrena para competir, y para la vida.</p>
           </div>
-          <ul class="values reveal">
-            <li>Disciplina</li>
-            <li>Mejora continua</li>
-            <li>Excelencia</li>
+          <ul class="values reveal" aria-label="Los tres valores del dojo">
+            <li><a href="#dia-disciplina">Disciplina<span class="sr">: cómo se vive en el día a día</span></a></li>
+            <li><a href="#dia-mejora">Mejora continua<span class="sr">: cómo se vive en el día a día</span></a></li>
+            <li><a href="#dia-excelencia">Excelencia<span class="sr">: cómo se vive en el día a día</span></a></li>
           </ul>
+          <p class="values-hint reveal">Toca un valor para ver cómo se entrena en el día a día del dojo.</p>
         </div>
 
         <!-- v2-pending: bio copy comes ONLY from what the Sensei sends (years teaching,
@@ -474,6 +499,33 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
           <p>Enseña karate a niños y adultos con una idea sencilla: la excelencia se demuestra en el tatami, con constancia, respeto y trabajo bien hecho.</p>
           <p class="sensei__pending">Su trayectoria y sus años de enseñanza, contados por él mismo, se suman aquí apenas los comparta.</p>
         </aside>
+      </div>
+
+      <!-- v2-pending: PROVISIONAL copy. A parent asked in the meeting (17-Aug) to see
+           the dojo's day to day (one day strength, another the karate vocabulary...).
+           Replace with the exact words from the meeting recording and the Sensei's
+           own description before publishing. Only "fuerza" and "vocabulario" come
+           from Ingrid's notes; the rest is a careful draft to be validated. -->
+      <div class="daily" id="dia-a-dia">
+        <div class="reveal">
+          <p class="kicker">El día a día</p>
+          <h3>Así se entrena aquí</h3>
+          <p class="daily__lead">Cada clase tiene su énfasis: hay días de <strong>fuerza y acondicionamiento</strong>, y días en que el trabajo está en el <strong>vocabulario del karate</strong> — lo que se dice y se responde en el tatami. Así los tres valores dejan de ser palabras y se vuelven rutina.</p>
+        </div>
+        <div class="daily__grid reveal">
+          <article class="daily__card" id="dia-disciplina">
+            <h4>Disciplina</h4>
+            <p>Se entrena en cada saludo, en llegar a tiempo y en el respeto al tatami y al compañero — desde el primer día, y a la medida de cada edad.</p>
+          </article>
+          <article class="daily__card" id="dia-mejora">
+            <h4>Mejora continua</h4>
+            <p>Cada cinturón es una meta alcanzable. Se avanza paso a paso, y el progreso se ve — en la técnica y en la actitud.</p>
+          </article>
+          <article class="daily__card" id="dia-excelencia">
+            <h4>Excelencia</h4>
+            <p>Se compite cuando se está listo, y se entrena para estarlo. La excelencia aquí es hacer bien lo de hoy.</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
