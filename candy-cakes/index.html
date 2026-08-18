@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Candy Cakes · Tortas temáticas en Maturín</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Candy Cakes — tortas temáticas, vintage y postres por encargo en Las Cocuizas, Maturín. Pídela por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Candy Cakes · Tortas temáticas en Maturín">
+<meta property="og:description" content="Tu catálogo de Instagram, por fin en una página. Tortas hechas con amor y pan de oro. Pedidos por WhatsApp.">
+<meta property="og:image" content="https://mnonline2001.github.io/medine-demos/candy-cakes/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/candycakes-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF9FC;
+    --cream-2:#FDEFF6;
+    --ink:#3A2230;
+    --ink-soft:#6E4B5E;
+    --pink:#EF9FCC;
+    --pink-soft:#FBE6F1;
+    --pink-line:#F3C2DD;
+    --aqua:#A4F6F2;
+    --aqua-soft:#E4FBFA;
+    --aqua-deep:#1F7C77;
+    --gold:#C8A24B;
+    --gold-deep:#8A6D24;
+    --berry:#A14355;
+    --berry-deep:#6E2438;
+    --shadow:0 18px 44px -22px rgba(120,40,80,.45);
+    --shadow-sm:0 8px 22px -14px rgba(120,40,80,.5);
+    --r:22px;
+    --maxw:1120px;
+    --scallop: radial-gradient(circle 9px at 12px 100%, transparent 9px, #000 9.5px) 0 100% / 24px 18px repeat-x;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Quicksand",system-ui,-apple-system,sans-serif;
+    font-weight:500;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{line-height:1.08;margin:0;font-weight:700;letter-spacing:-.01em}
+  p{margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:20px}
+  .script{font-family:"Grand Hotel",cursive;font-weight:400;letter-spacing:0;color:var(--pink)}
+  .eyebrow{
+    font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--berry);display:inline-flex;align-items:center;gap:.6em;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold);border-radius:2px}
+
+  /* ---- Buttons ---- */
+  .btn{
+    --bg:var(--berry);--fg:#fff;
+    display:inline-flex;align-items:center;gap:.5em;justify-content:center;
+    background:var(--bg);color:var(--fg);
+    font-family:inherit;font-weight:700;font-size:1rem;
+    text-decoration:none;border:0;cursor:pointer;
+    padding:.85em 1.4em;border-radius:0 0 16px 16px;
+    position:relative;box-shadow:var(--shadow-sm);white-space:nowrap;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    min-height:48px;
+  }
+  .only-sm{display:inline}
+  .hide-sm{display:none}
+  @media(min-width:560px){.only-sm{display:none}.hide-sm{display:inline}}
+  .nav-cta{font-size:.9rem;padding:.7em 1.05em}
+  @media(min-width:900px){.nav-cta{font-size:1rem;padding:.8em 1.35em}}
+  /* glaseado: borde superior de glaseado goteando */
+  .btn::before{
+    content:"";position:absolute;left:0;right:0;top:-11px;height:14px;background:var(--bg);
+    -webkit-mask:radial-gradient(circle 8px at 12px -2px, transparent 8px, #000 8.5px) 0 0 / 24px 14px repeat-x;
+            mask:radial-gradient(circle 8px at 12px -2px, transparent 8px, #000 8.5px) 0 0 / 24px 14px repeat-x;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn:active{transform:translateY(0)}
+  .btn--wa{--bg:#1FA855}
+  .btn--ghost{--bg:transparent;--fg:var(--berry);box-shadow:none;border:2px solid var(--pink-line);border-radius:999px;padding:.7em 1.25em}
+  .btn--ghost::before{display:none}
+  .btn--ghost:hover{background:var(--pink-soft)}
+  .btn .ico{width:1.15em;height:1.15em;flex:none}
+
+  :where(a,button,input,label,summary):focus-visible{
+    outline:3px solid var(--aqua-deep);outline-offset:3px;border-radius:6px;
+  }
+
+  /* ---- Nav ---- */
+  header.site{position:sticky;top:0;z-index:50}
+  .navbar{
+    background:rgba(255,249,252,.92);backdrop-filter:saturate(1.3) blur(8px);
+    border-bottom:1px solid var(--pink-line);
+    position:relative;
+  }
+  /* borde festoneado (doily) bajo el nav */
+  .navbar::after{
+    content:"";position:absolute;left:0;right:0;bottom:-15px;height:16px;
+    background:var(--pink);
+    -webkit-mask:var(--scallop);mask:var(--scallop);
+    opacity:.9;
+  }
+  .nav-in{display:flex;align-items:center;gap:1rem;min-height:66px}
+  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:700;color:var(--ink)}
+  .brand img{width:40px;height:40px;border-radius:50%;box-shadow:0 0 0 2px var(--pink-line)}
+  .brand b{font-size:1.05rem;letter-spacing:-.02em}
+  .brand span{display:block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  .nav-links{display:none;margin-left:auto;gap:1.4rem;align-items:center}
+  .nav-links a{text-decoration:none;font-weight:600;color:var(--ink);font-size:.95rem;padding:.3em 0;border-bottom:2px solid transparent}
+  .nav-links a:hover{border-bottom-color:var(--pink)}
+  .nav-cta{margin-left:auto}
+  @media(min-width:900px){
+    .nav-links{display:flex}
+    .nav-cta{margin-left:1.4rem}
+  }
+
+  /* ---- Hero ---- */
+  .hero{position:relative;padding:38px 0 46px}
+  .hero-grid{display:grid;gap:26px}
+  .hero-copy{align-self:center}
+  .hero h1{
+    font-size:clamp(2.35rem,9vw,4.3rem);margin:.35em 0 .15em;color:var(--ink);
+  }
+  .hero h1 .script{display:block;font-size:1.16em;line-height:.9;margin-bottom:-.06em}
+  .hero p.lead{font-size:1.08rem;color:var(--ink-soft);max-width:34ch;margin-top:.2em}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+  .proof{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;align-items:center}
+  .proof .chip{
+    display:inline-flex;align-items:center;gap:.5em;font-weight:600;font-size:.9rem;color:var(--ink);
+    background:#fff;border:1px solid var(--pink-line);padding:.5em .9em;border-radius:999px;box-shadow:var(--shadow-sm)
+  }
+  .proof .chip b{color:var(--berry)}
+  .proof .dot{width:8px;height:8px;border-radius:50%;background:var(--aqua);box-shadow:0 0 0 3px var(--aqua-soft)}
+
+  .hero-photo{position:relative}
+  .hero-photo .frame{
+    position:relative;border-radius:30px;overflow:hidden;box-shadow:var(--shadow);
+    border:6px solid #fff;background:var(--pink-soft);
+  }
+  .hero-photo .frame img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+  .hero-photo .tag{
+    position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);
+    border-radius:14px;padding:.55em .85em;font-size:.82rem;font-weight:700;color:var(--berry);
+    box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:.45em
+  }
+  .hero-photo .seal{
+    position:absolute;right:-10px;top:-10px;width:92px;height:92px;border-radius:50%;
+    background:var(--gold);color:#fff;display:grid;place-content:center;text-align:center;
+    font-weight:700;font-size:.7rem;line-height:1.15;transform:rotate(9deg);
+    box-shadow:var(--shadow);border:3px dashed #fff;padding:8px
+  }
+  @media(min-width:820px){
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}
+    .hero{padding:56px 0 64px}
+  }
+
+  /* ---- Section shell ---- */
+  section{position:relative}
+  .band{padding:60px 0}
+  .band.pink{background:var(--pink-soft)}
+  .band.mint{background:var(--aqua-soft)}
+  .sec-head{max-width:56ch;margin-bottom:30px}
+  .sec-head h2{font-size:clamp(1.8rem,5.5vw,2.7rem);margin-top:.25em}
+  .sec-head h2 .script{color:var(--berry)}
+  .sec-head p{color:var(--ink-soft);margin-top:.6em;font-size:1.03rem}
+  .kicker{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--aqua-deep)}
+
+  /* scallop divider on pink bands */
+  .band.pink::before{
+    content:"";position:absolute;top:-14px;left:0;right:0;height:15px;background:var(--pink-soft);
+    -webkit-mask:var(--scallop);mask:var(--scallop);
+  }
+
+  /* ---- Catálogo (filtro :has) ---- */
+  .filtros{border:0;padding:0;margin:0 0 26px;display:flex;flex-wrap:wrap;gap:10px}
+  .filtros legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .filtros input{position:absolute;opacity:0;width:1px;height:1px}
+  .filtros label{
+    cursor:pointer;font-weight:700;font-size:.92rem;color:var(--ink);
+    background:#fff;border:1.5px solid var(--pink-line);border-radius:999px;
+    padding:.55em 1.05em;transition:.16s;min-height:44px;display:inline-flex;align-items:center;gap:.4em
+  }
+  .filtros label:hover{background:var(--pink-soft)}
+  .filtros input:checked + label{background:var(--berry);border-color:var(--berry);color:#fff}
+  .filtros input:focus-visible + label{outline:3px solid var(--aqua-deep);outline-offset:3px}
+
+  .galeria{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:560px){.galeria{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.galeria{grid-template-columns:repeat(3,1fr)}}
+
+  .card{
+    background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);
+    border:1px solid var(--pink-line);display:flex;flex-direction:column;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .card .ph{position:relative;overflow:hidden;background:var(--pink-soft)}
+  .card .ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;transition:transform .5s ease}
+  .card:hover .ph img{transform:scale(1.05)}
+  .card .occ{
+    position:absolute;left:12px;top:12px;background:rgba(255,255,255,.94);color:var(--berry);
+    font-weight:700;font-size:.74rem;letter-spacing:.02em;padding:.4em .75em;border-radius:999px;box-shadow:var(--shadow-sm)
+  }
+  .card .body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .card .body h3{font-size:1.12rem;color:var(--ink)}
+  .card .body p{font-size:.92rem;color:var(--ink-soft)}
+  .card .body .btn{margin-top:auto;font-size:.92rem;align-self:flex-start}
+
+  /* filtro :has() — sin JS */
+  #catalogo:has(#f-cumple:checked) .card:not([data-occ~="cumple"]),
+  #catalogo:has(#f-tematica:checked) .card:not([data-occ~="tematica"]),
+  #catalogo:has(#f-vintage:checked) .card:not([data-occ~="vintage"]),
+  #catalogo:has(#f-postres:checked) .card:not([data-occ~="postres"]){
+    display:none;
+  }
+  .galeria-empty{display:none;color:var(--ink-soft);font-weight:600}
+
+  /* ---- Cómo pedimos (torta que se arma) ---- */
+  .proceso-grid{display:grid;gap:34px}
+  @media(min-width:860px){.proceso-grid{grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}}
+  .cake-stage{position:relative;display:flex;justify-content:center;padding:10px 0}
+  @media(min-width:860px){.cake-stage{position:sticky;top:96px}}
+  .cake{width:min(300px,80vw);display:flex;flex-direction:column-reverse;align-items:center;filter:drop-shadow(0 22px 26px rgba(120,40,80,.28))}
+  .tier{position:relative;border-radius:16px 16px 12px 12px;box-shadow:inset 0 -8px 18px rgba(0,0,0,.05);
+        opacity:0;transform:translateY(26px) scale(.96);transition:opacity .6s ease, transform .6s cubic-bezier(.34,1.56,.64,1)}
+  .tier.in{opacity:1;transform:none}
+  .tier--board{width:100%;height:22px;border-radius:0 0 40px 40px;background:linear-gradient(var(--gold),#b98f38);
+        -webkit-mask:radial-gradient(circle 8px at 11px 100%, transparent 8px, #000 8.5px) 0 100%/22px 16px repeat-x, linear-gradient(#000,#000) 0 0/100% calc(100% - 8px) no-repeat;
+                mask:radial-gradient(circle 8px at 11px 100%, transparent 8px, #000 8.5px) 0 100%/22px 16px repeat-x, linear-gradient(#000,#000) 0 0/100% calc(100% - 8px) no-repeat;}
+  .tier--1{width:92%;height:96px;background:linear-gradient(180deg,#f4a9cf,#ec93c3)}
+  .tier--2{width:74%;height:80px;background:linear-gradient(180deg,#f7bcd9,#f2a6cd)}
+  .tier--3{width:56%;height:64px;background:linear-gradient(180deg,#fbd3e6,#f6bcda)}
+  /* borde de conchas piped en cada tier */
+  .tier--1::before,.tier--2::before,.tier--3::before{
+    content:"";position:absolute;left:0;right:0;top:-9px;height:12px;
+    background:radial-gradient(circle 7px at 8px 9px,#fbdcec 6px,transparent 6.5px) 0 0/16px 12px repeat-x;
+  }
+  .tier .fleck{position:absolute;inset:0;background:
+      radial-gradient(circle 2px at 20% 40%,var(--gold) 2px,transparent 2.5px),
+      radial-gradient(circle 2px at 62% 62%,var(--gold) 2px,transparent 2.5px),
+      radial-gradient(circle 2px at 80% 30%,#fff 2px,transparent 2.5px),
+      radial-gradient(circle 2px at 40% 72%,#fff 2px,transparent 2.5px);opacity:.9}
+  .topper{position:relative;height:56px;display:flex;align-items:flex-end;justify-content:center;gap:8px;
+          opacity:0;transform:translateY(-14px);transition:opacity .5s ease .05s, transform .5s ease .05s}
+  .topper.in{opacity:1;transform:none}
+  .cherry{width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#d76,#a1263a);position:relative;margin-top:auto}
+  .cherry::after{content:"";position:absolute;left:50%;top:-14px;width:2px;height:15px;background:#3f7d2f;transform:rotate(12deg);transform-origin:bottom}
+  .candle{width:6px;height:44px;border-radius:4px;background:linear-gradient(#fff,#f6c9de)}
+  .candle::after{content:"";position:absolute;margin-top:-9px;margin-left:-1px;width:8px;height:11px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#ffd36b,#f2913f);transform:translateX(-1px)}
+  .cake-note{text-align:center;margin-top:14px;font-family:"Grand Hotel",cursive;font-size:1.7rem;color:var(--berry);opacity:0;transition:opacity .5s ease}
+  .cake-note.in{opacity:1}
+
+  .steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;counter-reset:step}
+  .step{
+    background:#fff;border:1px solid var(--pink-line);border-left:5px solid var(--pink);
+    border-radius:16px;padding:18px 18px 18px 20px;box-shadow:var(--shadow-sm);
+    display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+    opacity:0;transform:translateX(14px);transition:opacity .5s ease, transform .5s ease
+  }
+  .step.in{opacity:1;transform:none}
+  .step .n{counter-increment:step;width:40px;height:40px;flex:none;border-radius:50%;background:var(--pink-soft);
+           color:var(--berry);font-weight:700;display:grid;place-content:center;font-size:1.05rem}
+  .step .n::before{content:counter(step,decimal-leading-zero)}
+  .step h3{font-size:1.12rem;color:var(--ink)}
+  .step p{font-size:.95rem;color:var(--ink-soft);margin-top:.25em}
+
+  /* ---- Cursos / mini bands ---- */
+  .split{display:grid;gap:26px;align-items:center}
+  @media(min-width:820px){.split{grid-template-columns:1.05fr .95fr;gap:44px}}
+  .split .photo{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);border:5px solid #fff}
+  .split .photo img{width:100%;aspect-ratio:5/4;object-fit:cover}
+  .split.rev .photo{order:-1}
+  @media(min-width:820px){.split.rev .photo{order:0}}
+
+  .mini-list{display:grid;gap:12px;margin:20px 0 0;padding:0;list-style:none}
+  .mini-list li{display:flex;gap:.7em;align-items:flex-start;font-weight:600;color:var(--ink)}
+  .mini-list .tick{flex:none;width:22px;height:22px;border-radius:50%;background:var(--aqua);display:grid;place-content:center;margin-top:2px}
+  .mini-list .tick svg{width:13px;height:13px}
+
+  /* ---- Contacto ---- */
+  .contact-card{
+    background:linear-gradient(160deg,#fff, var(--pink-soft));
+    border:1px solid var(--pink-line);border-radius:28px;box-shadow:var(--shadow);
+    padding:34px 26px;display:grid;gap:22px
+  }
+  @media(min-width:760px){.contact-card{grid-template-columns:1.1fr .9fr;padding:44px 40px;align-items:center}}
+  .contact-card h2{font-size:clamp(1.8rem,5.5vw,2.6rem)}
+  .contact-lines{display:grid;gap:14px;margin-top:20px}
+  .cl{display:flex;gap:.8em;align-items:center;font-weight:600}
+  .cl .ic{flex:none;width:38px;height:38px;border-radius:12px;background:#fff;border:1px solid var(--pink-line);display:grid;place-content:center}
+  .cl .ic svg{width:19px;height:19px}
+  .cl small{display:block;font-weight:600;color:var(--ink-soft);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+  .contact-cta{display:flex;flex-direction:column;gap:12px}
+  .contact-cta .btn{width:100%}
+
+  /* ---- Footer (mesa dulce festoneada) ---- */
+  footer.site{position:relative;background:var(--pink);color:var(--ink);margin-top:64px;padding:56px 0 30px}
+  footer.site::before{
+    content:"";position:absolute;top:-16px;left:0;right:0;height:18px;background:var(--pink);
+    -webkit-mask:radial-gradient(circle 11px at 15px 0, transparent 11px, #000 11.5px) 0 0/30px 18px repeat-x;
+            mask:radial-gradient(circle 11px at 15px 0, transparent 11px, #000 11.5px) 0 0/30px 18px repeat-x;
+  }
+  .foot-lead{font-family:"Grand Hotel",cursive;font-size:clamp(2rem,8vw,3.2rem);color:var(--berry-deep);line-height:1;margin-bottom:8px}
+  .foot-grid{display:grid;gap:26px;margin-top:26px}
+  @media(min-width:720px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .foot-brand{display:flex;align-items:center;gap:.7rem}
+  .foot-brand img{width:52px;height:52px;border-radius:50%;box-shadow:0 0 0 3px rgba(255,255,255,.6)}
+  .foot-brand b{font-size:1.2rem}
+  .foot h4{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--berry-deep);margin:0 0 10px}
+  .foot a{color:var(--ink);text-decoration:none;font-weight:600}
+  .foot a:hover{text-decoration:underline}
+  .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .socials{display:flex;gap:10px;margin-top:6px}
+  .socials a{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-content:center;box-shadow:var(--shadow-sm)}
+  .socials svg{width:20px;height:20px}
+  .seal{
+    margin-top:34px;padding-top:20px;border-top:1px solid rgba(126,46,66,.25);
+    display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;
+    font-size:.82rem;color:var(--berry-deep);font-weight:600
+  }
+  .seal a{color:var(--berry-deep);font-weight:700}
+
+  /* ---- FAB ---- */
+  .fab{
+    position:fixed;right:16px;bottom:16px;z-index:60;width:60px;height:60px;border-radius:50%;
+    background:#25D366;display:grid;place-content:center;box-shadow:0 12px 28px -8px rgba(0,0,0,.4);
+    transition:transform .18s ease
+  }
+  .fab:hover{transform:scale(1.06)}
+  .fab svg{width:32px;height:32px}
+  .fab-label{position:absolute;right:70px;bottom:16px;background:#fff;color:var(--ink);font-weight:700;font-size:.85rem;
+    padding:.5em .8em;border-radius:12px;box-shadow:var(--shadow-sm);white-space:nowrap;display:none}
+  @media(min-width:900px){.fab-label{display:block}}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important;animation:none !important}
+    .reveal,.tier,.topper,.cake-note,.step{opacity:1 !important;transform:none !important}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="navbar" aria-label="Principal">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Candy Cakes, inicio">
+        <img src="./assets/candycakes-logo.png" alt="Logo de Candy Cakes" width="40" height="40">
+        <span class="txt"><b>Candy Cakes</b><span>Maturín</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#proceso">Cómo pedir</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a class="btn nav-cta" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20quiero%20encargar%20una%20torta%20%F0%9F%8E%82" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.1.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+        <span class="hide-sm">Pedir por WhatsApp</span><span class="only-sm">Pedir</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Repostería temática · Las Cocuizas, Maturín</span>
+        <h1><span class="script">Endulzamos</span>lo que celebras.</h1>
+        <p class="lead">Tortas temáticas, vintage y postres hechos por encargo, con amor y pan de oro. Elige tu diseño y pídelo por WhatsApp — sin dar tantas vueltas por el chat.</p>
+        <div class="hero-cta">
+          <a class="btn" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20encargar%20una%20torta%20%F0%9F%8E%82" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.1.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+            Encargar mi torta
+          </a>
+          <a class="btn btn--ghost" href="#catalogo">Ver el catálogo</a>
+        </div>
+        <div class="proof">
+          <span class="chip"><span class="dot"></span> <b>+16&nbsp;mil</b>&nbsp;nos siguen en Instagram</span>
+          <span class="chip"><span class="dot"></span> Pedidos por <b>WhatsApp</b></span>
+        </div>
+      </div>
+
+      <div class="hero-photo reveal">
+        <div class="frame">
+          <img src="./assets/cc-merengue.jpg" alt="Torta rosa de cumpleaños decorada con cerezas y pan de oro, hecha por Candy Cakes" width="1290" height="1712" fetchpriority="high">
+          <span class="tag">🎂 Hecha en Maturín</span>
+        </div>
+        <div class="seal" aria-hidden="true">Con pan de oro real</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section id="catalogo" class="band pink">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">El catálogo</span>
+        <h2>Tus <span class="script">diseños</span>, por fin ordenados por ocasión.</h2>
+        <p>Hoy todo vive en la grilla de Instagram y hay que escribir por DM para verlo. Aquí tus clientes filtran por lo que buscan y te escriben con el diseño en la mano.</p>
+      </div>
+
+      <fieldset class="filtros" id="filtros">
+        <legend>Filtrar tortas por ocasión</legend>
+        <input type="radio" name="occ" id="f-todas" checked>
+        <label for="f-todas">Todas</label>
+        <input type="radio" name="occ" id="f-cumple">
+        <label for="f-cumple">🎂 Cumpleaños</label>
+        <input type="radio" name="occ" id="f-tematica">
+        <label for="f-tematica">🎨 Temáticas</label>
+        <input type="radio" name="occ" id="f-vintage">
+        <label for="f-vintage">🎀 Vintage &amp; bodas</label>
+        <input type="radio" name="occ" id="f-postres">
+        <label for="f-postres">🍮 Postres</label>
+      </fieldset>
+
+      <div class="galeria">
+        <article class="card" data-occ="cumple tematica">
+          <div class="ph"><span class="occ">Cumpleaños</span><img src="./assets/cc-merengue.jpg" alt="Torta rosa con cerezas y pan de oro para cumpleaños número 5" loading="lazy" width="1290" height="1712"></div>
+          <div class="body">
+            <h3>Cumpleaños con cerezas</h3>
+            <p>Buttercream rosa, cerezas y borde de pan de oro. Personalizamos el nombre y la edad.</p>
+            <a class="btn" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20me%20encant%C3%B3%20la%20torta%20rosa%20con%20cerezas%20de%20su%20p%C3%A1gina.%20Quiero%20una%20para%20cumplea%C3%B1os%20%F0%9F%8E%82" target="_blank" rel="noopener">Pídela por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="card" data-occ="vintage">
+          <div class="ph"><span class="occ">Vintage</span><img src="./assets/cc-vintage.jpg" alt="Torta vintage rosa con lazos y letras doradas Happy Birthday" loading="lazy" width="1290" height="1720"></div>
+          <div class="body">
+            <h3>Vintage con lazos</h3>
+            <p>Piping de conchas, perlas y lazos de raso. El estilo que está en tendencia.</p>
+            <a class="btn" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20quiero%20una%20torta%20estilo%20vintage%20como%20la%20de%20su%20p%C3%A1gina%20%F0%9F%8E%80" target="_blank" rel="noopener">Pídela por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="card" data-occ="tematica">
+          <div class="ph"><span class="occ">Temática</span><img src="./assets/cc-franklin.jpg" alt="Torta temática infantil estilo bosque con personajes" loading="lazy" width="1290" height="1720"></div>
+          <div class="body">
+            <h3>Temáticas infantiles</h3>
+            <p>Del personaje favorito al mundo entero en azúcar. Cuéntanos el tema y lo armamos.</p>
+            <a class="btn" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20quiero%20una%20torta%20tem%C3%A1tica%20infantil.%20Le%20cuento%20el%20tema%20%F0%9F%8E%A8" target="_blank" rel="noopener">Pídela por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="card" data-occ="cumple">
+          <div class="ph"><span class="occ">Cumpleaños</span><img src="./assets/cc-chocohumeda.jpg" alt="Torta de chocolate con drip, crema y cerezas" loading="lazy" width="480" height="852"></div>
+          <div class="body">
+            <h3>Chocohúmeda rellena</h3>
+            <p>Bizcocho de chocolate, crema y cerezas marrasquino con chips. Un clásico que no falla.</p>
+            <a class="btn" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20quiero%20la%20torta%20chocoh%C3%BAmeda%20rellena%20de%20su%20p%C3%A1gina%20%F0%9F%8D%AB" target="_blank" rel="noopener">Pídela por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="card" data-occ="cumple vintage">
+          <div class="ph"><span class="occ">Sabor</span><img src="./assets/cc-fresas-crema.jpg" alt="Torta rectangular blanca de fresas con crema y velas doradas" loading="lazy" width="480" height="852"></div>
+          <div class="body">
+            <h3>Fresas con crema</h3>
+            <p>Doble relleno de fresas naturales y crema. Rectangular, en tendencia, para compartir.</p>
+            <a class="btn" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20quiero%20la%20torta%20de%20fresas%20con%20crema%20de%20su%20p%C3%A1gina%20%F0%9F%8D%93" target="_blank" rel="noopener">Pídela por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="card" data-occ="postres">
+          <div class="ph"><span class="occ">Postres</span><img src="./assets/cc-brillo-espejo.jpg" alt="Quesillos con brillo espejo, línea de postres de Candy Cakes" loading="lazy" width="640" height="1138"></div>
+          <div class="body">
+            <h3>Postres con brillo espejo</h3>
+            <p>Quesillo y flan con acabado mirror glaze. Ideales para mesas dulces y porciones.</p>
+            <a class="btn" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20quiero%20postres%20con%20brillo%20espejo%20para%20una%20mesa%20dulce%20%F0%9F%8D%AE" target="_blank" rel="noopener">Pídelos por WhatsApp</a>
+          </div>
+        </article>
+      </div>
+      <p class="galeria-empty" id="empty">No hay tortas en esa ocasión todavía — escríbenos y la creamos.</p>
+    </div>
+  </section>
+
+  <!-- PROCESO / torta que se arma -->
+  <section id="proceso" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Cómo pedir</span>
+        <h2>Tu torta se <span class="script">arma</span> en cuatro pasos.</h2>
+        <p>Sin formularios eternos. Nos cuentas la ocasión y el resto lo horneamos nosotras.</p>
+      </div>
+      <div class="proceso-grid">
+        <div class="cake-stage" aria-hidden="true">
+          <div class="cake" id="cake">
+            <div class="tier tier--board" data-step="1"></div>
+            <div class="tier tier--1" data-step="2"><span class="fleck"></span></div>
+            <div class="tier tier--2" data-step="3"><span class="fleck"></span></div>
+            <div class="tier tier--3" data-step="4"><span class="fleck"></span></div>
+            <div class="topper" data-step="4">
+              <span class="candle"></span><span class="cherry"></span><span class="candle"></span>
+            </div>
+          </div>
+        </div>
+        <ol class="steps">
+          <li class="step"><span class="n"></span><div><h3>Elige la ocasión</h3><p>Cumpleaños, boda, baby shower, temática infantil o una mesa de postres.</p></div></li>
+          <li class="step"><span class="n"></span><div><h3>Sabor y relleno</h3><p>Chocohúmeda, vainilla, fresas con crema… tú eliges cómo la quieres por dentro.</p></div></li>
+          <li class="step"><span class="n"></span><div><h3>Tema y decoración</h3><p>Colores, topper con el nombre, pan de oro, cerezas o el personaje favorito.</p></div></li>
+          <li class="step"><span class="n"></span><div><h3>La coordinamos</h3><p>Acordamos fecha y entrega por WhatsApp. Tú solo la disfrutas.</p></div></li>
+        </ol>
+      </div>
+      <p class="cake-note" id="cake-note">¡Lista para celebrar!</p>
+    </div>
+  </section>
+
+  <!-- CURSOS -->
+  <section id="cursos" class="band mint">
+    <div class="wrap split rev">
+      <div>
+        <span class="kicker">Aprende con nosotras</span>
+        <h2 class="sec-head" style="margin-bottom:0"><span style="display:block;font-size:clamp(1.8rem,5.5vw,2.6rem)">Cursos de <span class="script" style="color:var(--berry)">repostería</span></span></h2>
+        <p style="color:var(--ink-soft);margin-top:.8em;max-width:44ch">Además de hornear, enseñamos. Si te gustaría aprender a decorar como Candy Cakes, escríbenos y te contamos por el próximo curso.</p>
+        <ul class="mini-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#12615d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Técnicas de buttercream y piping</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#12615d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Rellenos y armado de tortas altas</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#12615d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Detalles vintage y acabados con brillo</li>
+        </ul>
+        <div style="margin-top:24px">
+          <a class="btn" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20me%20interesan%20sus%20cursos%20de%20reposter%C3%ADa.%20%C2%BFCu%C3%A1ndo%20es%20el%20pr%C3%B3ximo%3F" target="_blank" rel="noopener">Pregunta por el próximo curso</a>
+        </div>
+      </div>
+      <div class="photo reveal">
+        <img src="./assets/cc-vintage.jpg" alt="Detalle de una torta vintage decorada a mano por Candy Cakes" loading="lazy" width="1290" height="1720">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="band">
+    <div class="wrap">
+      <div class="contact-card">
+        <div>
+          <span class="kicker">Hagamos tu pedido</span>
+          <h2>Cuéntanos qué <span class="script" style="color:var(--berry)">celebras</span>.</h2>
+          <div class="contact-lines">
+            <div class="cl">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#a1263a" stroke-width="2" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div><small>Dónde estamos</small> Las Cocuizas, Maturín — Monagas</div>
+            </div>
+            <div class="cl">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span>
+              <div><small>WhatsApp</small> 0412&nbsp;182&nbsp;5371</div>
+            </div>
+            <div class="cl">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#a1263a" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#a1263a"/></svg></span>
+              <div><small>Instagram</small> @candycakesmatu</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <a class="btn btn--wa" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20quiero%20encargar%20una%20torta.%20Les%20cuento%3A" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.1.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+            Escribir por WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="https://instagram.com/candycakesmatu" target="_blank" rel="noopener" style="width:100%">Ver más en Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p class="foot-lead">Endulzamos lo que celebras</p>
+    <div class="foot-grid">
+      <div class="foot">
+        <div class="foot-brand">
+          <img src="./assets/candycakes-logo.png" alt="Logo de Candy Cakes" width="52" height="52">
+          <b>Candy Cakes</b>
+        </div>
+        <p style="margin-top:12px;max-width:34ch;color:var(--berry-deep);font-weight:600">Tortas temáticas, vintage y postres por encargo en Maturín. Hechas con amor.</p>
+        <div class="socials">
+          <a href="https://instagram.com/candycakesmatu" target="_blank" rel="noopener" aria-label="Instagram de Candy Cakes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#a1263a" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="#a1263a"/></svg>
+          </a>
+          <a href="https://wa.me/584121825371" target="_blank" rel="noopener" aria-label="WhatsApp de Candy Cakes">
+            <svg viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot">
+        <h4>Explora</h4>
+        <ul>
+          <li><a href="#catalogo">Catálogo por ocasión</a></li>
+          <li><a href="#proceso">Cómo pedir</a></li>
+          <li><a href="#cursos">Cursos de repostería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Pedidos</h4>
+        <ul>
+          <li><a href="https://wa.me/584121825371" target="_blank" rel="noopener">WhatsApp 0412 182 5371</a></li>
+          <li>Las Cocuizas, Maturín</li>
+          <li>Monagas, Venezuela</li>
+        </ul>
+      </div>
+    </div>
+    <div class="seal">
+      <span>© Candy Cakes · Maturín</span>
+      <span>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/584121825371?text=Hola%20Candy%20Cakes%2C%20quiero%20encargar%20una%20torta%20%F0%9F%8E%82" target="_blank" rel="noopener" aria-label="Escribir a Candy Cakes por WhatsApp">
+  <span class="fab-label">Pídela por WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.1.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(mq.matches) return;
+
+  // Reveal on scroll
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.16, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // Steps + cake tiers assemble together
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+  var cake = document.getElementById('cake');
+  var note = document.getElementById('cake-note');
+  var sio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var idx = steps.indexOf(e.target);
+      e.target.classList.add('in');
+      // reveal cake tier(s) for this step
+      if(cake){
+        cake.querySelectorAll('[data-step="'+(idx+1)+'"]').forEach(function(t){ t.classList.add('in'); });
+      }
+      if(idx === steps.length-1 && note){ note.classList.add('in'); }
+      sio.unobserve(e.target);
+    });
+  },{threshold:.5});
+  steps.forEach(function(s){ sio.observe(s); });
+})();
+</script>
+</body>
+</html>
