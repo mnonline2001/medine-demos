@@ -134,6 +134,19 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .lockup__sub{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);white-space:nowrap}
 @media (max-width:470px){.nav .lockup__sub{display:none}}
 @media (max-width:430px){.lockup__sub{display:none}.lockup__name{font-size:1.15rem}}
+/* very short viewports (landscape phones): a two-row pinned bar eats a quarter of the
+   screen, so the nav scrolls with the page there */
+@media (max-height:520px) and (max-width:899px){
+  :root{--nav-h:0px}
+  .nav{position:static}
+}
+/* ≤360px: keep lockup + CTA on one row (else the CTA drops to a third nav row) */
+@media (max-width:360px){
+  .nav__in{gap:0 .6rem}
+  .nav .lockup{gap:.5rem}
+  .nav .lockup__name{font-size:1.02rem}
+  .nav .cta{font-size:.92rem;padding:.4em .75em}
+}
 
 /* ============ CTA paralelogramo ============ */
 .cta{
