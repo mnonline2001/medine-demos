@@ -132,6 +132,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .lockup__txt{line-height:1.15;min-width:0}
 .lockup__name{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.3rem;letter-spacing:.04em;white-space:nowrap}
 .lockup__sub{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);white-space:nowrap}
+@media (max-width:470px){.nav .lockup__sub{display:none}}
 @media (max-width:430px){.lockup__sub{display:none}.lockup__name{font-size:1.15rem}}
 
 /* ============ CTA paralelogramo ============ */
@@ -206,6 +207,28 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   position:relative;padding-left:1.6em;
 }
 .values li::before{content:"";position:absolute;left:.75em;top:50%;width:.42em;height:.42em;background:var(--red);transform:translateY(-50%) rotate(45deg)}
+
+/* v2: inline links that must read as links (name of the Sensei → bio) */
+.lnk{color:inherit;text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:.22em;transition:color .2s ease,text-decoration-color .2s ease}
+.lnk:hover{color:var(--ink);text-decoration-color:var(--ink)}
+
+/* v2: 01 becomes text + Sensei card (meeting request: parents want to know
+   who teaches their kids). Copy comes only from what the Sensei confirms. */
+.dojo-grid{display:grid;gap:2.4rem;align-items:start}
+@media (min-width:900px){.dojo-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(2.4rem,5vw,4.5rem)}}
+.sensei{
+  position:relative;
+  background:var(--bg) var(--tatami);
+  border:1px solid rgba(245,244,240,.16);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%);
+  padding:clamp(1.5rem,4vw,2.2rem);
+}
+.sensei::before{content:"";position:absolute;inset-inline:0;top:0;height:3px;background:var(--red)}
+.sensei .kicker{margin-bottom:.9rem}
+.sensei h3{font-size:clamp(2.2rem,6vw,2.9rem);line-height:.95}
+.s-dojo .sensei__role{color:var(--ink);font-weight:600;font-size:1rem;margin-top:.5rem}
+.s-dojo .sensei p{font-size:1rem}
+.s-dojo .sensei__pending{margin-top:1.2rem;padding-top:1rem;border-top:1px dashed rgba(245,244,240,.22);font-size:.9rem;font-style:italic}
 
 /* ============ 02 categorías: pasillos scroll-snap ============ */
 .s-cats{background:var(--bg-3) var(--tatami)}
@@ -406,7 +429,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
         <span class="medal"><img src="assets/dojo-logo.png" width="88" height="88" alt=""></span>
         <div>
           <p class="hero__meta-name">Escuela de Karate-Do</p>
-          <p class="hero__meta-sub">Sensei José Rondón</p>
+          <p class="hero__meta-sub"><a class="lnk" href="#sensei">Sensei José Rondón</a></p>
         </div>
       </div>
       <h1>Disciplina que se nota. Dentro y fuera <span class="hl">del tatami</span>.</h1>
@@ -428,15 +451,30 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
         <p class="kicker">01 · El dojo</p>
         <h2 id="h-dojo">Disciplina, mejora continua, excelencia</h2>
       </div>
-      <div class="reveal">
-        <p>En Maturín, estado Monagas, la <strong>Escuela de Karate-Do Dojo J.J. Rondón</strong> lleva las iniciales de quien la dirige: el <strong>Sensei José Rondón</strong>. Aquí el karate se enseña como lo que es — una disciplina que forma el carácter.</p>
-        <p>La mayoría de nuestros alumnos son <strong>niños que crecen en el tatami</strong>, y también entrenan adultos que decidieron empezar. Es un dojo que <strong>forma medallistas</strong>: se entrena para competir, y para la vida.</p>
+      <div class="dojo-grid">
+        <div>
+          <div class="reveal">
+            <p>En Maturín, estado Monagas, la <strong>Escuela de Karate-Do Dojo J.J. Rondón</strong> lleva las iniciales de quien la dirige: el <strong><a class="lnk" href="#sensei">Sensei José Rondón</a></strong>. Aquí el karate se enseña como lo que es — una disciplina que forma el carácter.</p>
+            <p>La mayoría de nuestros alumnos son <strong>niños que crecen en el tatami</strong>, y también entrenan adultos que decidieron empezar. Es un dojo que <strong>forma medallistas</strong>: se entrena para competir, y para la vida.</p>
+          </div>
+          <ul class="values reveal">
+            <li>Disciplina</li>
+            <li>Mejora continua</li>
+            <li>Excelencia</li>
+          </ul>
+        </div>
+
+        <!-- v2-pending: bio copy comes ONLY from what the Sensei sends (years teaching,
+             trajectory, philosophy). Humble tone by his own rule: no ranks, no Dan.
+             Show it to him before publishing. Photo only if he picks and authorises one. -->
+        <aside class="sensei reveal" id="sensei" aria-labelledby="h-sensei">
+          <p class="kicker">El Sensei</p>
+          <h3 id="h-sensei">Sensei José Rondón</h3>
+          <p class="sensei__role">Dirige la Escuela de Karate-Do Dojo J.J. Rondón, en Maturín.</p>
+          <p>Enseña karate a niños y adultos con una idea sencilla: la excelencia se demuestra en el tatami, con constancia, respeto y trabajo bien hecho.</p>
+          <p class="sensei__pending">Su trayectoria y sus años de enseñanza, contados por él mismo, se suman aquí apenas los comparta.</p>
+        </aside>
       </div>
-      <ul class="values reveal">
-        <li>Disciplina</li>
-        <li>Mejora continua</li>
-        <li>Excelencia</li>
-      </ul>
     </div>
   </section>
 
@@ -569,7 +607,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
             <span class="lockup__sub">Escuela de Karate-Do · Maturín</span>
           </span>
         </a>
-        <p>Escuela de Karate-Do en Maturín, dirigida por el Sensei José Rondón. Disciplina, mejora continua y excelencia — para niños y adultos.</p>
+        <p>Escuela de Karate-Do en Maturín, dirigida por el <a class="lnk" href="#sensei">Sensei José Rondón</a>. Disciplina, mejora continua y excelencia — para niños y adultos.</p>
       </div>
       <div>
         <h3>Contacto</h3>
