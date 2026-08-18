@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>candy-cakes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Quicksand:wght@500;600;700&display=block" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1200px;height:630px;overflow:hidden;background:#FFF9FC;color:#3A2230;font-family:'Quicksand',sans-serif}
+.card{position:relative;width:1200px;height:630px;display:grid;grid-template-columns:1fr 486px;overflow:hidden;
+  background:radial-gradient(120% 140% at 0% 0%, #FFFFFF 0%, #FDEFF6 60%, #FBE0EF 100%)}
+.content{padding:66px 40px 66px 68px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.eyebrow{font:700 17px 'Quicksand';text-transform:uppercase;letter-spacing:.2em;color:#A14355;display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.eyebrow::before{content:"";width:34px;height:3px;background:#C8A24B;border-radius:3px}
+.wordmark{font:400 128px/.82 'Grand Hotel',cursive;color:#EF9FCC;letter-spacing:0}
+.wordmark b{display:block;font:700 62px/1 'Quicksand';color:#3A2230;letter-spacing:-.02em;margin-top:2px}
+.claim{font:600 25px/1.4 'Quicksand';color:#6E4B5E;margin-top:20px;max-width:24ch}
+.foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:30px}
+.chip{display:inline-flex;align-items:center;gap:9px;background:#A14355;color:#fff;font:700 19px 'Quicksand';padding:14px 22px;border-radius:0 0 16px 16px;position:relative}
+.chip::before{content:"";position:absolute;left:0;right:0;top:-9px;height:12px;background:#A14355;
+  -webkit-mask:radial-gradient(circle 7px at 11px -2px,transparent 7px,#000 7.5px) 0 0/22px 12px repeat-x;
+          mask:radial-gradient(circle 7px at 11px -2px,transparent 7px,#000 7.5px) 0 0/22px 12px repeat-x}
+.ig{font:700 19px 'Quicksand';color:#3A2230;background:#fff;border:2px solid #F3C2DD;padding:12px 20px;border-radius:999px}
+.ig b{color:#A14355}
+.seal{position:absolute;left:68px;bottom:30px;font:600 15px 'Quicksand';color:#8A6D24}
+.panel{position:relative;overflow:hidden}
+.panel img{width:100%;height:100%;object-fit:cover;display:block}
+/* doily edge on the left of the photo */
+.panel{-webkit-mask:radial-gradient(circle 15px at 0 22px,transparent 14px,#000 15px) 0 0/100% 44px repeat-y;
+        mask:radial-gradient(circle 15px at 0 22px,transparent 14px,#000 15px) 0 0/100% 44px repeat-y}
+.tagpan{position:absolute;left:34px;bottom:30px;background:rgba(255,255,255,.94);color:#A14355;font:700 18px 'Quicksand';
+  padding:11px 16px;border-radius:14px;box-shadow:0 10px 24px rgba(120,40,80,.3)}
+</style></head><body>
+<div class="card">
+  <div class="content">
+    <p class="eyebrow">Repostería temática · Maturín</p>
+    <p class="wordmark">Candy Cakes<b>Endulzamos lo que celebras</b></p>
+    <p class="claim">Tortas temáticas, vintage y postres por encargo — hechos con amor y pan de oro.</p>
+    <div class="foot"><span class="chip">Pídela por WhatsApp</span><span class="ig"><b>+16 mil</b> en Instagram</span></div>
+    <p class="seal">Propuesta de diseño · Medine.tech</p>
+  </div>
+  <div class="panel">
+    <img src="assets/cc-merengue.jpg" alt="Torta Candy Cakes">
+    <span class="tagpan">🎂 Hecha en Maturín</span>
+  </div>
+</div>
+</body></html>
