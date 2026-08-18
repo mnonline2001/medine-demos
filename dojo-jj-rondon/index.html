@@ -33,6 +33,8 @@
   --ink:#f5f4f0;
   --mut:#adafb8;
   --red:#d63a2f;
+  --red-text:#f2665a;   /* red for small text on dark bgs: >= 5.3:1 everywhere (brand red is 3.5–4.2:1) */
+  --red-press:#c22f24;  /* CTA hover: white text stays >= 5.6:1 (the old #e2473c was 4.04:1) */
   --wa:#25D366;
   --cut:clamp(26px, 5vw, 60px);
   --tatami:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg stroke='%23f5f4f0' stroke-opacity='0.045' stroke-width='1'%3E%3Cpath d='M0 14h28M28 42h28M14 28v28M42 0v28'/%3E%3C/g%3E%3C/svg%3E");
@@ -112,7 +114,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   transition:transform .25s ease,background .25s ease;
 }
 .cta>span{display:inline-block;transform:skewX(8deg)}
-.cta:hover{transform:skewX(0);background:#e2473c}
+.cta:hover{transform:skewX(0);background:var(--red-press)}
 .cta--ghost{background:transparent;border:1px solid rgba(245,244,240,.4);color:var(--ink)}
 .cta--ghost:hover{background:rgba(245,244,240,.08);border-color:var(--ink);transform:skewX(0)}
 .cta--sm{font-size:1.05rem;padding:.5em 1.1em}
@@ -223,7 +225,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .inscribe{margin-top:2.4rem;max-width:760px}
 .step{border:0;margin-bottom:2rem}
 .step legend{margin-bottom:1rem}
-.step__n{display:block;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.step__n{display:block;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--red-text)}
 .step__q{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.7rem;letter-spacing:.05em;text-transform:uppercase}
 .chips{display:flex;flex-wrap:wrap;gap:.7rem}
 .chip{
@@ -270,7 +272,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .footer h3{font-size:.72rem;font-family:"Work Sans",sans-serif;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);margin-bottom:1rem}
 .footer ul{list-style:none;display:grid;gap:.55rem}
 .footer li a{color:var(--ink);font-weight:500;transition:color .2s}
-.footer li a:hover{color:var(--red)}
+.footer li a:hover{color:var(--red-text)}
 .footer li{color:var(--mut)}
 .f-wa{display:inline-flex;align-items:center;gap:.5em}
 .f-wa svg{flex:none}
@@ -280,7 +282,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   font-size:.82rem;color:var(--mut);
 }
 .seal a{color:var(--ink);font-weight:600}
-.seal a:hover{color:var(--red)}
+.seal a:hover{color:var(--red-text)}
 
 /* ============ FAB WhatsApp ============ */
 .fab{
