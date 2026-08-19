@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>tortas-marielvi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Pinyon+Script&display=block" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1200px;height:630px;overflow:hidden;font-family:'Bricolage Grotesque',sans-serif;color:#F4E9DE}
+.card{position:relative;width:1200px;height:630px;display:grid;grid-template-columns:1fr 470px;overflow:hidden;
+  background:radial-gradient(120% 150% at 8% 0%, #45182b 0%, #331020 55%, #250b17 100%)}
+.card::before{content:"";position:absolute;inset:0;z-index:1;opacity:.4;background-image:radial-gradient(circle, rgba(160,141,105,.55) 1.4px, transparent 2px);background-size:32px 32px}
+.content{padding:60px 34px 60px 66px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:3}
+.eyebrow{font:800 16px 'Bricolage Grotesque';text-transform:uppercase;letter-spacing:.22em;color:#D9B45A;display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.eyebrow::before{content:"";width:32px;height:3px;background:#B32736;border-radius:3px}
+.script{font:400 96px/.9 'Pinyon Script',cursive;color:#EEC4CB}
+.wordmark{font:800 60px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#fff;margin-top:2px}
+.claim{font:600 24px/1.4 'Bricolage Grotesque';color:#E7C9BE;margin-top:22px;max-width:22ch}
+.foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:32px}
+.chip{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(#B7305B,#8B2551);color:#fff;font:800 18px 'Bricolage Grotesque';padding:14px 24px;border-radius:999px;box-shadow:0 10px 26px rgba(139,37,81,.5)}
+.ig{font:600 18px 'Bricolage Grotesque';color:#F4E9DE;border:1.5px solid rgba(217,180,90,.5);padding:12px 20px;border-radius:999px}
+.ig b{color:#D9B45A}
+.seal{position:absolute;left:66px;bottom:26px;font:600 14px 'Bricolage Grotesque';color:#A08D69;letter-spacing:.04em;z-index:3}
+.panel{position:relative;overflow:hidden;border-left:3px solid #A08D69}
+.panel img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05)}
+.panel::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(37,11,23,.55),rgba(37,11,23,0) 30%)}
+.tagpan{position:absolute;left:26px;bottom:28px;background:rgba(37,11,23,.82);color:#EEC4CB;font:800 17px 'Bricolage Grotesque';padding:11px 17px;border-radius:12px;border:1px solid rgba(160,141,105,.6);z-index:2}
+</style></head><body>
+<div class="card">
+  <div class="content">
+    <p class="eyebrow">Tortas personalizadas · Maturín</p>
+    <p class="script">Tortas</p>
+    <p class="wordmark">Marielvi</p>
+    <p class="claim">Celebraciones que saben a hecho en casa.</p>
+    <div class="foot"><span class="chip">Pedir por WhatsApp</span><span class="ig"><b>@</b>tortasmarielvi</span></div>
+    <p class="seal">Propuesta de diseño · Medine.tech</p>
+  </div>
+  <div class="panel">
+    <img src="assets/marielvi-cake-formula1-red.jpg" alt="Torta Tortas Marielvi">
+    <span class="tagpan">🎂 Hecho en Maturín</span>
+  </div>
+</div>
+</body></html>

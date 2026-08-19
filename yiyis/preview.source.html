@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>yiyis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&display=block" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1200px;height:630px;overflow:hidden;font-family:'Fredoka',sans-serif;color:#5A1918}
+.card{position:relative;width:1200px;height:630px;display:grid;grid-template-columns:1fr 470px;overflow:hidden;
+  background:radial-gradient(120% 140% at 0% 0%, #FBEEF0 0%, #F2E1E3 58%, #EAD0D6 100%)}
+.card::before{content:"";position:absolute;inset:0;z-index:1;opacity:.55;background-image:radial-gradient(circle, rgba(209,97,146,.4) 1.5px, transparent 2px);background-size:28px 28px}
+.content{padding:56px 34px 56px 66px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:3}
+.eyebrow{font:700 15px 'Fredoka';text-transform:uppercase;letter-spacing:.2em;color:#A83719;display:flex;align-items:center;gap:11px;margin-bottom:8px}
+.eyebrow::before{content:"";width:30px;height:3px;background:#D16192;border-radius:3px}
+.script{font:700 52px/1 'Caveat',cursive;color:#B6517A;margin-bottom:-6px}
+.wordmark{font:700 104px/.9 'Fredoka';color:#D16192;letter-spacing:-.02em}
+.claim{font:600 23px/1.4 'Fredoka';color:#7a4b52;margin-top:16px;max-width:24ch}
+.foot{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:28px}
+.chip{display:inline-flex;align-items:center;gap:9px;background:#C22C6B;color:#fff;font:700 18px 'Fredoka';padding:14px 24px;border-radius:999px;box-shadow:0 10px 24px rgba(194,44,107,.32)}
+.ig{font:600 18px 'Fredoka';color:#5A1918;background:#fff;border:2px solid #F4AFCC;padding:12px 20px;border-radius:999px}
+.ig b{color:#C22C6B}
+.seal{position:absolute;left:66px;bottom:24px;font:600 14px 'Fredoka';color:#9a6a5f;letter-spacing:.03em}
+.panel{position:relative;overflow:hidden;border-left:4px solid #D16192}
+.panel img{width:100%;height:100%;object-fit:cover;display:block}
+.tagpan{position:absolute;left:26px;bottom:28px;background:rgba(90,25,24,.8);color:#FBEEF0;font:700 16px 'Fredoka';padding:11px 16px;border-radius:12px}
+</style></head><body>
+<div class="card">
+  <div class="content">
+    <p class="eyebrow">Tres leches &amp; tortas frías · Maturín</p>
+    <p class="script">Arte &amp; Dulzura</p>
+    <p class="wordmark">YiYi's</p>
+    <p class="claim">Tres leches frías, hechas con amor.</p>
+    <div class="foot"><span class="chip">Pedir por WhatsApp</span><span class="ig"><b>@</b>yiyis.mat</span></div>
+    <p class="seal">Propuesta de diseño · Medine.tech</p>
+  </div>
+  <div class="panel">
+    <img src="assets/yiyis-hero-tresleches-fresas.jpg" alt="Tres leches con fresas — YiYi's">
+    <span class="tagpan">🍓 Hecho en Maturín</span>
+  </div>
+</div>
+</body></html>
