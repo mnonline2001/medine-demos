@@ -33,8 +33,11 @@
   --ink:#f5f4f0;
   --mut:#adafb8;
   --red:#d63a2f;
+  --red-text:#f2665a;   /* red for small text on dark bgs: >= 5.3:1 everywhere (brand red is 3.5–4.2:1) */
+  --red-press:#c22f24;  /* CTA hover: white text stays >= 5.6:1 (the old #e2473c was 4.04:1) */
   --wa:#25D366;
   --cut:clamp(26px, 5vw, 60px);
+  --nav-h:98px; /* two-row sticky nav on small screens (lockup + section links) */
   --tatami:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg stroke='%23f5f4f0' stroke-opacity='0.045' stroke-width='1'%3E%3Cpath d='M0 14h28M28 42h28M14 28v28M42 0v28'/%3E%3C/g%3E%3C/svg%3E");
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -92,8 +95,35 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 }
 .nav__in{
   width:min(1160px, 100% - clamp(2.2rem, 8vw, 6rem));margin-inline:auto;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 1rem;
   padding-block:.6rem;
+}
+/* v2: section links visible in the bar (meeting feedback, 17-Aug).
+   Small screens: a second, horizontally scrollable row under the lockup —
+   no hamburger, the sections are seen at once. ≥900px: inline, centered. */
+.nav__links{
+  list-style:none;order:3;flex-basis:100%;
+  display:flex;gap:.75rem;margin-top:.1rem;
+  overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain;
+  padding-inline:.4em;margin-inline:-.4em;
+}
+.nav__links::-webkit-scrollbar{display:none}
+.nav__links li{flex:none}
+.nav__links a{
+  display:block;padding:.5em .4em;margin-inline:-.4em;
+  font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--mut);white-space:nowrap;
+  border-bottom:2px solid transparent;
+  transition:color .2s ease,border-color .2s ease;
+}
+.nav__links a:hover{color:var(--ink)}
+.nav__links a[aria-current]{color:var(--ink);border-bottom-color:var(--red)}
+.nav__links a:focus-visible{outline-offset:-3px}
+@media (min-width:900px){
+  :root{--nav-h:66px}
+  .nav__links{order:0;flex:1;flex-basis:auto;justify-content:center;gap:1.7rem;margin-top:0;overflow:visible;padding-inline:0;margin-inline:0}
+  .nav__links a{margin-inline:0;padding-inline:.15em;font-size:.72rem;letter-spacing:.16em}
+  .nav__links a:focus-visible{outline-offset:3px}
 }
 .lockup{display:flex;align-items:center;gap:.7rem;min-width:0}
 .medal{border-radius:50%;background:var(--ink);border:2px solid var(--red);flex:none}
@@ -102,7 +132,21 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .lockup__txt{line-height:1.15;min-width:0}
 .lockup__name{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.3rem;letter-spacing:.04em;white-space:nowrap}
 .lockup__sub{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);white-space:nowrap}
+@media (max-width:470px){.nav .lockup__sub{display:none}}
 @media (max-width:430px){.lockup__sub{display:none}.lockup__name{font-size:1.15rem}}
+/* very short viewports (landscape phones): a two-row pinned bar eats a quarter of the
+   screen, so the nav scrolls with the page there */
+@media (max-height:520px) and (max-width:899px){
+  :root{--nav-h:0px}
+  .nav{position:static}
+}
+/* ≤360px: keep lockup + CTA on one row (else the CTA drops to a third nav row) */
+@media (max-width:360px){
+  .nav__in{gap:0 .6rem}
+  .nav .lockup{gap:.5rem}
+  .nav .lockup__name{font-size:1.02rem}
+  .nav .cta{font-size:.92rem;padding:.4em .75em}
+}
 
 /* ============ CTA paralelogramo ============ */
 .cta{
@@ -112,7 +156,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   transition:transform .25s ease,background .25s ease;
 }
 .cta>span{display:inline-block;transform:skewX(8deg)}
-.cta:hover{transform:skewX(0);background:#e2473c}
+.cta:hover{transform:skewX(0);background:var(--red-press)}
 .cta--ghost{background:transparent;border:1px solid rgba(245,244,240,.4);color:var(--ink)}
 .cta--ghost:hover{background:rgba(245,244,240,.08);border-color:var(--ink);transform:skewX(0)}
 .cta--sm{font-size:1.05rem;padding:.5em 1.1em}
@@ -124,7 +168,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .cut--b{clip-path:polygon(0 var(--cut), 100% 0, 100% calc(100% - var(--cut)), 0 100%)}
 .cut+.cut,.hero+.cut{margin-top:calc(-1 * var(--cut))}
 .sec{padding-block:calc(var(--cut) + clamp(3.4rem, 8vw, 6rem))}
-.sec{scroll-margin-top:84px}
+.sec,[id]{scroll-margin-top:calc(var(--nav-h) + 18px)}
 
 .bib{
   position:absolute;z-index:0;top:calc(var(--cut) + .5rem);right:2vw;
@@ -141,7 +185,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   background:var(--bg) var(--tatami);
   clip-path:polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--cut)));
   padding:clamp(2.6rem, 7vw, 5.5rem) 0 calc(var(--cut) + clamp(3rem, 7vw, 5rem));
-  min-height:max(540px, calc(100svh - 66px));
+  min-height:max(540px, calc(100svh - var(--nav-h)));
   display:flex;align-items:center;
 }
 .hero__art{position:absolute;z-index:0;right:0;top:4%;width:min(80vw, 400px);opacity:.15}
@@ -169,13 +213,81 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .s-dojo p+p{margin-top:1rem}
 .s-dojo p strong{color:var(--ink);font-weight:600}
 .values{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem;list-style:none}
-.values li{
+/* v2: the value chips are real links now (people clicked them in the meeting) →
+   they jump to "El día a día", where each value is shown as routine. */
+.values a{
+  display:inline-flex;align-items:center;gap:.55em;
   border:1px solid rgba(245,244,240,.22);border-radius:10px;
-  padding:.6em 1.2em;
+  padding:.6em 1.2em .6em 1.6em;
   font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.25rem;letter-spacing:.09em;
-  position:relative;padding-left:1.6em;
+  position:relative;
+  transition:border-color .2s ease,background .2s ease;
 }
-.values li::before{content:"";position:absolute;left:.75em;top:50%;width:.42em;height:.42em;background:var(--red);transform:translateY(-50%) rotate(45deg)}
+.values a::before{content:"";position:absolute;left:.75em;top:50%;width:.42em;height:.42em;background:var(--red);transform:translateY(-50%) rotate(45deg)}
+.values a::after{content:"→";font-family:"Work Sans",system-ui,sans-serif;font-size:.85em;color:var(--mut);transition:transform .2s ease,color .2s ease}
+.values a:hover{border-color:var(--ink);background:rgba(245,244,240,.06)}
+.values a:hover::after{transform:translateX(3px);color:var(--ink)}
+@media (max-width:480px){.values{gap:.6rem}.values a{font-size:1.15rem;padding:.55em .9em .55em 1.5em;gap:.45em}}
+.values-hint{margin-top:.9rem;font-size:.9rem}
+
+/* v2: highlighted note — the dojo welcomes neurodivergent kids (meeting request).
+   Welcome + practical next step only; no medical or therapeutic claims. */
+.note{
+  margin-top:2.2rem;padding:1.2rem 1.3rem 1.4rem;
+  border-left:4px solid var(--red);background:rgba(245,244,240,.045);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%);
+}
+.s-dojo .note__t{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.6rem;letter-spacing:.05em;text-transform:uppercase;line-height:1;color:var(--ink)}
+.s-dojo .note p+p{margin-top:.7rem}
+.s-dojo .note p{font-size:1rem}
+.note .cta{margin-top:1.1rem}
+
+/* v2: "El día a día" — how the three values look on a normal week */
+.daily{margin-top:clamp(2.8rem,6vw,4.5rem);padding-top:clamp(2rem,4vw,3rem);border-top:1px solid rgba(245,244,240,.14)}
+.daily h3{font-size:clamp(2.1rem,6vw,3rem);margin-top:.35rem}
+.s-dojo .daily__lead{margin-top:1rem;max-width:62ch}
+.daily__grid{display:grid;gap:1rem;margin-top:1.8rem}
+@media (min-width:760px){.daily__grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.daily__card{
+  background:var(--bg);border:1px solid rgba(245,244,240,.16);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%);
+  padding:1.3rem 1.4rem 1.5rem;
+  scroll-margin-top:calc(var(--nav-h) + 18px);
+}
+.daily__card h4{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight:400;font-size:1.65rem;letter-spacing:.06em;text-transform:uppercase;line-height:1;display:flex;align-items:center;gap:.5em}
+.daily__card h4::before{content:"";width:.42em;height:.42em;background:var(--red);transform:rotate(45deg);flex:none}
+.s-dojo .daily__card p{font-size:.97rem;margin-top:.7rem}
+
+/* v2: inline links that must read as links (name of the Sensei → bio) */
+.lnk{color:inherit;text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:.22em;transition:color .2s ease,text-decoration-color .2s ease}
+.lnk:hover{color:var(--ink);text-decoration-color:var(--ink)}
+
+/* v2: 01 becomes text + Sensei card (meeting request: parents want to know
+   who teaches their kids). Copy comes only from what the Sensei confirms. */
+.dojo-grid{display:grid;gap:2.4rem;align-items:start}
+@media (min-width:900px){.dojo-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(2.4rem,5vw,4.5rem)}}
+.sensei{
+  position:relative;
+  background:var(--bg) var(--tatami);
+  border:1px solid rgba(245,244,240,.16);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%);
+  padding:clamp(1.5rem,4vw,2.2rem);
+}
+.sensei::before{content:"";position:absolute;inset-inline:0;top:0;height:3px;background:var(--red)}
+.sensei .kicker{margin-bottom:.9rem}
+.sensei h3{font-size:clamp(2.2rem,6vw,2.9rem);line-height:.95}
+/* optional portrait (only if the Sensei picks and authorises one) */
+.sensei__head{display:flex;gap:1.1rem;align-items:flex-end;margin-bottom:1rem}
+.sensei__head .kicker{margin-bottom:.6rem}
+.sensei__photo{
+  flex:none;width:clamp(104px,30%,140px);height:auto;aspect-ratio:4/5;object-fit:cover;
+  border:1px solid rgba(245,244,240,.22);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%);
+  filter:saturate(.85) contrast(1.04);
+}
+.s-dojo .sensei__role{color:var(--ink);font-weight:600;font-size:1rem;margin-top:.5rem}
+.s-dojo .sensei p{font-size:1rem}
+.s-dojo .sensei__pending{margin-top:1.2rem;padding-top:1rem;border-top:1px dashed rgba(245,244,240,.22);font-size:.9rem;font-style:italic}
 
 /* ============ 02 categorías: pasillos scroll-snap ============ */
 .s-cats{background:var(--bg-3) var(--tatami)}
@@ -212,6 +324,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .pcard h3{font-size:clamp(2.5rem, 7vw, 3.2rem);color:var(--cat)}
 .pcard__tag{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.3rem;letter-spacing:.06em;text-transform:uppercase}
 .pcard p{color:var(--mut);font-size:.98rem;flex:1}
+.pcard .pcard__note{flex:0;font-size:.9rem;color:var(--ink);padding-left:.9em;border-left:2px solid var(--red)}
 .pcard .cta{align-self:flex-start;margin-top:.6rem}
 .rail-note{color:var(--mut);font-size:.9rem;max-width:52ch}
 .rail-note strong{color:var(--ink);font-weight:600}
@@ -223,7 +336,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .inscribe{margin-top:2.4rem;max-width:760px}
 .step{border:0;margin-bottom:2rem}
 .step legend{margin-bottom:1rem}
-.step__n{display:block;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.step__n{display:block;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--red-text)}
 .step__q{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.7rem;letter-spacing:.05em;text-transform:uppercase}
 .chips{display:flex;flex-wrap:wrap;gap:.7rem}
 .chip{
@@ -236,10 +349,21 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .chip input{position:absolute;opacity:0;pointer-events:none}
 .chip:has(input:checked){background:var(--ink);border-color:var(--ink);color:#15161a;font-weight:600}
 .chip:has(input:focus-visible){outline:2px solid var(--red);outline-offset:3px}
+/* v2: optional add-on, only shown when the message is for a son/daughter */
+.chips--opt{display:none;margin-top:.8rem}
+.inscribe:has(input[name="quien"][value="hijo"]:checked) .chips--opt{display:flex}
+@supports not selector(:has(*)){.chips--opt{display:flex}}
+.chip--check{font-size:.92rem;font-weight:400;border-style:dashed}
+.chip--check::before{content:"";width:.9em;height:.9em;margin-right:.6em;border:1px solid rgba(245,244,240,.55);border-radius:3px;flex:none}
+.chip--check:has(input:checked){border-style:solid}
+.chip--check:has(input:checked)::before{background:var(--red);border-color:var(--red)}
 
+/* v2: "Solo quiero información" comes pre-checked, so step 2 and the ready
+   message are visible on arrival (meeting feedback, 17-Aug). Both unlock as
+   soon as any step-1 option is checked. */
 .step--2,.compose__out{opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease,visibility .45s}
-.inscribe:has(input[name="quien"]:checked) .step--2{opacity:1;visibility:visible;transform:none}
-.inscribe:has(input[name="quien"]:checked):has(input[name="tema"]:checked) .compose__out{opacity:1;visibility:visible;transform:none}
+.inscribe:has(input[name="quien"]:checked) .step--2,
+.inscribe:has(input[name="quien"]:checked) .compose__out{opacity:1;visibility:visible;transform:none}
 @supports not selector(:has(*)){
   .step--2,.compose__out{opacity:1;visibility:visible;transform:none}
 }
@@ -270,7 +394,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .footer h3{font-size:.72rem;font-family:"Work Sans",sans-serif;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);margin-bottom:1rem}
 .footer ul{list-style:none;display:grid;gap:.55rem}
 .footer li a{color:var(--ink);font-weight:500;transition:color .2s}
-.footer li a:hover{color:var(--red)}
+.footer li a:hover{color:var(--red-text)}
 .footer li{color:var(--mut)}
 .f-wa{display:inline-flex;align-items:center;gap:.5em}
 .f-wa svg{flex:none}
@@ -280,7 +404,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   font-size:.82rem;color:var(--mut);
 }
 .seal a{color:var(--ink);font-weight:600}
-.seal a:hover{color:var(--red)}
+.seal a:hover{color:var(--red-text)}
 
 /* ============ FAB WhatsApp ============ */
 .fab{
@@ -291,6 +415,24 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   transition:transform .2s ease;
 }
 .fab:hover{transform:scale(1.07)}
+
+/* ============ v2: redes (Instagram / Facebook) ============
+   Gated by <body data-socials="pending|live">. "pending" = the dojo has not yet
+   confirmed the accounts are theirs → nothing that links to them is rendered
+   (footer keeps "próximamente"). Flip the attribute to "live" to activate all. */
+[data-socials="pending"] .social-live{display:none !important}
+[data-socials="live"] .social-pending{display:none !important}
+.socials{position:fixed;right:24px;bottom:96px;z-index:70;display:grid;gap:10px}
+.sfab{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--bg-2);border:1px solid rgba(245,244,240,.3);
+  display:grid;place-items:center;color:var(--ink);
+  box-shadow:0 8px 20px rgba(0,0,0,.4);
+  transition:transform .2s ease,border-color .2s ease;
+}
+.sfab:hover{transform:scale(1.07);border-color:var(--ink)}
+.sfab:focus-visible{outline-color:var(--ink)}
+.sfab svg{width:20px;height:20px;display:block}
 
 /* ============ reveal ============ */
 .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
@@ -318,7 +460,10 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 @media (max-width:760px){.gal{grid-template-columns:1fr}.gal img,.gal .ph{height:220px}}
 </style>
 </head>
-<body>
+<!-- data-socials: "live" shows the Instagram/Facebook buttons and footer links.
+     Candidate accounts found by Ingrid on 18-Aug, still to be confirmed by the dojo —
+     if they turn out not to be theirs, set "pending" (single switch, CSS block "redes"). -->
+<body data-socials="live">
 
 <a class="skip" href="#main">Saltar al contenido</a>
 
@@ -341,6 +486,12 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
         <span class="lockup__sub">Escuela de Karate-Do · Maturín</span>
       </span>
     </a>
+    <ul class="nav__links">
+      <li><a href="#dojo">El dojo</a></li>
+      <li><a href="#categorias">Categorías</a></li>
+      <li><a href="#escuela">La escuela</a></li>
+      <li><a href="#inscripcion">Inscripción</a></li>
+    </ul>
     <a class="cta" href="https://wa.me/584262470341?text=Buenas%2C%20Sensei.%20Quiero%20informaci%C3%B3n%20sobre%20la%20escuela."><span>Escríbenos</span></a>
   </div>
 </nav>
@@ -367,7 +518,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
         <span class="medal"><img src="assets/dojo-logo.png" width="88" height="88" alt=""></span>
         <div>
           <p class="hero__meta-name">Escuela de Karate-Do</p>
-          <p class="hero__meta-sub">Sensei José Rondón</p>
+          <p class="hero__meta-sub"><a class="lnk" href="#sensei">Sensei José Rondón</a></p>
         </div>
       </div>
       <h1>Disciplina que se nota. Dentro y fuera <span class="hl">del tatami</span>.</h1>
@@ -389,15 +540,69 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
         <p class="kicker">01 · El dojo</p>
         <h2 id="h-dojo">Disciplina, mejora continua, excelencia</h2>
       </div>
-      <div class="reveal">
-        <p>En Maturín, estado Monagas, la <strong>Escuela de Karate-Do Dojo J.J. Rondón</strong> lleva las iniciales de quien la dirige: el <strong>Sensei José Rondón</strong>. Aquí el karate se enseña como lo que es — una disciplina que forma el carácter.</p>
-        <p>La mayoría de nuestros alumnos son <strong>niños que crecen en el tatami</strong>, y también entrenan adultos que decidieron empezar. Es un dojo que <strong>forma medallistas</strong>: se entrena para competir, y para la vida.</p>
+      <div class="dojo-grid">
+        <div>
+          <div class="reveal">
+            <p>En Maturín, estado Monagas, la <strong>Escuela de Karate-Do Dojo J.J. Rondón</strong> lleva las iniciales de quien la dirige: el <strong><a class="lnk" href="#sensei">Sensei José Rondón</a></strong>. Aquí el karate se enseña como lo que es — una disciplina que forma el carácter.</p>
+            <p>La mayoría de nuestros alumnos son <strong>niños que crecen en el tatami</strong>, y también entrenan adultos que decidieron empezar. Es un dojo que <strong>forma medallistas</strong>: se entrena para competir, y para la vida.</p>
+          </div>
+          <ul class="values reveal" aria-label="Los tres valores del dojo">
+            <li><a href="#dia-disciplina">Disciplina<span class="sr">: cómo se vive en el día a día</span></a></li>
+            <li><a href="#dia-mejora">Mejora continua<span class="sr">: cómo se vive en el día a día</span></a></li>
+            <li><a href="#dia-excelencia">Excelencia<span class="sr">: cómo se vive en el día a día</span></a></li>
+          </ul>
+          <p class="values-hint reveal">Toca un valor para ver cómo se entrena en el día a día del dojo.</p>
+
+          <!-- v2-pending: the Sensei asked to highlight this. Wording is welcome + next step
+               only — no medical/therapeutic promises. He validates the final text. -->
+          <aside class="note reveal" aria-labelledby="h-neuro">
+            <p class="note__t" id="h-neuro">Aquí también entrenan niños neurodivergentes</p>
+            <p>El dojo los recibe con las mismas reglas y el mismo respeto que a todos — cada uno a su ritmo. Si tu hijo o hija necesita alguna adaptación, cuéntaselo al Sensei por WhatsApp para que la primera clase empiece bien.</p>
+            <a class="cta cta--ghost cta--sm" href="#inscripcion" data-preset="hijo-adapt"><span>Contárselo al Sensei</span></a>
+          </aside>
+        </div>
+
+        <!-- v2-pending: bio copy comes ONLY from what the Sensei sends (years teaching,
+             trajectory, philosophy). Humble tone by his own rule: no ranks, no Dan.
+             Show it to him before publishing. Photo only if he picks and authorises one. -->
+        <aside class="sensei reveal" id="sensei" aria-labelledby="h-sensei">
+          <!-- Portrait goes here once the Sensei picks and authorises one (see .sensei__head
+               CSS). Until then the card is photo-less by design — never publish the casual
+               selfie crop. -->
+          <p class="kicker">El Sensei</p>
+          <h3 id="h-sensei">Sensei José Rondón</h3>
+          <p class="sensei__role">Dirige la Escuela de Karate-Do Dojo J.J. Rondón, en Maturín.</p>
+          <p>Enseña karate a niños y adultos con una idea sencilla: la excelencia se demuestra en el tatami, con constancia, respeto y trabajo bien hecho.</p>
+          <p class="sensei__pending">Su trayectoria y sus años de enseñanza, contados por él mismo, se suman aquí apenas los comparta.</p>
+        </aside>
       </div>
-      <ul class="values reveal">
-        <li>Disciplina</li>
-        <li>Mejora continua</li>
-        <li>Excelencia</li>
-      </ul>
+
+      <!-- v2-pending: PROVISIONAL copy. A parent asked in the meeting (17-Aug) to see
+           the dojo's day to day (one day strength, another the karate vocabulary...).
+           Replace with the exact words from the meeting recording and the Sensei's
+           own description before publishing. Only "fuerza" and "vocabulario" come
+           from Ingrid's notes; the rest is a careful draft to be validated. -->
+      <div class="daily" id="dia-a-dia">
+        <div class="reveal">
+          <p class="kicker">El día a día</p>
+          <h3>Así se entrena aquí</h3>
+          <p class="daily__lead">Cada clase tiene su énfasis: hay días de <strong>fuerza y acondicionamiento</strong>, y días en que el trabajo está en el <strong>vocabulario del karate</strong> — lo que se dice y se responde en el tatami. Así los tres valores dejan de ser palabras y se vuelven rutina.</p>
+        </div>
+        <div class="daily__grid reveal">
+          <article class="daily__card" id="dia-disciplina">
+            <h4>Disciplina</h4>
+            <p>Se entrena en cada saludo, en llegar a tiempo y en el respeto al tatami y al compañero — desde el primer día, y a la medida de cada edad.</p>
+          </article>
+          <article class="daily__card" id="dia-mejora">
+            <h4>Mejora continua</h4>
+            <p>Cada cinturón es una meta alcanzable. Se avanza paso a paso, y el progreso se ve — en la técnica y en la actitud.</p>
+          </article>
+          <article class="daily__card" id="dia-excelencia">
+            <h4>Excelencia</h4>
+            <p>Se compite cuando se está listo, y se entrena para estarlo. La excelencia aquí es hacer bien lo de hoy.</p>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -417,6 +622,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
           <h3>Infantil</h3>
           <p class="pcard__tag">Primeros pasos y disciplina</p>
           <p>El tatami como primera escuela: respeto, foco y confianza para los más pequeños de la casa. Aquí empieza el camino del cinturón.</p>
+          <p class="pcard__note">Niños neurodivergentes: bienvenidos, a su ritmo.</p>
           <a class="cta cta--ghost cta--sm" href="#inscripcion"><span>Preguntar horarios</span></a>
         </div>
       </article>
@@ -491,7 +697,10 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
           <div class="chips">
             <label class="chip"><input type="radio" name="quien" value="hijo"><span>Para mi hijo o hija</span></label>
             <label class="chip"><input type="radio" name="quien" value="adulto"><span>Para mí (adulto)</span></label>
-            <label class="chip"><input type="radio" name="quien" value="info"><span>Solo quiero información</span></label>
+            <label class="chip"><input type="radio" name="quien" value="info" checked><span>Solo quiero información</span></label>
+          </div>
+          <div class="chips chips--opt">
+            <label class="chip chip--check"><input type="checkbox" name="adapt" value="1"><span>Mi hijo/a es neurodivergente o necesita alguna adaptación</span></label>
           </div>
         </fieldset>
 
@@ -530,7 +739,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
             <span class="lockup__sub">Escuela de Karate-Do · Maturín</span>
           </span>
         </a>
-        <p>Escuela de Karate-Do en Maturín, dirigida por el Sensei José Rondón. Disciplina, mejora continua y excelencia — para niños y adultos.</p>
+        <p>Escuela de Karate-Do en Maturín, dirigida por el <a class="lnk" href="#sensei">Sensei José Rondón</a>. Disciplina, mejora continua y excelencia — para niños y adultos.</p>
       </div>
       <div>
         <h3>Contacto</h3>
@@ -541,7 +750,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
               Escríbenos por WhatsApp
             </a>
           </li>
-          <li>Av. Principal de Las Cocuizas, Maturín, Monagas</li>
+          <li>Av. Principal de Las Cocuizas, diagonal a la iglesia Santo Domingo de Guzmán. Maturín 6201, Monagas</li>
           <li><a href="https://maps.google.com/?q=9.756304,-63.155331" target="_blank" rel="noopener">Cómo llegar (Google Maps) →</a></li>
         </ul>
       </div>
@@ -555,14 +764,27 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
         </ul>
         <h3 style="margin-top:18px">Redes</h3>
         <ul>
-          <li aria-disabled="true" style="opacity:.55">Facebook — próximamente</li>
-          <li aria-disabled="true" style="opacity:.55">Instagram — próximamente</li>
+          <li class="social-pending" aria-disabled="true" style="opacity:.55">Facebook — próximamente</li>
+          <li class="social-pending" aria-disabled="true" style="opacity:.55">Instagram — próximamente</li>
+          <li class="social-live"><a href="https://www.instagram.com/dojo_j.jrondon/" target="_blank" rel="noopener">Instagram →</a></li>
+          <li class="social-live"><a href="https://www.facebook.com/profile.php?id=100070059402691" target="_blank" rel="noopener">Facebook →</a></li>
         </ul>
       </div>
     </div>
     <p class="seal">Demo diseñada por <a href="https://medine.tech">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial.</p>
   </div>
 </footer>
+
+<!-- v2: floating social buttons (meeting request), stacked above the WhatsApp FAB.
+     Rendered only when <body data-socials="live">. -->
+<div class="socials social-live" aria-label="Redes del dojo">
+  <a class="sfab" href="https://www.instagram.com/dojo_j.jrondon/" target="_blank" rel="noopener" aria-label="Instagram del dojo (se abre en otra pestaña)">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg>
+  </a>
+  <a class="sfab" href="https://www.facebook.com/profile.php?id=100070059402691" target="_blank" rel="noopener" aria-label="Facebook del dojo (se abre en otra pestaña)">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.9.3-1.6 1.6-1.6h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.3h2.8V22h3.4z"/></svg>
+  </a>
+</div>
 
 <a class="fab" href="https://wa.me/584262470341?text=Buenas%2C%20Sensei.%20Vi%20la%20p%C3%A1gina%20del%20dojo%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." aria-label="Escríbenos por WhatsApp">
   <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -606,14 +828,31 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
       mensualidad: '¿Cuánto es la mensualidad?',
       prueba:      '¿Puedo ir a una clase de prueba?'
     };
-    form.addEventListener('change', function(){
+    var ADAPT = 'Mi hijo/a es neurodivergente; me gustaría saber cómo lo acompañan en clase.';
+    var update = function(){
       var q = form.querySelector('input[name="quien"]:checked');
       var t = form.querySelector('input[name="tema"]:checked');
-      var msg = (q ? WHO[q.value] : WHO.info) + (t ? ' ' + ASK[t.value] : '');
+      var a = form.querySelector('input[name="adapt"]:checked');
+      var msg = (q ? WHO[q.value] : WHO.info)
+              + (t ? ' ' + ASK[t.value] : '')
+              + (a && q && q.value === 'hijo' ? ' ' + ADAPT : '');
       out.textContent = msg;
       cta.href = 'https://wa.me/584262470341?text=' + encodeURIComponent(msg);
-    });
+    };
+    form.addEventListener('change', update);
     form.addEventListener('submit', function(e){ e.preventDefault(); });
+    update(); /* browsers may restore a previous choice on reload */
+
+    /* Links with data-preset pre-fill the composer (e.g. the neurodivergent note) */
+    d.querySelectorAll('[data-preset="hijo-adapt"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        var hijo = form.querySelector('input[name="quien"][value="hijo"]');
+        var adapt = form.querySelector('input[name="adapt"]');
+        if (hijo) hijo.checked = true;
+        if (adapt) adapt.checked = true;
+        update();
+      });
+    });
   }
 
   /* 3. Reveal sutil al hacer scroll */
@@ -627,6 +866,24 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
     els.forEach(function(el){ io.observe(el); });
   } else {
     els.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  /* 4. Nav: marca la sección visible (aria-current) */
+  var navLinks = d.querySelectorAll('.nav__links a[href^="#"]');
+  if (navLinks.length && 'IntersectionObserver' in window) {
+    var byId = {};
+    navLinks.forEach(function(a){
+      var sec = d.getElementById(a.getAttribute('href').slice(1));
+      if (sec) byId[sec.id] = a;
+    });
+    var nio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        navLinks.forEach(function(a){ a.removeAttribute('aria-current'); });
+        byId[en.target.id].setAttribute('aria-current', 'true');
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    Object.keys(byId).forEach(function(id){ nio.observe(d.getElementById(id)); });
   }
 })();
 </script>
