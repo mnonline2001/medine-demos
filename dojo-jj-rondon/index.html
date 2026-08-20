@@ -445,7 +445,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   .step--2,.compose__out{transform:none}
 }
 /* --- Galería de la escuela --- */
-.gal{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
 .gal figure{margin:0;border:1px solid rgba(245,244,240,.14);background:var(--bg-2);clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%)}
 .gal img{display:block;width:100%;height:260px;object-fit:cover}
 .gal figcaption{padding:10px 12px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
@@ -453,8 +453,11 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
   repeating-linear-gradient(45deg,rgba(245,244,240,.03) 0 8px,transparent 8px 16px),var(--bg-2)}
 .gal .ph img{width:54px;height:54px;object-fit:contain;opacity:.55}
 .gal .ph p{font-size:.8rem;color:var(--mut);max-width:24ch;line-height:1.45}
+.gal-feature{margin-top:26px;border:1px solid rgba(245,244,240,.14);background:var(--bg-2);clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)}
+.gal-feature img{display:block;width:100%;height:clamp(220px,42vw,440px);object-fit:cover}
+.gal-feature figcaption{padding:10px 14px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
 .gal-strip{margin-top:14px;border:1px solid rgba(245,244,240,.14)}
-.gal-strip img{display:block;width:100%;height:84px;object-fit:cover}
+.gal-strip img{display:block;width:100%;height:120px;object-fit:cover}
 .gal-strip figcaption{padding:8px 12px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
 .gal-note{margin-top:16px;font-size:.85rem;color:var(--mut)}
 @media (max-width:760px){.gal{grid-template-columns:1fr}.gal img,.gal .ph{height:220px}}
@@ -707,25 +710,27 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
         <p class="kicker">03 · La escuela</p>
         <h2 id="h-gal">La escuela por dentro</h2>
       </div>
+      <!-- Fotos reales del dojo tomadas por Ingrid (2026-08-19). Solo interiores sin
+           personas identificables (la de trofeos recortada para excluir un reflejo). -->
+      <figure class="gal-feature reveal">
+        <img src="assets/dojo-salon.jpg" width="1600" height="720" alt="El salón principal del Dojo J.J. Rondón: piso de madera, paredes azul y crema, saco de boxeo, llantas y conos de entrenamiento" loading="lazy">
+        <figcaption>El salón principal — listo para entrenar</figcaption>
+      </figure>
       <figure class="gal-strip reveal">
-        <img src="assets/dojo-trofeos-crop.jpg" alt="La pared de trofeos del dojo, con los estandartes de Fuerza y Respeto" loading="lazy">
-        <figcaption>La pared de trofeos — años formando medallistas</figcaption>
+        <img src="assets/dojo-trofeos-real.jpg" width="1600" height="288" alt="La pared de trofeos del dojo con los estandartes Esfuerzo, Respeto y Dedicación" loading="lazy">
+        <figcaption>La pared de trofeos · Esfuerzo · Respeto · Dedicación</figcaption>
       </figure>
       <div class="gal reveal">
+        <figure>
+          <img src="assets/dojo-interior.jpg" width="630" height="1400" alt="Interior del dojo: piso de baldosa, el banner de la escuela e Inochi Kai Monagas y la entrada" loading="lazy">
+          <figcaption>El dojo por dentro</figcaption>
+        </figure>
         <figure>
           <img src="assets/dojo-dia-del-nino.jpg" alt="Arte del dojo por el Día del Niño: dos pequeños karatecas animados con el emblema de la escuela" loading="lazy">
           <figcaption>El dojo celebra a sus niños</figcaption>
         </figure>
-        <figure>
-          <div class="ph"><img src="assets/dojo-logo.png" alt=""><p>Foto de la escuela — la selecciona el Sensei</p></div>
-          <figcaption>Espacio reservado</figcaption>
-        </figure>
-        <figure>
-          <div class="ph"><img src="assets/dojo-logo.png" alt=""><p>Foto de la escuela — la selecciona el Sensei</p></div>
-          <figcaption>Espacio reservado</figcaption>
-        </figure>
       </div>
-      <p class="gal-note reveal">Galería en su primera versión: las fotos definitivas las elige y autoriza el Sensei, y se renuevan cuando él quiera con el soporte anual.</p>
+      <p class="gal-note reveal">Fotos reales del dojo (agosto 2026). Se renuevan cuando el Sensei quiera con el soporte anual.</p>
     </div>
   </section>
 
