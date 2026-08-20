@@ -477,10 +477,20 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .bio-trail{margin:clamp(2rem,4vw,3rem) 0 0}
 .bio-trail__label{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-bottom:1rem;display:flex;align-items:center;gap:.7em}
 .bio-trail__label::after{content:"";flex:1;height:1px;background:rgba(245,244,240,.14)}
-.bio-trail__row{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
-@media (min-width:720px){.bio-trail__row{grid-template-columns:repeat(4,1fr)}}
-.bio-trail__row span{display:flex;flex-direction:column;gap:.55rem}
-.bio-trail__row img{width:100%;height:132px;object-fit:cover;background:var(--bg-2);border:1px solid rgba(245,244,240,.14);clip-path:polygon(0 0,100% 0,100% 100%,10px 100%,0 calc(100% - 10px))}
+.bio-trail__cue{font-family:"Work Sans",system-ui,sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.18em;color:var(--red-text);flex:none}
+/* carrusel deslizable (mismo gesto que las Categorías) */
+.bio-trail__row{
+  display:flex;gap:.9rem;
+  overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;
+  padding-bottom:.7rem;
+  scrollbar-width:thin;scrollbar-color:rgba(245,244,240,.3) transparent;
+}
+.bio-trail__row::-webkit-scrollbar{height:6px}
+.bio-trail__row::-webkit-scrollbar-thumb{background:rgba(245,244,240,.25)}
+.bio-trail__row::-webkit-scrollbar-track{background:transparent}
+.bio-trail__row span{flex:0 0 min(64vw, 232px);scroll-snap-align:start;display:flex;flex-direction:column;gap:.55rem}
+.bio-trail__row img{width:100%;height:150px;object-fit:cover;background:var(--bg-2);border:1px solid rgba(245,244,240,.14);clip-path:polygon(0 0,100% 0,100% 100%,10px 100%,0 calc(100% - 10px))}
 .bio-trail__row b{font-weight:500;font-size:.8rem;line-height:1.35;color:var(--mut)}
 </style>
 </head>
@@ -633,12 +643,13 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
           </div>
         </div>
         <figure class="bio-trail reveal" aria-label="Trayectoria del Sensei en imágenes">
-          <figcaption class="bio-trail__label">Una vida en el tatami</figcaption>
+          <figcaption class="bio-trail__label">Una vida en el tatami <span class="bio-trail__cue">desliza →</span></figcaption>
           <div class="bio-trail__row">
             <span><img src="assets/tray-fvkd.jpg" width="675" height="900" alt="El Sensei en un evento de la Federación Venezolana de Karate Do" loading="lazy"><b>Federación Venezolana de Karate Do</b></span>
             <span><img src="assets/tray-panamericano-2008.jpg" width="900" height="723" alt="Campeonato Panamericano de Karate Adultos, Caracas 2008" loading="lazy"><b>Panamericano de Karate Adultos · Caracas 2008</b></span>
             <span><img src="assets/tray-andes-2005.jpg" width="900" height="621" alt="Podio de los Juegos Deportivos Nacionales ANDES 2005" loading="lazy"><b>Juegos Deportivos Nacionales · ANDES 2005</b></span>
             <span><img src="assets/tray-cinturones-negros.jpg" width="900" height="547" alt="Grupo de cinturones negros formados en el dojo, junto al Sensei" loading="lazy"><b>Cinturones negros formados en el dojo</b></span>
+            <span><img src="assets/tray-esposa.jpg" width="850" height="598" alt="El Sensei José Rondón junto a su esposa" loading="lazy"><b>El Sensei y su esposa</b></span>
           </div>
         </figure>
       </div>
