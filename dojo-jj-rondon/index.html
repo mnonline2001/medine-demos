@@ -19,10 +19,20 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Dojo J.J. Rondón, Maturín: Karate-Do para niños y adultos.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🥋%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/bebas-neue-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/work-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* ============ fonts ============ */
+/* Self-hosted (Google Fonts, SIL OFL). The stylesheet from fonts.googleapis.com
+   was the page's only render-blocking resource: ~1s of blank screen on mobile
+   before the first paint. Same bytes, one origin, no round-trip. Only the
+   subset the visitor actually needs is fetched, via unicode-range. */
+@font-face{font-family:"Bebas Neue";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/bebas-neue-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Bebas Neue";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/bebas-neue-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* Work Sans ships as one variable file per subset, 400-700 on the wght axis. */
+@font-face{font-family:"Work Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/work-sans-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Work Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/work-sans-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
 /* ============ base ============ */
 :root{
   --bg:#17181c;
@@ -456,6 +466,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .gal-feature{margin-top:26px;border:1px solid rgba(245,244,240,.14);background:var(--bg-2);clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)}
 .gal-feature img{display:block;width:100%;height:clamp(220px,42vw,440px);object-fit:cover}
 .gal-feature figcaption{padding:10px 14px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.gal-feature+.gal-feature{margin-top:14px}
 .gal-strip{margin-top:14px;border:1px solid rgba(245,244,240,.14)}
 .gal-strip img{display:block;width:100%;height:120px;object-fit:cover}
 .gal-strip figcaption{padding:8px 12px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
@@ -647,7 +658,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
         </div>
         <figure class="bio-trail reveal" aria-label="Trayectoria del Sensei en imágenes">
           <figcaption class="bio-trail__label">Una vida en el tatami <span class="bio-trail__cue">desliza →</span></figcaption>
-          <div class="bio-trail__row">
+          <div class="bio-trail__row" role="region" aria-label="Trayectoria del Sensei, galería deslizable" tabindex="0">
             <span><img src="assets/tray-fvkd.jpg" width="675" height="900" alt="El Sensei en un evento de la Federación Venezolana de Karate Do" loading="lazy"><b>Federación Venezolana de Karate Do</b></span>
             <span><img src="assets/tray-panamericano-2008.jpg" width="900" height="723" alt="Campeonato Panamericano de Karate Adultos, Caracas 2008" loading="lazy"><b>Panamericano de Karate Adultos · Caracas 2008</b></span>
             <span><img src="assets/tray-andes-2005.jpg" width="900" height="621" alt="Podio de los Juegos Deportivos Nacionales ANDES 2005" loading="lazy"><b>Juegos Deportivos Nacionales · ANDES 2005</b></span>
@@ -699,7 +710,11 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
       </article>
     </div>
     <div class="wrap">
-      <p class="rail-note reveal"><strong>¿Horarios y mensualidad?</strong> Se preguntan en un toque, aquí abajo — el Sensei te responde directo por WhatsApp.</p>
+      <!-- Horario tomado del cartel pintado en la fachada del dojo (foto 2026-08-20):
+           "Inscripciones abiertas / de lunes a viernes / 4pm-5pm / 5pm-6pm / 6pm-7pm".
+           Vigencia confirmada por Ingrid el 2026-08-20. El cartel NO dice que bloque
+           corresponde a cada categoria: eso queda para el Sensei. -->
+      <p class="rail-note reveal"><strong>Lunes a viernes, de 4:00 a 7:00 pm.</strong> ¿Cuál hora le toca a tu hijo y cuánto es la mensualidad? Se pregunta en un toque, aquí abajo — el Sensei te responde directo por WhatsApp.</p>
     </div>
   </section>
 
@@ -708,10 +723,15 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="kicker">03 · La escuela</p>
-        <h2 id="h-gal">La escuela por dentro</h2>
+        <h2 id="h-gal">La escuela, por fuera y por dentro</h2>
       </div>
-      <!-- Fotos reales del dojo tomadas por Ingrid (2026-08-19). Solo interiores sin
-           personas identificables (la de trofeos recortada para excluir un reflejo). -->
+      <!-- Fotos reales del dojo tomadas por Ingrid (2026-08-19 interiores, 2026-08-20
+           fachada). Sin personas identificables (la de trofeos va recortada para
+           excluir un reflejo en el espejo). -->
+      <figure class="gal-feature reveal">
+        <img src="assets/dojo-fachada.jpg" width="1600" height="600" alt="La fachada del dojo en Maturín: pared azul con el letrero Escuela de Karate-Do Dojo J.J. Rondón y un cartel de inscripciones abiertas" loading="lazy">
+        <figcaption>Así se ve al llegar — Av. Principal de Las Cocuizas</figcaption>
+      </figure>
       <figure class="gal-feature reveal">
         <img src="assets/dojo-salon.jpg" width="1600" height="720" alt="El salón principal del Dojo J.J. Rondón: piso de madera, paredes azul y crema, saco de boxeo, llantas y conos de entrenamiento" loading="lazy">
         <figcaption>El salón principal — listo para entrenar</figcaption>
@@ -773,7 +793,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 
         <div class="compose__out">
           <p class="out-label">Tu mensaje, listo</p>
-          <p class="bubble" id="msg-preview">Buenas, Sensei. Quiero información sobre la escuela.</p>
+          <p class="bubble" id="msg-preview" role="status" aria-live="polite">Buenas, Sensei. Quiero información sobre la escuela.</p>
           <a class="cta" id="msg-send" href="https://wa.me/584262470341?text=Buenas%2C%20Sensei.%20Quiero%20informaci%C3%B3n%20sobre%20la%20escuela."><span>Enviar por WhatsApp</span></a>
           <p class="fine">Se abre tu WhatsApp con el mensaje ya escrito — lo puedes editar antes de enviar.</p>
         </div>
@@ -805,6 +825,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
               Escríbenos por WhatsApp
             </a>
           </li>
+          <li>Lunes a viernes, de 4:00 a 7:00 pm</li>
           <li>Av. Principal de Las Cocuizas, diagonal a la iglesia Santo Domingo de Guzmán. Maturín 6201, Monagas</li>
           <li><a href="https://maps.google.com/?q=9.756304,-63.155331" target="_blank" rel="noopener">Cómo llegar (Google Maps) →</a></li>
         </ul>
