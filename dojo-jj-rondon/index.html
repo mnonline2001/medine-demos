@@ -458,6 +458,30 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .gal-strip figcaption{padding:8px 12px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
 .gal-note{margin-top:16px;font-size:.85rem;color:var(--mut)}
 @media (max-width:760px){.gal{grid-template-columns:1fr}.gal img,.gal .ph{height:220px}}
+
+/* ============ v2: biografía del Sensei ============ */
+.dojo-intro{max-width:640px}
+.bio{margin-top:clamp(2.8rem,6vw,4.5rem);padding-top:clamp(2rem,4vw,3rem);border-top:1px solid rgba(245,244,240,.14);scroll-margin-top:calc(var(--nav-h) + 18px)}
+.bio-head{margin-bottom:clamp(1.4rem,3.5vw,2.2rem)}
+.bio-head h3{font-size:clamp(2.4rem,7vw,3.6rem);margin-top:.35rem}
+.bio-grid{display:grid;gap:clamp(1.5rem,4vw,2.6rem);align-items:start}
+@media (min-width:820px){.bio-grid{grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(2rem,5vw,3.4rem)}}
+.bio-portrait{margin:0;position:relative}
+.bio-portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--bg-2);border:1px solid rgba(245,244,240,.18);clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%)}
+.bio-portrait::before{content:"";position:absolute;inset-inline:0;top:0;height:3px;background:var(--red)}
+.bio-portrait figcaption{margin-top:.75rem;font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:1.2rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);display:flex;align-items:center;gap:.55em}
+.bio-portrait figcaption::before{content:"";width:.42em;height:.42em;background:var(--red);transform:rotate(45deg);flex:none}
+.s-dojo .bio-text p{max-width:62ch;color:var(--mut);font-size:1.06rem}
+.s-dojo .bio-text p+p{margin-top:1rem}
+.s-dojo .bio-text strong{color:var(--ink);font-weight:600}
+.bio-trail{margin:clamp(2rem,4vw,3rem) 0 0}
+.bio-trail__label{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-bottom:1rem;display:flex;align-items:center;gap:.7em}
+.bio-trail__label::after{content:"";flex:1;height:1px;background:rgba(245,244,240,.14)}
+.bio-trail__row{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
+@media (min-width:720px){.bio-trail__row{grid-template-columns:repeat(4,1fr)}}
+.bio-trail__row span{display:flex;flex-direction:column;gap:.55rem}
+.bio-trail__row img{width:100%;height:132px;object-fit:cover;background:var(--bg-2);border:1px solid rgba(245,244,240,.14);clip-path:polygon(0 0,100% 0,100% 100%,10px 100%,0 calc(100% - 10px))}
+.bio-trail__row b{font-weight:500;font-size:.8rem;line-height:1.35;color:var(--mut)}
 </style>
 </head>
 <!-- data-socials: "live" shows the Instagram/Facebook buttons and footer links.
@@ -540,40 +564,24 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
         <p class="kicker">01 · El dojo</p>
         <h2 id="h-dojo">Disciplina, mejora continua, excelencia</h2>
       </div>
-      <div class="dojo-grid">
-        <div>
-          <div class="reveal">
-            <p>En Maturín, estado Monagas, la <strong>Escuela de Karate-Do Dojo J.J. Rondón</strong> lleva las iniciales de quien la dirige: el <strong><a class="lnk" href="#sensei">Sensei José Rondón</a></strong>. Aquí el karate se enseña como lo que es — una disciplina que forma el carácter.</p>
-            <p>La mayoría de nuestros alumnos son <strong>niños que crecen en el tatami</strong>, y también entrenan adultos que decidieron empezar. Es un dojo que <strong>forma medallistas</strong>: se entrena para competir, y para la vida.</p>
-          </div>
-          <ul class="values reveal" aria-label="Los tres valores del dojo">
-            <li><a href="#dia-disciplina">Disciplina<span class="sr">: cómo se vive en el día a día</span></a></li>
-            <li><a href="#dia-mejora">Mejora continua<span class="sr">: cómo se vive en el día a día</span></a></li>
-            <li><a href="#dia-excelencia">Excelencia<span class="sr">: cómo se vive en el día a día</span></a></li>
-          </ul>
-          <p class="values-hint reveal">Toca un valor para ver cómo se entrena en el día a día del dojo.</p>
-
-          <!-- v2-pending: the Sensei asked to highlight this. Wording is welcome + next step
-               only — no medical/therapeutic promises. He validates the final text. -->
-          <aside class="note reveal" aria-labelledby="h-neuro">
-            <p class="note__t" id="h-neuro">Aquí también entrenan niños neurodivergentes</p>
-            <p>El dojo los recibe con las mismas reglas y el mismo respeto que a todos — cada uno a su ritmo. Si tu hijo o hija necesita alguna adaptación, cuéntaselo al Sensei por WhatsApp para que la primera clase empiece bien.</p>
-            <a class="cta cta--ghost cta--sm" href="#inscripcion" data-preset="hijo-adapt"><span>Contárselo al Sensei</span></a>
-          </aside>
+      <div class="dojo-intro">
+        <div class="reveal">
+          <p>En Maturín, estado Monagas, la <strong>Escuela de Karate-Do Dojo J.J. Rondón</strong> lleva las iniciales de quien la dirige: el <strong><a class="lnk" href="#sensei">Sensei José Rondón</a></strong>. Aquí el karate se enseña como lo que es — una disciplina que forma el carácter.</p>
+          <p>La mayoría de nuestros alumnos son <strong>niños que crecen en el tatami</strong>, y también entrenan adultos que decidieron empezar. Es un dojo que <strong>forma medallistas</strong>: se entrena para competir, y para la vida.</p>
         </div>
+        <ul class="values reveal" aria-label="Los tres valores del dojo">
+          <li><a href="#dia-disciplina">Disciplina<span class="sr">: cómo se vive en el día a día</span></a></li>
+          <li><a href="#dia-mejora">Mejora continua<span class="sr">: cómo se vive en el día a día</span></a></li>
+          <li><a href="#dia-excelencia">Excelencia<span class="sr">: cómo se vive en el día a día</span></a></li>
+        </ul>
+        <p class="values-hint reveal">Toca un valor para ver cómo se entrena en el día a día del dojo.</p>
 
-        <!-- v2-pending: bio copy comes ONLY from what the Sensei sends (years teaching,
-             trajectory, philosophy). Humble tone by his own rule: no ranks, no Dan.
-             Show it to him before publishing. Photo only if he picks and authorises one. -->
-        <aside class="sensei reveal" id="sensei" aria-labelledby="h-sensei">
-          <!-- Portrait goes here once the Sensei picks and authorises one (see .sensei__head
-               CSS). Until then the card is photo-less by design — never publish the casual
-               selfie crop. -->
-          <p class="kicker">El Sensei</p>
-          <h3 id="h-sensei">Sensei José Rondón</h3>
-          <p class="sensei__role">Dirige la Escuela de Karate-Do Dojo J.J. Rondón, en Maturín.</p>
-          <p>Enseña karate a niños y adultos con una idea sencilla: la excelencia se demuestra en el tatami, con constancia, respeto y trabajo bien hecho.</p>
-          <p class="sensei__pending">Su trayectoria y sus años de enseñanza, contados por él mismo, se suman aquí apenas los comparta.</p>
+        <!-- v2-pending: the Sensei asked to highlight this. Wording is welcome + next step
+             only — no medical/therapeutic promises. He validates the final text. -->
+        <aside class="note reveal" aria-labelledby="h-neuro">
+          <p class="note__t" id="h-neuro">Aquí también entrenan niños neurodivergentes</p>
+          <p>El dojo los recibe con las mismas reglas y el mismo respeto que a todos — cada uno a su ritmo. Si tu hijo o hija necesita alguna adaptación, cuéntaselo al Sensei por WhatsApp para que la primera clase empiece bien.</p>
+          <a class="cta cta--ghost cta--sm" href="#inscripcion" data-preset="hijo-adapt"><span>Contárselo al Sensei</span></a>
         </aside>
       </div>
 
@@ -602,6 +610,37 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
             <p>Se compite cuando se está listo, y se entrena para estarlo. La excelencia aquí es hacer bien lo de hoy.</p>
           </article>
         </div>
+      </div>
+
+      <!-- Biografía del Sensei — BORRADOR (2026-08-18). Redactada SOLO con lo que muestran
+           las fotos que él envió + lo ya confirmado. No se afirma un número de Dan (el
+           certificado no se lee con seguridad). El Sensei confirma/corrige antes de dar por
+           buena la versión final. Fotos: solo de adultos. -->
+      <div class="bio" id="sensei" aria-labelledby="h-sensei">
+        <div class="bio-head reveal">
+          <p class="kicker">El Sensei</p>
+          <h3 id="h-sensei">Sensei José Rondón</h3>
+        </div>
+        <div class="bio-grid">
+          <figure class="bio-portrait reveal">
+            <img src="assets/sensei-retrato.jpg" width="760" height="950" alt="El Sensei José Rondón, en kimono y cinturón negro, sostiene su certificado de grado Dan" loading="lazy">
+            <figcaption>Cinturón negro · Grado Dan</figcaption>
+          </figure>
+          <div class="bio-text reveal">
+            <p>Detrás del Dojo J.J. Rondón está el <strong>Sensei José Rondón</strong>, quien le da su nombre a la escuela. Cinturón negro de <strong>grado Dan</strong>, ha dedicado su vida al karate-do — primero como competidor y hoy, sobre todo, como maestro.</p>
+            <p>Su camino lo ha llevado a tatamis dentro y fuera del estado: ha estado presente en competencias nacionales e internacionales —como los <strong>Juegos Deportivos Nacionales (ANDES 2005)</strong> y el <strong>Campeonato Panamericano de Karate Adultos (Caracas, 2008)</strong>— siempre en el marco de la <strong>Federación Venezolana de Karate Do</strong>.</p>
+            <p>Pero lo que más lo enorgullece no son las medallas, sino sus alumnos: <strong>varios de los cinturones negros que formó hoy también dan clase</strong>. En su dojo, en Maturín, enseña a niños y adultos con la misma idea de siempre — que la excelencia se demuestra en el tatami, con constancia, respeto y trabajo bien hecho.</p>
+          </div>
+        </div>
+        <figure class="bio-trail reveal" aria-label="Trayectoria del Sensei en imágenes">
+          <figcaption class="bio-trail__label">Una vida en el tatami</figcaption>
+          <div class="bio-trail__row">
+            <span><img src="assets/tray-fvkd.jpg" width="675" height="900" alt="El Sensei en un evento de la Federación Venezolana de Karate Do" loading="lazy"><b>Federación Venezolana de Karate Do</b></span>
+            <span><img src="assets/tray-panamericano-2008.jpg" width="900" height="723" alt="Campeonato Panamericano de Karate Adultos, Caracas 2008" loading="lazy"><b>Panamericano de Karate Adultos · Caracas 2008</b></span>
+            <span><img src="assets/tray-andes-2005.jpg" width="900" height="621" alt="Podio de los Juegos Deportivos Nacionales ANDES 2005" loading="lazy"><b>Juegos Deportivos Nacionales · ANDES 2005</b></span>
+            <span><img src="assets/tray-cinturones-negros.jpg" width="900" height="547" alt="Grupo de cinturones negros formados en el dojo, junto al Sensei" loading="lazy"><b>Cinturones negros formados en el dojo</b></span>
+          </div>
+        </figure>
       </div>
     </div>
   </section>
