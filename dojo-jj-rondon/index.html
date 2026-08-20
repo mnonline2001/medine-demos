@@ -466,6 +466,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
 .gal-feature{margin-top:26px;border:1px solid rgba(245,244,240,.14);background:var(--bg-2);clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)}
 .gal-feature img{display:block;width:100%;height:clamp(220px,42vw,440px);object-fit:cover}
 .gal-feature figcaption{padding:10px 14px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.gal-feature+.gal-feature{margin-top:14px}
 .gal-strip{margin-top:14px;border:1px solid rgba(245,244,240,.14)}
 .gal-strip img{display:block;width:100%;height:120px;object-fit:cover}
 .gal-strip figcaption{padding:8px 12px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
@@ -709,7 +710,10 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
       </article>
     </div>
     <div class="wrap">
-      <p class="rail-note reveal"><strong>¿Horarios y mensualidad?</strong> Se preguntan en un toque, aquí abajo — el Sensei te responde directo por WhatsApp.</p>
+      <!-- Horario tomado del cartel pintado en la fachada del dojo (foto 2026-08-20):
+           "Inscripciones abiertas / de lunes a viernes / 4pm-5pm / 5pm-6pm / 6pm-7pm".
+           El cartel NO dice que bloque corresponde a cada categoria: eso lo confirma el Sensei. -->
+      <p class="rail-note reveal"><strong>Lunes a viernes, de 4:00 a 7:00 pm.</strong> ¿Cuál hora le toca a tu hijo y cuánto es la mensualidad? Se pregunta en un toque, aquí abajo — el Sensei te responde directo por WhatsApp.</p>
     </div>
   </section>
 
@@ -718,10 +722,15 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="kicker">03 · La escuela</p>
-        <h2 id="h-gal">La escuela por dentro</h2>
+        <h2 id="h-gal">La escuela, por fuera y por dentro</h2>
       </div>
-      <!-- Fotos reales del dojo tomadas por Ingrid (2026-08-19). Solo interiores sin
-           personas identificables (la de trofeos recortada para excluir un reflejo). -->
+      <!-- Fotos reales del dojo tomadas por Ingrid (2026-08-19 interiores, 2026-08-20
+           fachada). Sin personas identificables (la de trofeos va recortada para
+           excluir un reflejo en el espejo). -->
+      <figure class="gal-feature reveal">
+        <img src="assets/dojo-fachada.jpg" width="1600" height="600" alt="La fachada del dojo en Maturín: pared azul con el letrero Escuela de Karate-Do Dojo J.J. Rondón y un cartel de inscripciones abiertas" loading="lazy">
+        <figcaption>Así se ve al llegar — Av. Principal de Las Cocuizas</figcaption>
+      </figure>
       <figure class="gal-feature reveal">
         <img src="assets/dojo-salon.jpg" width="1600" height="720" alt="El salón principal del Dojo J.J. Rondón: piso de madera, paredes azul y crema, saco de boxeo, llantas y conos de entrenamiento" loading="lazy">
         <figcaption>El salón principal — listo para entrenar</figcaption>
@@ -815,6 +824,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
               Escríbenos por WhatsApp
             </a>
           </li>
+          <li>Lunes a viernes, de 4:00 a 7:00 pm</li>
           <li>Av. Principal de Las Cocuizas, diagonal a la iglesia Santo Domingo de Guzmán. Maturín 6201, Monagas</li>
           <li><a href="https://maps.google.com/?q=9.756304,-63.155331" target="_blank" rel="noopener">Cómo llegar (Google Maps) →</a></li>
         </ul>
