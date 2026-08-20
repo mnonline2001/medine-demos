@@ -687,7 +687,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
           <p class="pcard__tag">Primeros pasos y disciplina</p>
           <p>El tatami como primera escuela: respeto, foco y confianza para los más pequeños de la casa. Aquí empieza el camino del cinturón.</p>
           <p class="pcard__note">Niños neurodivergentes: bienvenidos, a su ritmo.</p>
-          <a class="cta cta--ghost cta--sm" href="#inscripcion"><span>Preguntar horarios</span></a>
+          <a class="cta cta--ghost cta--sm" href="#inscripcion" data-preset="hijo"><span>Inscribir a mi hijo/a</span></a>
         </div>
       </article>
       <article class="pcard pcard--juvenil">
@@ -696,7 +696,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
           <h3>Juvenil</h3>
           <p class="pcard__tag">Técnica y competencia</p>
           <p>La etapa donde el karate se pule y nacen los medallistas: más técnica, más ritmo y la mentalidad para competir.</p>
-          <a class="cta cta--ghost cta--sm" href="#inscripcion"><span>Preguntar horarios</span></a>
+          <a class="cta cta--ghost cta--sm" href="#inscripcion" data-preset="hijo"><span>Inscribir a mi hijo/a</span></a>
         </div>
       </article>
       <article class="pcard pcard--adultos">
@@ -705,7 +705,7 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
           <h3>Adultos</h3>
           <p class="pcard__tag">Nunca es tarde para empezar</p>
           <p>Condición física, foco y una disciplina que te ordena la semana. Empiezas donde estás; el tatami hace el resto.</p>
-          <a class="cta cta--ghost cta--sm" href="#inscripcion"><span>Preguntar horarios</span></a>
+          <a class="cta cta--ghost cta--sm" href="#inscripcion" data-preset="adulto"><span>Quiero entrenar</span></a>
         </div>
       </article>
     </div>
@@ -922,13 +922,18 @@ h1,h2,h3,.display{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-weight
     form.addEventListener('submit', function(e){ e.preventDefault(); });
     update(); /* browsers may restore a previous choice on reload */
 
-    /* Links with data-preset pre-fill the composer (e.g. the neurodivergent note) */
-    d.querySelectorAll('[data-preset="hijo-adapt"]').forEach(function(a){
+    /* Links with data-preset pre-fill the composer: the category cards pick who it
+       is for, and the neurodivergent note also ticks the adaptation checkbox. The
+       preview is a live region, so screen readers hear the message change. */
+    d.querySelectorAll('[data-preset]').forEach(function(a){
       a.addEventListener('click', function(){
-        var hijo = form.querySelector('input[name="quien"][value="hijo"]');
-        var adapt = form.querySelector('input[name="adapt"]');
-        if (hijo) hijo.checked = true;
-        if (adapt) adapt.checked = true;
+        var preset = a.getAttribute('data-preset');
+        var who = form.querySelector('input[name="quien"][value="' + (preset === 'adulto' ? 'adulto' : 'hijo') + '"]');
+        if (who) who.checked = true;
+        if (preset === 'hijo-adapt') {
+          var adapt = form.querySelector('input[name="adapt"]');
+          if (adapt) adapt.checked = true;
+        }
         update();
       });
     });
