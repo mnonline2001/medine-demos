@@ -102,7 +102,7 @@ a.placa:hover::before{background:var(--amarillo-3)}
 .placa-nav[aria-current="true"]::before{background:var(--amarillo-3);box-shadow:inset 0 0 0 2px var(--noche)}
 .placa-pin{padding:0 1.3em 0 .9em}
 .placa-pin svg{width:14px;height:20px}
-@media (min-width:1400px){
+@media (min-width:1480px){
   /* En pantallas anchas el poste está plantado en el piso, abajo a la izquierda: no es una barra */
   .poste{position:fixed;top:auto;left:20px;bottom:0;width:auto;padding:0 0 0 20px;background:none;box-shadow:none;overflow:visible}
   .poste::before{content:"";position:absolute;left:0;top:-10px;bottom:0;width:14px;background:linear-gradient(90deg,#2b2724,#4d4844 45%,#2b2724);box-shadow:0 0 0 1px #0b0908}
@@ -239,7 +239,7 @@ legend{float:left;width:100%;font-weight:800;padding:0;margin-bottom:var(--s1)}
 .modo input{width:22px;height:22px;accent-color:var(--amarillo);margin:0;flex:0 0 auto}
 .campo{display:grid;gap:6px}
 .campo label{font-weight:700}
-.campo input{width:100%;min-width:0;min-height:48px;padding:0 14px;border:1px solid rgba(243,233,210,.35);background:#15100d;color:var(--crema);font:inherit;border-radius:2px}
+.campo input{width:100%;min-width:0;min-height:48px;padding:0 14px;border:1px solid rgba(243,233,210,.5);background:#15100d;color:var(--crema);font:inherit;border-radius:2px}
 .campo input:focus-visible{outline:3px solid var(--amarillo);outline-offset:2px}
 .campo input::placeholder{color:#A69C8C;opacity:1}
 .campo .ayuda{font-size:.88rem;color:var(--crema-2)}
@@ -274,10 +274,10 @@ legend{float:left;width:100%;font-weight:800;padding:0;margin-bottom:var(--s1)}
 #local{padding-block:var(--pad-aire)}
 .fotos{display:grid;gap:var(--s2)}
 @media (min-width:768px){.fotos{grid-template-columns:2fr 1fr;grid-template-rows:auto auto}.fotos figure:first-child{grid-row:1/3}}
-.fotos figure{margin:0;position:relative;overflow:hidden}
+.fotos figure{margin:0;position:relative;overflow:clip}
 .fotos img{border:6px solid #2a2622;width:100%;height:100%;object-fit:cover}
 .fotos figure:first-child img{aspect-ratio:630/580}
-.fotos figure:not(:first-child) img{aspect-ratio:630/400;object-fit:fill}
+.fotos figure:not(:first-child) img{aspect-ratio:630/400;object-fit:cover}
 .fotos figcaption{position:absolute;left:14px;bottom:14px;padding:6px 12px;background:var(--noche);color:var(--crema);font-size:.85rem;font-weight:600}
 /* Las fotos entran como si se abriera la reja: cada una desde un lado distinto */
 .reja-reveal{--desde:inset(0 100% 0 0);clip-path:var(--desde)}
@@ -298,7 +298,7 @@ legend{float:left;width:100%;font-weight:800;padding:0;margin-bottom:var(--s1)}
 .riel{background:var(--hierro);padding:var(--s3);display:grid;justify-items:center;text-align:center;gap:var(--s2)}
 .riel--sup{border-bottom:3px solid #3a3531}
 .riel--inf{border-top:3px solid #3a3531;padding-bottom:calc(var(--s3) + 8px)}
-.barrotes{position:relative;height:120px;overflow:hidden}
+.barrotes{position:relative;height:120px;overflow:clip}
 .barrotes::before,.barrotes::after{content:"";position:absolute;top:0;bottom:0;width:50%;background:repeating-linear-gradient(90deg,var(--hierro) 0 7px,transparent 7px 36px)}
 .barrotes::before{left:0}
 .barrotes::after{right:0;background-position:right}
@@ -348,7 +348,7 @@ legend{float:left;width:100%;font-weight:800;padding:0;margin-bottom:var(--s1)}
         <span class="vh">El Punto Del Sabor — restaurant en Maturín</span>
         <span class="lk-rest" aria-hidden="true">Restaurant</span>
         <span class="lk-punto" aria-hidden="true">EL PUNT<span class="pin"><svg viewBox="0 0 64 100" focusable="false"><ellipse class="pin-sombra" cx="32" cy="92" rx="24" ry="6" fill="rgba(0,0,0,.55)"/><ellipse class="pin-onda" cx="32" cy="92" rx="24" ry="6" fill="none" stroke="#F8C92A" stroke-width="3"/><g class="pin-body"><ellipse cx="32" cy="88" rx="20" ry="6" fill="#8E1F1A"/><path fill="#C8322B" d="M32 2C17 2 6 13.5 6 28c0 19 26 60 26 60s26-41 26-60C58 13.5 47 2 32 2z"/><path fill="#E0453C" d="M32 6c-9 0-16 6-18 14 4-6 10-9 18-9s14 3 18 9C48 12 41 6 32 6z" opacity=".8"/><circle cx="32" cy="28" r="11" fill="#1B1512"/></g></svg></span></span>
-        <span class="lk-sabor" aria-hidden="true">del Sabor</span>
+        <span class="lk-sabor" aria-hidden="true">Del Sabor</span>
       </h1>
       <div class="hero-copy">
         <p class="lead">Hamburguesas, perros calientes y pepitos en Maturín. Arma tu pedido aquí mismo y mándalo por WhatsApp en un solo mensaje, listo para pasarlo a buscar.</p>
@@ -514,7 +514,7 @@ Nombre: <strong>Carla</strong>
 <!-- ===== Footer: la reja ===== -->
 <footer class="reja" id="contacto">
   <div class="riel riel--sup">
-    <p class="pie-lockup">El Punto <em>del Sabor</em></p>
+    <p class="pie-lockup">El Punto <em>Del Sabor</em></p>
     <p class="pie-datos">Restaurant · Maturín, Monagas</p>
   </div>
   <div class="barrotes" aria-hidden="true"></div>
@@ -704,7 +704,7 @@ Nombre: <strong>Carla</strong>
     var html = send.innerHTML; send.textContent = 'Abriendo WhatsApp…';
     var url = waUrl(mensaje());
     /* con "noopener" window.open devuelve null aunque abra: no se usa el retorno como señal */
-    window.open(url, '_blank', 'noopener');
+    try { window.open(url, '_blank', 'noopener'); } catch (err) { /* el enlace de respaldo queda en #estado */ }
     setTimeout(function () {
       busy = false; send.removeAttribute('aria-busy'); send.innerHTML = html;
       estado.innerHTML = 'Se abrió WhatsApp con tu pedido. Si no lo ves, <a href="' + url + '" rel="noopener" target="_blank">ábrelo aquí</a>.';
@@ -713,6 +713,8 @@ Nombre: <strong>Carla</strong>
 
   /* ---- poste: sección activa ---- */
   var links = document.querySelectorAll('.placa-nav[data-target]');
+  /* En la franja móvil, la placa que recibe foco se trae a la vista */
+  Array.prototype.forEach.call(links, function (a) { a.addEventListener('focus', function () { a.scrollIntoView({ block: 'nearest', inline: 'nearest' }); }); });
   function setCurrent(id) {
     Array.prototype.forEach.call(links, function (a) {
       if (a.getAttribute('data-target') === id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
@@ -729,11 +731,15 @@ Nombre: <strong>Carla</strong>
     }, { rootMargin: '-30% 0px -50% 0px', threshold: [0, .1, .25, .5, .75, 1] });
     ['inicio', 'menu', 'pedir', 'claro', 'local', 'contacto'].forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
 
-    /* El botón flotante se esconde mientras el compositor está a la vista: un solo botón verde por pantalla */
-    var comanda = $('.comanda');
-    new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { fab.classList.toggle('oculto', en.isIntersecting); });
-    }, { threshold: 0.05 }).observe(comanda);
+    /* El botón flotante se esconde mientras la pizarra o el compositor están a la vista:
+       nunca tapa los «+» ni compite con el botón verde de envío */
+    var tapables = { pizarra: false, comanda: false };
+    var fabSpy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { tapables[en.target.getAttribute('data-fab-zone')] = en.isIntersecting; });
+      fab.classList.toggle('oculto', tapables.pizarra || tapables.comanda);
+    }, { threshold: 0.02 });
+    $('.pizarra').setAttribute('data-fab-zone', 'pizarra'); $('.comanda').setAttribute('data-fab-zone', 'comanda');
+    fabSpy.observe($('.pizarra')); fabSpy.observe($('.comanda'));
     var poste = $('.poste');
     new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { poste.classList.toggle('oculto', en.isIntersecting); });
