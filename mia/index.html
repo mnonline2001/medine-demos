@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%E2%9C%A8</text></svg>">
+<!-- CLARITY: pendiente Project ID (blindado: solo esta pagina) -->
+<title>Mía · Piloto Automático</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    /* light — cool, blue-biased neutrals chosen around MedineTech #23BAFF */
+    --ground: #F1F7FC;
+    --ground-2: #E5F0F9;
+    --surface: #FFFFFF;
+    --surface-2: #F6FAFD;
+    --border: #DCE7F1;
+    --border-strong: #C1D5E6;
+    --ink: #0C2233;
+    --ink-2: #3C566B;
+    --ink-3: #6C8497;
+    --accent: #23BAFF;
+    --accent-deep: #0B7FBD;
+    --accent-soft: #E2F5FF;
+    --wa: #1FB268;
+    --wa-strong: #128C4B;
+    --wa-soft: #E2F6EC;
+    --amber: #C98118;
+    --amber-soft: #FBEFD6;
+    --shadow-sm: 0 1px 2px rgba(12,34,51,.06), 0 1px 3px rgba(12,34,51,.05);
+    --shadow-md: 0 4px 14px rgba(12,34,51,.08), 0 2px 6px rgba(12,34,51,.05);
+    --shadow-lg: 0 18px 48px rgba(11,60,95,.14);
+    --ring: 0 0 0 3px rgba(35,186,255,.35);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --ground: #071320;
+      --ground-2: #0B1C2B;
+      --surface: #0F2233;
+      --surface-2: #142B3E;
+      --border: #21394D;
+      --border-strong: #325168;
+      --ink: #E7F2FA;
+      --ink-2: #A9C2D4;
+      --ink-3: #7A96AB;
+      --accent: #35BEFF;
+      --accent-deep: #82D4FA;
+      --accent-soft: #10364E;
+      --wa: #2FD37E;
+      --wa-strong: #37E08A;
+      --wa-soft: #10312150;
+      --amber: #F0B65C;
+      --amber-soft: #35291320;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+      --shadow-md: 0 6px 18px rgba(0,0,0,.45);
+      --shadow-lg: 0 22px 56px rgba(0,0,0,.55);
+      --ring: 0 0 0 3px rgba(53,190,255,.45);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #071320;
+    --ground-2: #0B1C2B;
+    --surface: #0F2233;
+    --surface-2: #142B3E;
+    --border: #21394D;
+    --border-strong: #325168;
+    --ink: #E7F2FA;
+    --ink-2: #A9C2D4;
+    --ink-3: #7A96AB;
+    --accent: #35BEFF;
+    --accent-deep: #82D4FA;
+    --accent-soft: #10364E;
+    --wa: #2FD37E;
+    --wa-strong: #37E08A;
+    --wa-soft: #10312150;
+    --amber: #F0B65C;
+    --amber-soft: #35291320;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+    --shadow-md: 0 6px 18px rgba(0,0,0,.45);
+    --shadow-lg: 0 22px 56px rgba(0,0,0,.55);
+    --ring: 0 0 0 3px rgba(53,190,255,.45);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+
+  /* ---- typography roles ---- */
+  .label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .7rem; font-weight: 500;
+    letter-spacing: .16em; text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+  /* ---- app bar ---- */
+  .appbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--ground) 86%, transparent);
+    backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .appbar-in { display: flex; align-items: center; gap: 16px; min-height: 62px; }
+  .brand { display: flex; align-items: baseline; gap: 9px; }
+  .brand .mark {
+    font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 600;
+    font-size: 1.5rem; color: var(--ink); line-height: 1;
+  }
+  .brand .mark b { color: var(--accent-deep); font-weight: 600; }
+  .brand .sub {
+    font-family: "IBM Plex Mono", monospace; font-size: .62rem; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-3);
+    padding-left: 10px; margin-left: 2px; border-left: 1px solid var(--border-strong);
+  }
+  .spacer { flex: 1; }
+  .tenant {
+    display: flex; align-items: center; gap: 9px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; padding: 5px 12px 5px 5px; box-shadow: var(--shadow-sm);
+  }
+  .tenant .ava {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    color: #fff; display: grid; place-items: center;
+    font-size: .72rem; font-weight: 600; letter-spacing: .02em;
+  }
+  .tenant .who { display: flex; flex-direction: column; line-height: 1.15; }
+  .tenant .who .h { font-size: .8rem; font-weight: 600; }
+  .tenant .who .m {
+    font-family: "IBM Plex Mono", monospace; font-size: .6rem; color: var(--wa-strong);
+    display: flex; align-items: center; gap: 4px;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--wa); box-shadow: 0 0 0 3px var(--wa-soft); }
+  .demo-pill {
+    font-family: "IBM Plex Mono", monospace; font-size: .58rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--amber);
+    border: 1px dashed var(--amber); border-radius: 999px; padding: 4px 9px;
+  }
+
+  /* ---- hero ---- */
+  .hero { padding: clamp(38px, 6vw, 68px) 0 clamp(26px, 4vw, 40px); }
+  .hero .eyebrow { margin: 0 0 18px; }
+  .hero h1 {
+    font-family: "Fraunces", Georgia, serif; font-weight: 400;
+    font-size: clamp(2rem, 4.6vw, 3.35rem); line-height: 1.06;
+    letter-spacing: -.015em; text-wrap: balance; margin: 0 0 18px; max-width: 20ch;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent-deep); }
+  .hero p.lede {
+    font-size: clamp(1.02rem, 1.6vw, 1.18rem); color: var(--ink-2);
+    max-width: 58ch; margin: 0;
+  }
+
+  /* ---- flow rail ---- */
+  .flow {
+    margin-top: clamp(28px, 4vw, 40px);
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+    position: relative;
+  }
+  .step {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 20px 20px 18px; box-shadow: var(--shadow-sm); position: relative;
+  }
+  .step .n {
+    font-family: "IBM Plex Mono", monospace; font-size: .68rem; font-weight: 600;
+    letter-spacing: .1em; color: var(--accent-deep);
+  }
+  .step h3 { margin: 8px 0 6px; font-size: 1.06rem; font-weight: 600; letter-spacing: -.01em; }
+  .step p { margin: 0; font-size: .9rem; color: var(--ink-2); }
+  .step .ico {
+    width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
+    background: var(--accent-soft); color: var(--accent-deep); margin-bottom: 12px;
+  }
+  .step .ico svg { width: 20px; height: 20px; }
+  .step.is-wa .ico { background: var(--wa-soft); color: var(--wa-strong); }
+  .flow .arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    color: var(--border-strong); z-index: 2;
+  }
+  .flow .arrow svg { width: 22px; height: 22px; display: block; }
+  .flow .a1 { left: calc(33.33% - 4px); }
+  .flow .a2 { left: calc(66.66% - 4px); }
+
+  .quality-badge {
+    margin-top: 16px; display: inline-flex; align-items: center; gap: 12px;
+    background: linear-gradient(100deg, var(--accent-soft), transparent 70%);
+    border: 1px solid var(--border); border-left: 3px solid var(--accent);
+    border-radius: 12px; padding: 12px 18px 12px 15px; box-shadow: var(--shadow-sm);
+  }
+  .quality-badge .k {
+    font-family: "IBM Plex Mono", monospace; font-size: .62rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent-deep); white-space: nowrap;
+  }
+  .quality-badge .t { font-size: .93rem; color: var(--ink); }
+  .quality-badge strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- section frame ---- */
+  section.panel { padding: clamp(30px, 5vw, 52px) 0; }
+  .sec-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+  .sec-head h2 {
+    font-family: "Fraunces", Georgia, serif; font-weight: 500; font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+    letter-spacing: -.01em; margin: 0; line-height: 1.1;
+  }
+  .sec-head .note { font-size: .86rem; color: var(--ink-3); max-width: 40ch; }
+
+  /* ---- main grid ---- */
+  .cockpit { display: grid; grid-template-columns: 1.55fr 1fr; gap: 22px; align-items: start; }
+
+  /* calendar */
+  .cal { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow-md); overflow: hidden; }
+  .cal-top { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid var(--border); background: var(--surface-2); }
+  .cal-top .wk { font-weight: 600; font-size: .95rem; }
+  .cal-legend { display: flex; gap: 14px; flex-wrap: wrap; }
+  .cal-legend span { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; color: var(--ink-2); }
+  .cal-legend i { width: 9px; height: 9px; border-radius: 3px; display: inline-block; }
+  .lg-img { background: var(--accent); }
+  .lg-vid { background: #8B5CF6; }
+  .lg-story { background: var(--amber); }
+
+  .days { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .day { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px; display: flex; flex-direction: column; gap: 10px; min-height: 190px; }
+  .day:nth-child(3n) { border-right: none; }
+  .day:nth-child(n+4) { }
+  .day .d-head { display: flex; align-items: baseline; justify-content: space-between; }
+  .day .d-day { font-family: "IBM Plex Mono", monospace; font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+  .day .d-date { font-family: "IBM Plex Mono", monospace; font-size: .8rem; font-weight: 600; color: var(--ink-2); }
+  .thumb { border-radius: 10px; height: 74px; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 7px; }
+  .thumb .type { font-family: "IBM Plex Mono", monospace; font-size: .56rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; padding: 3px 7px; border-radius: 6px; background: rgba(255,255,255,.85); color: #0C2233; backdrop-filter: blur(2px); }
+  .th-a { background: linear-gradient(140deg, #23BAFF, #0B7FBD); }
+  .th-b { background: linear-gradient(140deg, #4FC9E8, #1B6FA8); }
+  .th-vid { background: linear-gradient(140deg, #A78BFA, #6D28D9); }
+  .th-vid::after { content: ""; position: absolute; inset: 0; margin: auto; width: 0; height: 0; border-left: 15px solid rgba(255,255,255,.92); border-top: 10px solid transparent; border-bottom: 10px solid transparent; filter: drop-shadow(0 1px 2px rgba(0,0,0,.3)); }
+  .th-story { background: linear-gradient(140deg, #F0B24B, #C97C12); }
+  .day .cap { font-size: .82rem; color: var(--ink); line-height: 1.4; }
+  .pill { align-self: flex-start; margin-top: auto; font-family: "IBM Plex Mono", monospace; font-size: .62rem; letter-spacing: .04em; font-weight: 500; padding: 4px 9px; border-radius: 999px; display: inline-flex; align-items: center; gap: 5px; }
+  .pill.done { background: var(--wa-soft); color: var(--wa-strong); }
+  .pill.sched { background: var(--accent-soft); color: var(--accent-deep); }
+  .pill.wait { background: var(--amber-soft); color: var(--amber); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--amber) 40%, transparent); }
+  .pill.auto { background: color-mix(in srgb, #8B5CF6 14%, transparent); color: #7C3AED; }
+  :root[data-theme="dark"] .pill.auto, :root:not([data-theme="light"]) .pill.auto { color: #C4B5FD; }
+  .day.hl { background: color-mix(in srgb, var(--amber) 8%, var(--surface)); outline: 1.5px solid color-mix(in srgb, var(--amber) 45%, transparent); outline-offset: -1.5px; }
+
+  /* right column */
+  .side { display: flex; flex-direction: column; gap: 22px; }
+
+  /* phone / whatsapp */
+  .phone { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow-md); overflow: hidden; }
+  .wa-top { background: var(--wa-strong); color: #fff; display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
+  .wa-top .ava { width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,.22); display: grid; place-items: center; font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: .95rem; }
+  .wa-top .nm { font-weight: 600; font-size: .9rem; line-height: 1.1; }
+  .wa-top .st { font-size: .66rem; opacity: .85; }
+  .wa-body { padding: 14px; display: flex; flex-direction: column; gap: 9px; background-color: var(--surface-2); background-image: radial-gradient(color-mix(in srgb, var(--ink-3) 12%, transparent) 0.5px, transparent 0.5px); background-size: 14px 14px; }
+  .bub { max-width: 82%; padding: 9px 12px; border-radius: 14px; font-size: .84rem; line-height: 1.42; box-shadow: var(--shadow-sm); }
+  .bub .t { font-family: "IBM Plex Mono", monospace; font-size: .58rem; color: var(--ink-3); display: block; margin-top: 4px; text-align: right; }
+  .bub.in { align-self: flex-start; background: var(--surface); border: 1px solid var(--border); border-top-left-radius: 4px; }
+  .bub.out { align-self: flex-end; background: var(--wa-soft); border: 1px solid color-mix(in srgb, var(--wa) 35%, transparent); border-top-right-radius: 4px; }
+  .bub b { color: var(--accent-deep); font-weight: 600; }
+  .qr { display: flex; gap: 7px; flex-wrap: wrap; align-self: flex-start; max-width: 92%; margin-top: 1px; }
+  .qr button { font-family: inherit; font-size: .76rem; font-weight: 500; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--accent); background: transparent; color: var(--accent-deep); cursor: pointer; transition: background .15s, transform .1s; }
+  .qr button.primary { background: var(--wa-strong); border-color: var(--wa-strong); color: #fff; }
+  .qr button:hover { background: var(--accent-soft); }
+  .qr button.primary:hover { background: var(--wa); }
+  .qr button:focus-visible { outline: none; box-shadow: var(--ring); }
+  .wa-note { padding: 10px 14px; font-size: .68rem; color: var(--ink-3); text-align: center; border-top: 1px solid var(--border); background: var(--surface); }
+
+  /* week stats */
+  .stats { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow-sm); padding: 18px; }
+  .stats h3 { margin: 0 0 14px; font-size: .82rem; font-weight: 600; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 12px 13px; }
+  .stat .v { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.7rem; line-height: 1; letter-spacing: -.01em; }
+  .stat .v small { font-size: .95rem; color: var(--ink-3); font-family: "Instrument Sans", sans-serif; font-weight: 500; }
+  .stat .k { margin-top: 5px; font-size: .74rem; color: var(--ink-2); }
+  .stat.accent .v { color: var(--accent-deep); }
+  .stat.wa .v { color: var(--wa-strong); }
+
+  /* quota strip */
+  .quota { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .plan { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 22px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+  .plan.plus { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); box-shadow: var(--shadow-md); }
+  .plan .pname { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 1.4rem; }
+  .plan .ptag { font-family: "IBM Plex Mono", monospace; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-top: 2px; }
+  .plan .big { margin: 16px 0 4px; display: flex; align-items: baseline; gap: 8px; }
+  .plan .big .n { font-family: "Fraunces", serif; font-weight: 600; font-size: 2.6rem; line-height: 1; color: var(--accent-deep); letter-spacing: -.02em; }
+  .plan .big .u { font-size: .9rem; color: var(--ink-2); }
+  .plan ul { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+  .plan li { display: flex; gap: 9px; font-size: .88rem; color: var(--ink); align-items: flex-start; }
+  .plan li svg { width: 16px; height: 16px; color: var(--wa-strong); flex: none; margin-top: 3px; }
+  .plan .flag { margin-top: 14px; align-self: flex-start; font-family: "IBM Plex Mono", monospace; font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-deep); background: var(--accent-soft); padding: 4px 9px; border-radius: 999px; }
+  .price-note { margin-top: 18px; font-size: .82rem; color: var(--ink-3); text-align: center; max-width: 62ch; margin-inline: auto; }
+  .price-note b { color: var(--ink-2); font-weight: 600; }
+
+  /* footer */
+  footer { border-top: 1px solid var(--border); padding: 26px 0 40px; margin-top: clamp(20px,4vw,44px); }
+  .foot-in { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+  .foot-brand { font-family: "Fraunces", serif; font-style: italic; font-size: 1.05rem; color: var(--ink-2); }
+  .foot-brand b { color: var(--accent-deep); font-style: normal; font-weight: 600; font-family: "Instrument Sans", sans-serif; font-size: .8rem; letter-spacing: .04em; }
+  .foot-note { font-family: "IBM Plex Mono", monospace; font-size: .64rem; letter-spacing: .06em; color: var(--ink-3); text-transform: uppercase; }
+
+  /* motion */
+  .rise { opacity: 0; transform: translateY(14px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+  .rise.d1 { animation-delay: .06s; } .rise.d2 { animation-delay: .13s; } .rise.d3 { animation-delay: .2s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  @media (max-width: 860px) {
+    .cockpit { grid-template-columns: 1fr; }
+    .flow { grid-template-columns: 1fr; }
+    .flow .arrow { display: none; }
+    .quota { grid-template-columns: 1fr; }
+    .brand .sub { display: none; }
+  }
+  @media (max-width: 560px) {
+    .days { grid-template-columns: repeat(2, 1fr); }
+    .day:nth-child(3n) { border-right: 1px solid var(--border); }
+    .day:nth-child(2n) { border-right: none; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .demo-pill { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rise { animation: none; opacity: 1; transform: none; }
+    * { scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+
+<header class="appbar">
+  <div class="wrap appbar-in">
+    <div class="brand">
+      <span class="mark">M<b>í</b>a</span>
+      <span class="sub">Piloto Automático</span>
+    </div>
+    <span class="spacer"></span>
+    <span class="demo-pill">Demo · datos de ejemplo</span>
+    <div class="tenant">
+      <span class="ava">IS</span>
+      <span class="who">
+        <span class="h">@ingridsofia8</span>
+        <span class="m"><span class="dot"></span>Instagram + Facebook</span>
+      </span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <p class="label eyebrow rise">MedineTech · contenido diario automatizado</p>
+    <h1 class="rise d1">Mía lo crea, tú dices <em>«sí»</em>, y se publica solo.</h1>
+    <p class="lede rise d2">Se acabó buscar el archivo y mandarlo a mano. Mía arma el paquete del día, te pide un visto bueno por WhatsApp, y lo publica en Instagram y Facebook por su vía oficial.</p>
+
+    <div class="flow rise d3">
+      <article class="step">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 15l4-4 4 4 3-3 5 5"/><circle cx="9" cy="9" r="1.6"/></svg>
+        </div>
+        <span class="n">01 · GENERA</span>
+        <h3>Mía arma el paquete</h3>
+        <p>Imagen de marca, copy con gancho y guion de historia — listos para publicar.</p>
+      </article>
+      <article class="step is-wa">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.3A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 11.5h.01M12 11.5h.01M15 11.5h.01"/></svg>
+        </div>
+        <span class="n">02 · APRUEBA</span>
+        <h3>Un «sí» por WhatsApp</h3>
+        <p>«¿Publico hoy?» → respondes con un toque. Silencio = «sorpréndeme».</p>
+      </article>
+      <article class="step">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>
+        </div>
+        <span class="n">03 · PUBLICA</span>
+        <h3>Directo a Instagram</h3>
+        <p>Vía la API oficial de Instagram y Facebook, en el horario programado.</p>
+      </article>
+      <span class="arrow a1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+      <span class="arrow a2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="quality-badge rise d3">
+      <span class="k">Calidad intacta</span>
+      <span class="t">El archivo <strong>nunca pasa por WhatsApp</strong>, así que llega sin la compresión que borronea el texto y el logo.</span>
+    </div>
+  </section>
+
+  <section class="wrap panel">
+    <div class="sec-head">
+      <h2>La semana, ya armada</h2>
+      <p class="note">Lunes a sábado. Tú solo apruebas; lo demás corre solo.</p>
+    </div>
+
+    <div class="cockpit">
+      <div class="cal">
+        <div class="cal-top">
+          <span class="wk num">Semana del 25 – 30 ago</span>
+          <div class="cal-legend">
+            <span><i class="lg-img"></i>Imagen</span>
+            <span><i class="lg-vid"></i>Video</span>
+            <span><i class="lg-story"></i>Historia</span>
+          </div>
+        </div>
+        <div class="days">
+          <article class="day">
+            <div class="d-head"><span class="d-day">Lun</span><span class="d-date num">25</span></div>
+            <div class="thumb th-a"><span class="type">Imagen</span></div>
+            <p class="cap">Les presento a Mía ✨</p>
+            <span class="pill done">✓ Publicado</span>
+          </article>
+          <article class="day">
+            <div class="d-head"><span class="d-day">Mar</span><span class="d-date num">26</span></div>
+            <div class="thumb th-story"><span class="type">Historia</span></div>
+            <p class="cap">Detrás de cámara del barrio</p>
+            <span class="pill done">✓ Publicado</span>
+          </article>
+          <article class="day">
+            <div class="d-head"><span class="d-day">Mié</span><span class="d-date num">27</span></div>
+            <div class="thumb th-b"><span class="type">Imagen</span></div>
+            <p class="cap">Testimonio de una vecina</p>
+            <span class="pill sched">◷ Programado 7:30</span>
+          </article>
+          <article class="day hl">
+            <div class="d-head"><span class="d-day">Jue</span><span class="d-date num">28</span></div>
+            <div class="thumb th-vid"><span class="type">Video · Reel</span></div>
+            <p class="cap">Cómo funciona, en 20 s</p>
+            <span class="pill wait">● Espera tu OK</span>
+          </article>
+          <article class="day">
+            <div class="d-head"><span class="d-day">Vie</span><span class="d-date num">29</span></div>
+            <div class="thumb th-a"><span class="type">Imagen</span></div>
+            <p class="cap">Pregunta a tu comunidad</p>
+            <span class="pill sched">◷ Programado</span>
+          </article>
+          <article class="day">
+            <div class="d-head"><span class="d-day">Sáb</span><span class="d-date num">30</span></div>
+            <div class="thumb th-vid"><span class="type">Video · Reel</span></div>
+            <p class="cap">Resumen de la semana</p>
+            <span class="pill auto">✦ Sorpréndeme</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="phone">
+          <div class="wa-top">
+            <span class="ava">M</span>
+            <span>
+              <span class="nm">Mía · MedineTech</span>
+              <span class="st">en línea</span>
+            </span>
+          </div>
+          <div class="wa-body">
+            <div class="bub in">¡Buenos días, Ingrid! ☀️ Hoy te propongo:<br><b>A)</b> Testimonio de una vecina 💬<br><b>B)</b> Un tip rápido para tu negocio<br>¿Publico hoy?<span class="t">9:01</span></div>
+            <div class="qr" role="group" aria-label="Respuesta rápida">
+              <button type="button" class="primary">Sí, publícalo</button>
+              <button type="button">Cámbialo</button>
+              <button type="button">Hoy no</button>
+            </div>
+            <div class="bub out">La A, dale 👍<span class="t">9:02 ✓✓</span></div>
+            <div class="bub in">Listo ✅ Publicado en Instagram y Facebook <b>a calidad original</b>.<span class="t">9:03</span></div>
+          </div>
+          <p class="wa-note">Por WhatsApp viaja solo el mensaje de aprobación — no el archivo.</p>
+        </div>
+
+        <div class="stats">
+          <h3>Esta semana</h3>
+          <div class="stat-grid">
+            <div class="stat accent"><div class="v num">6</div><div class="k">publicaciones</div></div>
+            <div class="stat"><div class="v num">2</div><div class="k">videos (Reels)</div></div>
+            <div class="stat wa"><div class="v num">100<small>%</small></div><div class="k">a calidad original</div></div>
+            <div class="stat"><div class="v num">1<small>/día</small></div><div class="k">toque tuyo</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap panel">
+    <div class="sec-head">
+      <h2>¿Cuántos videos por semana?</h2>
+      <p class="note">Publicar no tiene tope: el límite real es cuántos videos se producen. Por eso el video va como cupo, no «ilimitado».</p>
+    </div>
+    <div class="quota">
+      <article class="plan">
+        <span class="pname">Base</span>
+        <span class="ptag">contenido diario</span>
+        <div class="big"><span class="n num">1</span><span class="u">video / semana</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Imágenes e historias de lunes a sábado</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Publicación en Instagram y Facebook</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Aprobación por WhatsApp con un toque</li>
+        </ul>
+      </article>
+      <article class="plan plus">
+        <span class="pname">Plus</span>
+        <span class="ptag">más video · multi-red</span>
+        <div class="big"><span class="n num">2–3</span><span class="u">videos / semana</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Todo lo de Base</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Un Reel, publicado en Instagram, TikTok y Facebook con un clic</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Prioridad en el calendario semanal</li>
+        </ul>
+        <span class="flag">El video es una capacidad adicional</span>
+      </article>
+    </div>
+    <p class="price-note"><b>Precio en validación.</b> Se cotiza por negocio con la calculadora de la agencia; los cupos de video se fijan sobre el costo real de producción. Este cupo es un ejemplo para conversar, no una tarifa cerrada.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span class="foot-brand">Mía ✨ &nbsp;·&nbsp; <b>MedineTech&nbsp;&nbsp;|&nbsp;&nbsp;RIF: V-18581219-3</b></span>
+    <span class="foot-note">Mockup de producto · datos de ejemplo · nada conectado ni publicado · 27 ago 2026</span>
+  </div>
+</footer>
+
+<script>
+  // Demo-only: the quick-reply chips walk through the approval, purely illustrative.
+  document.querySelectorAll('.qr button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var note = document.querySelector('.wa-note');
+      if (!note) return;
+      var msg = b.classList.contains('primary')
+        ? 'Aprobado — Mía publicaría ahora en Instagram y Facebook. (Demo)'
+        : (b.textContent.trim() === 'Cámbialo'
+            ? 'Mía propondría otra opción para hoy. (Demo)'
+            : 'Hoy no se publica; el cupo se guarda. (Demo)');
+      note.textContent = msg;
+    });
+  });
+</script>
+
+</body>
+</html>
