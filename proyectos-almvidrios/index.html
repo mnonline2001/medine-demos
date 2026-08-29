@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proyectos Almvidrios — Todo para construir y remodelar en Maturín</title>
+<meta name="description" content="Vidrio, aluminio, grifería, baño y materiales de construcción — mayorista y detal en Maturín, Monagas. Todo lo que necesitas en un solo lugar. Cotiza por WhatsApp.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#071426">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Proyectos Almvidrios, C.A.">
+<meta property="og:title" content="Proyectos Almvidrios — Todo en un solo lugar">
+<meta property="og:description" content="Vidrio y aluminio a la medida, grifería, baño y materiales para construir y remodelar. Maturín, Monagas. Cotiza por WhatsApp.">
+<meta property="og:image" content="https://mnonline2001.github.io/medine-demos/proyectos-almvidrios/assets/almvidrios-logo.jpg">
+<meta property="og:locale" content="es_VE">
+
+<!-- Favicon: navy chip + amber facet, eco de marca -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Ccircle%20cx='32'%20cy='32'%20r='32'%20fill='%23012D74'/%3E%3Cpath%20d='M32%2016%20L48%2032%20L32%2048%20L16%2032%20Z'%20fill='none'%20stroke='%23F6F8F8'%20stroke-width='3'/%3E%3Cpath%20d='M32%2024%20L40%2032%20L32%2040%20L24%2032%20Z'%20fill='%23F49206'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============ Tokens ============ */
+:root{
+  --ink:#071426;          /* base casi-negro azulado */
+  --ink-2:#0A1B33;
+  --navy:#012D74;         /* navy de marca (paneles) */
+  --navy-deep:#04204f;
+  --royal:#0270CC;        /* azul royal (vidrio) */
+  --frost:#F6F8F8;        /* blanco escarcha */
+  --mist:#AEC2DC;         /* texto secundario azulado */
+  --mist-dim:#7E93AE;
+  --amber:#F49206;        /* acento acción */
+  --amber-soft:#ffb347;
+  --gold:#DB9824;         /* filete hairline */
+  --wa:#25D366;
+  --line:rgba(174,194,220,.16);
+  --glass-edge:rgba(246,248,248,.55);
+  --pad:clamp(1.15rem,5.2vw,5rem);
+  --maxw:1200px;
+  --fog-o:1;
+  --facets:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='52'%20height='52'%20viewBox='0%200%2052%2052'%3E%3Cg%20fill='none'%20stroke='%23F6F8F8'%20stroke-opacity='0.055'%20stroke-width='1'%3E%3Cpath%20d='M26%200%20L52%2026%20L26%2052%20L0%2026%20Z'/%3E%3Cpath%20d='M0%2026%20H52%20M26%200%20V52'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--frost);
+  font-family:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  font-size:clamp(1rem,.96rem + .3vw,1.06rem);
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:"Oswald",Impact,"Arial Narrow",sans-serif;font-weight:600;line-height:.98;letter-spacing:.01em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit}
+
+.shell{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+
+.kicker{
+  font-family:"Oswald",sans-serif;font-weight:500;
+  text-transform:uppercase;letter-spacing:.34em;
+  font-size:.7rem;color:var(--amber);
+  display:inline-flex;align-items:center;gap:.7rem;
+}
+.kicker::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,var(--amber),transparent)}
+
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+
+/* ============ CTA amber con barrido de luz ============ */
+.btn{
+  --bg:var(--amber);--fg:var(--ink);
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  padding:.92rem 1.55rem;min-width:0;
+  font-family:"Oswald",sans-serif;font-weight:600;font-size:.9rem;
+  letter-spacing:.11em;text-transform:uppercase;
+  color:var(--fg);background:var(--bg);
+  border:none;border-radius:2px;cursor:pointer;
+  box-shadow:0 10px 26px -12px rgba(244,146,6,.65), inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
+  isolation:isolate;
+}
+.btn::before{ /* barrido de luz en el canto */
+  content:"";position:absolute;top:0;left:-130%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);
+  transform:skewX(-18deg);z-index:-1;transition:left .6s ease;
+}
+.btn:hover::before,.btn:focus-visible::before{left:135%}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(244,146,6,.8), inset 0 1px 0 rgba(255,255,255,.4)}
+.btn:active{transform:translateY(0)}
+.btn--ghost{
+  --bg:transparent;--fg:var(--frost);
+  border:1px solid var(--line);box-shadow:none;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.btn--ghost::before{display:none}
+.btn--ghost:hover{border-color:var(--glass-edge);background:rgba(246,248,248,.05);box-shadow:none}
+.btn svg{flex:0 0 auto}
+
+/* ============ Nav (se escarcha al scroll) ============ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.72rem var(--pad);
+  background:transparent;border-bottom:1px solid transparent;
+  transition:background .4s ease,border-color .4s ease,backdrop-filter .4s ease,padding .4s ease;
+}
+.nav.is-scrolled{
+  background:rgba(7,20,38,.72);
+  backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 1px 0 rgba(246,248,248,.06), 0 18px 40px -30px #000;
+  padding-block:.55rem;
+}
+.brandlink{display:flex;align-items:center;gap:.68rem;min-width:0}
+.medallion{
+  width:44px;height:44px;flex:0 0 auto;border-radius:50%;
+  padding:2px;background:conic-gradient(from 210deg,var(--gold),rgba(246,248,248,.5),var(--royal),var(--gold));
+  box-shadow:0 0 0 1px rgba(246,248,248,.12), 0 8px 20px -10px #000;
+}
+.medallion img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--navy)}
+.brandlink b{
+  font-family:"Oswald",sans-serif;font-weight:600;font-size:1rem;letter-spacing:.04em;
+  line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.brandlink small{display:block;font-family:"Manrope";font-weight:500;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mist-dim)}
+.nav .btn{padding:.6rem 1rem;font-size:.74rem}
+.nav__tag{display:none}
+@media(min-width:560px){.nav__tag{display:block}}
+
+/* ============ Hero (vaho se despeja) ============ */
+.hero{
+  position:relative;min-height:100svh;
+  display:flex;align-items:flex-end;
+  padding:clamp(6.5rem,20vh,10rem) 0 clamp(2.4rem,7vh,4rem);
+  overflow:hidden;isolation:isolate;
+}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg::before{ /* gradiente cinematográfico navy */
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(120% 90% at 78% 8%, rgba(2,112,204,.30), transparent 55%),
+    radial-gradient(130% 100% at 12% 100%, rgba(1,45,116,.75), transparent 60%),
+    linear-gradient(160deg,#0A1B33 0%, #071426 48%, #050f1e 100%);
+}
+.hero__bg::after{ /* patrón de facetas */
+  content:"";position:absolute;inset:0;background-image:var(--facets);background-size:52px 52px;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 92%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 92%);
+  opacity:.9;
+}
+/* haz de luz vertical, como reflejo en vidrio */
+.hero__beam{position:absolute;top:-10%;right:14%;width:min(46vw,420px);height:120%;z-index:1;
+  background:linear-gradient(105deg,transparent 42%,rgba(246,248,248,.06) 50%,transparent 58%);
+  transform:skewX(-8deg);pointer-events:none}
+
+.hero__fog{ /* capa de vaho — se despeja al cargar */
+  position:absolute;inset:0;z-index:5;pointer-events:none;
+  opacity:var(--fog-o);
+  background:
+    linear-gradient(115deg,rgba(246,248,248,.10) 0 12%,transparent 12% 20%,rgba(246,248,248,.10) 20% 30%,transparent 30%),
+    radial-gradient(60% 45% at 26% 34%, rgba(246,248,248,.34), transparent 70%),
+    radial-gradient(55% 50% at 74% 60%, rgba(214,228,240,.30), transparent 72%),
+    radial-gradient(80% 70% at 50% 90%, rgba(246,248,248,.22), transparent 75%),
+    rgba(224,234,244,.14);
+  backdrop-filter:blur(18px) saturate(1.05) brightness(1.04);
+  -webkit-backdrop-filter:blur(18px) saturate(1.05) brightness(1.04);
+  animation:defog 2.8s cubic-bezier(.4,0,.15,1) .15s forwards;
+}
+.hero__haze{ /* segunda capa: se limpia al hacer scroll */
+  position:absolute;inset:0;z-index:6;pointer-events:none;
+  opacity:.42;
+  background:
+    repeating-linear-gradient(118deg,rgba(246,248,248,.05) 0 2px,transparent 2px 34px),
+    radial-gradient(70% 60% at 60% 20%,rgba(246,248,248,.16),transparent 70%);
+  transition:opacity .3s linear;
+}
+@keyframes defog{to{opacity:0;backdrop-filter:blur(0) saturate(1) brightness(1);-webkit-backdrop-filter:blur(0) saturate(1) brightness(1)}}
+/* con JS controlamos el defog para poder combinarlo con el scroll */
+.js .hero__fog{animation:none;transition:opacity 2.4s cubic-bezier(.4,0,.15,1),backdrop-filter 2.4s cubic-bezier(.4,0,.15,1),-webkit-backdrop-filter 2.4s cubic-bezier(.4,0,.15,1)}
+
+.hero__content{position:relative;z-index:4;width:100%}
+.hero__eyebrow{margin-bottom:1.15rem}
+.h1{
+  font-weight:600;text-transform:uppercase;
+  font-size:clamp(3rem,15.5vw,9.2rem);
+  letter-spacing:.005em;line-height:.9;
+  text-wrap:balance;
+}
+.h1 .l2{display:block;color:transparent;background:linear-gradient(180deg,#fff,var(--royal) 140%);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-stroke:0;filter:drop-shadow(0 2px 18px rgba(2,112,204,.25))}
+.hero__lema{
+  margin-top:1.4rem;max-width:34ch;
+  font-family:"Oswald",sans-serif;font-weight:300;
+  font-size:clamp(1.15rem,4.4vw,1.7rem);line-height:1.22;color:var(--frost);
+}
+.hero__lema b{font-weight:600;color:var(--amber-soft)}
+.hero__sub{margin-top:1rem;max-width:46ch;color:var(--mist);font-size:clamp(.98rem,2.7vw,1.08rem)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.hero__meta{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.5rem .5rem;align-items:center}
+.tagpill{
+  font-family:"Oswald",sans-serif;font-weight:500;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mist);padding:.4rem .8rem;border:1px solid var(--line);border-radius:100px;
+  background:rgba(246,248,248,.02);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+}
+.tagpill b{color:var(--frost);font-weight:600}
+.scrollcue{margin-top:2.4rem;display:inline-flex;align-items:center;gap:.6rem;color:var(--mist-dim);
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-family:"Oswald",sans-serif}
+.scrollcue span{width:1px;height:34px;background:linear-gradient(var(--amber),transparent);animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top;opacity:.5}50%{transform:scaleY(1);opacity:1}}
+
+/* ============ Secciones genéricas ============ */
+.section{position:relative;padding:clamp(3.6rem,9vw,6.5rem) 0}
+.section__head{display:flex;flex-direction:column;gap:1rem;margin-bottom:2.4rem}
+.section__title{font-size:clamp(1.9rem,7vw,3.4rem);text-transform:uppercase;font-weight:600;text-wrap:balance}
+.section__title em{font-style:normal;color:var(--amber)}
+.section__intro{max-width:52ch;color:var(--mist)}
+
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+[data-reveal].in{opacity:1;transform:none}
+
+/* ============ Catálogo ============ */
+.catalog{background:
+  radial-gradient(120% 60% at 0% 0%, rgba(1,45,116,.35), transparent 55%),
+  linear-gradient(180deg,#071426, #08182e 60%, #071426)}
+.linksrail{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.4rem}
+.linksrail a{
+  font-family:"Oswald",sans-serif;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;
+  color:var(--mist);padding:.5rem .85rem;border:1px solid var(--line);border-radius:2px;
+  background:rgba(246,248,248,.02);transition:.25s;white-space:nowrap;
+}
+.linksrail a:hover,.linksrail a:focus-visible{color:var(--ink);background:var(--amber);border-color:var(--amber)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem}
+
+/* Panel de vidrio con canto de luz */
+.panel{
+  position:relative;min-width:0;
+  padding:1.5rem 1.4rem 1.5rem;
+  border-radius:6px;
+  background:linear-gradient(158deg,rgba(2,112,204,.14),rgba(1,45,116,.10) 55%,rgba(7,20,38,.30));
+  border:1px solid rgba(174,194,220,.14);
+  box-shadow:inset 0 1px 0 rgba(246,248,248,.10), 0 24px 44px -34px #000;
+  overflow:hidden;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .4s;
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+}
+.panel::before{ /* canto de luz biselado */
+  content:"";position:absolute;inset:0;border-radius:6px;padding:1px;pointer-events:none;
+  background:linear-gradient(135deg,var(--glass-edge),transparent 38%,transparent 62%,rgba(2,112,204,.5));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:.7;transition:opacity .4s;
+}
+.panel::after{ /* facetas tenues dentro del vidrio */
+  content:"";position:absolute;inset:0;background-image:var(--facets);background-size:52px 52px;opacity:.4;pointer-events:none;
+}
+/* el vaho se despeja también en la tarjeta enfocada */
+.panel:hover,.panel:has(a:focus-visible){transform:translateY(-4px);border-color:var(--glass-edge);box-shadow:inset 0 1px 0 rgba(246,248,248,.18),0 30px 50px -30px #000, 0 0 0 1px rgba(2,112,204,.25)}
+.panel:hover::before,.panel:has(a:focus-visible)::before{opacity:1}
+
+.panel__no{font-family:"Oswald",sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.2em;color:var(--gold)}
+.panel__title{margin:.55rem 0 .35rem;font-size:1.42rem;text-transform:uppercase;font-weight:600;line-height:1.02}
+.panel__lead{color:var(--mist);font-size:.92rem;margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem}
+.chip{
+  font-size:.78rem;letter-spacing:.01em;color:var(--frost);
+  padding:.32rem .68rem;border-radius:100px;
+  border:1px solid rgba(174,194,220,.2);background:rgba(7,20,38,.4);
+  transition:.25s;
+}
+.panel:hover .chip{border-color:rgba(174,194,220,.3)}
+.panel__cta{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:"Oswald",sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--amber);padding-top:.2rem;
+  border-top:1px solid transparent;transition:.25s;
+}
+.panel__cta svg{transition:transform .3s}
+.panel__cta:hover{color:var(--amber-soft)}
+.panel__cta:hover svg{transform:translateX(4px)}
+
+/* panel estrella */
+.panel--star{
+  grid-column:1/-1;
+  background:linear-gradient(140deg,rgba(2,112,204,.22),rgba(1,45,116,.28) 60%,rgba(7,20,38,.4));
+  border-color:rgba(244,146,6,.28);
+}
+.panel--star .panel__no{color:var(--amber)}
+.ribbon{
+  position:absolute;top:1.1rem;right:-.2rem;
+  font-family:"Oswald",sans-serif;font-weight:600;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);background:var(--amber);padding:.32rem .8rem;border-radius:2px;
+  box-shadow:0 10px 22px -12px rgba(244,146,6,.7);
+}
+@media(min-width:720px){
+  .panel--star{display:grid;grid-template-columns:1.1fr .9fr;gap:1.4rem;align-items:center}
+  .panel--star .panel__title{font-size:1.9rem}
+}
+
+/* ============ Feature: a la medida (espejo) ============ */
+.measure{background:linear-gradient(180deg,#071426,#061428)}
+.measure__wrap{display:grid;gap:2rem}
+@media(min-width:860px){.measure__wrap{grid-template-columns:1fr 1fr;align-items:center;gap:3rem}}
+.mirror{
+  position:relative;min-width:0;aspect-ratio:4/3;border-radius:8px;overflow:hidden;
+  background:
+    radial-gradient(120% 90% at var(--mx,30%) var(--my,26%), rgba(246,248,248,.28), transparent 42%),
+    linear-gradient(150deg,#0b2b5e,#03163a 55%,#061024);
+  border:1px solid rgba(246,248,248,.16);
+  box-shadow:inset 0 1px 0 rgba(246,248,248,.22), 0 40px 70px -40px #000;
+}
+.mirror::before{content:"";position:absolute;inset:0;background-image:var(--facets);background-size:60px 60px;opacity:.5}
+.mirror::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(115deg,transparent 40%,rgba(246,248,248,.14) 48%,transparent 56%);}
+.mirror__label{position:absolute;left:1.1rem;bottom:1rem;z-index:2;
+  font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--mist)}
+.mirror__frame{position:absolute;inset:14% 14%;border:1px solid rgba(246,248,248,.28);border-radius:3px;
+  box-shadow:0 0 40px -10px rgba(2,112,204,.5) inset}
+.measure__list{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1.5rem 0 1.9rem}
+.measure__list li{display:flex;gap:.6rem;align-items:flex-start;color:var(--frost);font-size:.95rem;min-width:0}
+.measure__list svg{flex:0 0 auto;margin-top:.2rem;color:var(--amber)}
+
+/* ============ Ubicación ============ */
+.locate{background:
+  radial-gradient(100% 80% at 100% 0%,rgba(1,45,116,.4),transparent 55%),
+  linear-gradient(180deg,#061428,#071426)}
+.locate__grid{display:grid;gap:1rem}
+@media(min-width:760px){.locate__grid{grid-template-columns:1.15fr .85fr}}
+.infocard{
+  position:relative;min-width:0;padding:1.6rem 1.5rem;border-radius:6px;
+  background:linear-gradient(158deg,rgba(2,112,204,.12),rgba(7,20,38,.3));
+  border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(246,248,248,.08);
+}
+.infocard h3{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:1rem;letter-spacing:.06em;margin-bottom:1rem;color:var(--frost)}
+.inforow{display:flex;gap:.85rem;padding:.7rem 0;border-top:1px solid var(--line);align-items:flex-start}
+.inforow:first-of-type{border-top:none}
+.inforow svg{flex:0 0 auto;margin-top:.15rem;color:var(--amber)}
+.inforow b{display:block;font-family:"Oswald",sans-serif;font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-size:.72rem;color:var(--mist-dim);margin-bottom:.15rem}
+.inforow span{color:var(--frost)}
+.locate__cta{margin-top:1.3rem}
+.pinart{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.1rem;
+  padding:1.8rem 1.4rem;border-radius:6px;text-align:center;
+  background:linear-gradient(158deg,rgba(1,45,116,.25),rgba(7,20,38,.35));border:1px solid var(--line)}
+.pinart__badge{width:74px;height:74px}
+.pinart p{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:var(--mist)}
+.pinart b{color:var(--frost)}
+
+/* ============ Footer (vidrio grabado) ============ */
+.foot{position:relative;padding:clamp(3rem,8vw,5rem) 0 2rem;
+  background:linear-gradient(180deg,#050f1e,#04101f);border-top:1px solid var(--line)}
+.foot::before{content:"";position:absolute;inset:0;background-image:var(--facets);background-size:52px 52px;opacity:.5;
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.foot__inner{position:relative;display:grid;gap:2rem}
+@media(min-width:760px){.foot__inner{grid-template-columns:1.3fr 1fr}}
+.foot__brand{display:flex;gap:1rem;align-items:flex-start}
+.foot__brand .medallion{width:58px;height:58px}
+.foot__brand h2{font-size:1.5rem;text-transform:uppercase;letter-spacing:.03em}
+/* texto "grabado" con relieve sutil */
+.engraved{color:var(--mist);text-shadow:0 1px 0 rgba(0,0,0,.55),0 -1px 0 rgba(246,248,248,.05)}
+.foot__lema{margin:.6rem 0 1.2rem;max-width:36ch;font-family:"Oswald",sans-serif;font-weight:300;font-size:1.05rem;color:var(--frost)}
+.foot__contact{display:grid;gap:.85rem}
+.foot__row{display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem}
+.foot__row svg{flex:0 0 auto;margin-top:.15rem;color:var(--royal)}
+.socials{display:flex;gap:.6rem;margin-top:.4rem}
+.socials a{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;
+  border:1px solid var(--line);color:var(--mist);background:rgba(246,248,248,.02);transition:.25s}
+.socials a:hover{color:var(--ink);background:var(--frost);border-color:var(--frost)}
+.foot__bar{position:relative;margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;justify-content:space-between}
+@media(max-width:600px){.foot__bar{padding-bottom:4.5rem}} /* despeja el FAB de WhatsApp */
+.foot__bar small{color:var(--mist-dim);font-size:.78rem}
+.seal{font-size:.76rem;color:var(--mist-dim);line-height:1.5}
+.seal a{color:var(--amber);border-bottom:1px solid transparent;transition:.2s}
+.seal a:hover{border-color:var(--amber)}
+
+/* ============ FAB WhatsApp ============ */
+.fab{
+  position:fixed;z-index:80;
+  right:clamp(.9rem,4vw,1.4rem);bottom:calc(clamp(.9rem,4vw,1.4rem) + env(safe-area-inset-bottom,0px));
+  width:58px;height:58px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--wa);color:#fff;
+  box-shadow:0 12px 30px -8px rgba(37,211,102,.55), 0 0 0 6px rgba(37,211,102,.14);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;
+}
+.fab:hover{transform:scale(1.08) translateY(-2px);box-shadow:0 18px 38px -8px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.16)}
+.fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}70%{transform:scale(1.6);opacity:0}100%{opacity:0}}
+
+/* ============ Reduced motion ============ */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  :root{--fog-o:0}
+  .hero__fog{opacity:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;animation:none!important}
+  .hero__haze{opacity:0!important}
+  [data-reveal]{opacity:1!important;transform:none!important}
+  .fab::after{display:none}
+  .scrollcue span{animation:none}
+}
+
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Principal">
+  <a class="brandlink" href="#top" aria-label="Proyectos Almvidrios — inicio">
+    <span class="medallion"><img src="./assets/almvidrios-logo.jpg" alt="Logo de Proyectos Almvidrios, C.A." width="44" height="44"></span>
+    <span>
+      <b>Proyectos Almvidrios</b>
+      <small class="nav__tag">Todo en un solo lugar</small>
+    </span>
+  </a>
+  <a class="btn" href="https://wa.me/584249557746?text=Hola%2C%20quiero%20cotizar%20con%20Proyectos%20Almvidrios." target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.9C0 5.33 5.36 0 11.94 0a11.9 11.9 0 018.42 3.48 11.75 11.75 0 013.48 8.42c0 6.56-5.36 11.9-11.94 11.9a12 12 0 01-5.7-1.45L.06 24zm6.6-3.8c1.7 1 3.32 1.6 5.28 1.6 5.44 0 9.87-4.4 9.87-9.9 0-5.5-4.42-9.9-9.86-9.9-5.46 0-9.88 4.4-9.88 9.9 0 2.1.62 3.68 1.66 5.34l-1 3.62 3.93-1.26zm11.3-5.35c-.08-.13-.28-.2-.58-.35s-1.75-.86-2.02-.96-.47-.14-.66.14-.76.96-.94 1.16-.35.22-.65.07a8.09 8.09 0 01-2.38-1.47 8.94 8.94 0 01-1.65-2.05c-.17-.3 0-.45.13-.6.13-.13.3-.34.44-.5.15-.18.2-.3.3-.5s.05-.37-.02-.52-.66-1.6-.9-2.18c-.24-.58-.48-.5-.66-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1-1.04 2.48 1.06 2.9 1.21 3.1 2.1 3.2 5.08 4.49c.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.7.25-1.28.17-1.4z"/></svg>
+    Cotizar
+  </a>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__beam" aria-hidden="true"></div>
+  <div class="hero__fog" aria-hidden="true"></div>
+  <div class="hero__haze" aria-hidden="true"></div>
+
+  <div class="shell hero__content">
+    <span class="kicker hero__eyebrow">Maturín · Monagas · Mayorista y detal</span>
+    <h1 class="h1">Proyectos<span class="l2">Almvidrios</span></h1>
+    <p class="hero__lema"><b>Todo lo que necesitas en un solo lugar,</b> con la mejor atención.</p>
+    <p class="hero__sub">Vidrio, aluminio, baño y materiales para construir y remodelar — reunidos en un solo escaparate, listos para cotizar.</p>
+
+    <div class="hero__cta">
+      <a class="btn" href="https://wa.me/584249557746?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20de%20Proyectos%20Almvidrios%20y%20quiero%20cotizar." target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.9C0 5.33 5.36 0 11.94 0a11.9 11.9 0 018.42 3.48 11.75 11.75 0 013.48 8.42c0 6.56-5.36 11.9-11.94 11.9a12 12 0 01-5.7-1.45L.06 24zm6.6-3.8c1.7 1 3.32 1.6 5.28 1.6 5.44 0 9.87-4.4 9.87-9.9 0-5.5-4.42-9.9-9.86-9.9-5.46 0-9.88 4.4-9.88 9.9 0 2.1.62 3.68 1.66 5.34l-1 3.62 3.93-1.26zm11.3-5.35c-.08-.13-.28-.2-.58-.35s-1.75-.86-2.02-.96-.47-.14-.66.14-.76.96-.94 1.16-.35.22-.65.07a8.09 8.09 0 01-2.38-1.47 8.94 8.94 0 01-1.65-2.05c-.17-.3 0-.45.13-.6.13-.13.3-.34.44-.5.15-.18.2-.3.3-.5s.05-.37-.02-.52-.66-1.6-.9-2.18c-.24-.58-.48-.5-.66-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1-1.04 2.48 1.06 2.9 1.21 3.1 2.1 3.2 5.08 4.49c.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.7.25-1.28.17-1.4z"/></svg>
+        Cotiza por WhatsApp
+      </a>
+      <a class="btn btn--ghost" href="#catalogo">Ver el catálogo</a>
+    </div>
+
+    <div class="hero__meta">
+      <span class="tagpill"><b>Grifería</b> &amp; baño</span>
+      <span class="tagpill"><b>Vidrio</b> y aluminio a la medida</span>
+      <span class="tagpill"><b>Materiales</b> de construcción</span>
+    </div>
+
+    <span class="scrollcue" aria-hidden="true"><span></span>Desliza y descubre</span>
+  </div>
+</header>
+
+<!-- ============ CATÁLOGO ============ -->
+<section class="section catalog" id="catalogo" aria-labelledby="cat-title">
+  <div class="shell">
+    <div class="section__head" data-reveal>
+      <span class="kicker">El catálogo · 7 líneas</span>
+      <h2 class="section__title" id="cat-title">Un solo <em>escaparate</em>, organizado por líneas</h2>
+      <p class="section__intro">Ferretería, vidriería y baño reunidos. Lo que antes estaba disperso, aquí lo ves ordenado y a un mensaje de distancia. Precios y disponibilidad, siempre por WhatsApp.</p>
+    </div>
+
+    <nav class="linksrail" aria-label="Líneas del catálogo" data-reveal>
+      <a href="#l-griferia">Grifería y baño</a>
+      <a href="#l-medida">Vidrio y aluminio</a>
+      <a href="#l-herrajes">Herrajes</a>
+      <a href="#l-plomeria">Plomería</a>
+      <a href="#l-adhesivos">Adhesivos</a>
+      <a href="#l-construccion">Construcción</a>
+      <a href="#l-electrico">Eléctrico</a>
+    </nav>
+
+    <div class="grid">
+
+      <!-- 01 Grifería -->
+      <article class="panel" id="l-griferia" data-reveal>
+        <div class="panel__no">01</div>
+        <h3 class="panel__title">Grifería y baño</h3>
+        <p class="panel__lead">Mezcladoras, lavamanos y todo para armar el baño y la cocina.</p>
+        <ul class="chips">
+          <li class="chip">Mezcladoras de cocina</li>
+          <li class="chip">Mezcladoras de baño</li>
+          <li class="chip">FAGUAX</li>
+          <li class="chip">Griven</li>
+          <li class="chip">Lavamanos</li>
+          <li class="chip">Espejos</li>
+          <li class="chip">Accesorios de baño</li>
+        </ul>
+        <a class="panel__cta" href="https://wa.me/584249557746?text=Hola%2C%20quiero%20cotizar%20en%20la%20l%C3%ADnea%20de%20Grifer%C3%ADa%20y%20ba%C3%B1o." target="_blank" rel="noopener">
+          Cotizar por WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- 02 Herrajes -->
+      <article class="panel" id="l-herrajes" data-reveal>
+        <div class="panel__no">02</div>
+        <h3 class="panel__title">Herrajes para vidrio y aluminio</h3>
+        <p class="panel__lead">La quincallería fina que hace que todo cierre y gire como debe.</p>
+        <ul class="chips">
+          <li class="chip">Pivotes</li>
+          <li class="chip">Jalones / manillones</li>
+          <li class="chip">Brazos cierrapuertas</li>
+          <li class="chip">Cerraduras para vitrina</li>
+          <li class="chip">Manillas de ventana proyectante</li>
+          <li class="chip">Correderas</li>
+        </ul>
+        <a class="panel__cta" href="https://wa.me/584249557746?text=Hola%2C%20quiero%20cotizar%20herrajes%20para%20vidrio%20y%20aluminio." target="_blank" rel="noopener">
+          Cotizar por WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- 03 Plomería -->
+      <article class="panel" id="l-plomeria" data-reveal>
+        <div class="panel__no">03</div>
+        <h3 class="panel__title">Plomería y conexiones</h3>
+        <p class="panel__lead">Desde la válvula hasta la tubería, para que el agua llegue donde tiene que llegar.</p>
+        <ul class="chips">
+          <li class="chip">Válvulas</li>
+          <li class="chip">Llaves de paso</li>
+          <li class="chip">Inyectores</li>
+          <li class="chip">Tubería PVC</li>
+        </ul>
+        <a class="panel__cta" href="https://wa.me/584249557746?text=Hola%2C%20quiero%20cotizar%20en%20la%20l%C3%ADnea%20de%20plomer%C3%ADa%20y%20conexiones." target="_blank" rel="noopener">
+          Cotizar por WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- 04 Adhesivos -->
+      <article class="panel" id="l-adhesivos" data-reveal>
+        <div class="panel__no">04</div>
+        <h3 class="panel__title">Adhesivos y selladores</h3>
+        <p class="panel__lead">Lo que pega, sella y no deja pasar el agua. Marcas que aguantan.</p>
+        <ul class="chips">
+          <li class="chip">Silicón estructural</li>
+          <li class="chip">Mastique para vidrio</li>
+          <li class="chip">Teflón</li>
+          <li class="chip">Cemento PVC</li>
+          <li class="chip">Selladores de poliuretano</li>
+        </ul>
+        <a class="panel__cta" href="https://wa.me/584249557746?text=Hola%2C%20quiero%20cotizar%20adhesivos%20y%20selladores." target="_blank" rel="noopener">
+          Cotizar por WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- 05 Construcción -->
+      <article class="panel" id="l-construccion" data-reveal>
+        <div class="panel__no">05</div>
+        <h3 class="panel__title">Materiales de construcción</h3>
+        <p class="panel__lead">La obra gruesa también: del cemento al techo y el tanque de agua.</p>
+        <ul class="chips">
+          <li class="chip">Cemento</li>
+          <li class="chip">Bloque</li>
+          <li class="chip">Friso / estuco</li>
+          <li class="chip">Láminas de zinc (techos)</li>
+          <li class="chip">Tanques de agua</li>
+        </ul>
+        <a class="panel__cta" href="https://wa.me/584249557746?text=Hola%2C%20quiero%20cotizar%20materiales%20de%20construcci%C3%B3n." target="_blank" rel="noopener">
+          Cotizar por WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- 06 Eléctrico -->
+      <article class="panel" id="l-electrico" data-reveal>
+        <div class="panel__no">06</div>
+        <h3 class="panel__title">Eléctrico e iluminación</h3>
+        <p class="panel__lead">Para que el local, el taller o la casa queden bien iluminados.</p>
+        <ul class="chips">
+          <li class="chip">Bombillos LED industriales</li>
+          <li class="chip">Iluminación</li>
+        </ul>
+        <a class="panel__cta" href="https://wa.me/584249557746?text=Hola%2C%20quiero%20cotizar%20en%20la%20l%C3%ADnea%20de%20el%C3%A9ctrico%20e%20iluminaci%C3%B3n." target="_blank" rel="noopener">
+          Cotizar por WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- 07 Vidrio y aluminio — estrella -->
+      <article class="panel panel--star" id="l-medida" data-reveal>
+        <span class="ribbon">Servicio estrella</span>
+        <div>
+          <div class="panel__no">07</div>
+          <h3 class="panel__title">Vidrio y aluminio a la medida</h3>
+          <p class="panel__lead">Nuestro fuerte: lo cortamos, lo armamos y lo instalamos según tu espacio.</p>
+        </div>
+        <div>
+          <ul class="chips">
+            <li class="chip">Ventanas</li>
+            <li class="chip">Mamparas de baño</li>
+            <li class="chip">Espejos a medida</li>
+            <li class="chip">División de ambientes</li>
+          </ul>
+          <a class="panel__cta" href="#medida">
+            Ver cómo trabajamos <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE: A LA MEDIDA ============ -->
+<section class="section measure" id="medida" aria-labelledby="med-title">
+  <div class="shell measure__wrap">
+    <div class="mirror" data-reveal aria-hidden="true">
+      <span class="mirror__frame"></span>
+      <span class="mirror__label">Corte y biselado a la medida</span>
+    </div>
+    <div data-reveal>
+      <span class="kicker">Vidrio y aluminio · a la medida</span>
+      <h2 class="section__title" id="med-title" style="margin-top:1rem">Tu <em>proyecto</em>, cortado a tu espacio</h2>
+      <p class="section__intro" style="margin-top:1rem">Tomamos la medida real de tu ventana, tu baño o tu ambiente y te entregamos la solución completa: vidrio, aluminio y herrajes que encajan. Sin improvisar.</p>
+      <ul class="measure__list">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Ventanas de aluminio</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Mamparas de baño</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Espejos cortados a medida</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> División de ambientes</li>
+      </ul>
+      <a class="btn" href="https://wa.me/584249557746?text=Hola%2C%20quiero%20contarles%20un%20proyecto%20de%20vidrio%20y%20aluminio%20a%20la%20medida." target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.9C0 5.33 5.36 0 11.94 0a11.9 11.9 0 018.42 3.48 11.75 11.75 0 013.48 8.42c0 6.56-5.36 11.9-11.94 11.9a12 12 0 01-5.7-1.45L.06 24zm6.6-3.8c1.7 1 3.32 1.6 5.28 1.6 5.44 0 9.87-4.4 9.87-9.9 0-5.5-4.42-9.9-9.86-9.9-5.46 0-9.88 4.4-9.88 9.9 0 2.1.62 3.68 1.66 5.34l-1 3.62 3.93-1.26zm11.3-5.35c-.08-.13-.28-.2-.58-.35s-1.75-.86-2.02-.96-.47-.14-.66.14-.76.96-.94 1.16-.35.22-.65.07a8.09 8.09 0 01-2.38-1.47 8.94 8.94 0 01-1.65-2.05c-.17-.3 0-.45.13-.6.13-.13.3-.34.44-.5.15-.18.2-.3.3-.5s.05-.37-.02-.52-.66-1.6-.9-2.18c-.24-.58-.48-.5-.66-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1-1.04 2.48 1.06 2.9 1.21 3.1 2.1 3.2 5.08 4.49c.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.7.25-1.28.17-1.4z"/></svg>
+        Cuéntanos tu proyecto
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UBICACIÓN ============ -->
+<section class="section locate" id="ubicacion" aria-labelledby="ub-title">
+  <div class="shell">
+    <div class="section__head" data-reveal>
+      <span class="kicker">Dónde estamos</span>
+      <h2 class="section__title" id="ub-title">Pasa por la tienda o <em>escríbenos</em></h2>
+    </div>
+    <div class="locate__grid">
+      <div class="infocard" data-reveal>
+        <h3>Proyectos Almvidrios, C.A.</h3>
+        <div class="inforow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span><b>Dirección</b><span>Av. José Gregorio Monagas, Sector Las Cocuizas. Maturín — Monagas 6201.</span></span>
+        </div>
+        <div class="inforow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span><b>Horario</b><span>Lunes a viernes, 8:00 a.m. – 4:00 p.m.</span></span>
+        </div>
+        <div class="inforow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+          <span><b>Atención</b><span>Mayorista y detal — para tu obra o para tu casa.</span></span>
+        </div>
+        <div class="locate__cta">
+          <a class="btn" href="https://wa.me/584249557746?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20horario." target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.9C0 5.33 5.36 0 11.94 0a11.9 11.9 0 018.42 3.48 11.75 11.75 0 013.48 8.42c0 6.56-5.36 11.9-11.94 11.9a12 12 0 01-5.7-1.45L.06 24zm6.6-3.8c1.7 1 3.32 1.6 5.28 1.6 5.44 0 9.87-4.4 9.87-9.9 0-5.5-4.42-9.9-9.86-9.9-5.46 0-9.88 4.4-9.88 9.9 0 2.1.62 3.68 1.66 5.34l-1 3.62 3.93-1.26zm11.3-5.35c-.08-.13-.28-.2-.58-.35s-1.75-.86-2.02-.96-.47-.14-.66.14-.76.96-.94 1.16-.35.22-.65.07a8.09 8.09 0 01-2.38-1.47 8.94 8.94 0 01-1.65-2.05c-.17-.3 0-.45.13-.6.13-.13.3-.34.44-.5.15-.18.2-.3.3-.5s.05-.37-.02-.52-.66-1.6-.9-2.18c-.24-.58-.48-.5-.66-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1-1.04 2.48 1.06 2.9 1.21 3.1 2.1 3.2 5.08 4.49c.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.7.25-1.28.17-1.4z"/></svg>
+            Escríbenos por WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="pinart" data-reveal>
+        <svg class="pinart__badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true" style="color:var(--amber)"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <p>Sector <b>Las Cocuizas</b><br>Maturín, Monagas</p>
+        <p style="font-size:.72rem;color:var(--mist-dim)">Av. José Gregorio Monagas</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (vidrio grabado) ============ -->
+<footer class="foot" id="contacto">
+  <div class="shell foot__inner">
+    <div>
+      <div class="foot__brand">
+        <span class="medallion"><img src="./assets/almvidrios-logo.jpg" alt="Logo de Proyectos Almvidrios, C.A." width="58" height="58"></span>
+        <div>
+          <h2 class="engraved" style="color:var(--frost)">Proyectos Almvidrios</h2>
+          <p class="foot__lema">Todo lo que necesitas en un solo lugar, con la mejor atención.</p>
+        </div>
+      </div>
+      <div class="socials">
+        <a href="https://instagram.com/proyectosalmvidrios" target="_blank" rel="noopener" aria-label="Instagram de Proyectos Almvidrios">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://wa.me/584249557746?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Proyectos%20Almvidrios%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="WhatsApp de Proyectos Almvidrios">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.9C0 5.33 5.36 0 11.94 0a11.9 11.9 0 018.42 3.48 11.75 11.75 0 013.48 8.42c0 6.56-5.36 11.9-11.94 11.9a12 12 0 01-5.7-1.45L.06 24zm6.6-3.8c1.7 1 3.32 1.6 5.28 1.6 5.44 0 9.87-4.4 9.87-9.9 0-5.5-4.42-9.9-9.86-9.9-5.46 0-9.88 4.4-9.88 9.9 0 2.1.62 3.68 1.66 5.34l-1 3.62 3.93-1.26zm11.3-5.35c-.08-.13-.28-.2-.58-.35s-1.75-.86-2.02-.96-.47-.14-.66.14-.76.96-.94 1.16-.35.22-.65.07a8.09 8.09 0 01-2.38-1.47 8.94 8.94 0 01-1.65-2.05c-.17-.3 0-.45.13-.6.13-.13.3-.34.44-.5.15-.18.2-.3.3-.5s.05-.37-.02-.52-.66-1.6-.9-2.18c-.24-.58-.48-.5-.66-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1-1.04 2.48 1.06 2.9 1.21 3.1 2.1 3.2 5.08 4.49c.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.7.25-1.28.17-1.4z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="foot__contact engraved">
+      <div class="foot__row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.9C0 5.33 5.36 0 11.94 0a11.9 11.9 0 018.42 3.48 11.75 11.75 0 013.48 8.42c0 6.56-5.36 11.9-11.94 11.9a12 12 0 01-5.7-1.45L.06 24zm6.6-3.8c1.7 1 3.32 1.6 5.28 1.6 5.44 0 9.87-4.4 9.87-9.9 0-5.5-4.42-9.9-9.86-9.9-5.46 0-9.88 4.4-9.88 9.9 0 2.1.62 3.68 1.66 5.34l-1 3.62 3.93-1.26z"/></svg>
+        <span>WhatsApp <b style="color:var(--frost)">+58 424-9557746</b></span>
+      </div>
+      <div class="foot__row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Av. José Gregorio Monagas, Sector Las Cocuizas. Maturín — Monagas 6201.</span>
+      </div>
+      <div class="foot__row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Lunes a viernes, 8:00 a.m. – 4:00 p.m. · Mayorista y detal.</span>
+      </div>
+      <div class="foot__row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span>@proyectosalmvidrios</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell foot__bar">
+    <small>© 2026 Proyectos Almvidrios, C.A. · Maturín, Monagas, Venezuela.</small>
+    <p class="seal">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial.</p>
+  </div>
+</footer>
+
+<!-- ============ FAB WhatsApp ============ -->
+<a class="fab" href="https://wa.me/584249557746?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Proyectos%20Almvidrios%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Proyectos Almvidrios">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.9C0 5.33 5.36 0 11.94 0a11.9 11.9 0 018.42 3.48 11.75 11.75 0 013.48 8.42c0 6.56-5.36 11.9-11.94 11.9a12 12 0 01-5.7-1.45L.06 24zm6.6-3.8c1.7 1 3.32 1.6 5.28 1.6 5.44 0 9.87-4.4 9.87-9.9 0-5.5-4.42-9.9-9.86-9.9-5.46 0-9.88 4.4-9.88 9.9 0 2.1.62 3.68 1.66 5.34l-1 3.62 3.93-1.26zm11.3-5.35c-.08-.13-.28-.2-.58-.35s-1.75-.86-2.02-.96-.47-.14-.66.14-.76.96-.94 1.16-.35.22-.65.07a8.09 8.09 0 01-2.38-1.47 8.94 8.94 0 01-1.65-2.05c-.17-.3 0-.45.13-.6.13-.13.3-.34.44-.5.15-.18.2-.3.3-.5s.05-.37-.02-.52-.66-1.6-.9-2.18c-.24-.58-.48-.5-.66-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1-1.04 2.48 1.06 2.9 1.21 3.1 2.1 3.2 5.08 4.49c.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.7.25-1.28.17-1.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.remove('no-js');root.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Nav: se escarcha al hacer scroll */
+  var nav=document.querySelector('.nav');
+  var onScrollNav=function(){nav.classList.toggle('is-scrolled', window.scrollY>28);};
+  onScrollNav();
+  window.addEventListener('scroll',onScrollNav,{passive:true});
+
+  /* Reveal on scroll */
+  var revs=document.querySelectorAll('[data-reveal]');
+  if(reduce || !('IntersectionObserver' in window)){
+    revs.forEach(function(el){el.classList.add('in');});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    revs.forEach(function(el){io.observe(el);});
+  }
+
+  /* Signature: el vaho se despeja (al cargar + al hacer scroll) */
+  var fog=document.querySelector('.hero__fog');
+  var haze=document.querySelector('.hero__haze');
+  var hero=document.querySelector('.hero');
+  if(reduce){
+    if(fog){fog.style.opacity='0';}
+    if(haze){haze.style.opacity='0';}
+  }else{
+    /* despeje al cargar */
+    root.style.setProperty('--fog-o','1');
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ root.style.setProperty('--fog-o','0'); });
+    });
+    /* despeje al hacer scroll (limpia el vaho restante) */
+    var onScrollFog=function(){
+      if(!haze||!hero) return;
+      var h=hero.offsetHeight||window.innerHeight;
+      var p=Math.min(Math.max(window.scrollY/(h*0.6),0),1);
+      haze.style.opacity=(0.42*(1-p)).toFixed(3);
+    };
+    onScrollFog();
+    window.addEventListener('scroll',onScrollFog,{passive:true});
+  }
+
+  /* Espejo: reflejo especular que sigue el puntero */
+  var mirror=document.querySelector('.mirror');
+  if(mirror && !reduce && window.matchMedia('(hover: hover)').matches){
+    mirror.addEventListener('pointermove',function(e){
+      var r=mirror.getBoundingClientRect();
+      mirror.style.setProperty('--mx',(((e.clientX-r.left)/r.width)*100).toFixed(1)+'%');
+      mirror.style.setProperty('--my',(((e.clientY-r.top)/r.height)*100).toFixed(1)+'%');
+    });
+  }
+})();
+</script>
+</body>
+</html>
