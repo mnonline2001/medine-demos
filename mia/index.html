@@ -297,6 +297,20 @@
   .stat.accent .v { color: var(--accent-deep); }
   .stat.wa .v { color: var(--wa-strong); }
 
+  /* schedule config */
+  .config { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow-sm); padding: 18px; }
+  .cfg-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+  .cfg-head h3 { margin: 0; font-size: .82rem; font-weight: 600; }
+  .cfg-tag { font-family: "IBM Plex Mono", monospace; font-size: .56rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+  .cfg-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; }
+  .cfg-row + .cfg-row { border-top: 1px solid var(--border); }
+  .cfg-row label, .cfg-row .lbl { display: inline-flex; align-items: center; gap: 8px; font-size: .82rem; color: var(--ink-2); }
+  .cfg-row svg { width: 15px; height: 15px; color: var(--accent-deep); flex: none; }
+  .cfg-input { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .78rem; font-weight: 500; color: var(--ink); background: var(--surface-2); border: 1px solid var(--border-strong); border-radius: 9px; padding: 6px 9px; cursor: pointer; }
+  .cfg-input:focus-visible { outline: none; box-shadow: var(--ring); }
+  .cfg-val { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .78rem; font-weight: 500; color: var(--ink); background: var(--surface-2); border: 1px dashed var(--border-strong); border-radius: 9px; padding: 6px 9px; white-space: nowrap; }
+  .cfg-note { margin: 8px 0 0; font-size: .7rem; color: var(--ink-3); }
+
   /* quota strip */
   .quota { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   .plan { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 22px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
@@ -440,7 +454,7 @@
             <div class="d-head"><span class="d-day">Mié</span><span class="d-date num">27</span></div>
             <div class="thumb th-b"><span class="type">Imagen</span></div>
             <p class="cap">Testimonio de una vecina</p>
-            <span class="pill sched">◷ Programado 7:30</span>
+            <span class="pill sched" id="pill-hora">◷ Programado 7:30 am</span>
           </article>
           <article class="day hl">
             <div class="d-head"><span class="d-day">Jue</span><span class="d-date num">28</span></div>
@@ -483,6 +497,49 @@
             <div class="bub in">Listo ✅ Publicado en Instagram y Facebook <b>a calidad original</b>.<span class="t">9:03</span></div>
           </div>
           <p class="wa-note">Por WhatsApp viaja solo el mensaje de aprobación — no el archivo.</p>
+        </div>
+
+        <div class="config">
+          <div class="cfg-head">
+            <h3>Tu horario</h3>
+            <span class="cfg-tag">se elige al empezar</span>
+          </div>
+          <div class="cfg-row">
+            <label for="cfg-hora">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              Hora de publicación
+            </label>
+            <select id="cfg-hora" class="cfg-input num">
+              <option>7:00 am</option>
+              <option selected>7:30 am</option>
+              <option>8:00 am</option>
+              <option>12:00 m</option>
+              <option>6:00 pm</option>
+            </select>
+          </div>
+          <div class="cfg-row">
+            <label for="cfg-descanso">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 1 1 10.5 4a7 7 0 0 0 9.5 9.5z"/></svg>
+              Día de descanso
+            </label>
+            <select id="cfg-descanso" class="cfg-input">
+              <option selected>Domingo</option>
+              <option>Lunes</option>
+              <option>Martes</option>
+              <option>Miércoles</option>
+              <option>Jueves</option>
+              <option>Viernes</option>
+              <option>Sábado</option>
+            </select>
+          </div>
+          <div class="cfg-row">
+            <span class="lbl">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+              Propuesta de la mañana
+            </span>
+            <span class="cfg-val num">entre 7 y 9 am</span>
+          </div>
+          <p class="cfg-note" id="cfg-note">Tu calendario se ajusta solo. ¿Cambiarlo después? Un mensaje a Mía y listo.</p>
         </div>
 
         <div class="stats">
@@ -533,7 +590,7 @@
 <footer>
   <div class="wrap foot-in">
     <span class="foot-brand">Mía ✨ &nbsp;·&nbsp; <b>MedineTech&nbsp;&nbsp;|&nbsp;&nbsp;RIF: V-18581219-3</b></span>
-    <span class="foot-note">Mockup de producto · datos de ejemplo · nada conectado ni publicado · 27 ago 2026</span>
+    <span class="foot-note">Mockup de producto · datos de ejemplo · nada conectado ni publicado · 1 sep 2026</span>
   </div>
 </footer>
 
@@ -551,6 +608,25 @@
       note.textContent = msg;
     });
   });
+
+  // Demo-only: the schedule fields drive the calendar preview.
+  (function () {
+    var hora = document.getElementById('cfg-hora');
+    var descanso = document.getElementById('cfg-descanso');
+    var pill = document.getElementById('pill-hora');
+    var note = document.getElementById('cfg-note');
+    if (hora && pill) {
+      hora.addEventListener('change', function () {
+        pill.textContent = '◷ Programado ' + hora.value;
+        if (note) note.textContent = 'Listo: tus próximas publicaciones salen a las ' + hora.value + '. (Demo)';
+      });
+    }
+    if (descanso && note) {
+      descanso.addEventListener('change', function () {
+        note.textContent = 'Descansas el ' + descanso.value.toLowerCase() + ' — el calendario se reacomoda solo. (Demo)';
+      });
+    }
+  })();
 </script>
 
 </body>
