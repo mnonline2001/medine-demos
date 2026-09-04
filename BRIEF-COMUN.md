@@ -29,9 +29,13 @@ individual). Además:
   siluetas SVG dibujadas por ti. Un hero de gradiente + patrón + tipografía enorme bien hecho
   vale más que una foto rota. NUNCA dejes un <img> sin verificar.
 - `<meta name="robots" content="noindex">` (es una demo).
-- `<meta name="color-scheme" content="only light">` + `html { color-scheme: only light; }` — las demos
-  se diseñan en UNA sola versión; sin esto, el modo oscuro automático de Chrome/Android recalcula
-  los colores y arruina la paleta (vinotinto→rosa, degradados descuadrados; visto en Coferpan).
+- Modo oscuro: la vía correcta es una **variante oscura propia** vía tokens en `:root` +
+  `@media (prefers-color-scheme: dark)` y `color-scheme: light dark` — con dark nativo, los
+  repintadores (auto-dark de Chrome, Samsung Internet) se apartan. `only light` solo frena a los
+  navegadores estándar; los rebeldes igual repintan (visto en Coferpan: vinotinto→rosa). Claves:
+  separar tokens de color-de-texto vs color-de-superficie (ej. `--vino-texto`), hairlines con
+  `--linea-rgb`, y las marcas críticas dibujadas (banderines) como IMAGEN data-URI, que ningún
+  repintador toca.
 - OG tags + `<title>` con el nombre del negocio. Favicon: emoji SVG inline o logo local.
 - Accesibilidad: contraste AA mínimo, `alt` en imágenes, un solo `h1`, focus-visible,
   `prefers-reduced-motion` respetado.

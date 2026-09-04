@@ -6,19 +6,20 @@
 <title>Coferpan — Pastelería, Charcutería y Delicateses en Maturín</title>
 <meta name="description" content="Un café para su cita de negocios. Pastelería, charcutería y delicateses en la Av. Raúl Leoni, Maturín. Desde las 6:00 a.m.">
 <meta name="robots" content="noindex">
-<meta name="color-scheme" content="only light">
+<meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#6E2331">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#211318">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Coferpan — Pastelería, Charcutería y Delicateses en Maturín">
 <meta property="og:description" content="Un café para su cita de negocios: mesa tranquila, café recién colado y algo dulce de la vitrina. Av. Raúl Leoni, frente al polideportivo. Desde las 6:00 a.m.">
-<meta property="og:image" content="https://mnonline2001.github.io/medine-demos/coferpan/assets/preview.jpg">
+<meta property="og:image" content="https://mnonline2001.github.io/medine-demos/coferpan/assets/preview.jpg?v=2">
 <meta property="og:url" content="https://mnonline2001.github.io/medine-demos/coferpan/">
 <meta property="og:locale" content="es_VE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Coferpan — Pastelería, Charcutería y Delicateses en Maturín">
 <meta name="twitter:description" content="Un café para su cita de negocios: mesa tranquila, café recién colado y algo dulce de la vitrina. Av. Raúl Leoni, Maturín.">
-<meta name="twitter:image" content="https://mnonline2001.github.io/medine-demos/coferpan/assets/preview.jpg">
+<meta name="twitter:image" content="https://mnonline2001.github.io/medine-demos/coferpan/assets/preview.jpg?v=2">
 
 <link rel="icon" type="image/webp" href="./assets/coferpan-logo-nav.webp">
 
@@ -57,14 +58,31 @@
   --oro-ang: 35deg;
   --filete: linear-gradient(var(--oro-ang), var(--oro-medio), var(--oro) 40%, var(--oro-luz) 52%, var(--oro-medio) 78%);
   --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.92 0 0 0 0 0.70 0 0 0 0 0.33 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E");
+  --vino-texto: var(--vino);
+  --linea-rgb: 110, 35, 49;
   --rombo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 0 10 5 5 10 0 5Z' fill='%23C9963F'/%3E%3C/svg%3E");
+}
+
+/* ---------- La carta de noche (modo oscuro propio) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papel: #211318;
+    --papel-claro: #2B1B21;
+    --tinta: #EFE3D5;
+    --vino-texto: #E4B872;
+    --linea-rgb: 228, 184, 114;
+    --oro: #EFC06A;
+    --oro-medio: #D8A44E;
+    --oro-luz: #F6DC96;
+    --rombo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 0 10 5 5 10 0 5Z' fill='%23D8A44E'/%3E%3C/svg%3E");
+  }
 }
 
 @keyframes oroGira { to { --oro-ang: 395deg; } }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; color-scheme: only light; }
+html { scroll-behavior: smooth; color-scheme: light dark; }
 
 body {
   background: var(--papel);
@@ -75,10 +93,10 @@ body {
 
 img { max-width: 100%; display: block; }
 
-a { color: var(--vino); }
+a { color: var(--vino-texto); }
 
 :focus-visible {
-  outline: 2px solid var(--vino);
+  outline: 2px solid var(--vino-texto);
   outline-offset: 3px;
 }
 .s-vino :focus-visible, .portada :focus-visible {
@@ -246,17 +264,17 @@ html[data-carta="cerrada"] :is(main, .colofon) { visibility: hidden; }
 .menu-cab {
   display: flex; align-items: center; gap: 12px;
   padding-bottom: 14px;
-  border-bottom: 1px solid rgba(110, 35, 49, .18);
+  border-bottom: 1px solid rgba(var(--linea-rgb), .18);
 }
 .menu-logo { width: 40px; height: 40px; }
 .menu-titulo {
   font: 600 1.3rem/1.1 var(--serif);
-  color: var(--vino);
+  color: var(--vino-texto);
 }
 .menu-sub {
   font: 500 .62rem/1.4 var(--sans);
   letter-spacing: .22em; text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
 }
 .menu ol { list-style: none; margin-top: 6px; }
 .menu ol a {
@@ -265,12 +283,12 @@ html[data-carta="cerrada"] :is(main, .colofon) { visibility: hidden; }
   font: 400 1.02rem/1.3 var(--sans);
   color: var(--tinta);
   text-decoration: none;
-  border-bottom: 1px solid rgba(110, 35, 49, .12);
+  border-bottom: 1px solid rgba(var(--linea-rgb), .12);
 }
-.menu ol a:hover { color: var(--vino); }
+.menu ol a:hover { color: var(--vino-texto); }
 .menu ol .rom {
   font: 600 italic 1.05rem/1 var(--serif);
-  color: var(--vino);
+  color: var(--vino-texto);
   min-width: 26px;
 }
 .menu-wa {
@@ -290,7 +308,7 @@ html[data-carta="cerrada"] :is(main, .colofon) { visibility: hidden; }
   border: 0; background: none;
   font: 500 .68rem/1 var(--sans);
   letter-spacing: .2em; text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
   cursor: pointer;
   padding: 6px 10px;
 }
@@ -310,13 +328,13 @@ section[id] { scroll-margin-top: 20px; }
 .cap-rom {
   display: block;
   font: 600 italic clamp(1.5rem, 4vw, 2rem)/1 var(--serif);
-  color: var(--vino);
+  color: var(--vino-texto);
   margin-bottom: 8px;
 }
 .s-vino .cap-rom { color: var(--oro); }
 .cap-cab h2 {
   font: 600 clamp(2.3rem, 6.5vw, 3.9rem)/1.05 var(--serif);
-  color: var(--vino);
+  color: var(--vino-texto);
   letter-spacing: .01em;
 }
 .s-vino .cap-cab h2 { color: var(--crema-logo); }
@@ -324,7 +342,7 @@ section[id] { scroll-margin-top: 20px; }
   text-wrap: balance;
   font: 500 .72rem/1.5 var(--sans);
   letter-spacing: .3em; text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
   margin-bottom: 14px;
 }
 .s-vino .ceja { color: var(--oro); }
@@ -370,7 +388,7 @@ html[data-js] .rev.vista { opacity: 1; translate: 0 0; }
 .marca-linea {
   font: 500 .72rem/1.6 var(--sans);
   letter-spacing: .3em; text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
   margin-bottom: clamp(18px, 3vw, 30px);
 }
 h1 {
@@ -382,7 +400,7 @@ h1 {
 h1 em {
   font-style: italic;
   font-weight: 400;
-  color: var(--vino);
+  color: var(--vino-texto);
 }
 .lede {
   margin-top: clamp(22px, 4vw, 34px);
@@ -392,22 +410,22 @@ h1 em {
 .indice-rotulo {
   font: 500 .66rem/1.5 var(--sans);
   letter-spacing: .3em; text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
   margin-bottom: 6px;
 }
 .indice { list-style: none; }
 .indice a {
   display: flex; align-items: baseline; gap: 16px;
   padding: 13px 2px;
-  border-bottom: 1px solid rgba(110, 35, 49, .16);
+  border-bottom: 1px solid rgba(var(--linea-rgb), .16);
   text-decoration: none;
   color: var(--tinta);
   font: 400 1.05rem/1.3 var(--sans);
 }
-.indice a:hover { color: var(--vino); }
+.indice a:hover { color: var(--vino-texto); }
 .indice .rom {
   font: 600 italic 1.1rem/1 var(--serif);
-  color: var(--vino);
+  color: var(--vino-texto);
   min-width: 28px;
 }
 
@@ -437,7 +455,7 @@ h1 em {
   padding: 12px 4px 3px;
   font: 500 .66rem/1.5 var(--sans);
   letter-spacing: .18em; text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
   text-align: center;
 }
 
@@ -484,7 +502,7 @@ h1 em {
 }
 .cita-panel p {
   font: 600 italic clamp(1.35rem, 3.4vw, 1.75rem)/1.45 var(--serif);
-  color: var(--vino);
+  color: var(--vino-texto);
 }
 
 /* ---------- CTA filete dorado ---------- */
@@ -495,7 +513,7 @@ h1 em {
   padding: 17px 36px;
   font: 600 .78rem/1 var(--sans);
   letter-spacing: .22em; text-transform: uppercase; text-indent: .22em;
-  color: var(--vino);
+  color: var(--vino-texto);
   text-decoration: none;
   background: transparent;
   border: 1px solid transparent;
@@ -535,9 +553,9 @@ h1 em {
 
 .carta-lista { margin-top: clamp(26px, 4vw, 38px); }
 .carta-lista details {
-  border-bottom: 1px solid rgba(110, 35, 49, .2);
+  border-bottom: 1px solid rgba(var(--linea-rgb), .2);
 }
-.carta-lista details:first-child { border-top: 1px solid rgba(110, 35, 49, .2); }
+.carta-lista details:first-child { border-top: 1px solid rgba(var(--linea-rgb), .2); }
 .carta-lista summary {
   display: flex; align-items: center; gap: 16px;
   padding: 19px 2px;
@@ -547,18 +565,18 @@ h1 em {
   color: var(--tinta);
 }
 .carta-lista summary::-webkit-details-marker { display: none; }
-.carta-lista summary:hover { color: var(--vino); }
+.carta-lista summary:hover { color: var(--vino-texto); }
 .carta-lista .marca-espiga {
   width: 14px; height: 26px; flex: none;
   color: var(--oro-medio);
   transition: transform .45s ease;
 }
-.carta-lista details[open] .marca-espiga { transform: rotate(90deg); color: var(--vino); }
+.carta-lista details[open] .marca-espiga { transform: rotate(90deg); color: var(--vino-texto); }
 .carta-lista summary .nota-summary {
   margin-left: auto;
   font: 500 .62rem/1.4 var(--sans);
   letter-spacing: .18em; text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
   text-align: right;
 }
 .carta-lista details p {
@@ -570,7 +588,7 @@ h1 em {
   margin-top: clamp(22px, 4vw, 30px);
   font: 500 .74rem/1.7 var(--sans);
   letter-spacing: .22em; text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
 }
 
 /* ---------- IV. La mesa árabe ---------- */
@@ -607,7 +625,7 @@ h1 em {
 .platos { list-style: none; }
 .platos li {
   font: 600 italic clamp(1.5rem, 4.6vw, 2.3rem)/1.35 var(--serif);
-  color: var(--vino);
+  color: var(--vino-texto);
 }
 .platos li + li { margin-top: 2px; }
 .platos li::after {
@@ -622,7 +640,7 @@ h1 em {
   margin-top: clamp(20px, 3.5vw, 28px);
   font: 500 .68rem/1.7 var(--sans);
   letter-spacing: .24em; text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
 }
 .arabe-cierre {
   max-width: 62ch;
@@ -662,7 +680,7 @@ h1 em {
 }
 .pag {
   background:
-    repeating-linear-gradient(to bottom, transparent 0 47px, rgba(110, 35, 49, .16) 47px 48px),
+    repeating-linear-gradient(to bottom, transparent 0 47px, rgba(var(--linea-rgb), .16) 47px 48px),
     var(--papel-claro);
   color: var(--tinta);
   padding: clamp(26px, 5vw, 46px) clamp(22px, 4.5vw, 44px) clamp(34px, 5vw, 50px);
@@ -670,21 +688,21 @@ h1 em {
 .pag-izq { box-shadow: inset -22px 0 26px -22px rgba(46, 16, 24, .38); }
 .pag-der {
   box-shadow: inset 22px 0 26px -22px rgba(46, 16, 24, .38);
-  border-left: 1px solid rgba(110, 35, 49, .22);
+  border-left: 1px solid rgba(var(--linea-rgb), .22);
 }
 @media (max-width: 879px) {
   .pag-izq { box-shadow: inset 0 -20px 24px -22px rgba(46, 16, 24, .35); }
-  .pag-der { border-left: 0; border-top: 1px solid rgba(110, 35, 49, .22); box-shadow: inset 0 20px 24px -22px rgba(46, 16, 24, .35); }
+  .pag-der { border-left: 0; border-top: 1px solid rgba(var(--linea-rgb), .22); box-shadow: inset 0 20px 24px -22px rgba(46, 16, 24, .35); }
 }
 .pag-rotulo {
   font: 500 .64rem/48px var(--sans);
   letter-spacing: .26em; text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
 }
 .pag fieldset { border: 0; margin-top: 4px; }
 .pag legend {
   font: 600 1.25rem/48px var(--serif);
-  color: var(--vino);
+  color: var(--vino-texto);
 }
 .opcion {
   position: relative;
@@ -700,7 +718,7 @@ h1 em {
 }
 .gema {
   width: 11px; height: 11px; flex: none;
-  border: 1.5px solid var(--vino);
+  border: 1.5px solid var(--vino-texto);
   rotate: 45deg;
   transition: background .3s ease, rotate .3s ease, box-shadow .3s ease;
 }
@@ -710,17 +728,17 @@ h1 em {
   box-shadow: 0 0 0 3px rgba(201, 150, 63, .4);
 }
 .opcion input:focus-visible + .gema {
-  outline: 2px solid var(--vino);
+  outline: 2px solid var(--vino-texto);
   outline-offset: 4px;
 }
-.opcion:has(input:checked) { color: var(--vino); font-weight: 500; }
+.opcion:has(input:checked) { color: var(--vino-texto); font-weight: 500; }
 
 /* la página escrita */
 .escrito { font: 400 italic 1.05rem/48px var(--serif); color: rgba(46, 16, 24, .55); }
 .linea {
   position: relative;
   font: 600 italic clamp(1.45rem, 4vw, 1.8rem)/48px var(--serif);
-  color: var(--vino);
+  color: var(--vino-texto);
   min-height: 48px;
   white-space: nowrap;
 }
@@ -795,7 +813,7 @@ html[data-js] .v .plum { animation: pluma 1.15s cubic-bezier(.55, 0, .3, 1) both
   letter-spacing: .34em;
   text-indent: .34em;
   text-transform: uppercase;
-  color: var(--vino);
+  color: var(--vino-texto);
 }
 .colofon-rubro {
   margin-top: 8px;
@@ -809,7 +827,7 @@ html[data-js] .v .plum { animation: pluma 1.15s cubic-bezier(.55, 0, .3, 1) both
 }
 .colofon-datos a {
   display: inline-flex; align-items: center; gap: 8px;
-  color: var(--vino);
+  color: var(--vino-texto);
   text-decoration-color: var(--oro-medio);
   text-underline-offset: 4px;
 }
@@ -821,9 +839,9 @@ html[data-js] .v .plum { animation: pluma 1.15s cubic-bezier(.55, 0, .3, 1) both
 .sello-demo {
   margin-top: 34px;
   font: 400 .8rem/1.8 var(--sans);
-  color: var(--vino);
+  color: var(--vino-texto);
 }
-.sello-demo a { color: var(--vino); text-underline-offset: 3px; }
+.sello-demo a { color: var(--vino-texto); text-underline-offset: 3px; }
 
 /* ==========================================================================
    FAB WhatsApp
