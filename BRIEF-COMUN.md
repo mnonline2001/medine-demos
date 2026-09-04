@@ -29,6 +29,9 @@ individual). Además:
   siluetas SVG dibujadas por ti. Un hero de gradiente + patrón + tipografía enorme bien hecho
   vale más que una foto rota. NUNCA dejes un <img> sin verificar.
 - `<meta name="robots" content="noindex">` (es una demo).
+- `<meta name="color-scheme" content="only light">` + `html { color-scheme: only light; }` — las demos
+  se diseñan en UNA sola versión; sin esto, el modo oscuro automático de Chrome/Android recalcula
+  los colores y arruina la paleta (vinotinto→rosa, degradados descuadrados; visto en Coferpan).
 - OG tags + `<title>` con el nombre del negocio. Favicon: emoji SVG inline o logo local.
 - Accesibilidad: contraste AA mínimo, `alt` en imágenes, un solo `h1`, focus-visible,
   `prefers-reduced-motion` respetado.
