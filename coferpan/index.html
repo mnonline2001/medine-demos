@@ -15,12 +15,16 @@
 <meta property="og:url" content="https://mnonline2001.github.io/medine-demos/coferpan/">
 <meta property="og:locale" content="es_VE">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coferpan — Pastelería, Charcutería y Delicateses en Maturín">
+<meta name="twitter:description" content="Un café para su cita de negocios: mesa tranquila, café recién colado y algo dulce de la vitrina. Av. Raúl Leoni, Maturín.">
+<meta name="twitter:image" content="https://mnonline2001.github.io/medine-demos/coferpan/assets/preview.jpg">
 
 <link rel="icon" type="image/webp" href="./assets/coferpan-logo-nav.webp">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="./assets/coferpan-logo.webp" fetchpriority="high">
 
 <style>
 /* ==========================================================================
@@ -316,6 +320,7 @@ section[id] { scroll-margin-top: 20px; }
 }
 .s-vino .cap-cab h2 { color: var(--crema-logo); }
 .ceja {
+  text-wrap: balance;
   font: 500 .72rem/1.5 var(--sans);
   letter-spacing: .3em; text-transform: uppercase;
   color: var(--vino);
@@ -525,7 +530,7 @@ h1 em {
 }
 .horno-cuadro { max-width: 430px; }
 .horno-cuadro .paspartu { aspect-ratio: 3 / 4.2; }
-@media (min-width: 880px) { .horno-cuadro { margin-top: clamp(30px, 5vw, 70px); } }
+@media (min-width: 880px) { .horno-cuadro { position: sticky; top: 40px; margin-top: 8px; } }
 
 .carta-lista { margin-top: clamp(26px, 4vw, 38px); }
 .carta-lista details {
@@ -772,7 +777,7 @@ html[data-js] .v .plum { animation: pluma 1.15s cubic-bezier(.55, 0, .3, 1) both
    COLOFÓN
    ========================================================================== */
 .colofon {
-  padding: clamp(70px, 10vw, 110px) clamp(20px, 5vw, 52px) 34px;
+  padding: clamp(70px, 10vw, 110px) clamp(20px, 5vw, 52px) clamp(96px, 12vw, 120px);
   text-align: center;
   background: var(--papel);
 }
@@ -831,7 +836,7 @@ html[data-js] .v .plum { animation: pluma 1.15s cubic-bezier(.55, 0, .3, 1) both
   border-radius: 50%;
   background: var(--wa);
   display: grid; place-items: center;
-  box-shadow: 0 12px 26px rgba(46, 16, 24, .38);
+  box-shadow: 0 12px 26px rgba(10, 8, 8, .3);
   transition: transform .3s ease;
 }
 .fab-wa:hover { transform: scale(1.06); }
@@ -915,7 +920,7 @@ html[data-js] .v .plum { animation: pluma 1.15s cubic-bezier(.55, 0, .3, 1) both
       <svg class="esq esq-bl" aria-hidden="true"><use href="#esquina"/></svg>
     </div>
     <div class="portada-cuerpo">
-      <img class="portada-logo" src="./assets/coferpan-logo.webp" alt="Coferpan: óvalo vino tinto con espiga dorada y nombre en letra caligráfica dorada" width="900" height="900" decoding="async">
+      <img class="portada-logo" src="./assets/coferpan-logo.webp" fetchpriority="high" alt="Coferpan: óvalo vino tinto con espiga dorada y nombre en letra caligráfica dorada" width="900" height="900" decoding="async">
       <p class="portada-rubro">Pastelería · Charcutería · Delicateses</p>
       <p class="portada-ciudad">Maturín</p>
       <div class="portada-hilo" aria-hidden="true"></div>
@@ -966,7 +971,7 @@ html[data-js] .v .plum { animation: pluma 1.15s cubic-bezier(.55, 0, .3, 1) both
   <section class="pagina-uno pliego">
     <div class="uno-grid">
       <div>
-        <p class="marca-linea">Coferpan · Maturín · Desde las 6:00 a.m.</p>
+        <p class="marca-linea">Coferpan · Maturín · Desde las 6:00 a.m.</p>
         <h1>La carta <em>de la casa</em></h1>
         <p class="lede">Pastelería, charcutería y delicateses en la avenida Raúl Leoni, frente al polideportivo. Pan recién horneado desde las seis de la mañana, dulces de vitrina y una mesa tranquila para conversar. Pase y lea con calma: esta es la carta de un clásico de Maturín.</p>
       </div>
@@ -1108,7 +1113,7 @@ html[data-js] .v .plum { animation: pluma 1.15s cubic-bezier(.55, 0, .3, 1) both
   <section class="cap pliego mesa-arabe" id="mesa-arabe">
     <header class="cap-cab rev">
       <span class="cap-rom" aria-hidden="true">IV.</span>
-      <p class="ceja">Lo que nadie más en Maturín cuenta así</p>
+      <p class="ceja">Lo que nadie más en Maturín cuenta así</p>
       <h2>La mesa árabe &amp; Delicateses</h2>
       <div class="divisor" aria-hidden="true"><svg><use href="#espiga"/></svg></div>
     </header>
