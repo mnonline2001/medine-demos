@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coferpan — Pastelería, Charcutería y Delicateses en Maturín</title>
+<meta name="description" content="Un café para su cita de negocios. Pastelería, charcutería y delicateses en la Av. Raúl Leoni, Maturín. Desde las 6:00 a.m.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#6E2331">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coferpan — Pastelería, Charcutería y Delicateses en Maturín">
+<meta property="og:description" content="Un café para su cita de negocios: mesa tranquila, café recién colado y algo dulce de la vitrina. Av. Raúl Leoni, frente al polideportivo. Desde las 6:00 a.m.">
+<meta property="og:image" content="https://mnonline2001.github.io/medine-demos/coferpan/assets/preview.jpg">
+<meta property="og:url" content="https://mnonline2001.github.io/medine-demos/coferpan/">
+<meta property="og:locale" content="es_VE">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/webp" href="./assets/coferpan-logo-nav.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   COFERPAN — "Carta encuadernada de gran café"
+   Demo de venta · Medine.tech
+   ========================================================================== */
+
+@property --oro-ang {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 35deg;
+}
+
+:root {
+  --papel: #F7F2E9;
+  --papel-claro: #FBF8F1;
+  --tinta: #2E1018;
+  --vino: #6E2331;
+  --vino-osc: #4A1520;
+  --oro: #EAB353;
+  --oro-medio: #C9963F;
+  --oro-luz: #F3D48A;
+  --crema-logo: #F5F4F2;
+  --turquesa: #13C6AC;
+  --reja: #51818F;
+  --wa: #25D366;
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans: 'Jost', 'Avenir Next', system-ui, sans-serif;
+  --oro-ang: 35deg;
+  --filete: linear-gradient(var(--oro-ang), var(--oro-medio), var(--oro) 40%, var(--oro-luz) 52%, var(--oro-medio) 78%);
+  --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.92 0 0 0 0 0.70 0 0 0 0 0.33 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E");
+  --rombo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 0 10 5 5 10 0 5Z' fill='%23C9963F'/%3E%3C/svg%3E");
+}
+
+@keyframes oroGira { to { --oro-ang: 395deg; } }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--papel);
+  color: var(--tinta);
+  font: 400 1.0625rem/1.75 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--vino); }
+
+:focus-visible {
+  outline: 2px solid var(--vino);
+  outline-offset: 3px;
+}
+.s-vino :focus-visible, .portada :focus-visible {
+  outline-color: var(--oro);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  clip-path: inset(50%); overflow: hidden; white-space: nowrap;
+}
+
+/* ---------- estados de la carta (los fija el JS) ---------- */
+html[data-carta="cerrada"] { overflow: hidden; }
+html[data-carta] .escena {
+  position: fixed; inset: 0; z-index: 80;
+  perspective: 1500px; perspective-origin: 18% 50%;
+  overflow: clip;
+}
+html[data-carta] .portada {
+  position: absolute; inset: 0;
+  transform-origin: left center;
+  will-change: transform;
+}
+html[data-carta="abriendo"] .portada {
+  transform: rotateY(-158deg);
+  opacity: 0;
+  transition: transform 1.15s cubic-bezier(.72, 0, .26, 1), opacity .55s ease .5s;
+  pointer-events: none;
+}
+html[data-carta="abierta"] .escena { display: none; }
+html[data-carta="cerrada"] :is(main, .colofon) { visibility: hidden; }
+
+/* ==========================================================================
+   PORTADA — tapa vino con marco de doble filete y esquineras
+   ========================================================================== */
+.portada {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--crema-logo);
+  background:
+    radial-gradient(120% 85% at 50% 32%, rgba(255, 236, 200, .07), transparent 62%),
+    var(--grano),
+    linear-gradient(158deg, var(--vino) 12%, var(--vino-osc) 88%);
+  cursor: pointer;
+}
+.marco-oro {
+  position: absolute;
+  inset: clamp(14px, 3.4vw, 30px);
+  border: 2px solid transparent;
+  border-image: var(--filete) 1;
+  pointer-events: none;
+  animation: oroGira 9s linear infinite;
+}
+.marco-oro::after {
+  content: '';
+  position: absolute; inset: 7px;
+  border: 1px solid transparent;
+  border-image: var(--filete) 1;
+}
+.esq {
+  position: absolute;
+  width: 34px; height: 34px;
+  color: var(--oro);
+}
+.esq-tl { top: -6px; left: -6px; }
+.esq-tr { top: -6px; right: -6px; transform: rotate(90deg); }
+.esq-br { bottom: -6px; right: -6px; transform: rotate(180deg); }
+.esq-bl { bottom: -6px; left: -6px; transform: rotate(270deg); }
+
+.portada-cuerpo {
+  padding: clamp(52px, 9vh, 90px) clamp(30px, 8vw, 60px);
+  max-width: 620px;
+}
+.portada-logo {
+  width: clamp(210px, 52vw, 330px);
+  height: auto;
+  margin-inline: auto;
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, .45));
+}
+.portada-rubro {
+  margin-top: clamp(20px, 4vh, 34px);
+  font: 500 clamp(.72rem, 2.6vw, .92rem)/1.6 var(--sans);
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  text-indent: .34em;
+  color: var(--crema-logo);
+}
+.portada-ciudad {
+  margin-top: 10px;
+  font: 600 italic clamp(1.05rem, 3vw, 1.3rem)/1 var(--serif);
+  letter-spacing: .12em;
+  color: var(--oro);
+}
+.portada-hilo {
+  width: 74px; height: 1px;
+  margin: clamp(16px, 3.4vh, 26px) auto 0;
+  background: linear-gradient(90deg, transparent, var(--oro), transparent);
+}
+.abrir-carta {
+  display: inline-block;
+  margin-top: clamp(22px, 4.5vh, 36px);
+  font: 500 .78rem/1 var(--sans);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  text-indent: .26em;
+  color: var(--crema-logo);
+  text-decoration: none;
+  border-bottom: 1px solid var(--oro-medio);
+  padding-bottom: 9px;
+}
+.abrir-carta .flecha { display: inline-block; margin-left: .5em; }
+@media (prefers-reduced-motion: no-preference) {
+  html[data-carta="cerrada"] .abrir-carta .flecha { animation: baja 2.4s ease-in-out infinite; }
+  @keyframes baja { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+}
+
+/* ==========================================================================
+   CINTA MARCADOR — nav colgante con Popover API
+   ========================================================================== */
+.cinta {
+  position: fixed;
+  top: 0;
+  right: clamp(16px, 6vw, 48px);
+  z-index: 95;
+  width: 58px; height: 158px;
+  border: 0; padding: 0;
+  background: none;
+  cursor: pointer;
+  filter: drop-shadow(0 8px 14px rgba(46, 16, 24, .38));
+  transition: transform .5s ease, translate .5s ease;
+}
+.cinta.recogida { translate: 0 -62px; }
+.cinta:hover { translate: 0 4px; }
+.cinta.recogida:hover { translate: 0 -56px; }
+.cinta-fondo { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cinta-logo {
+  position: absolute;
+  left: 50%; top: 72px;
+  width: 42px; height: 42px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+/* panel del menú (popover) */
+.menu { display: none; }
+.menu:popover-open { display: block; }
+.menu.abierto { display: block; position: fixed; z-index: 99; }
+.menu {
+  inset: auto;
+  top: 16px;
+  right: clamp(10px, 3vw, 34px);
+  width: min(330px, calc(100vw - 20px));
+  margin: 0;
+  border: 1px solid transparent;
+  border-image: var(--filete) 1;
+  background: var(--papel-claro);
+  color: var(--tinta);
+  padding: 26px 26px 22px;
+  box-shadow: 0 30px 70px -20px rgba(46, 16, 24, .5);
+}
+.menu::backdrop { background: rgba(46, 16, 24, .45); }
+.menu-cab {
+  display: flex; align-items: center; gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(110, 35, 49, .18);
+}
+.menu-logo { width: 40px; height: 40px; }
+.menu-titulo {
+  font: 600 1.3rem/1.1 var(--serif);
+  color: var(--vino);
+}
+.menu-sub {
+  font: 500 .62rem/1.4 var(--sans);
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--vino);
+}
+.menu ol { list-style: none; margin-top: 6px; }
+.menu ol a {
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 11px 2px;
+  font: 400 1.02rem/1.3 var(--sans);
+  color: var(--tinta);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(110, 35, 49, .12);
+}
+.menu ol a:hover { color: var(--vino); }
+.menu ol .rom {
+  font: 600 italic 1.05rem/1 var(--serif);
+  color: var(--vino);
+  min-width: 26px;
+}
+.menu-wa {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 18px;
+  padding: 13px 10px;
+  background: var(--wa);
+  color: var(--tinta);
+  font: 600 .78rem/1 var(--sans);
+  letter-spacing: .14em; text-transform: uppercase;
+  text-decoration: none;
+}
+.menu-wa svg { width: 17px; height: 17px; fill: var(--tinta); }
+.menu-cerrar {
+  display: block;
+  margin: 14px auto 0;
+  border: 0; background: none;
+  font: 500 .68rem/1 var(--sans);
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--vino);
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE PÁGINAS INTERIORES
+   ========================================================================== */
+.pliego {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 52px);
+}
+.cap { padding-block: clamp(72px, 11vw, 128px); }
+section[id] { scroll-margin-top: 20px; }
+
+.cap-cab { margin-bottom: clamp(34px, 6vw, 60px); }
+.cap-rom {
+  display: block;
+  font: 600 italic clamp(1.5rem, 4vw, 2rem)/1 var(--serif);
+  color: var(--vino);
+  margin-bottom: 8px;
+}
+.s-vino .cap-rom { color: var(--oro); }
+.cap-cab h2 {
+  font: 600 clamp(2.3rem, 6.5vw, 3.9rem)/1.05 var(--serif);
+  color: var(--vino);
+  letter-spacing: .01em;
+}
+.s-vino .cap-cab h2 { color: var(--crema-logo); }
+.ceja {
+  font: 500 .72rem/1.5 var(--sans);
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--vino);
+  margin-bottom: 14px;
+}
+.s-vino .ceja { color: var(--oro); }
+
+.divisor {
+  display: flex; align-items: center; gap: 16px;
+  margin-top: 18px;
+  color: var(--oro-medio);
+  max-width: 330px;
+}
+.s-vino .divisor { color: var(--oro); }
+.divisor::before, .divisor::after {
+  content: '';
+  height: 1px; flex: 1;
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+.divisor::after { background: linear-gradient(90deg, currentColor, transparent); }
+.divisor svg { width: 17px; height: 31px; flex: none; }
+
+.prosa { max-width: 60ch; }
+.prosa p + p { margin-top: 1.1em; }
+
+/* revelado sutil al hacer scroll */
+html[data-js] .rev {
+  opacity: 0;
+  translate: 0 16px;
+  transition: opacity .75s ease, translate .75s ease;
+}
+html[data-js] .rev.vista { opacity: 1; translate: 0 0; }
+
+/* ---------- página uno: el H1 ---------- */
+.pagina-uno {
+  /* aire suficiente para que la cinta marcador no pise el texto */
+  padding-block: clamp(190px, 26vh, 240px) clamp(60px, 9vw, 110px);
+}
+.uno-grid {
+  display: grid;
+  gap: clamp(40px, 6vw, 72px);
+}
+@media (min-width: 880px) {
+  .uno-grid { grid-template-columns: 7fr 4fr; align-items: end; }
+}
+.marca-linea {
+  font: 500 .72rem/1.6 var(--sans);
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--vino);
+  margin-bottom: clamp(18px, 3vw, 30px);
+}
+h1 {
+  font: 600 clamp(3.3rem, 11.5vw, 7.6rem)/.98 var(--serif);
+  color: var(--tinta);
+  letter-spacing: -.01em;
+  text-wrap: balance;
+}
+h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--vino);
+}
+.lede {
+  margin-top: clamp(22px, 4vw, 34px);
+  font: 400 clamp(1.1rem, 2.6vw, 1.3rem)/1.7 var(--serif);
+  max-width: 52ch;
+}
+.indice-rotulo {
+  font: 500 .66rem/1.5 var(--sans);
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--vino);
+  margin-bottom: 6px;
+}
+.indice { list-style: none; }
+.indice a {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 13px 2px;
+  border-bottom: 1px solid rgba(110, 35, 49, .16);
+  text-decoration: none;
+  color: var(--tinta);
+  font: 400 1.05rem/1.3 var(--sans);
+}
+.indice a:hover { color: var(--vino); }
+.indice .rom {
+  font: 600 italic 1.1rem/1 var(--serif);
+  color: var(--vino);
+  min-width: 28px;
+}
+
+/* ---------- cuadros del salón ---------- */
+.cuadro {
+  background: var(--papel-claro);
+  padding: clamp(10px, 2vw, 16px);
+  border: 1px solid transparent;
+  border-image: var(--filete) 1;
+  box-shadow: 0 26px 50px -30px rgba(46, 16, 24, .45);
+}
+.cuadro:hover, .cuadro:focus-within {
+  --filete: linear-gradient(var(--oro-ang), var(--oro), var(--oro-luz) 50%, var(--oro));
+  animation: oroGira 6s linear infinite;
+}
+.paspartu {
+  border: 1px solid transparent;
+  border-image: var(--filete) 1;
+  overflow: clip;
+}
+.paspartu img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: sepia(.12) saturate(1.05);
+}
+.cuadro figcaption {
+  padding: 12px 4px 3px;
+  font: 500 .66rem/1.5 var(--sans);
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--vino);
+  text-align: center;
+}
+
+/* ---------- I. La casa ---------- */
+.casa-grid { display: grid; gap: clamp(36px, 5vw, 60px); }
+@media (min-width: 880px) {
+  .casa-grid { grid-template-columns: 5fr 6fr; align-items: center; }
+}
+.casa-cuadros {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: clamp(14px, 3vw, 26px);
+  align-items: start;
+}
+.casa-cuadros .cuadro:first-child { margin-top: clamp(30px, 6vw, 64px); }
+.casa-cuadros .paspartu { aspect-ratio: 3 / 4.4; }
+.resena {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: clamp(22px, 4vw, 32px);
+  font: 500 .95rem/1.4 var(--sans);
+  color: var(--tinta);
+}
+.resena svg { width: 17px; height: 17px; fill: var(--oro-medio); flex: none; }
+
+/* ---------- II. El salón ---------- */
+.salon-grid { display: grid; gap: clamp(36px, 5vw, 64px); }
+@media (min-width: 880px) {
+  .salon-grid { grid-template-columns: 5fr 6fr; }
+  .salon-grid .salon-cuadro { order: -1; }
+}
+.salon-cuadro .paspartu { aspect-ratio: 3 / 4; }
+.salon-cuadro figcaption { position: relative; }
+.salon-cuadro figcaption::after {
+  content: '';
+  display: block;
+  width: 44px; height: 2px;
+  margin: 9px auto 0;
+  background: var(--reja);
+}
+.cita-panel {
+  border-inline-start: 3px solid var(--turquesa);
+  padding-inline-start: clamp(18px, 3vw, 28px);
+  margin-block: clamp(20px, 3.5vw, 30px);
+}
+.cita-panel p {
+  font: 600 italic clamp(1.35rem, 3.4vw, 1.75rem)/1.45 var(--serif);
+  color: var(--vino);
+}
+
+/* ---------- CTA filete dorado ---------- */
+.cta {
+  position: relative;
+  display: inline-block;
+  margin-top: clamp(24px, 4vw, 34px);
+  padding: 17px 36px;
+  font: 600 .78rem/1 var(--sans);
+  letter-spacing: .22em; text-transform: uppercase; text-indent: .22em;
+  color: var(--vino);
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-image: var(--filete) 1;
+  animation: oroGira 12s linear infinite;
+}
+.cta::before {
+  content: '';
+  position: absolute; inset: 4px;
+  border: 1px solid transparent;
+  border-image: var(--filete) 1;
+  pointer-events: none;
+}
+.cta::after {
+  content: '';
+  position: absolute; inset: -4px;
+  background-image: var(--rombo), var(--rombo), var(--rombo), var(--rombo);
+  background-position: top left, top right, bottom left, bottom right;
+  background-repeat: no-repeat;
+  background-size: 8px 8px;
+  pointer-events: none;
+}
+.cta:hover { --filete: linear-gradient(var(--oro-ang), var(--oro), var(--oro-luz) 50%, var(--oro)); }
+.cta--wa {
+  background: var(--wa);
+  color: var(--tinta);
+}
+
+/* ---------- III. Panadería & Pastelería ---------- */
+.horno-grid { display: grid; gap: clamp(36px, 5vw, 64px); }
+@media (min-width: 880px) {
+  .horno-grid { grid-template-columns: 7fr 5fr; align-items: start; }
+}
+.horno-cuadro { max-width: 430px; }
+.horno-cuadro .paspartu { aspect-ratio: 3 / 4.2; }
+@media (min-width: 880px) { .horno-cuadro { margin-top: clamp(30px, 5vw, 70px); } }
+
+.carta-lista { margin-top: clamp(26px, 4vw, 38px); }
+.carta-lista details {
+  border-bottom: 1px solid rgba(110, 35, 49, .2);
+}
+.carta-lista details:first-child { border-top: 1px solid rgba(110, 35, 49, .2); }
+.carta-lista summary {
+  display: flex; align-items: center; gap: 16px;
+  padding: 19px 2px;
+  cursor: pointer;
+  list-style: none;
+  font: 600 clamp(1.3rem, 3.2vw, 1.6rem)/1.2 var(--serif);
+  color: var(--tinta);
+}
+.carta-lista summary::-webkit-details-marker { display: none; }
+.carta-lista summary:hover { color: var(--vino); }
+.carta-lista .marca-espiga {
+  width: 14px; height: 26px; flex: none;
+  color: var(--oro-medio);
+  transition: transform .45s ease;
+}
+.carta-lista details[open] .marca-espiga { transform: rotate(90deg); color: var(--vino); }
+.carta-lista summary .nota-summary {
+  margin-left: auto;
+  font: 500 .62rem/1.4 var(--sans);
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--vino);
+  text-align: right;
+}
+.carta-lista details p {
+  padding: 0 2px 20px;
+  max-width: 56ch;
+  color: var(--tinta);
+}
+.servicio-linea {
+  margin-top: clamp(22px, 4vw, 30px);
+  font: 500 .74rem/1.7 var(--sans);
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--vino);
+}
+
+/* ---------- IV. La mesa árabe ---------- */
+.mesa-arabe .cap-cab { text-align: center; margin-inline: auto; }
+.mesa-arabe .divisor { margin-inline: auto; }
+.mesa-arabe .prosa { margin-inline: auto; text-align: center; }
+.plato-plaqueta {
+  position: relative;
+  max-width: 760px;
+  margin: clamp(34px, 6vw, 54px) auto 0;
+  padding: clamp(30px, 6vw, 56px) clamp(22px, 5vw, 60px);
+  background: var(--papel-claro);
+  border: 1px solid transparent;
+  border-image: var(--filete) 1;
+  text-align: center;
+  box-shadow: 0 26px 50px -32px rgba(46, 16, 24, .4);
+}
+.plato-plaqueta::before {
+  content: '';
+  position: absolute; inset: 6px;
+  border: 1px solid transparent;
+  border-image: var(--filete) 1;
+  pointer-events: none;
+}
+.plato-plaqueta::after {
+  content: '';
+  position: absolute; inset: -4px;
+  background-image: var(--rombo), var(--rombo), var(--rombo), var(--rombo);
+  background-position: top left, top right, bottom left, bottom right;
+  background-repeat: no-repeat;
+  background-size: 9px 9px;
+  pointer-events: none;
+}
+.platos { list-style: none; }
+.platos li {
+  font: 600 italic clamp(1.5rem, 4.6vw, 2.3rem)/1.35 var(--serif);
+  color: var(--vino);
+}
+.platos li + li { margin-top: 2px; }
+.platos li::after {
+  content: '';
+  display: block;
+  width: 26px; height: 1px;
+  margin: 10px auto 8px;
+  background: linear-gradient(90deg, transparent, var(--oro-medio), transparent);
+}
+.platos li:last-child::after { display: none; }
+.plaqueta-nota {
+  margin-top: clamp(20px, 3.5vw, 28px);
+  font: 500 .68rem/1.7 var(--sans);
+  letter-spacing: .24em; text-transform: uppercase;
+  color: var(--vino);
+}
+.arabe-cierre {
+  max-width: 62ch;
+  margin: clamp(30px, 5vw, 44px) auto 0;
+  text-align: center;
+}
+.cuadro-cierre {
+  max-width: 400px;
+  margin: clamp(34px, 6vw, 54px) auto 0;
+}
+.cuadro-cierre .paspartu { aspect-ratio: 3 / 3.6; }
+
+/* ==========================================================================
+   V. EL LIBRO DE RESERVAS — sobre el escritorio vino
+   ========================================================================== */
+.s-vino {
+  background:
+    var(--grano),
+    linear-gradient(168deg, var(--vino) 6%, var(--vino-osc) 90%);
+  color: var(--crema-logo);
+}
+.s-vino .prosa { color: var(--crema-logo); }
+.libro-nota {
+  font: 400 .95rem/1.7 var(--sans);
+  color: var(--crema-logo);
+  opacity: .92;
+  max-width: 52ch;
+}
+
+.libro {
+  display: grid;
+  margin-top: clamp(34px, 6vw, 54px);
+  filter: drop-shadow(0 34px 50px rgba(0, 0, 0, .38));
+}
+@media (min-width: 880px) {
+  .libro { grid-template-columns: 1fr 1fr; }
+}
+.pag {
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 47px, rgba(110, 35, 49, .16) 47px 48px),
+    var(--papel-claro);
+  color: var(--tinta);
+  padding: clamp(26px, 5vw, 46px) clamp(22px, 4.5vw, 44px) clamp(34px, 5vw, 50px);
+}
+.pag-izq { box-shadow: inset -22px 0 26px -22px rgba(46, 16, 24, .38); }
+.pag-der {
+  box-shadow: inset 22px 0 26px -22px rgba(46, 16, 24, .38);
+  border-left: 1px solid rgba(110, 35, 49, .22);
+}
+@media (max-width: 879px) {
+  .pag-izq { box-shadow: inset 0 -20px 24px -22px rgba(46, 16, 24, .35); }
+  .pag-der { border-left: 0; border-top: 1px solid rgba(110, 35, 49, .22); box-shadow: inset 0 20px 24px -22px rgba(46, 16, 24, .35); }
+}
+.pag-rotulo {
+  font: 500 .64rem/48px var(--sans);
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--vino);
+}
+.pag fieldset { border: 0; margin-top: 4px; }
+.pag legend {
+  font: 600 1.25rem/48px var(--serif);
+  color: var(--vino);
+}
+.opcion {
+  position: relative;
+  display: flex; align-items: center; gap: 13px;
+  min-height: 48px;
+  cursor: pointer;
+  font: 400 1rem/1.3 var(--sans);
+}
+.opcion input {
+  position: absolute;
+  opacity: 0;
+  width: 1px; height: 1px;
+}
+.gema {
+  width: 11px; height: 11px; flex: none;
+  border: 1.5px solid var(--vino);
+  rotate: 45deg;
+  transition: background .3s ease, rotate .3s ease, box-shadow .3s ease;
+}
+.opcion input:checked + .gema {
+  background: var(--vino);
+  rotate: 135deg;
+  box-shadow: 0 0 0 3px rgba(201, 150, 63, .4);
+}
+.opcion input:focus-visible + .gema {
+  outline: 2px solid var(--vino);
+  outline-offset: 4px;
+}
+.opcion:has(input:checked) { color: var(--vino); font-weight: 500; }
+
+/* la página escrita */
+.escrito { font: 400 italic 1.05rem/48px var(--serif); color: rgba(46, 16, 24, .55); }
+.linea {
+  position: relative;
+  font: 600 italic clamp(1.45rem, 4vw, 1.8rem)/48px var(--serif);
+  color: var(--vino);
+  min-height: 48px;
+  white-space: nowrap;
+}
+.linea .v { display: none; position: relative; }
+.linea .txt {
+  display: inline-block;
+  clip-path: inset(-14% -6% -14% 0);
+}
+html[data-js] .linea .txt { animation: tinta 1.15s cubic-bezier(.55, 0, .3, 1) both; }
+@keyframes tinta {
+  from { clip-path: inset(-14% 102% -14% 0); }
+  to   { clip-path: inset(-14% -6% -14% 0); }
+}
+.plum {
+  position: absolute;
+  left: 0; top: 0;
+  width: 24px; height: 10px;
+  color: var(--vino-osc);
+  rotate: -14deg;
+  offset-path: path('M 4 30 C 70 22, 150 38, 244 28');
+  offset-rotate: 0deg;
+  opacity: 0;
+  pointer-events: none;
+}
+html[data-js] .v .plum { animation: pluma 1.15s cubic-bezier(.55, 0, .3, 1) both; }
+@keyframes pluma {
+  0%   { opacity: 1; offset-distance: 0%; }
+  82%  { opacity: 1; }
+  100% { opacity: 0; offset-distance: 100%; }
+}
+#libro[data-cuantos="2"] .l-cuantos .v-2,
+#libro[data-cuantos="4"] .l-cuantos .v-4,
+#libro[data-cuantos="6"] .l-cuantos .v-6,
+#libro[data-cuando="manana"] .l-cuando .v-manana,
+#libro[data-cuando="tarde"] .l-cuando .v-tarde,
+#libro[data-motivo="negocios"] .l-motivo .v-negocios,
+#libro[data-motivo="celebracion"] .l-motivo .v-celebracion,
+#libro[data-motivo="encargo"] .l-motivo .v-encargo { display: inline-block; }
+
+.btn-reserva-zona { min-height: 96px; display: flex; align-items: center; }
+#btn-reserva {
+  opacity: 0;
+  pointer-events: none;
+  translate: 0 8px;
+  transition: opacity .6s ease, translate .6s ease;
+  margin-top: 8px;
+}
+.libro.completo #btn-reserva {
+  opacity: 1;
+  pointer-events: auto;
+  translate: 0 0;
+}
+
+/* ==========================================================================
+   COLOFÓN
+   ========================================================================== */
+.colofon {
+  padding: clamp(70px, 10vw, 110px) clamp(20px, 5vw, 52px) 34px;
+  text-align: center;
+  background: var(--papel);
+}
+.colofon-espiga { display: block; width: 26px; height: 48px; color: var(--oro-medio); margin-inline: auto; }
+.filigrana {
+  display: block;
+  width: min(260px, 70vw);
+  height: 12px;
+  color: var(--oro-medio);
+  margin: 22px auto;
+}
+.colofon-nombre {
+  font: 600 clamp(1.7rem, 5vw, 2.3rem)/1.2 var(--serif);
+  letter-spacing: .34em;
+  text-indent: .34em;
+  text-transform: uppercase;
+  color: var(--vino);
+}
+.colofon-rubro {
+  margin-top: 8px;
+  font: 500 .68rem/1.7 var(--sans);
+  letter-spacing: .3em; text-transform: uppercase; text-indent: .3em;
+  color: var(--tinta);
+}
+.colofon-datos {
+  margin-top: 26px;
+  font: 400 .98rem/2 var(--sans);
+}
+.colofon-datos a {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--vino);
+  text-decoration-color: var(--oro-medio);
+  text-underline-offset: 4px;
+}
+.colofon-datos svg { width: 16px; height: 16px; fill: currentColor; }
+.colofon-redes {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px;
+  margin-top: 10px;
+}
+.sello-demo {
+  margin-top: 34px;
+  font: 400 .8rem/1.8 var(--sans);
+  color: var(--vino);
+}
+.sello-demo a { color: var(--vino); text-underline-offset: 3px; }
+
+/* ==========================================================================
+   FAB WhatsApp
+   ========================================================================== */
+.fab-wa {
+  position: fixed;
+  right: clamp(14px, 3vw, 26px);
+  bottom: clamp(14px, 3vw, 26px);
+  z-index: 96;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--wa);
+  display: grid; place-items: center;
+  box-shadow: 0 12px 26px rgba(46, 16, 24, .38);
+  transition: transform .3s ease;
+}
+.fab-wa:hover { transform: scale(1.06); }
+.fab-wa svg { width: 30px; height: 30px; fill: #fff; }
+
+/* ==========================================================================
+   MOVIMIENTO REDUCIDO — las tres firmas se apagan
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .linea .txt { clip-path: none !important; animation: none !important; }
+  .plum { display: none !important; }
+  .marco-oro, .marco-oro::after, .cta, .cuadro { animation: none !important; }
+  html[data-js] .rev { opacity: 1; translate: 0 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- símbolos SVG propios -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="espiga" viewBox="0 0 24 44">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 42 V9"/>
+        <path d="M12 32 C8 31 6 28 6 24 C10 25 12 28 12 32 Z"/>
+        <path d="M12 32 C16 31 18 28 18 24 C14 25 12 28 12 32 Z"/>
+        <path d="M12 24 C8 23 6 20 6 16 C10 17 12 20 12 24 Z"/>
+        <path d="M12 24 C16 23 18 20 18 16 C14 17 12 20 12 24 Z"/>
+        <path d="M12 16 C8 15 6 12 6 8 C10 9 12 12 12 16 Z"/>
+        <path d="M12 16 C16 15 18 12 18 8 C14 9 12 12 12 16 Z"/>
+        <path d="M12 9 C12 5 13 3 15 1"/>
+      </g>
+    </symbol>
+    <symbol id="esquina" viewBox="0 0 40 40">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <path d="M2 38 V12 Q2 2 12 2 H38"/>
+        <path d="M10 30 V16 Q10 10 16 10 H30"/>
+        <path d="M17 23 Q17 17 23 17"/>
+        <circle cx="34" cy="6" r="1.7" fill="currentColor" stroke="none"/>
+        <circle cx="6" cy="34" r="1.7" fill="currentColor" stroke="none"/>
+      </g>
+    </symbol>
+    <symbol id="estrella" viewBox="0 0 24 24">
+      <path d="M12 2.6 14.8 8.6 21.4 9.4 16.5 13.9 17.8 20.4 12 17.1 6.2 20.4 7.5 13.9 2.6 9.4 9.2 8.6 Z"/>
+    </symbol>
+    <symbol id="plumilla" viewBox="0 0 26 10">
+      <path d="M0 5 C6 1.4 11 .4 17 1.4 C21 2.1 24.4 3.4 26 5 C24.4 6.6 21 7.9 17 8.6 C11 9.6 6 8.6 0 5 Z" fill="currentColor"/>
+      <path d="M2.5 5 H13" stroke="#FBF8F1" stroke-width=".9"/>
+    </symbol>
+    <symbol id="ig" viewBox="0 0 24 24">
+      <path d="M12 2.4c3.1 0 3.5 0 4.7.07 1.14.05 1.76.24 2.17.4.55.21.94.47 1.35.87.4.41.66.8.87 1.35.16.41.35 1.03.4 2.17.06 1.22.07 1.6.07 4.71s-.01 3.49-.07 4.71c-.05 1.14-.24 1.76-.4 2.17-.21.55-.47.94-.87 1.35-.41.4-.8.66-1.35.87-.41.16-1.03.35-2.17.4-1.22.06-1.6.07-4.7.07s-3.5-.01-4.71-.07c-1.14-.05-1.76-.24-2.17-.4a3.65 3.65 0 0 1-1.35-.87 3.65 3.65 0 0 1-.87-1.35c-.16-.41-.35-1.03-.4-2.17C2.4 15.5 2.4 15.1 2.4 12s0-3.5.06-4.71c.06-1.14.25-1.76.41-2.17.21-.55.47-.94.87-1.35.41-.4.8-.66 1.35-.87.41-.16 1.03-.35 2.17-.4C8.5 2.4 8.9 2.4 12 2.4Zm0 1.73c-3.05 0-3.41.01-4.62.07-1.06.05-1.63.22-2.01.37-.51.2-.87.43-1.25.81-.38.38-.61.74-.8 1.25-.15.38-.33.95-.38 2-.06 1.21-.07 1.58-.07 4.62s.01 3.41.07 4.62c.05 1.06.23 1.63.38 2.01.19.5.42.87.8 1.25.38.38.74.61 1.25.8.38.15.95.33 2 .38 1.22.06 1.58.07 4.63.07s3.41-.01 4.62-.07c1.06-.05 1.63-.23 2-.38.51-.19.88-.42 1.26-.8.38-.38.61-.74.8-1.25.15-.38.33-.95.38-2 .06-1.22.07-1.58.07-4.63s-.01-3.41-.07-4.62c-.05-1.06-.23-1.62-.38-2a3.36 3.36 0 0 0-.8-1.26 3.36 3.36 0 0 0-1.25-.8c-.38-.15-.95-.33-2-.38-1.22-.06-1.58-.07-4.63-.07Zm0 2.94a4.93 4.93 0 1 1 0 9.86 4.93 4.93 0 0 1 0-9.86Zm0 1.73a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Zm5.13-3.08a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/>
+    </symbol>
+    <symbol id="wa" viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.9 11.9 0 0 0 12.05 0C5.46 0 .1 5.35.1 11.94c0 2.1.55 4.16 1.6 5.97L0 24l6.24-1.64a11.94 11.94 0 0 0 5.8 1.48h.01c6.58 0 11.94-5.36 11.94-11.95 0-3.19-1.24-6.19-3.47-8.41ZM12.05 21.8h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.22-3.7.97.99-3.61-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.86-9.89 9.86Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.3.18-1.42-.07-.12-.27-.2-.57-.35Z"/>
+    </symbol>
+    <symbol id="filigrana" viewBox="0 0 240 12">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M0 6 H104"/>
+        <path d="M136 6 H240"/>
+        <path d="M120 1 L125.5 6 L120 11 L114.5 6 Z"/>
+        <circle cx="109" cy="6" r="1.2" fill="currentColor" stroke="none"/>
+        <circle cx="131" cy="6" r="1.2" fill="currentColor" stroke="none"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ======================= PORTADA (tapa de la carta) ======================= -->
+<div class="escena" id="escena">
+  <header class="portada" id="portada">
+    <div class="marco-oro">
+      <svg class="esq esq-tl" aria-hidden="true"><use href="#esquina"/></svg>
+      <svg class="esq esq-tr" aria-hidden="true"><use href="#esquina"/></svg>
+      <svg class="esq esq-br" aria-hidden="true"><use href="#esquina"/></svg>
+      <svg class="esq esq-bl" aria-hidden="true"><use href="#esquina"/></svg>
+    </div>
+    <div class="portada-cuerpo">
+      <img class="portada-logo" src="./assets/coferpan-logo.webp" alt="Coferpan: óvalo vino tinto con espiga dorada y nombre en letra caligráfica dorada" width="900" height="900" decoding="async">
+      <p class="portada-rubro">Pastelería · Charcutería · Delicateses</p>
+      <p class="portada-ciudad">Maturín</p>
+      <div class="portada-hilo" aria-hidden="true"></div>
+      <a class="abrir-carta" id="abrir-carta" href="#interior">Abrir la carta <span class="flecha" aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+</div>
+
+<!-- ======================= NAV: cinta marcador de libro ======================= -->
+<button class="cinta" id="btn-menu" type="button" popovertarget="menu-carta" aria-label="Abrir el índice de la carta">
+  <svg class="cinta-fondo" viewBox="0 0 58 158" aria-hidden="true" focusable="false">
+    <path d="M0 0 H58 V142 L29 120 L0 142 Z" fill="#6E2331"/>
+    <path d="M5.5 0 V138 L29 120.2 L52.5 138 V0" fill="none" stroke="#EAB353" stroke-width="1.4"/>
+    <g stroke="#EAB353" stroke-width="1.5" stroke-linecap="round">
+      <path d="M21 38 H37"/>
+      <path d="M21 46 H37"/>
+      <path d="M21 54 H37"/>
+    </g>
+  </svg>
+  <img class="cinta-logo" src="./assets/coferpan-logo-nav.webp" alt="" width="280" height="280" decoding="async">
+</button>
+
+<nav class="menu" id="menu-carta" popover aria-label="Índice de la carta">
+  <div class="menu-cab">
+    <img class="menu-logo" src="./assets/coferpan-logo-nav.webp" alt="" width="280" height="280" decoding="async">
+    <div>
+      <p class="menu-sub">Coferpan · Maturín</p>
+      <p class="menu-titulo">La carta de la casa</p>
+    </div>
+  </div>
+  <ol>
+    <li><a data-menu-link href="#la-casa"><span class="rom" aria-hidden="true">I</span> La casa</a></li>
+    <li><a data-menu-link href="#el-salon"><span class="rom" aria-hidden="true">II</span> El salón</a></li>
+    <li><a data-menu-link href="#panaderia"><span class="rom" aria-hidden="true">III</span> Panadería &amp; Pastelería</a></li>
+    <li><a data-menu-link href="#mesa-arabe"><span class="rom" aria-hidden="true">IV</span> La mesa árabe &amp; Delicateses</a></li>
+    <li><a data-menu-link href="#reservas"><span class="rom" aria-hidden="true">V</span> El libro de reservas</a></li>
+  </ol>
+  <a class="menu-wa" data-menu-link href="https://wa.me/584149971345?text=Hola%2C%20Coferpan.%20Quisiera%20hacerles%20un%20pedido.">
+    <svg aria-hidden="true"><use href="#wa"/></svg>
+    Escríbenos por WhatsApp
+  </a>
+  <button class="menu-cerrar" id="btn-cerrar-menu" type="button" popovertarget="menu-carta" popovertargetaction="hide">Cerrar</button>
+</nav>
+
+<main id="interior">
+
+  <!-- ======================= PÁGINA UNO ======================= -->
+  <section class="pagina-uno pliego">
+    <div class="uno-grid">
+      <div>
+        <p class="marca-linea">Coferpan · Maturín · Desde las 6:00 a.m.</p>
+        <h1>La carta <em>de la casa</em></h1>
+        <p class="lede">Pastelería, charcutería y delicateses en la avenida Raúl Leoni, frente al polideportivo. Pan recién horneado desde las seis de la mañana, dulces de vitrina y una mesa tranquila para conversar. Pase y lea con calma: esta es la carta de un clásico de Maturín.</p>
+      </div>
+      <nav aria-label="Índice de capítulos">
+        <p class="indice-rotulo">Índice</p>
+        <ol class="indice">
+          <li><a href="#la-casa"><span class="rom" aria-hidden="true">I</span> La casa</a></li>
+          <li><a href="#el-salon"><span class="rom" aria-hidden="true">II</span> El salón</a></li>
+          <li><a href="#panaderia"><span class="rom" aria-hidden="true">III</span> Panadería &amp; Pastelería</a></li>
+          <li><a href="#mesa-arabe"><span class="rom" aria-hidden="true">IV</span> La mesa árabe &amp; Delicateses</a></li>
+          <li><a href="#reservas"><span class="rom" aria-hidden="true">V</span> El libro de reservas</a></li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ======================= I. LA CASA ======================= -->
+  <section class="cap pliego" id="la-casa">
+    <header class="cap-cab rev">
+      <span class="cap-rom" aria-hidden="true">I.</span>
+      <h2>La casa</h2>
+      <div class="divisor" aria-hidden="true"><svg><use href="#espiga"/></svg></div>
+    </header>
+    <div class="casa-grid">
+      <div class="prosa rev">
+        <p>Coferpan es de esas casas que Maturín da por sentadas porque siempre han estado ahí: la esquina de ladrillo en la avenida Raúl Leoni, el salón de madera labrada, el mostrador atendido con oficio.</p>
+        <p>Los años trajeron épocas duras, y la casa siguió abriendo todos los días desde las 6:00 de la mañana. Eso no se improvisa: se gana, hornada a hornada.</p>
+        <p class="resena">
+          <svg aria-hidden="true"><use href="#estrella"/></svg>
+          4.0 · 438 reseñas en Google Maps
+        </p>
+      </div>
+      <div class="casa-cuadros">
+        <figure class="cuadro rev">
+          <div class="paspartu">
+            <img src="./assets/coferpan-01.jpg" alt="Esquina exterior de Coferpan en la avenida Raúl Leoni, con su letrero oval en un poste" width="720" height="1600" loading="lazy" decoding="async" style="object-position: 62% 30%;">
+          </div>
+          <figcaption>La esquina de la Raúl Leoni</figcaption>
+        </figure>
+        <figure class="cuadro rev">
+          <div class="paspartu">
+            <img src="./assets/coferpan-05.jpg" alt="Salón interior de Coferpan con boiserie de madera labrada, mesas y sillas junto a la baranda" width="720" height="1600" loading="lazy" decoding="async" style="object-position: 50% 42%;">
+          </div>
+          <figcaption>El salón de madera labrada</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= II. EL SALÓN ======================= -->
+  <section class="cap pliego" id="el-salon">
+    <header class="cap-cab rev">
+      <span class="cap-rom" aria-hidden="true">II.</span>
+      <p class="ceja">Un café para su cita de negocios</p>
+      <h2>El salón</h2>
+      <div class="divisor" aria-hidden="true"><svg><use href="#espiga"/></svg></div>
+    </header>
+    <div class="salon-grid">
+      <div class="prosa rev">
+        <p>Hay conversaciones que no se resuelven por teléfono. Para esas, la casa tiene mesa: la terraza techada de rejas verdes, un café recién colado y algo dulce de la vitrina.</p>
+        <div class="cita-panel">
+          <p>Usted trae el tema. El resto lo pone Coferpan.</p>
+        </div>
+        <p>En la avenida Raúl Leoni, frente al polideportivo: a mitad de camino de cualquier diligencia. Se atiende en el local, para llevar o con delivery.</p>
+        <a class="cta" href="#reservas">Aparte su mesa</a>
+      </div>
+      <figure class="cuadro salon-cuadro rev">
+        <div class="paspartu">
+          <img src="./assets/coferpan-04.jpg" alt="Terraza de Coferpan: baranda ornamental verde, mesas de mármol claro y sillas bajo techo" width="720" height="1600" loading="lazy" decoding="async" style="object-position: 55% 58%;">
+        </div>
+        <figcaption>La terraza, bajo techo y con calma</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================= III. PANADERÍA & PASTELERÍA ======================= -->
+  <section class="cap pliego" id="panaderia">
+    <header class="cap-cab rev">
+      <span class="cap-rom" aria-hidden="true">III.</span>
+      <h2>Panadería &amp; Pastelería</h2>
+      <div class="divisor" aria-hidden="true"><svg><use href="#espiga"/></svg></div>
+    </header>
+    <div class="horno-grid">
+      <div class="rev">
+        <div class="prosa">
+          <p>Los rótulos sobre las vitrinas lo dicen sin adornos: <strong>Pastelería</strong>, <strong>Panadería</strong>. Esta es la parte de la carta que huele a horno.</p>
+        </div>
+        <div class="carta-lista">
+          <details name="carta" open>
+            <summary>
+              <svg class="marca-espiga" aria-hidden="true"><use href="#espiga"/></svg>
+              Golfeados
+              <span class="nota-summary">La especialidad</span>
+            </summary>
+            <p>Nuestra especialidad — así lo decimos nosotros mismos, y lo sostenemos. Para comer aquí con café, para llevar o para mandar a pedir.</p>
+          </details>
+          <details name="carta">
+            <summary>
+              <svg class="marca-espiga" aria-hidden="true"><use href="#espiga"/></svg>
+              Canillón y pan del día
+            </summary>
+            <p>Canillón, pan dulce y el pan de todos los días, horneado en casa desde la madrugada.</p>
+          </details>
+          <details name="carta">
+            <summary>
+              <svg class="marca-espiga" aria-hidden="true"><use href="#espiga"/></svg>
+              Desayunos
+              <span class="nota-summary">Desde las 6:00 a.m.</span>
+            </summary>
+            <p>Cachitos, pastelitos y desayuno americano para empezar el día temprano, como abre la casa.</p>
+          </details>
+          <details name="carta">
+            <summary>
+              <svg class="marca-espiga" aria-hidden="true"><use href="#espiga"/></svg>
+              Dulces y chuches de vitrina
+            </summary>
+            <p>Lo dulce se elige mirando: la vitrina de la casa cambia y siempre tiene con qué tentarlo.</p>
+          </details>
+          <details name="carta">
+            <summary>
+              <svg class="marca-espiga" aria-hidden="true"><use href="#espiga"/></svg>
+              Temporada navideña
+            </summary>
+            <p>Pan de jamón y panettone: la época fuerte de la casa, cada diciembre.</p>
+          </details>
+        </div>
+        <p class="servicio-linea">En el local · Para llevar · Delivery con cobro a destino</p>
+      </div>
+      <figure class="cuadro horno-cuadro rev">
+        <div class="paspartu">
+          <img src="./assets/coferpan-06.jpg" alt="Vitrinas de Coferpan bajo sus rótulos de madera de Pastelería y Panadería" width="720" height="1600" loading="lazy" decoding="async" style="object-position: 50% 32%;">
+        </div>
+        <figcaption>Las vitrinas, bajo sus rótulos de siempre</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================= IV. LA MESA ÁRABE ======================= -->
+  <section class="cap pliego mesa-arabe" id="mesa-arabe">
+    <header class="cap-cab rev">
+      <span class="cap-rom" aria-hidden="true">IV.</span>
+      <p class="ceja">Lo que nadie más en Maturín cuenta así</p>
+      <h2>La mesa árabe &amp; Delicateses</h2>
+      <div class="divisor" aria-hidden="true"><svg><use href="#espiga"/></svg></div>
+    </header>
+    <div class="prosa rev">
+      <p>Junto al pan, esta casa pone en la mesa una cocina árabe preparada aquí mismo, con recetas de las de verdad.</p>
+    </div>
+    <div class="plato-plaqueta rev">
+      <ul class="platos">
+        <li>Falafel</li>
+        <li>Kibbe</li>
+        <li>Tabaquitos de hoja de uva</li>
+        <li>Crema de garbanzo</li>
+        <li>Crema de berenjena</li>
+        <li>Tabule</li>
+      </ul>
+      <p class="plaqueta-nota">Cocina árabe de la casa</p>
+    </div>
+    <div class="prosa arabe-cierre rev">
+      <p>Y en la charcutería, delicateses para llevarse a la suya: la otra mitad del letrero también se cumple.</p>
+    </div>
+    <figure class="cuadro cuadro-cierre rev">
+      <div class="paspartu">
+        <img src="./assets/coferpan-03.jpg" alt="Letrero oval de Coferpan con espiga dorada sobre la pared turquesa del local" width="720" height="1600" loading="lazy" decoding="async" style="object-position: 50% 33%;">
+      </div>
+      <figcaption>El letrero de la casa</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================= V. EL LIBRO DE RESERVAS ======================= -->
+  <section class="cap s-vino" id="reservas">
+    <div class="pliego">
+      <header class="cap-cab rev">
+        <span class="cap-rom" aria-hidden="true">V.</span>
+        <h2>El libro de reservas</h2>
+        <div class="divisor" aria-hidden="true"><svg><use href="#espiga"/></svg></div>
+      </header>
+      <div class="prosa rev">
+        <p>Elija tres cosas y la casa escribe la línea por usted. El mensaje sale por WhatsApp y Coferpan le confirma la mesa, como se ha hecho siempre: conversando.</p>
+      </div>
+
+      <div class="libro rev" id="libro">
+        <div class="pag pag-izq">
+          <p class="pag-rotulo">Elija usted</p>
+          <fieldset>
+            <legend>¿Para cuántos?</legend>
+            <label class="opcion"><input type="radio" name="cuantos" value="2"><span class="gema" aria-hidden="true"></span>Dos</label>
+            <label class="opcion"><input type="radio" name="cuantos" value="4"><span class="gema" aria-hidden="true"></span>Cuatro</label>
+            <label class="opcion"><input type="radio" name="cuantos" value="6"><span class="gema" aria-hidden="true"></span>Seis o más</label>
+          </fieldset>
+          <fieldset>
+            <legend>¿Cuándo?</legend>
+            <label class="opcion"><input type="radio" name="cuando" value="manana"><span class="gema" aria-hidden="true"></span>En la mañana</label>
+            <label class="opcion"><input type="radio" name="cuando" value="tarde"><span class="gema" aria-hidden="true"></span>En la tarde</label>
+          </fieldset>
+          <fieldset>
+            <legend>¿El motivo?</legend>
+            <label class="opcion"><input type="radio" name="motivo" value="negocios"><span class="gema" aria-hidden="true"></span>Cita de negocios</label>
+            <label class="opcion"><input type="radio" name="motivo" value="celebracion"><span class="gema" aria-hidden="true"></span>Celebración</label>
+            <label class="opcion"><input type="radio" name="motivo" value="encargo"><span class="gema" aria-hidden="true"></span>Encargo</label>
+          </fieldset>
+        </div>
+        <div class="pag pag-der">
+          <p class="pag-rotulo">La casa escribe</p>
+          <div aria-hidden="true">
+            <p class="escrito">En el libro de la casa —</p>
+            <p class="linea l-cuantos">
+              <span class="v v-2"><span class="txt">Mesa para dos,</span><svg class="plum"><use href="#plumilla"/></svg></span>
+              <span class="v v-4"><span class="txt">Mesa para cuatro,</span><svg class="plum"><use href="#plumilla"/></svg></span>
+              <span class="v v-6"><span class="txt">Mesa para seis o más,</span><svg class="plum"><use href="#plumilla"/></svg></span>
+            </p>
+            <p class="linea l-cuando">
+              <span class="v v-manana"><span class="txt">en la mañana,</span><svg class="plum"><use href="#plumilla"/></svg></span>
+              <span class="v v-tarde"><span class="txt">en la tarde,</span><svg class="plum"><use href="#plumilla"/></svg></span>
+            </p>
+            <p class="linea l-motivo">
+              <span class="v v-negocios"><span class="txt">para una cita de negocios.</span><svg class="plum"><use href="#plumilla"/></svg></span>
+              <span class="v v-celebracion"><span class="txt">para una celebración.</span><svg class="plum"><use href="#plumilla"/></svg></span>
+              <span class="v v-encargo"><span class="txt">para un encargo.</span><svg class="plum"><use href="#plumilla"/></svg></span>
+            </p>
+          </div>
+          <p class="sr-only" aria-live="polite" id="reserva-lectura"></p>
+          <div class="btn-reserva-zona">
+            <a class="cta cta--wa" id="btn-reserva" href="https://wa.me/584149971345?text=Hola%2C%20Coferpan.%20Quisiera%20apartar%20una%20mesa.%20%C2%BFMe%20confirman%3F">Enviar por WhatsApp</a>
+          </div>
+          <noscript><p>Escríbanos directo por WhatsApp al 0414-9971345 y la casa le confirma su mesa.</p></noscript>
+        </div>
+      </div>
+      <p class="libro-nota rev" style="margin-top: 22px;">Este libro no aparta la mesa por sí solo: arma su mensaje. La confirmación se la da la casa, por WhatsApp.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================= COLOFÓN ======================= -->
+<footer class="colofon">
+  <svg class="colofon-espiga" aria-hidden="true"><use href="#espiga"/></svg>
+  <svg class="filigrana" aria-hidden="true"><use href="#filigrana"/></svg>
+  <p class="colofon-nombre">Coferpan</p>
+  <p class="colofon-rubro">Pastelería · Charcutería · Delicateses</p>
+  <div class="colofon-datos">
+    <p>Av. Raúl Leoni, frente al polideportivo · Maturín, Monagas</p>
+    <p>Abierto desde las 6:00 a.m.</p>
+    <div class="colofon-redes">
+      <a href="https://www.instagram.com/coferpan.mat/" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#ig"/></svg>
+        @coferpan.mat
+      </a>
+      <a href="https://wa.me/584149971345?text=Hola%2C%20Coferpan.%20Quisiera%20hacerles%20un%20pedido.">
+        <svg aria-hidden="true"><use href="#wa"/></svg>
+        0414-9971345
+      </a>
+    </div>
+  </div>
+  <svg class="filigrana" aria-hidden="true"><use href="#filigrana"/></svg>
+  <p class="sello-demo">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</p>
+</footer>
+
+<!-- ======================= FAB WhatsApp ======================= -->
+<a class="fab-wa" href="https://wa.me/584149971345?text=Hola%2C%20Coferpan.%20Quisiera%20hacerles%20un%20pedido." aria-label="Escríbale a Coferpan por WhatsApp">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#wa"/></svg>
+</a>
+
+<script>
+(function () {
+  'use strict';
+  var html = document.documentElement;
+  html.dataset.js = '';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var portada = document.getElementById('portada');
+  var abierta = false;
+
+  /* ---------- Firma 1: la carta se abre en 3D ---------- */
+  function abrirCarta() {
+    if (abierta) return;
+    abierta = true;
+    if (html.dataset.carta !== 'cerrada') return;
+    html.dataset.carta = 'abriendo';
+    var cerrado = false;
+    var fin = function () {
+      if (cerrado) return;
+      cerrado = true;
+      html.dataset.carta = 'abierta';
+    };
+    portada.addEventListener('transitionend', function (e) {
+      if (e.propertyName === 'transform') fin();
+    }, { once: true });
+    setTimeout(fin, 1600);
+    window.scrollTo(0, 0);
+  }
+
+  if (!reduce.matches && portada) {
+    html.dataset.carta = 'cerrada';
+    window.addEventListener('wheel', function (e) {
+      if (!abierta && e.deltaY > 4) abrirCarta();
+    }, { passive: true });
+    var toqueY = null;
+    window.addEventListener('touchstart', function (e) {
+      toqueY = e.touches[0].clientY;
+    }, { passive: true });
+    window.addEventListener('touchmove', function (e) {
+      if (!abierta && toqueY !== null && toqueY - e.touches[0].clientY > 12) abrirCarta();
+    }, { passive: true });
+    window.addEventListener('keydown', function (e) {
+      if (abierta) return;
+      if ([' ', 'ArrowDown', 'PageDown', 'End', 'Enter'].indexOf(e.key) !== -1 &&
+          !e.target.closest('a, button, input, [popover]')) abrirCarta();
+    });
+    portada.addEventListener('click', function (e) {
+      if (!e.target.closest('a')) abrirCarta();
+    });
+  } else {
+    abierta = true;
+  }
+
+  var enlaceAbrir = document.getElementById('abrir-carta');
+  if (enlaceAbrir) {
+    enlaceAbrir.addEventListener('click', function (e) {
+      if (html.dataset.carta === 'cerrada') {
+        e.preventDefault();
+        abrirCarta();
+      }
+    });
+  }
+
+  /* ---------- Nav: popover con respaldo ---------- */
+  var menu = document.getElementById('menu-carta');
+  var btnMenu = document.getElementById('btn-menu');
+  var btnCerrar = document.getElementById('btn-cerrar-menu');
+  var soportaPopover = typeof HTMLElement !== 'undefined' && 'popover' in HTMLElement.prototype;
+  if (!soportaPopover && menu && btnMenu) {
+    btnMenu.addEventListener('click', function () { menu.classList.toggle('abierto'); });
+    if (btnCerrar) btnCerrar.addEventListener('click', function () { menu.classList.remove('abierto'); });
+    document.addEventListener('click', function (e) {
+      if (menu.classList.contains('abierto') &&
+          !menu.contains(e.target) && !btnMenu.contains(e.target)) {
+        menu.classList.remove('abierto');
+      }
+    });
+  }
+
+  function cerrarMenu() {
+    if (!menu) return;
+    if (soportaPopover) { try { menu.hidePopover(); } catch (err) {} }
+    menu.classList.remove('abierto');
+  }
+
+  var enlacesMenu = document.querySelectorAll('[data-menu-link]');
+  for (var i = 0; i < enlacesMenu.length; i++) {
+    (function (a) {
+      a.addEventListener('click', function (e) {
+        cerrarMenu();
+        var destino = a.getAttribute('href');
+        if (destino && destino.charAt(0) === '#' && html.dataset.carta === 'cerrada') {
+          e.preventDefault();
+          abrirCarta();
+          setTimeout(function () {
+            var el = document.querySelector(destino);
+            if (el) el.scrollIntoView({ behavior: reduce.matches ? 'auto' : 'smooth' });
+            if (history.replaceState) history.replaceState(null, '', destino);
+          }, 220);
+        }
+      });
+    })(enlacesMenu[i]);
+  }
+
+  /* cinta que se recoge al leer */
+  var cinta = btnMenu;
+  if (cinta) {
+    window.addEventListener('scroll', function () {
+      cinta.classList.toggle('recogida', window.scrollY > 160);
+    }, { passive: true });
+  }
+
+  /* ---------- Firma 2: el libro escribe a pluma ---------- */
+  var libro = document.getElementById('libro');
+  if (libro) {
+    var estado = { cuantos: null, cuando: null, motivo: null };
+    var letras = {
+      cuantos: { '2': 'dos', '4': 'cuatro', '6': 'seis o más' },
+      cuando: { 'manana': 'en la mañana', 'tarde': 'en la tarde' },
+      motivo: { 'negocios': 'una cita de negocios', 'celebracion': 'una celebración', 'encargo': 'un encargo' }
+    };
+    var lectura = document.getElementById('reserva-lectura');
+    var btnReserva = document.getElementById('btn-reserva');
+    libro.addEventListener('change', function (e) {
+      var inp = e.target;
+      if (!inp.name || !(inp.name in estado)) return;
+      estado[inp.name] = inp.value;
+      libro.setAttribute('data-' + inp.name, inp.value);
+      var partes = [];
+      if (estado.cuantos) partes.push('Mesa para ' + letras.cuantos[estado.cuantos]);
+      if (estado.cuando) partes.push(letras.cuando[estado.cuando]);
+      if (estado.motivo) partes.push('para ' + letras.motivo[estado.motivo]);
+      if (lectura) lectura.textContent = partes.join(', ') + '.';
+      if (estado.cuantos && estado.cuando && estado.motivo) {
+        libro.classList.add('completo');
+        var mensaje = 'Hola, Coferpan. Quisiera apartar una mesa para ' +
+          letras.cuantos[estado.cuantos] + ', ' +
+          letras.cuando[estado.cuando] + ', para ' +
+          letras.motivo[estado.motivo] + '. ¿Me confirman?';
+        btnReserva.href = 'https://wa.me/584149971345?text=' + encodeURIComponent(mensaje);
+      }
+    });
+  }
+
+  /* ---------- revelado sutil ---------- */
+  var revelables = document.querySelectorAll('.rev');
+  if (!reduce.matches && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('vista');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    revelables.forEach(function (el) { io.observe(el); });
+  } else {
+    revelables.forEach(function (el) { el.classList.add('vista'); });
+  }
+})();
+</script>
+</body>
+</html>

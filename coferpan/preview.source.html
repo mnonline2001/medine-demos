@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Coferpan — tarjeta OG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Jost:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  .tarjeta {
+    position: relative;
+    width: 1200px; height: 630px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background:
+      radial-gradient(115% 90% at 50% 30%, rgba(255, 236, 200, .08), transparent 62%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.92 0 0 0 0 0.70 0 0 0 0 0.33 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E"),
+      linear-gradient(158deg, #6E2331 12%, #4A1520 88%);
+  }
+  .marco {
+    position: absolute;
+    inset: 26px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(35deg, #C9963F, #EAB353 40%, #F3D48A 52%, #C9963F 78%) 1;
+    pointer-events: none;
+  }
+  .marco::after {
+    content: '';
+    position: absolute; inset: 8px;
+    border: 1px solid transparent;
+    border-image: linear-gradient(215deg, #C9963F, #EAB353 40%, #F3D48A 52%, #C9963F 78%) 1;
+  }
+  .esq { position: absolute; width: 40px; height: 40px; color: #EAB353; }
+  .esq-tl { top: -7px; left: -7px; }
+  .esq-tr { top: -7px; right: -7px; transform: rotate(90deg); }
+  .esq-br { bottom: -7px; right: -7px; transform: rotate(180deg); }
+  .esq-bl { bottom: -7px; left: -7px; transform: rotate(270deg); }
+  .cuerpo { position: relative; }
+  .logo {
+    width: 300px; height: 300px;
+    margin-inline: auto;
+    display: block;
+    filter: drop-shadow(0 16px 34px rgba(0, 0, 0, .45));
+  }
+  .rubro {
+    margin-top: 28px;
+    font: 500 24px/1.5 'Jost', system-ui, sans-serif;
+    letter-spacing: .34em;
+    text-indent: .34em;
+    text-transform: uppercase;
+    color: #F5F4F2;
+  }
+  .hilo {
+    width: 90px; height: 1px;
+    margin: 24px auto;
+    background: linear-gradient(90deg, transparent, #EAB353, transparent);
+  }
+  .datos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font: 600 italic 30px/1 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: .08em;
+    color: #EAB353;
+  }
+  .datos svg { width: 24px; height: 24px; fill: #EAB353; }
+</style>
+</head>
+<body>
+<div class="tarjeta">
+  <div class="marco">
+    <svg class="esq esq-tl" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2 38 V12 Q2 2 12 2 H38"/><path d="M10 30 V16 Q10 10 16 10 H30"/><path d="M17 23 Q17 17 23 17"/><circle cx="34" cy="6" r="1.7" fill="currentColor" stroke="none"/><circle cx="6" cy="34" r="1.7" fill="currentColor" stroke="none"/></g></svg>
+    <svg class="esq esq-tr" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2 38 V12 Q2 2 12 2 H38"/><path d="M10 30 V16 Q10 10 16 10 H30"/><path d="M17 23 Q17 17 23 17"/><circle cx="34" cy="6" r="1.7" fill="currentColor" stroke="none"/><circle cx="6" cy="34" r="1.7" fill="currentColor" stroke="none"/></g></svg>
+    <svg class="esq esq-br" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2 38 V12 Q2 2 12 2 H38"/><path d="M10 30 V16 Q10 10 16 10 H30"/><path d="M17 23 Q17 17 23 17"/><circle cx="34" cy="6" r="1.7" fill="currentColor" stroke="none"/><circle cx="6" cy="34" r="1.7" fill="currentColor" stroke="none"/></g></svg>
+    <svg class="esq esq-bl" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2 38 V12 Q2 2 12 2 H38"/><path d="M10 30 V16 Q10 10 16 10 H30"/><path d="M17 23 Q17 17 23 17"/><circle cx="34" cy="6" r="1.7" fill="currentColor" stroke="none"/><circle cx="6" cy="34" r="1.7" fill="currentColor" stroke="none"/></g></svg>
+  </div>
+  <div class="cuerpo">
+    <img class="logo" src="./assets/coferpan-logo.webp" alt="Coferpan" width="900" height="900">
+    <p class="rubro">Pastelería · Charcutería · Delicateses</p>
+    <div class="hilo"></div>
+    <p class="datos">
+      Maturín
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6 14.8 8.6 21.4 9.4 16.5 13.9 17.8 20.4 12 17.1 6.2 20.4 7.5 13.9 2.6 9.4 9.2 8.6 Z"/></svg>
+      4.0 · 438 reseñas en Google
+    </p>
+  </div>
+</div>
+</body>
+</html>
