@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#071320" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F1F7FC" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%E2%9C%A8</text></svg>">
+<title>Mía · Video</title>
+
+<!-- Open Graph: previsualización al compartir el enlace -->
+<meta property="og:title" content="Mía · MedineTech">
+<meta property="og:description" content="Tu community manager con IA por WhatsApp.">
+<meta property="og:type" content="video.other">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --ground: #F1F7FC;
+    --ground-2: #E5F0F9;
+    --surface: #FFFFFF;
+    --border: #DCE7F1;
+    --ink: #0C2233;
+    --ink-2: #3C566B;
+    --ink-3: #6C8497;
+    --accent: #23BAFF;
+    --accent-deep: #0B7FBD;
+    --shadow-lg: 0 18px 48px rgba(11,60,95,.16);
+  }
+  :root[data-theme="dark"] {
+    --ground: #071320;
+    --ground-2: #0B1C2B;
+    --surface: #0F2233;
+    --border: #21394D;
+    --ink: #E7F2FA;
+    --ink-2: #A9C2D4;
+    --ink-3: #7A96AB;
+    --accent: #35BEFF;
+    --accent-deep: #82D4FA;
+    --shadow-lg: 0 22px 60px rgba(0,0,0,.5);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #071320;
+      --ground-2: #0B1C2B;
+      --surface: #0F2233;
+      --border: #21394D;
+      --ink: #E7F2FA;
+      --ink-2: #A9C2D4;
+      --ink-3: #7A96AB;
+      --accent: #35BEFF;
+      --accent-deep: #82D4FA;
+      --shadow-lg: 0 22px 60px rgba(0,0,0,.5);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background:
+      radial-gradient(120% 80% at 50% -10%, var(--ground-2), var(--ground)) fixed;
+    color: var(--ink);
+    font-family: "Instrument Sans", system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 3.5vh, 26px);
+    padding: max(18px, env(safe-area-inset-top)) 18px max(18px, env(safe-area-inset-bottom));
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 600;
+    letter-spacing: .01em;
+  }
+  .brand .mark { font-size: 22px; line-height: 1; }
+  .brand .name { font-family: "Fraunces", Georgia, serif; font-size: 22px; }
+  .brand .sub {
+    color: var(--ink-3);
+    font-size: 13px;
+    font-weight: 500;
+    padding-left: 9px;
+    margin-left: 3px;
+    border-left: 1px solid var(--border);
+  }
+
+  .stage {
+    position: relative;
+    width: min(100%, calc((100dvh - 190px) * 0.5625), 420px);
+    aspect-ratio: 9 / 16;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+  }
+  video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .unmute {
+    position: absolute;
+    inset: 0 0 46px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: radial-gradient(60% 40% at 50% 50%, rgba(0,0,0,.28), rgba(0,0,0,0) 70%);
+    border: 0;
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .25s ease;
+  }
+  .unmute .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 15px;
+    border-radius: 999px;
+    background: rgba(9, 20, 32, .62);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.3);
+  }
+  .unmute.hidden { opacity: 0; pointer-events: none; }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #04202f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 8px 22px rgba(35,186,255,.32);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .cta:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(35,186,255,.4); }
+  .cta:active { transform: translateY(0); }
+
+  footer {
+    color: var(--ink-3);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+  <div class="brand">
+    <span class="mark">✨</span>
+    <span class="name">Mía</span>
+    <span class="sub">MedineTech</span>
+  </div>
+
+  <div class="stage">
+    <video id="v" src="mia-video.mp4" playsinline muted autoplay controls preload="auto"></video>
+    <button class="unmute" id="unmute" aria-label="Activar sonido">
+      <span class="pill">🔊 Toca para activar el sonido</span>
+    </button>
+  </div>
+
+  <a class="cta" href="https://wa.me/584248274759?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20de%20M%C3%ADa%20%E2%9C%A8"
+     target="_blank" rel="noopener">
+    Quiero saber más
+  </a>
+
+  <footer>Tu community manager con IA, por WhatsApp.</footer>
+
+<script>
+  (function () {
+    var v = document.getElementById('v');
+    var overlay = document.getElementById('unmute');
+    function activateSound() {
+      v.muted = false;
+      v.volume = 1;
+      if (v.paused) { v.play().catch(function(){}); }
+      overlay.classList.add('hidden');
+    }
+    overlay.addEventListener('click', activateSound);
+    // Si el usuario usa los controles nativos y quita el mute, ocultamos el aviso.
+    v.addEventListener('volumechange', function () {
+      if (!v.muted) overlay.classList.add('hidden');
+    });
+    v.addEventListener('ended', function () {
+      overlay.classList.remove('hidden');
+    });
+  })();
+</script>
+</body>
+</html>
