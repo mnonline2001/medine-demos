@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wisin Barber — Barbería de hombres · Maturín</title>
+<meta name="description" content="Wisin Barber, Maturín. 40 años de tijera en mano: el maestro y la nueva escuela, en la misma silla. El espacio del hombre.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#131519">
+<meta name="color-scheme" content="dark">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wisin Barber — El espacio del hombre, en Maturín">
+<meta property="og:description" content="40 años de tijera. Cuatro de barbería. La misma silla. Pide tu turno.">
+<meta property="og:image" content="https://mnonline2001.github.io/medine-demos/wisin-barber/assets/preview.png">
+<meta property="og:url" content="https://mnonline2001.github.io/medine-demos/wisin-barber/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mnonline2001.github.io/medine-demos/wisin-barber/assets/preview.png">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============ Tokens ============ */
+@property --bulb { syntax: '<number>'; inherits: false; initial-value: 0.5; }
+
+:root{
+  color-scheme: dark;
+  --ink:#131519; --panel:#1a1d23; --panel-2:#22262d; --raise:#2a2f37;
+  --line: rgba(240,238,230,.10); --line-2: rgba(240,238,230,.16);
+  --smoke:#9aa1a8; --steel:#c3c8cd; --bone:#eeece5; --bone-dim:#d7d5cd;
+  --red:#c8352f; --red-deep:#a3241f; --blue:#2f4f8c;
+  --gold:#c9a55f; --gold-deep:#a9863f;
+  --wa:#25d366;
+  --f-brand:'Kaushan Script', cursive;
+  --f:'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ink); color:var(--bone); font-family:var(--f);
+  font-size:clamp(15px,1.05vw,17px); line-height:1.6; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{line-height:1.02; margin:0; font-weight:700; letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block}
+.wrap{width:min(var(--wrap),92vw); margin-inline:auto}
+.eyebrow{font-size:.74rem; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); font-weight:600}
+.muted{color:var(--smoke)}
+
+/* section number tag */
+.sec-tag{display:inline-flex; align-items:center; gap:.6rem; font-size:.72rem; letter-spacing:.3em; text-transform:uppercase; color:var(--smoke)}
+.sec-tag b{color:var(--gold); font-weight:700; font-variant-numeric:tabular-nums}
+.sec-tag::before{content:""; width:34px; height:1px; background:var(--gold-deep); opacity:.7}
+
+/* ============ Barber-pole helix (signature) ============ */
+.pole{
+  position:relative; border-radius:40px; overflow:hidden;
+  background:repeating-linear-gradient(48deg,
+    var(--red) 0 13px, #f1efe8 13px 26px, var(--blue) 26px 39px, #f1efe8 39px 52px);
+  background-size:100% 52px;
+  animation:poleSpin 2.2s linear infinite;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.4), inset -6px 0 14px rgba(0,0,0,.45), inset 6px 0 14px rgba(255,255,255,.18);
+}
+.pole::after{ /* glass cylinder sheen */
+  content:""; position:absolute; inset:0; border-radius:inherit;
+  background:linear-gradient(90deg, rgba(255,255,255,.34), rgba(255,255,255,0) 34%, rgba(0,0,0,.28) 68%, rgba(255,255,255,.14));
+}
+@keyframes poleSpin{ from{background-position-y:0} to{background-position-y:-52px} }
+
+/* ============ Nav — slim bar with animated pole hairline + status ============ */
+header.nav{
+  position:sticky; top:0; z-index:60;
+  background:color-mix(in srgb, var(--ink) 82%, transparent);
+  backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+header.nav::after{ /* the pole hairline */
+  content:""; position:absolute; left:0; right:0; bottom:-1px; height:3px;
+  background:repeating-linear-gradient(90deg, var(--red) 0 10px, #f1efe8 10px 20px, var(--blue) 20px 30px, #f1efe8 30px 40px);
+  background-size:40px 100%; animation:hairline 2.4s linear infinite; opacity:.9;
+}
+@keyframes hairline{ from{background-position-x:0} to{background-position-x:40px} }
+.nav-in{display:flex; align-items:center; gap:1rem; height:62px}
+.brand{font-family:var(--f-brand); font-size:1.5rem; color:var(--bone); line-height:1; padding-top:.2em}
+.brand span{color:var(--gold)}
+.nav-links{display:flex; gap:1.6rem; margin-left:auto; align-items:center}
+.nav-links a{font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; color:var(--bone-dim); font-weight:500}
+.nav-links a:hover{color:var(--gold)}
+.status{display:inline-flex; align-items:center; gap:.5rem; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--steel); padding:.4rem .7rem; border:1px solid var(--line-2); border-radius:100px}
+.status .dot{width:8px; height:8px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 3px rgba(201,165,95,.18)}
+.nav-cta{font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:#fff; background:var(--red); padding:.62rem 1.05rem; border-radius:8px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.28), inset 0 -2px 0 rgba(0,0,0,.34); }
+.nav-cta:hover{background:var(--red-deep)}
+.burger{display:none; margin-left:auto; width:44px; height:44px; border:1px solid var(--line-2); border-radius:10px; background:transparent; color:var(--bone); cursor:pointer}
+.burger svg{width:20px; height:20px; margin:auto}
+
+/* ============ Hero — marquee mirror ============ */
+.hero{position:relative; padding:clamp(2.4rem,6vw,5rem) 0 clamp(2.6rem,6vw,5.5rem); overflow:hidden}
+.hero-bg{position:absolute; inset:0; z-index:0}
+.hero-bg img{width:100%; height:100%; object-fit:cover; filter:grayscale(.35) contrast(1.05) brightness(.42)}
+.hero-bg::after{content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(120% 90% at 78% 8%, rgba(201,165,95,.14), transparent 45%),
+    linear-gradient(180deg, rgba(19,21,25,.55), rgba(19,21,25,.82) 55%, var(--ink));
+}
+.hero-grid{position:relative; z-index:2; display:grid; grid-template-columns: 46px 1fr; gap:clamp(1rem,3vw,2.4rem); align-items:center}
+.hero-pole{height:min(560px,74vh); align-self:stretch}
+.mirror{position:relative; max-width:760px; margin:0 auto; padding:clamp(1.8rem,5vw,3.4rem) clamp(1.4rem,5vw,3.2rem);
+  background:linear-gradient(180deg, rgba(34,38,45,.86), rgba(20,23,27,.92)); border-radius:20px;
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,.8), inset 0 0 0 1px var(--line-2);
+}
+.mirror-glow{position:absolute; inset:0; border-radius:20px; pointer-events:none;
+  background:radial-gradient(130% 90% at 50% 0%, rgba(201,165,95, calc(.30*var(--bulb))), transparent 62%);
+  animation:bulbPulse 3.4s ease-in-out infinite;}
+@keyframes bulbPulse{ 0%,100%{--bulb:.4} 50%{--bulb:1} }
+/* bulb strips */
+.bulbs{position:absolute; pointer-events:none; --b:#f2e4c4}
+.bulbs.tb{left:26px; right:26px; height:8px;
+  background-image:radial-gradient(circle at center, var(--b) 0 2.4px, var(--gold-deep) 2.4px 3.4px, transparent 4px);
+  background-size:24px 8px; background-repeat:repeat-x;
+  filter:drop-shadow(0 0 4px rgba(201,165,95,calc(.5*var(--bulb)))); animation:bulbPulse 3.4s ease-in-out infinite;}
+.bulbs.t{top:12px} .bulbs.b{bottom:12px}
+.bulbs.lr{top:26px; bottom:26px; width:8px;
+  background-image:radial-gradient(circle at center, var(--b) 0 2.4px, var(--gold-deep) 2.4px 3.4px, transparent 4px);
+  background-size:8px 24px; background-repeat:repeat-y;
+  filter:drop-shadow(0 0 4px rgba(201,165,95,calc(.5*var(--bulb)))); animation:bulbPulse 3.4s ease-in-out infinite;}
+.bulbs.l{left:12px} .bulbs.r{right:12px}
+.mirror .in{position:relative; text-align:center}
+.mirror .eyebrow{display:block}
+h1.hero-brand{font-family:var(--f-brand); font-weight:400; color:var(--bone);
+  font-size:clamp(3.4rem,13vw,7rem); line-height:.9; margin:.5rem 0 .1rem; letter-spacing:0;
+  text-shadow:0 2px 0 rgba(0,0,0,.4), 0 0 34px rgba(201,165,95,.18);}
+h1.hero-brand span{color:var(--gold)}
+.hero-rule{width:120px; height:2px; margin:1.1rem auto; background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.hero-sub{font-size:clamp(1.02rem,2.4vw,1.32rem); color:var(--bone-dim); max-width:34ch; margin:0 auto; font-weight:500}
+.hero-sub b{color:var(--bone); font-weight:700}
+.hero-actions{display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; margin-top:1.7rem}
+.hero-meta{margin-top:1.4rem; font-size:.76rem; letter-spacing:.24em; text-transform:uppercase; color:var(--smoke)}
+
+/* ============ Buttons ============ */
+.btn{display:inline-flex; align-items:center; gap:.55rem; font-family:var(--f); font-weight:600; font-size:.92rem;
+  letter-spacing:.03em; padding:.9rem 1.4rem; border-radius:9px; cursor:pointer; border:0; position:relative; overflow:hidden; color:#fff}
+.btn-red{background:linear-gradient(180deg,var(--red),var(--red-deep));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.28), inset 0 -2px 0 rgba(0,0,0,.4), 0 10px 26px -10px rgba(200,53,47,.7);}
+.btn-red::after{content:""; position:absolute; top:0; bottom:0; width:40%; left:-60%;
+  background:linear-gradient(90deg,transparent, rgba(255,255,255,.35), transparent); transform:skewX(-18deg); transition:left .55s ease}
+.btn-red:hover::after{left:130%}
+.btn-ghost{background:transparent; color:var(--gold); border:1px solid var(--gold-deep);
+  box-shadow: inset 0 0 0 1px rgba(201,165,95,.06);}
+.btn-ghost:hover{background:rgba(201,165,95,.1)}
+.btn-wa{background:linear-gradient(180deg,#2ce06f,#1eb257); color:#08331b;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -2px 0 rgba(0,0,0,.18), 0 10px 24px -12px rgba(37,211,102,.7); font-weight:700}
+.btn svg{width:18px; height:18px}
+
+/* ============ Section shell ============ */
+section{padding:clamp(3rem,8vw,6rem) 0; position:relative}
+.h2{font-size:clamp(1.9rem,5vw,3.2rem); font-weight:700; letter-spacing:-.02em; margin:.7rem 0 .4rem}
+.lead{color:var(--bone-dim); max-width:52ch; font-size:1.05rem}
+
+/* Linaje */
+.linaje{background:
+  linear-gradient(180deg,var(--ink), #101216 60%, var(--ink));}
+.lin-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(1.6rem,4vw,3.4rem); align-items:center; margin-top:2.4rem}
+.gens{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem}
+.gen{background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line); border-radius:16px; padding:1.5rem 1.4rem; position:relative; overflow:hidden}
+.gen .n{font-size:clamp(3.4rem,9vw,5.4rem); font-weight:700; line-height:.8; color:var(--gold); font-variant-numeric:tabular-nums; letter-spacing:-.04em}
+.gen .u{display:block; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--smoke); margin:.4rem 0 .7rem}
+.gen p{font-size:.95rem; color:var(--bone-dim)}
+.gen.master{border-color:rgba(201,165,95,.4)}
+.gen.master::before{content:"TIJERA"; position:absolute; top:12px; right:-30px; transform:rotate(45deg); background:var(--gold); color:#211a0c; font-size:.6rem; font-weight:700; letter-spacing:.18em; padding:.24rem 2.4rem}
+.lin-copy .h2{margin-top:.6rem}
+.lin-copy p+p{margin-top:1rem}
+.pull{margin-top:1.6rem; padding-left:1.1rem; border-left:2px solid var(--gold); font-family:var(--f-brand); font-size:1.6rem; color:var(--bone); line-height:1.2}
+
+/* Carta / servicios */
+.carta-head{display:flex; justify-content:space-between; align-items:flex-end; gap:1rem; flex-wrap:wrap}
+.carta{margin-top:2.2rem; border-top:1px solid var(--line)}
+.srv{display:grid; grid-template-columns:auto 1fr auto; gap:1.1rem; align-items:center; padding:1.15rem .2rem; border-bottom:1px solid var(--line); transition:background .25s}
+.srv:hover{background:linear-gradient(90deg, rgba(201,165,95,.06), transparent)}
+.srv .num{font-size:.78rem; color:var(--gold); font-weight:700; font-variant-numeric:tabular-nums; letter-spacing:.1em}
+.srv .name{font-weight:600; font-size:1.12rem}
+.srv .name small{display:block; font-weight:400; font-size:.86rem; color:var(--smoke); letter-spacing:0; text-transform:none; margin-top:.15rem}
+.srv .tag{font-size:.64rem; letter-spacing:.16em; text-transform:uppercase; color:#211a0c; background:var(--gold); padding:.28rem .55rem; border-radius:6px; font-weight:700; white-space:nowrap}
+.carta-note{margin-top:1.3rem; font-size:.9rem; color:var(--smoke)}
+
+/* Local gallery */
+.local{background:#101216}
+.gal{display:grid; grid-template-columns:1.3fr 1fr; gap:1.2rem; margin-top:2.2rem}
+.shot{position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--line)}
+.shot img{width:100%; height:100%; object-fit:cover; aspect-ratio:3/4; filter:grayscale(.15) contrast(1.05)}
+.shot.wide img{aspect-ratio:16/13}
+.shot .cap{position:absolute; left:0; right:0; bottom:0; padding:1.1rem; font-size:.8rem; letter-spacing:.06em; color:var(--bone-dim);
+  background:linear-gradient(180deg,transparent,rgba(16,18,22,.9))}
+.gal-col{display:grid; gap:1.2rem}
+
+/* Reserva / comanda */
+.reserva{background:
+  radial-gradient(120% 80% at 15% 0%, rgba(47,79,140,.12), transparent 50%),
+  radial-gradient(120% 80% at 90% 100%, rgba(200,53,47,.1), transparent 50%), var(--ink)}
+.res-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(1.4rem,4vw,3rem); margin-top:2.2rem; align-items:start}
+.picker{display:grid; gap:1.5rem}
+.pk-group>span{display:block; font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; color:var(--smoke); margin-bottom:.7rem}
+.chips{display:flex; flex-wrap:wrap; gap:.55rem}
+.chips label{cursor:pointer}
+.chips input{position:absolute; opacity:0; width:0; height:0}
+.chips .c{display:inline-flex; align-items:center; gap:.4rem; padding:.6rem .95rem; border:1px solid var(--line-2); border-radius:100px; font-size:.9rem; color:var(--bone-dim); transition:.2s; background:var(--panel)}
+.chips label:hover .c{border-color:var(--gold-deep); color:var(--bone)}
+.chips input:checked + .c{background:linear-gradient(180deg,var(--gold),var(--gold-deep)); color:#1c1608; border-color:var(--gold); font-weight:600}
+.chips input:focus-visible + .c{outline:2px solid var(--gold); outline-offset:2px}
+/* comanda ticket */
+.ticket{background:linear-gradient(180deg,#f6f3ea,#efe9db); color:#1c1a15; border-radius:6px; padding:1.5rem 1.4rem; position:relative;
+  box-shadow:0 30px 60px -24px rgba(0,0,0,.7); font-family:var(--f)}
+.ticket::before{content:""; position:absolute; left:0; right:0; top:0; height:5px; border-radius:6px 6px 0 0;
+  background:repeating-linear-gradient(90deg,var(--red) 0 9px,#f1efe8 9px 18px,var(--blue) 18px 27px,#f1efe8 27px 36px); background-size:36px 100%;}
+.tk-top{display:flex; justify-content:space-between; align-items:center; border-bottom:2px dashed rgba(0,0,0,.28); padding-bottom:.8rem}
+.tk-brand{font-family:var(--f-brand); font-size:1.5rem; line-height:1}
+.tk-mini{font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; color:#6a655b}
+.tk-body{padding:1rem 0; display:grid; gap:.7rem; border-bottom:2px dashed rgba(0,0,0,.28)}
+.tk-row{display:flex; justify-content:space-between; gap:1rem; font-size:.94rem}
+.tk-row .k{color:#6a655b; text-transform:uppercase; letter-spacing:.12em; font-size:.72rem; align-self:center}
+.tk-row .v{font-weight:600; text-align:right}
+.tk-foot{padding-top:.9rem; text-align:center}
+.tk-foot .tot{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:#6a655b}
+.tk-foot .price{font-family:var(--f-brand); font-size:1.7rem; margin:.1rem 0 .9rem}
+.res-copy .h2{margin-top:.5rem}
+.res-copy p{color:var(--bone-dim); margin-top:.9rem}
+.contact-list{margin-top:1.6rem; display:grid; gap:.9rem}
+.ci{display:flex; gap:.8rem; align-items:flex-start}
+.ci svg{width:20px; height:20px; color:var(--gold); flex:none; margin-top:.15rem}
+.ci b{display:block; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--smoke); font-weight:600}
+.ci span{color:var(--bone)}
+
+/* ============ Footer — enamel plate ============ */
+footer{background:linear-gradient(180deg,#0d0f12, #0a0b0e); border-top:1px solid var(--line); padding-top:0}
+.plate{position:relative; background:linear-gradient(180deg,#1a1d23,#141619); border-radius:20px 20px 0 0;
+  box-shadow: inset 0 1px 0 var(--line-2); padding:clamp(2.4rem,6vw,4rem) 0 2.4rem; overflow:hidden}
+.plate .pole-top{position:absolute; top:0; left:0; right:0; height:6px;
+  background:repeating-linear-gradient(90deg,var(--red) 0 12px,#f1efe8 12px 24px,var(--blue) 24px 36px,#f1efe8 36px 48px);
+  background-size:48px 100%; animation:hairline 2.6s linear infinite}
+.foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2rem; align-items:start}
+.foot-brand{font-family:var(--f-brand); font-size:clamp(2.4rem,7vw,4rem); color:var(--bone); line-height:.9}
+.foot-brand span{color:var(--gold)}
+.foot-brand + p{color:var(--smoke); margin-top:.6rem; max-width:30ch}
+.fcol h4{font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.9rem; font-weight:600}
+.fcol a, .fcol p{display:block; color:var(--bone-dim); font-size:.94rem; margin-bottom:.5rem}
+.fcol a:hover{color:var(--gold)}
+.social{display:flex; gap:.7rem; margin-top:.4rem}
+.social a{width:40px; height:40px; border:1px solid var(--line-2); border-radius:10px; display:grid; place-items:center; color:var(--bone)}
+.social a:hover{border-color:var(--gold); color:var(--gold)}
+.social svg{width:19px; height:19px}
+.foot-base{border-top:1px solid var(--line); margin-top:2.4rem; padding-top:1.4rem; display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:center}
+.seal{font-size:.78rem; color:var(--smoke)}
+.seal a{color:var(--gold)}
+.foot-base .mini{font-size:.76rem; color:var(--smoke)}
+
+/* ============ FAB ============ */
+.fab{position:fixed; right:18px; bottom:18px; z-index:80; width:58px; height:58px; border-radius:50%;
+  background:var(--wa); display:grid; place-items:center; box-shadow:0 14px 30px -8px rgba(37,211,102,.6);
+  animation:fabIn .5s .8s both}
+.fab svg{width:30px; height:30px}
+@keyframes fabIn{from{transform:scale(0) rotate(-30deg); opacity:0} to{transform:none; opacity:1}}
+
+/* ============ Responsive ============ */
+@media (max-width:880px){
+  .nav-links{position:fixed; inset:62px 0 auto 0; flex-direction:column; align-items:flex-start; gap:0;
+    background:var(--panel); border-bottom:1px solid var(--line-2); padding:.6rem 6vw 1.2rem; display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.85rem 0; width:100%; border-bottom:1px solid var(--line); letter-spacing:.14em}
+  .nav-links .status{margin:.6rem 0}
+  .nav-links .nav-cta{margin-top:.6rem}
+  .burger{display:grid; place-items:center}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-pole{display:none}
+  .lin-grid, .res-grid, .gal{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .reveal-img{aspect-ratio:16/11}
+}
+@media (max-width:440px){
+  .gens{grid-template-columns:1fr}
+  .srv{grid-template-columns:auto 1fr; }
+  .srv .tag{grid-column:2; justify-self:start; margin-top:.2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important; transition:none !important; scroll-behavior:auto}
+  .swipe{clip-path:inset(0 0 0 0)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand">Wisin<span>·</span>Barber</a>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <nav class="nav-links" id="menu">
+      <a href="#linaje">El maestro</a>
+      <a href="#carta">La carta</a>
+      <a href="#local">El local</a>
+      <span class="status"><span class="dot"></span>El espacio del hombre</span>
+      <a class="nav-cta" data-wa data-msg="Hola Wisin Barber 👋 Quiero pedir un turno.">Pedir turno</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="assets/fachada.jpg" alt="Fachada de Wisin Barber en Maturín"></div>
+  <div class="wrap hero-grid">
+    <div class="pole hero-pole" aria-hidden="true"></div>
+    <div class="mirror">
+      <div class="mirror-glow" aria-hidden="true"></div>
+      <span class="bulbs tb t" aria-hidden="true"></span>
+      <span class="bulbs tb b" aria-hidden="true"></span>
+      <span class="bulbs lr l" aria-hidden="true"></span>
+      <span class="bulbs lr r" aria-hidden="true"></span>
+      <div class="in">
+        <span class="eyebrow">Barbería de hombres · Maturín</span>
+        <h1 class="hero-brand">Wisin <span>Barber</span></h1>
+        <div class="hero-rule"></div>
+        <p class="hero-sub"><b>40 años de tijera.</b> Cuatro de barbería. La misma silla.</p>
+        <div class="hero-actions">
+          <a class="btn btn-red" data-wa data-msg="Hola Wisin Barber 👋 Quiero pedir un turno.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M5 6h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></svg>
+            Pedir turno
+          </a>
+          <a class="btn btn-ghost" href="#carta">Ver la carta</a>
+        </div>
+        <p class="hero-meta">@wisin_barber18</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINAJE -->
+<section class="linaje" id="linaje">
+  <div class="wrap">
+    <span class="sec-tag"><b>01</b> El maestro y la nueva escuela</span>
+    <div class="lin-grid">
+      <div class="lin-copy">
+        <h2 class="h2">Dos generaciones,<br>una sola navaja.</h2>
+        <p>Wisin Barber nació hace <b>cuatro años</b> como la casa de la nueva escuela: fade limpio, líneas al milímetro, barba definida. El lugar donde el hombre de Maturín viene a verse bien.</p>
+        <p>Desde <b>diciembre</b>, el maestro se sentó en la silla: <b>el Sr. Charles</b>, el papá. <b>Cuarenta años de tijera en mano</b> — el corte clásico, el pulso que no tiembla, el oficio que no se aprende en un tutorial. Llegó a casa, y ahora está aquí para ti.</p>
+        <p class="pull">La experiencia no se improvisa: se hereda.</p>
+      </div>
+      <div class="gens">
+        <div class="gen master">
+          <div class="n">40</div>
+          <span class="u">Años de oficio · Sr. Charles</span>
+          <p>El maestro. Tijera clásica, navaja y toalla caliente. El corte de toda la vida, hecho a mano.</p>
+        </div>
+        <div class="gen">
+          <div class="n">04</div>
+          <span class="u">Años de barbería</span>
+          <p>La nueva escuela. Fades, diseños y detalle. El estilo de hoy, con la técnica de siempre al lado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARTA / SERVICIOS -->
+<section id="carta">
+  <div class="wrap">
+    <div class="carta-head">
+      <div>
+        <span class="sec-tag"><b>02</b> La carta de la casa</span>
+        <h2 class="h2">Lo que se hace en la silla.</h2>
+      </div>
+      <p class="lead">Corte, barba y detalle para el hombre. Cada servicio, con el pulso de quien lleva 40 años en esto.</p>
+    </div>
+    <div class="carta">
+      <div class="srv"><span class="num">01</span><span class="name">Corte de caballero<small>Fade, clásico o a máquina — como lo pidas.</small></span></div>
+      <div class="srv"><span class="num">02</span><span class="name">Corte + barba<small>El combo completo: cabeza y barba en una sola visita.</small></span><span class="tag">A tijera</span></div>
+      <div class="srv"><span class="num">03</span><span class="name">Perfilado de barba<small>Diseño, contorno y toalla caliente.</small></span><span class="tag">A tijera</span></div>
+      <div class="srv"><span class="num">04</span><span class="name">Diseño y líneas<small>Freestyle, partes y detalles a mano alzada.</small></span></div>
+      <div class="srv"><span class="num">05</span><span class="name">Cejas<small>Perfilado para rematar el look.</small></span></div>
+      <div class="srv"><span class="num">06</span><span class="name">Corte para niños<small>Paciencia y buena mano para los más pequeños.</small></span></div>
+      <div class="srv"><span class="num">07</span><span class="name">El ritual completo<small>Corte + barba + cejas. Sales como nuevo.</small></span><span class="tag">Con el maestro</span></div>
+    </div>
+    <p class="carta-note">Precios del día por WhatsApp — te confirmamos al instante según el servicio.</p>
+  </div>
+</section>
+
+<!-- EL LOCAL -->
+<section class="local" id="local">
+  <div class="wrap">
+    <span class="sec-tag"><b>03</b> El local</span>
+    <h2 class="h2">El espacio del hombre, en buena zona.</h2>
+    <p class="lead">Barbería de esquina, fácil de encontrar. Ambiente cuidado, iluminación de estación y una sala para esperar tranquilo.</p>
+    <div class="gal">
+      <div class="shot wide">
+        <img src="assets/estacion.jpg" alt="Interior de Wisin Barber: recepción e iluminación de estación">
+        <div class="cap">Recepción e iluminación de estación — el detalle se nota apenas entras.</div>
+      </div>
+      <div class="gal-col">
+        <div class="shot">
+          <img src="assets/espera.jpg" alt="Sala de espera de Wisin Barber">
+          <div class="cap">Sala de espera — siéntate, relájate, es tu momento.</div>
+        </div>
+        <div class="shot">
+          <img src="assets/fachada-wide.jpg" alt="Fachada de la barbería con su toldo">
+          <div class="cap">La fachada — nos ves desde la calle.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVA -->
+<section class="reserva" id="reserva">
+  <div class="wrap">
+    <span class="sec-tag"><b>04</b> Pide tu turno</span>
+    <div class="res-grid">
+      <div class="res-copy">
+        <h2 class="h2">Arma tu turno<br>en 10 segundos.</h2>
+        <p>Elige el servicio y con quién quieres sentarte. Te armamos el mensaje listo para enviar por WhatsApp — sin llamadas, sin colas.</p>
+        <div class="picker">
+          <div class="pk-group">
+            <span>¿Qué te vas a hacer?</span>
+            <div class="chips" data-name="Servicio">
+              <label><input type="radio" name="srv" value="Corte de caballero" checked><span class="c">Corte</span></label>
+              <label><input type="radio" name="srv" value="Corte + barba"><span class="c">Corte + barba</span></label>
+              <label><input type="radio" name="srv" value="Perfilado de barba"><span class="c">Barba</span></label>
+              <label><input type="radio" name="srv" value="Diseño y líneas"><span class="c">Diseño / líneas</span></label>
+              <label><input type="radio" name="srv" value="El ritual completo"><span class="c">Ritual completo</span></label>
+            </div>
+          </div>
+          <div class="pk-group">
+            <span>¿Con quién?</span>
+            <div class="chips" data-name="Barbero">
+              <label><input type="radio" name="who" value="Con el Sr. Charles (el maestro, 40 años)" checked><span class="c">El Sr. Charles (40 años)</span></label>
+              <label><input type="radio" name="who" value="Con el equipo Wisin"><span class="c">El equipo Wisin</span></label>
+              <label><input type="radio" name="who" value="El primero disponible"><span class="c">El primero disponible</span></label>
+            </div>
+          </div>
+          <div class="pk-group">
+            <span>¿Cuándo?</span>
+            <div class="chips" data-name="Cuándo">
+              <label><input type="radio" name="when" value="Hoy" checked><span class="c">Hoy</span></label>
+              <label><input type="radio" name="when" value="Esta semana"><span class="c">Esta semana</span></label>
+              <label><input type="radio" name="when" value="El fin de semana"><span class="c">Fin de semana</span></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ticket" aria-live="polite">
+          <div class="tk-top">
+            <span class="tk-brand">Wisin Barber</span>
+            <span class="tk-mini">Comanda · turno</span>
+          </div>
+          <div class="tk-body">
+            <div class="tk-row"><span class="k">Servicio</span><span class="v" id="t-srv">Corte de caballero</span></div>
+            <div class="tk-row"><span class="k">Barbero</span><span class="v" id="t-who">Con el Sr. Charles (el maestro, 40 años)</span></div>
+            <div class="tk-row"><span class="k">Cuándo</span><span class="v" id="t-when">Hoy</span></div>
+          </div>
+          <div class="tk-foot">
+            <span class="tot">El espacio del hombre</span>
+            <div class="price">Maturín</div>
+            <a class="btn btn-wa" id="t-send" style="width:100%; justify-content:center">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.2.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.2.1.9-.1 1.4z"/></svg>
+              Pedir por WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="contact-list">
+          <div class="ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><b>Dónde estamos</b><span>Maturín, estado Monagas · barbería de esquina, buena ubicación.</span></div>
+          </div>
+          <div class="ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <div><b>Horario</b><span>Escríbenos y coordinamos tu turno del día.</span></div>
+          </div>
+          <div class="ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+            <div><b>WhatsApp</b><span>0414-083-1951 · escríbele al Sr. Charles.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="plate">
+    <div class="pole-top" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">Wisin <span>Barber</span></div>
+          <p>El espacio del hombre en Maturín. Cuarenta años de tijera, una silla que te espera.</p>
+        </div>
+        <div class="fcol">
+          <h4>La casa</h4>
+          <a href="#linaje">El maestro</a>
+          <a href="#carta">La carta</a>
+          <a href="#local">El local</a>
+          <a href="#reserva">Pedir turno</a>
+        </div>
+        <div class="fcol">
+          <h4>Escríbenos</h4>
+          <a data-wa data-msg="Hola Wisin Barber 👋 Quiero pedir un turno.">WhatsApp 0414-083-1951</a>
+          <p>Maturín · Monagas</p>
+          <div class="social">
+            <a href="https://www.instagram.com/wisin_barber18/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-base">
+        <span class="seal">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Es una propuesta de diseño — no es el sitio oficial.</span>
+        <span class="mini">Barbería · Maturín</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FAB -->
+<a class="fab" data-wa data-msg="Hola Wisin Barber 👋 Vi su página y quiero pedir un turno." aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.2.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.2.1.9-.1 1.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  // ---- WhatsApp / IG DM fallback ----
+  var WA = "584140831951"; // Sr. Charles (el maestro) · 0414-083-1951
+  var IGDM = "https://ig.me/m/wisin_barber18";
+  function waLink(msg){ return WA ? "https://wa.me/"+WA+"?text="+encodeURIComponent(msg) : IGDM; }
+  document.querySelectorAll("[data-wa]").forEach(function(el){
+    el.setAttribute("href", waLink(el.getAttribute("data-msg")||""));
+    el.setAttribute("target","_blank"); el.setAttribute("rel","noopener");
+  });
+
+  // ---- Mobile menu ----
+  var burger = document.querySelector(".burger"), menu = document.getElementById("menu");
+  burger.addEventListener("click", function(){
+    var open = menu.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open);
+  });
+  menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ menu.classList.remove("open"); burger.setAttribute("aria-expanded",false); }); });
+
+  // ---- Comanda composer ----
+  var srv=document.getElementById("t-srv"), who=document.getElementById("t-who"), when=document.getElementById("t-when"), send=document.getElementById("t-send");
+  function val(name){ var el=document.querySelector('input[name="'+name+'"]:checked'); return el?el.value:""; }
+  function update(){
+    var s=val("srv"), w=val("who"), c=val("when");
+    srv.textContent=s; who.textContent=w; when.textContent=c;
+    var msg="Hola Wisin Barber 👋 Quiero pedir un turno:\n• Servicio: "+s+"\n• Con: "+w+"\n• Cuándo: "+c+"\n¿Me confirman disponibilidad?";
+    send.setAttribute("href", waLink(msg));
+    send.setAttribute("target","_blank"); send.setAttribute("rel","noopener");
+  }
+  document.querySelectorAll('.picker input').forEach(function(i){ i.addEventListener("change", update); });
+  update();
+
+})();
+</script>
+</body>
+</html>

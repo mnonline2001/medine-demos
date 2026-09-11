@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden;font-family:'Figtree',sans-serif;background:#faf4e7}
+  .card{position:relative;width:1200px;height:630px;color:#2a211a;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:630px}
+  .tri{position:absolute;top:0;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,#f5c518 0 40px,#123c8c 40px 80px,#c7362b 80px 120px);z-index:3}
+  .left{height:630px;padding:40px 26px 40px 78px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+  .brandline{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .emblem{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#34281f,#201812);border:3px solid #7a2b25;display:grid;place-items:center;position:relative;flex:none}
+  .emblem::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1.5px dotted rgba(245,236,222,.55)}
+  .emblem svg{width:28px;height:28px}
+  .kicker{font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:#3f7a46;font-weight:600;line-height:1.2}
+  h1{font-family:'DM Serif Display',serif;font-size:58px;line-height:1.02;color:#2a211a}
+  h1 em{font-style:italic;color:#3f7a46}
+  .sub{font-size:23px;color:#6b5e4f;margin-top:16px;max-width:520px}
+  .foot{margin-top:20px;font-size:19px;color:#3f7a46;font-weight:600}
+  .right{position:relative}
+  .right img{width:100%;height:100%;object-fit:cover}
+  .right::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#faf4e7,transparent 22%)}
+  .badge{position:absolute;right:34px;bottom:26px;font-size:16px;color:#8a7a63;z-index:3}
+</style></head>
+<body>
+  <div class="card">
+    <div class="tri"></div>
+    <div class="left">
+      <div class="brandline">
+        <span class="emblem"><svg viewBox="0 0 24 24" fill="none" stroke="#e9c877" stroke-width="1.6"><path d="M12 3c-1.6 2-1.6 4 0 6 1.6-2 1.6-4 0-6z"/><path d="M12 9v11M9 12c-1.4 1-1.4 3 0 4M15 12c1.4 1 1.4 3 0 4M9 16c-1.4 1-1.4 3 0 4M15 16c1.4 1 1.4 3 0 4"/></svg></span>
+        <span class="kicker">Comida colombiana · Café &amp; Market</span>
+      </div>
+      <h1>Un rincón de <em>Colombia</em><br>en Maturín.</h1>
+      <div class="sub">Pandebono recién hecho y café colombiano de verdad.</div>
+      <div class="foot">@lacasadelpandebonomat</div>
+    </div>
+    <div class="right"><img src="./assets/mostrador.jpg" alt=""></div>
+    <div class="badge">medine.tech</div>
+  </div>
+</body></html>

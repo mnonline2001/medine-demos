@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Casa del Pandebono — Comida colombiana · Café &amp; Market · Maturín</title>
+<meta name="description" content="La Casa del Pandebono, en el centro de Maturín. Pandebono recién hecho, café colombiano de verdad y un rincón de Colombia hecho en familia. Con opciones sin gluten.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#3F7A46">
+<meta name="color-scheme" content="light">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="La Casa del Pandebono — un rincón de Colombia en Maturín">
+<meta property="og:description" content="Pandebono recién hecho, café colombiano y la mesa siempre puesta. Comida colombiana · Café & Market.">
+<meta property="og:image" content="https://mnonline2001.github.io/medine-demos/la-casa-del-pandebono/assets/preview.png">
+<meta property="og:url" content="https://mnonline2001.github.io/medine-demos/la-casa-del-pandebono/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mnonline2001.github.io/medine-demos/la-casa-del-pandebono/assets/preview.png">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+@property --steam { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --haze { syntax:'<number>'; inherits:false; initial-value:.4; }
+
+:root{
+  color-scheme: light;
+  --cream:#faf4e7; --cream-2:#f3ead6; --paper:#fffdf7; --panel:#fbf6ea;
+  --ink:#2a211a; --ink-soft:#6b5e4f; --line:rgba(42,33,26,.12); --line-2:rgba(42,33,26,.2);
+  --green:#3f7a46; --green-deep:#2e5a34; --sage:#8fa986; --sage-soft:#e4ecdd;
+  --wood:#a9713f; --crust:#c68a4e; --maroon:#7a2b25;
+  --amarillo:#f2c230; --wa:#25d366;
+  --co-y:#f5c518; --co-b:#123c8c; --co-r:#c7362b;
+  --f-serif:'DM Serif Display', Georgia, serif;
+  --f:'Figtree', ui-sans-serif, system-ui, sans-serif;
+  --wrap:1160px;
+  /* tricolor stitch as data-URI so repainters can't touch it */
+  --tricolor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='6'%3E%3Crect width='12' height='6' fill='%23f5c518'/%3E%3Crect x='12' width='12' height='6' fill='%23123c8c'/%3E%3Crect x='24' width='12' height='6' fill='%23c7362b'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--cream); color:var(--ink); font-family:var(--f); font-size:clamp(15px,1.05vw,17px); line-height:1.62; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+h1,h2,h3{margin:0; font-family:var(--f-serif); font-weight:400; line-height:1.04}
+p{margin:0}
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block}
+.wrap{width:min(var(--wrap),92vw); margin-inline:auto}
+.eyebrow{font-size:.74rem; letter-spacing:.24em; text-transform:uppercase; color:var(--green); font-weight:600; font-family:var(--f)}
+.muted{color:var(--ink-soft)}
+.serif-it{font-family:var(--f-serif); font-style:italic}
+.sec-tag{display:inline-flex; align-items:center; gap:.6rem; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-soft); font-weight:600}
+.sec-tag b{color:var(--green); font-family:var(--f)}
+.sec-tag .room{width:34px; height:6px; background-image:var(--tricolor); background-size:auto 6px; border-radius:2px}
+
+/* ===== Emblem (recreated badge) ===== */
+.emblem{width:46px; height:46px; border-radius:50%; background:radial-gradient(circle at 50% 38%, #34281f, #201812);
+  display:grid; place-items:center; border:2px solid var(--maroon); position:relative; flex:none;
+  box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
+.emblem::before{content:""; position:absolute; inset:4px; border-radius:50%; border:1px dotted rgba(245,236,222,.55)}
+.emblem svg{width:24px; height:24px}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex; align-items:center; gap:.5rem; font-family:var(--f); font-weight:600; font-size:.94rem; padding:.85rem 1.35rem; border-radius:100px; cursor:pointer; border:0; transition:transform .15s, box-shadow .2s, background .2s; position:relative}
+.btn:active{transform:translateY(1px)}
+.btn-green{background:var(--green); color:#fff; box-shadow:0 10px 22px -12px rgba(63,122,70,.9)}
+.btn-green:hover{background:var(--green-deep)}
+.btn-outline{background:transparent; color:var(--ink); border:1.5px solid var(--line-2)}
+.btn-outline:hover{border-color:var(--green); color:var(--green)}
+.btn-wa{background:var(--wa); color:#08331b; font-weight:700; box-shadow:0 10px 22px -12px rgba(37,211,102,.9)}
+.btn-wa:hover{filter:brightness(.97)}
+.btn svg{width:18px; height:18px}
+
+/* ===== Nav — warm bar, room links, hand-drawn underline ===== */
+header.nav{position:sticky; top:0; z-index:60; background:color-mix(in srgb,var(--cream) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+header.nav::before{content:""; position:absolute; top:0; left:0; right:0; height:4px; background-image:var(--tricolor); background-size:auto 4px; opacity:.9}
+.nav-in{display:flex; align-items:center; gap:1rem; height:66px}
+.brand{display:flex; align-items:center; gap:.65rem}
+.brand .name{font-family:var(--f-serif); font-size:1.15rem; line-height:1; color:var(--ink)}
+.brand .name small{display:block; font-family:var(--f); font-size:.56rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); margin-top:.2rem}
+.nav-links{display:flex; gap:1.5rem; margin-left:auto; align-items:center}
+.nav-links a.room-link{font-size:.86rem; font-weight:500; color:var(--ink); position:relative; padding:.3rem 0}
+.nav-links a.room-link::after{content:""; position:absolute; left:0; right:0; bottom:-2px; height:6px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='6'%3E%3Cpath d='M1 4 Q15 1 30 3.5 T59 3' stroke='%233f7a46' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/100% no-repeat; opacity:0; transition:opacity .2s}
+.nav-links a.room-link:hover::after{opacity:1}
+.nav-cta{background:var(--green); color:#fff; padding:.55rem 1rem; border-radius:100px; font-size:.86rem; font-weight:600}
+.nav-cta:hover{background:var(--green-deep)}
+.burger{display:none; margin-left:auto; width:44px; height:44px; border:1px solid var(--line-2); border-radius:12px; background:transparent; color:var(--ink); cursor:pointer}
+.burger svg{width:20px;height:20px;margin:auto}
+
+/* ===== Hero — umbral ===== */
+.hero{position:relative; padding:clamp(2rem,5vw,4rem) 0 clamp(2.5rem,6vw,4.5rem); overflow:hidden}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(1.6rem,4vw,3rem); align-items:center}
+.hero-copy .eyebrow{display:inline-flex; align-items:center; gap:.6rem}
+.hero-copy .eyebrow::before{content:""; width:26px; height:6px; background-image:var(--tricolor); background-size:auto 6px; border-radius:2px}
+h1.hero-title{font-size:clamp(2.9rem,7.2vw,5rem); color:var(--ink); margin:1rem 0 .2rem; letter-spacing:-.01em}
+h1.hero-title em{font-style:italic; color:var(--green)}
+.hero-sub{font-size:clamp(1.05rem,2.2vw,1.28rem); color:var(--ink-soft); max-width:40ch; margin-top:.6rem}
+.hero-actions{display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.7rem}
+.hero-stats{display:flex; gap:1.8rem; margin-top:2rem; flex-wrap:wrap}
+.hero-stats div{border-left:2px solid var(--sage); padding-left:.8rem}
+.hero-stats .n{font-family:var(--f-serif); font-size:1.5rem; color:var(--green); line-height:1}
+.hero-stats .l{font-size:.78rem; color:var(--ink-soft)}
+/* hero photo + steam */
+.hero-photo{position:relative; border-radius:20px; overflow:hidden; aspect-ratio:4/4.4; box-shadow:0 40px 80px -34px rgba(42,33,26,.5); border:1px solid var(--line)}
+.hero-photo img{width:100%; height:100%; object-fit:cover}
+.hero-photo .warm{position:absolute; inset:0; background:radial-gradient(90% 60% at 70% 20%, rgba(242,194,48,calc(.22*var(--haze))), transparent 55%); animation:haze 6s ease-in-out infinite; mix-blend-mode:soft-light}
+@keyframes haze{0%,100%{--haze:.35} 50%{--haze:1}}
+.steam{position:absolute; top:6%; right:16%; width:80px; height:120px; z-index:3; pointer-events:none}
+.steam path{stroke:rgba(255,255,255,.75); stroke-width:5; fill:none; stroke-linecap:round;
+  stroke-dasharray:8 120; animation:rise 4s linear infinite; filter:blur(1px)}
+.steam path:nth-child(2){animation-delay:1.3s; animation-duration:4.6s}
+.steam path:nth-child(3){animation-delay:2.4s; animation-duration:5.2s}
+@keyframes rise{0%{stroke-dashoffset:120; opacity:0} 20%{opacity:.9} 100%{stroke-dashoffset:-40; opacity:0}}
+.hero-photo .badge-tag{position:absolute; left:14px; bottom:14px; z-index:3; display:flex; align-items:center; gap:.6rem; background:rgba(32,24,18,.82); color:#f6efe2; padding:.5rem .8rem .5rem .55rem; border-radius:100px; font-size:.78rem; backdrop-filter:blur(4px)}
+.hero-photo .badge-tag .emblem{width:32px; height:32px; border-width:1.5px}
+.hero-photo .badge-tag .emblem svg{width:17px;height:17px}
+
+/* ===== Section shell ===== */
+section{padding:clamp(2.8rem,7vw,5.5rem) 0}
+.h2{font-size:clamp(1.9rem,5vw,3rem); color:var(--ink); margin:.7rem 0 .5rem; letter-spacing:-.01em}
+.lead{color:var(--ink-soft); max-width:54ch; font-size:1.05rem}
+
+/* ===== La cocina (menú) ===== */
+.cocina{background:var(--paper)}
+.cocina-head{display:flex; justify-content:space-between; align-items:flex-end; gap:1.2rem; flex-wrap:wrap}
+.filters{display:flex; flex-wrap:wrap; gap:.55rem; margin:2rem 0 1.8rem}
+.filters input{position:absolute; opacity:0; width:0; height:0}
+.filters label{cursor:pointer}
+.filters .c{display:inline-flex; align-items:center; gap:.45rem; padding:.55rem 1rem; border-radius:100px; border:1.5px solid var(--line); font-size:.9rem; color:var(--ink-soft); background:var(--cream); transition:.18s; font-weight:500}
+.filters label:hover .c{border-color:var(--green); color:var(--green)}
+.filters input:checked + .c{background:var(--green); color:#fff; border-color:var(--green)}
+.filters input:focus-visible + .c{outline:2px solid var(--green); outline-offset:2px}
+.menu{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:1.1rem}
+.item{position:relative; background:var(--cream); border:1px solid var(--line); border-radius:16px; padding:1.3rem 1.2rem 1.2rem; overflow:hidden; transition:transform .18s, box-shadow .2s}
+.item:hover{transform:translateY(-3px); box-shadow:0 18px 34px -20px rgba(42,33,26,.35)}
+.item::before{content:""; position:absolute; top:0; right:0; width:56px; height:56px; background:var(--sage-soft);
+  clip-path:polygon(100% 0,0 0,100% 100%)}
+.item .ico{position:absolute; top:9px; right:9px; z-index:2; color:var(--green-deep)}
+.item .ico svg{width:20px; height:20px}
+.item h3{font-family:var(--f-serif); font-size:1.35rem; color:var(--ink); margin-bottom:.3rem; padding-right:2.4rem}
+.item p{font-size:.9rem; color:var(--ink-soft); min-height:2.4em}
+.item .row{display:flex; align-items:center; gap:.6rem; margin-top:.9rem; flex-wrap:wrap}
+.pill{font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700; padding:.28rem .55rem; border-radius:100px}
+.pill.gf{background:#eaf3e6; color:var(--green-deep); border:1px solid rgba(63,122,70,.3)}
+.pill.star{background:#fdf3d6; color:#8a6a12; border:1px solid rgba(242,194,48,.5)}
+.qmark{margin-left:auto; font-size:.8rem; color:var(--green); font-weight:600; background:transparent; border:0; cursor:pointer; text-decoration:underline; text-underline-offset:3px}
+[popover]{border:0; border-radius:16px; padding:1.4rem 1.4rem; max-width:min(340px,90vw); background:var(--ink); color:#f4ead9; box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+[popover] h4{font-family:var(--f-serif); font-size:1.3rem; margin-bottom:.4rem; color:#fff}
+[popover] p{font-size:.92rem; color:#d9cdb8}
+[popover]::backdrop{background:rgba(20,15,10,.5)}
+[popover] .cls{position:absolute; top:8px; right:12px; background:none; border:0; color:#d9cdb8; font-size:1.4rem; cursor:pointer}
+.menu-note{margin-top:1.4rem; font-size:.9rem; color:var(--ink-soft)}
+.menu:has(.item:not([hidden]))+.empty{display:none}
+
+/* ===== La sala (historia) ===== */
+.sala{position:relative; background:linear-gradient(180deg,var(--cream),var(--cream-2))}
+.sala-grid{display:grid; grid-template-columns:.95fr 1.05fr; gap:clamp(1.6rem,4vw,3.4rem); align-items:center; margin-top:2rem}
+.sala-photo{border-radius:20px; overflow:hidden; border:1px solid var(--line); box-shadow:0 30px 60px -30px rgba(42,33,26,.5); aspect-ratio:4/4.4}
+.sala-photo img{width:100%;height:100%;object-fit:cover}
+.sala-copy p{color:var(--ink-soft); margin-top:1rem}
+.sala-copy .big-quote{font-family:var(--f-serif); font-style:italic; font-size:clamp(1.5rem,3.4vw,2.1rem); color:var(--ink); line-height:1.2; margin:.4rem 0 1rem}
+.familia{display:inline-flex; align-items:center; gap:.5rem; margin-top:1.4rem; font-family:var(--f-serif); font-style:italic; color:var(--maroon); font-size:1.15rem}
+.familia svg{width:22px;height:22px; color:var(--co-r)}
+
+/* ===== El market ===== */
+.market{background:var(--green-deep); color:#f3efe2; position:relative; overflow:hidden}
+.market::before{content:""; position:absolute; top:0; left:0; right:0; height:6px; background-image:var(--tricolor); background-size:auto 6px}
+.market .sec-tag{color:#cfe0c9} .market .sec-tag b{color:#fff}
+.market .h2{color:#fff}
+.market .lead{color:#dce7d6}
+.market-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin-top:2rem}
+.mk{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); border-radius:14px; padding:1.2rem}
+.mk .emblem{width:38px;height:38px; margin-bottom:.8rem; border-color:var(--amarillo)}
+.mk .emblem svg{width:19px;height:19px}
+.mk h3{font-family:var(--f-serif); color:#fff; font-size:1.25rem; margin-bottom:.3rem}
+.mk p{font-size:.9rem; color:#cfe0c9}
+
+/* ===== La mesa (visítanos + pedido) ===== */
+.mesa{background:var(--paper)}
+.mesa-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.6rem,4vw,3rem); margin-top:2rem; align-items:start}
+.info-card{background:var(--cream); border:1px solid var(--line); border-radius:18px; padding:1.6rem}
+.info-card + .info-card{margin-top:1.1rem}
+.ci{display:flex; gap:.9rem; align-items:flex-start}
+.ci + .ci{margin-top:1.1rem; padding-top:1.1rem; border-top:1px solid var(--line)}
+.ci svg{width:22px;height:22px; color:var(--green); flex:none; margin-top:.15rem}
+.ci b{display:block; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); font-weight:700; margin-bottom:.2rem}
+.ci span{color:var(--ink)}
+.hours{display:grid; grid-template-columns:auto 1fr; gap:.3rem 1rem; font-size:.94rem; margin-top:.4rem}
+.hours .d{color:var(--ink-soft)} .hours .h{text-align:right; font-weight:600}
+.badges{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem}
+.badges .pill{font-size:.72rem; padding:.4rem .7rem}
+/* pedido composer */
+.pedido{background:linear-gradient(180deg,#2e5a34,#26492b); color:#f3efe2; border-radius:18px; padding:1.7rem 1.5rem; position:relative; overflow:hidden}
+.pedido::before{content:""; position:absolute; top:0; left:0; right:0; height:5px; background-image:var(--tricolor); background-size:auto 5px}
+.pedido h3{font-family:var(--f-serif); color:#fff; font-size:1.6rem; margin-bottom:.3rem}
+.pedido>p{color:#cfe0c9; font-size:.94rem; margin-bottom:1.1rem}
+.picks{display:grid; gap:.55rem}
+.pick{display:flex; align-items:center; gap:.7rem; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); border-radius:12px; padding:.7rem .9rem; cursor:pointer; transition:.15s}
+.pick:hover{background:rgba(255,255,255,.13)}
+.pick input{width:20px; height:20px; accent-color:var(--amarillo); flex:none}
+.pick .nm{font-weight:600} .pick .ds{font-size:.8rem; color:#bcd0b6}
+.pedido-foot{margin-top:1.2rem}
+.pedido-foot .cta{width:100%; justify-content:center}
+.pedido-count{font-size:.82rem; color:#cfe0c9; margin-bottom:.7rem; min-height:1.2em}
+
+/* ===== Footer — la mesa familiar ===== */
+footer{background:var(--wood); color:#f6ede0; position:relative; overflow:hidden}
+footer::before{content:""; position:absolute; inset:0; opacity:.14; pointer-events:none;
+  background:repeating-linear-gradient(92deg, rgba(0,0,0,.5) 0 2px, transparent 2px 26px)}
+.foot-in{position:relative; padding:clamp(2.6rem,6vw,4rem) 0 2rem; text-align:center}
+.foot-in .emblem{margin:0 auto 1.1rem; width:64px; height:64px; border-color:var(--amarillo)}
+.foot-in .emblem svg{width:32px;height:32px}
+.foot-name{font-family:var(--f-serif); font-size:clamp(2rem,6vw,3rem); color:#fff}
+.foot-line{font-family:var(--f-serif); font-style:italic; font-size:1.15rem; color:#f4e6cf; margin-top:.4rem}
+.foot-links{display:flex; gap:1.4rem; justify-content:center; flex-wrap:wrap; margin:1.6rem 0}
+.foot-links a{color:#f6ede0; font-size:.92rem; font-weight:500}
+.foot-links a:hover{color:#fff; text-decoration:underline; text-underline-offset:3px}
+.foot-contact{display:flex; gap:1.4rem; justify-content:center; flex-wrap:wrap; color:#f0e2cf; font-size:.94rem}
+.social{display:flex; gap:.6rem; justify-content:center; margin-top:1.4rem}
+.social a{width:42px;height:42px; border:1px solid rgba(255,255,255,.35); border-radius:12px; display:grid; place-items:center; color:#fff}
+.social a:hover{background:rgba(255,255,255,.14)}
+.social svg{width:20px;height:20px}
+.foot-base{border-top:1px solid rgba(255,255,255,.22); margin-top:2rem; padding-top:1.4rem; font-size:.8rem; color:#eaddc9}
+.foot-base a{color:#fff; text-decoration:underline}
+
+/* ===== FAB ===== */
+.fab{position:fixed; right:18px; bottom:18px; z-index:80; width:58px; height:58px; border-radius:50%; background:var(--wa); display:grid; place-items:center; box-shadow:0 14px 30px -8px rgba(37,211,102,.6); animation:fabIn .5s .8s both}
+.fab svg{width:30px;height:30px}
+@keyframes fabIn{from{transform:scale(0) rotate(20deg);opacity:0} to{transform:none;opacity:1}}
+
+/* ===== Responsive ===== */
+@media (max-width:860px){
+  .nav-links{position:fixed; inset:66px 0 auto 0; flex-direction:column; align-items:flex-start; gap:0; background:var(--paper); border-bottom:1px solid var(--line-2); padding:.4rem 6vw 1.2rem; display:none}
+  .nav-links.open{display:flex}
+  .nav-links a.room-link{padding:.9rem 0; width:100%; border-bottom:1px solid var(--line)}
+  .nav-links .nav-cta{margin-top:.7rem}
+  .burger{display:grid; place-items:center}
+  .hero-grid, .sala-grid, .mesa-grid{grid-template-columns:1fr}
+  .hero-photo{aspect-ratio:4/3.4; order:-1}
+  .sala-photo{aspect-ratio:16/11}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important; transition:none !important; scroll-behavior:auto}
+  .steam{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Emblem template used inline (dark circle + wheat) -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand">
+      <span class="emblem" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e9c877" stroke-width="1.6"><path d="M12 3c-1.6 2-1.6 4 0 6 1.6-2 1.6-4 0-6z"/><path d="M12 9v11M9 12c-1.4 1-1.4 3 0 4M15 12c1.4 1 1.4 3 0 4M9 16c-1.4 1-1.4 3 0 4M15 16c1.4 1 1.4 3 0 4"/></svg>
+      </span>
+      <span class="name">La Casa del Pandebono<small>Comida colombiana · Café &amp; Market</small></span>
+    </a>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <nav class="nav-links" id="menu">
+      <a class="room-link" href="#cocina">La cocina</a>
+      <a class="room-link" href="#historia">Historia</a>
+      <a class="room-link" href="#market">Market</a>
+      <a class="room-link" href="#mesa">Visítanos</a>
+      <a class="nav-cta" data-wa data-msg="¡Hola! 👋 Vi la página de La Casa del Pandebono y quiero encargar / preguntar por el menú.">Escríbenos</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Comida colombiana · Café &amp; Market · Maturín</span>
+      <h1 class="hero-title">Un rincón de<br><em>Colombia</em> en Maturín.</h1>
+      <p class="hero-sub">Pandebono recién hecho, café colombiano de verdad y la mesa siempre puesta. Aquí se entra por hambre y se vuelve por cariño.</p>
+      <div class="hero-actions">
+        <a class="btn btn-green" href="#cocina">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h18M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M4 11v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8"/></svg>
+          Ver el menú
+        </a>
+        <a class="btn btn-outline" data-wa data-msg="¡Hola! 👋 Vi la página de La Casa del Pandebono y quiero preguntar algo.">Escríbenos</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="n">100%</div><div class="l">Sabor colombiano</div></div>
+        <div><div class="n">Sin gluten</div><div class="l">Opciones aptas para celíacos</div></div>
+        <div><div class="n">En familia</div><div class="l">Hecho como en casa</div></div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/mostrador.jpg" alt="Mostrador de La Casa del Pandebono con sus productos colombianos">
+      <div class="warm" aria-hidden="true"></div>
+      <svg class="steam" viewBox="0 0 80 120" aria-hidden="true">
+        <path d="M28 118 C20 96 40 88 30 66 C22 48 40 40 32 18"/>
+        <path d="M46 118 C38 98 56 90 46 70 C40 52 56 44 48 24"/>
+        <path d="M60 118 C54 100 68 92 60 74 C55 58 68 52 62 34"/>
+      </svg>
+      <span class="badge-tag">
+        <span class="emblem"><svg viewBox="0 0 24 24" fill="none" stroke="#e9c877" stroke-width="1.6"><path d="M12 3c-1.6 2-1.6 4 0 6 1.6-2 1.6-4 0-6z"/><path d="M12 9v11M9 12c-1.4 1-1.4 3 0 4M15 12c1.4 1 1.4 3 0 4"/></svg></span>
+        Recién horneado, todos los días
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- LA COCINA -->
+<section class="cocina" id="cocina">
+  <div class="wrap">
+    <div class="cocina-head">
+      <div>
+        <span class="sec-tag"><span class="room"></span><b>01</b> La cocina</span>
+        <h2 class="h2">Lo que sale del horno<br>y de la cafetera.</h2>
+      </div>
+      <p class="lead">Filtra por lo que se te antoje. Cada cosa se hace aquí, con receta colombiana de verdad.</p>
+    </div>
+
+    <div class="menu-tool">
+      <div class="filters" role="tablist" aria-label="Filtrar el menú">
+        <label><input type="radio" name="cat" value="all" checked><span class="c">Todo</span></label>
+        <label><input type="radio" name="cat" value="pan"><span class="c">Panadería</span></label>
+        <label><input type="radio" name="cat" value="cocina"><span class="c">Cocina</span></label>
+        <label><input type="radio" name="cat" value="cafe"><span class="c">Café &amp; bebidas</span></label>
+        <label><input type="radio" name="cat" value="dulce"><span class="c">Dulces</span></label>
+      </div>
+
+      <div class="menu" id="menu-grid">
+        <article class="item" data-cat="pan">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 13c0-4 4-6 8-6s8 2 8 6-4 4-8 4-8 0-8-4z"/></svg></span>
+          <h3>Pandebono</h3>
+          <p>El de la casa. Recién hecho, calientico, con su mermelada. El que nos puso el nombre.</p>
+          <div class="row"><span class="pill star">El favorito</span><button class="qmark" popovertarget="p-pandebono">¿qué es?</button></div>
+        </article>
+
+        <article class="item" data-cat="cocina">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <h3>Papa rellena</h3>
+          <p>Crocante por fuera, rellena y sabrosa por dentro. Antojo colombiano clásico.</p>
+          <div class="row"><span class="pill" style="background:#f3ead6;color:var(--wood);border:1px solid var(--line)">Para picar</span></div>
+        </article>
+
+        <article class="item" data-cat="dulce">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 9h16l-1.5 10.5A2 2 0 0 1 16.5 21h-9A2 2 0 0 1 5.5 19.5L4 9z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></span>
+          <h3>Torta de zanahoria</h3>
+          <p>Húmeda, con especias justas. De las más pedidas para acompañar el café.</p>
+          <div class="row"><span class="pill star">Estrella dulce</span></div>
+        </article>
+
+        <article class="item" data-cat="dulce">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 10h.01M9 14h6"/></svg></span>
+          <h3>Galletas</h3>
+          <p>Recién horneadas, perfectas junto al pandebono o para llevar a casa.</p>
+          <div class="row"><span class="pill" style="background:#f3ead6;color:var(--wood);border:1px solid var(--line)">Para llevar</span></div>
+        </article>
+
+        <article class="item" data-cat="cafe">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8h13v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z"/><path d="M17 9h2a2 2 0 0 1 0 5h-2"/></svg></span>
+          <h3>Café colombiano</h3>
+          <p>Del bueno. El que la gente vuelve a buscar. Espresso, con leche o como te guste.</p>
+          <div class="row"><button class="qmark" popovertarget="p-cafe">¿por qué el nuestro?</button></div>
+        </article>
+
+        <article class="item" data-cat="cafe">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8h13v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z"/><path d="M17 9h2a2 2 0 0 1 0 5h-2"/></svg></span>
+          <h3>Chocolate caliente</h3>
+          <p>Con verdadero sabor a chocolate. El abrazo dulce para las tardes.</p>
+          <div class="row"><span class="pill" style="background:#f3ead6;color:var(--wood);border:1px solid var(--line)">Caliente</span></div>
+        </article>
+
+        <article class="item" data-cat="pan">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 13c0-4 4-6 8-6s8 2 8 6-4 4-8 4-8 0-8-4z"/></svg></span>
+          <h3>Opciones sin gluten</h3>
+          <p>Para quienes no pueden con el gluten, también hay antojo. Pregúntanos por lo del día.</p>
+          <div class="row"><span class="pill gf">Apto celíacos</span></div>
+        </article>
+
+        <article class="item" data-cat="cocina">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3v7M9 3v7M6 10a3 3 0 0 0 3-3M7.5 10v11M17 3c-1.5 0-2.5 2-2.5 5s1 5 2.5 5"/><path d="M17 3v18"/></svg></span>
+          <h3>Desayunos</h3>
+          <p>Empieza el día distinto: pan, café y algo dulce. Un desayuno con acento colombiano.</p>
+          <div class="row"><span class="pill" style="background:#f3ead6;color:var(--wood);border:1px solid var(--line)">Mañanas</span></div>
+        </article>
+      </div>
+      <p class="empty muted" hidden>No hay nada en esa categoría todavía.</p>
+      <p class="menu-note">Los precios cambian con la semana — <b>pregúntanos por WhatsApp</b> y te decimos lo del día. ¿Quieres encargar? Baja a <a href="#mesa" style="color:var(--green);font-weight:600">La mesa</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Popovers -->
+<div id="p-pandebono" popover>
+  <button class="cls" popovertarget="p-pandebono" popovertargetaction="hide" aria-label="Cerrar">×</button>
+  <h4>El pandebono</h4>
+  <p>Panecito colombiano hecho con almidón de yuca y queso — por fuera doradito, por dentro suave y elástico. Se come tibio, y con nosotros, recién salido del horno.</p>
+</div>
+<div id="p-cafe" popover>
+  <button class="cls" popovertarget="p-cafe" popovertargetaction="hide" aria-label="Cerrar">×</button>
+  <h4>Café colombiano</h4>
+  <p>Colombia es tierra de café por algo. El nuestro se prepara como debe ser — por eso la gente vuelve a buscarlo. Pídelo solo, cortado o con leche.</p>
+</div>
+
+<!-- LA SALA / HISTORIA -->
+<section class="sala" id="historia">
+  <div class="wrap">
+    <span class="sec-tag"><span class="room"></span><b>02</b> La sala</span>
+    <div class="sala-grid">
+      <div class="sala-photo"><img src="assets/salon.jpg" alt="El salón de La Casa del Pandebono, acogedor y familiar"></div>
+      <div class="sala-copy">
+        <h2 class="h2">De Colombia,<br>con cariño.</h2>
+        <p class="big-quote">“Un rincón de nuestros hermanos colombianos, en el corazón de Maturín.”</p>
+        <p>La Casa del Pandebono nació para traer a Maturín el sabor de casa: el pan que huele a domingo, el café que se comparte, la receta que pasa de mano en mano. No es solo una cafetería — es una casa donde siempre hay un puesto en la mesa para ti.</p>
+        <p>Pequeña, tranquila y bien cuidada. El lugar para desayunar sin prisa, merendar con los tuyos o sentarte a tomar un buen café. Aquí hasta tu mascota es bienvenida.</p>
+        <span class="familia">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.35-9-8.5C1.5 9 3.5 6 6.5 6c1.9 0 3 1 1.5 0C9.5 6 11 7 12 8.5 13 7 14.5 6 16 6c3 0 5 3 3.5 6.5C19 16.65 12 21 12 21z"/></svg>
+          Hecho en familia, servido con cariño.
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EL MARKET -->
+<section class="market" id="market">
+  <div class="wrap">
+    <span class="sec-tag"><span class="room"></span><b>03</b> El market</span>
+    <h2 class="h2">Un pedacito de Colombia<br>para llevar a casa.</h2>
+    <p class="lead">Además de la cafetería, somos market: esos productos colombianos que se extrañan y no se consiguen en cualquier parte.</p>
+    <div class="market-row">
+      <div class="mk">
+        <span class="emblem"><svg viewBox="0 0 24 24" fill="none" stroke="#e9c877" stroke-width="1.6"><path d="M4 13c0-4 4-6 8-6s8 2 8 6-4 4-8 4-8 0-8-4z"/></svg></span>
+        <h3>Panadería del día</h3>
+        <p>Pandebono, pan y galletas recién hechos para llevar por docena.</p>
+      </div>
+      <div class="mk">
+        <span class="emblem"><svg viewBox="0 0 24 24" fill="none" stroke="#e9c877" stroke-width="1.6"><path d="M4 8h13v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z"/><path d="M17 9h2a2 2 0 0 1 0 5h-2"/></svg></span>
+        <h3>Café colombiano</h3>
+        <p>Para seguir disfrutándolo en tu propia casa cada mañana.</p>
+      </div>
+      <div class="mk">
+        <span class="emblem"><svg viewBox="0 0 24 24" fill="none" stroke="#e9c877" stroke-width="1.6"><path d="M6 2h12l-1 4H7L6 2zM5 6h14v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6z"/></svg></span>
+        <h3>Productos colombianos</h3>
+        <p>Antojos y marcas de allá. Escríbenos y pregunta qué tenemos esta semana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LA MESA / VISÍTANOS -->
+<section class="mesa" id="mesa">
+  <div class="wrap">
+    <span class="sec-tag"><span class="room"></span><b>04</b> La mesa</span>
+    <h2 class="h2">Ven, o encarga desde el sofá.</h2>
+    <div class="mesa-grid">
+      <div>
+        <div class="info-card">
+          <div class="ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><b>Dónde estamos</b><span>En el centro de Maturín, estado Monagas (zona Catedral). Escríbenos y te pasamos la ubicación exacta.</span></div>
+          </div>
+          <div class="ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <div><b>Horario</b>
+              <div class="hours">
+                <span class="d">Lunes a sábado</span><span class="h">8:00 am – 7:00 pm</span>
+                <span class="d">Domingo</span><span class="h">8:00 am – 1:00 pm</span>
+              </div>
+            </div>
+          </div>
+          <div class="ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+            <div><b>WhatsApp</b><span>0412-644-4140 · te respondemos rapidito.</span></div>
+          </div>
+        </div>
+        <div class="badges">
+          <span class="pill gf">Apto para celíacos</span>
+          <span class="pill star">Café colombiano</span>
+          <span class="pill" style="background:var(--sage-soft);color:var(--green-deep)">Pet friendly</span>
+        </div>
+      </div>
+
+      <div class="pedido">
+        <h3>Arma tu pedido</h3>
+        <p>Marca lo que se te antoja y te armamos el mensaje listo para enviarnos por WhatsApp.</p>
+        <div class="picks">
+          <label class="pick"><input type="checkbox" value="Pandebono (docena)"><span><span class="nm">Pandebono</span> <span class="ds">recién hecho</span></span></label>
+          <label class="pick"><input type="checkbox" value="Papa rellena"><span><span class="nm">Papa rellena</span> <span class="ds">para picar</span></span></label>
+          <label class="pick"><input type="checkbox" value="Torta de zanahoria"><span><span class="nm">Torta de zanahoria</span> <span class="ds">porción o entera</span></span></label>
+          <label class="pick"><input type="checkbox" value="Galletas"><span><span class="nm">Galletas</span> <span class="ds">surtidas</span></span></label>
+          <label class="pick"><input type="checkbox" value="Café colombiano"><span><span class="nm">Café colombiano</span> <span class="ds">del bueno</span></span></label>
+          <label class="pick"><input type="checkbox" value="Algo sin gluten"><span><span class="nm">Algo sin gluten</span> <span class="ds">apto celíacos</span></span></label>
+        </div>
+        <div class="pedido-foot">
+          <p class="pedido-count" id="pcount">Aún no has elegido nada.</p>
+          <a class="btn btn-wa cta" id="psend">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.2.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.2.1.9-.1 1.4z"/></svg>
+            Encargar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-in">
+    <span class="emblem"><svg viewBox="0 0 24 24" fill="none" stroke="#e9c877" stroke-width="1.5"><path d="M12 3c-1.6 2-1.6 4 0 6 1.6-2 1.6-4 0-6z"/><path d="M12 9v11M9 12c-1.4 1-1.4 3 0 4M15 12c1.4 1 1.4 3 0 4M9 16c-1.4 1-1.4 3 0 4M15 16c1.4 1 1.4 3 0 4"/></svg></span>
+    <div class="foot-name">La Casa del Pandebono</div>
+    <div class="foot-line">Comida colombiana, hecha en familia.</div>
+    <nav class="foot-links">
+      <a href="#cocina">La cocina</a><a href="#historia">Historia</a><a href="#market">Market</a><a href="#mesa">Visítanos</a>
+    </nav>
+    <div class="foot-contact">
+      <span>Centro de Maturín · Monagas</span><span>WhatsApp 0412-644-4140</span><span>Lun–Sáb 8am–7pm · Dom 8am–1pm</span>
+    </div>
+    <div class="social">
+      <a href="https://www.instagram.com/lacasadelpandebonomat/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a data-wa data-msg="¡Hola! 👋 Los encontré por su página. Quiero preguntar por el menú." target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.2.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.2.1.9-.1 1.4z"/></svg>
+      </a>
+    </div>
+    <div class="foot-base">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Es una propuesta de diseño — no es el sitio oficial.</div>
+  </div>
+</footer>
+
+<a class="fab" data-wa data-msg="¡Hola! 👋 Vi la página de La Casa del Pandebono y quiero encargar." aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.2.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.2.1.9-.1 1.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  var WA = "584126444140"; // 0412-644-4140 (fuente: Instagram del negocio, confirmado por Ingrid)
+  var IGDM = "https://ig.me/m/lacasadelpandebonomat";
+  function waLink(msg){ return WA ? "https://wa.me/"+WA+"?text="+encodeURIComponent(msg) : IGDM; }
+  document.querySelectorAll("[data-wa]").forEach(function(el){
+    el.setAttribute("href", waLink(el.getAttribute("data-msg")||""));
+    el.setAttribute("target","_blank"); el.setAttribute("rel","noopener");
+  });
+
+  // Mobile menu
+  var burger=document.querySelector(".burger"), menu=document.getElementById("menu");
+  burger.addEventListener("click", function(){ var o=menu.classList.toggle("open"); burger.setAttribute("aria-expanded",o); });
+  menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click",function(){ menu.classList.remove("open"); burger.setAttribute("aria-expanded",false); }); });
+
+  // Menu filter (:has() does the visual work; JS toggles [hidden] for a11y + empty note)
+  var items=[].slice.call(document.querySelectorAll("#menu-grid .item"));
+  document.querySelectorAll('input[name="cat"]').forEach(function(r){
+    r.addEventListener("change", function(){
+      var v=this.value;
+      items.forEach(function(it){ it.hidden = !(v==="all" || it.dataset.cat===v); });
+    });
+  });
+
+  // Pedido composer
+  var boxes=[].slice.call(document.querySelectorAll(".pick input"));
+  var pcount=document.getElementById("pcount"), psend=document.getElementById("psend");
+  function upd(){
+    var chosen=boxes.filter(function(b){return b.checked;}).map(function(b){return b.value;});
+    if(chosen.length===0){ pcount.textContent="Aún no has elegido nada."; }
+    else { pcount.textContent="Tu pedido: "+chosen.join(", ")+"."; }
+    var msg = chosen.length
+      ? "¡Hola La Casa del Pandebono! 👋 Quiero encargar:\n• "+chosen.join("\n• ")+"\n¿Me dicen precio y disponibilidad? ¡Gracias!"
+      : "¡Hola! 👋 Vi su página y quiero encargar / preguntar por el menú.";
+    psend.setAttribute("href", waLink(msg)); psend.setAttribute("target","_blank"); psend.setAttribute("rel","noopener");
+  }
+  boxes.forEach(function(b){ b.addEventListener("change", upd); });
+  upd();
+})();
+</script>
+</body>
+</html>
