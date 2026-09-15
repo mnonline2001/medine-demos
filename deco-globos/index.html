@@ -458,13 +458,29 @@
       <div class="builder">
         <div class="stage rv">
           <svg class="bq" viewBox="0 0 320 300" role="img" aria-label="Vista previa de tu ramo">
-            <defs><linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3DEE2"/><stop offset="1" stop-color="#E7DAC6"/></linearGradient></defs>
+            <defs>
+              <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3DEE2"/><stop offset="1" stop-color="#E7DAC6"/></linearGradient>
+              <pattern id="dots" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.15" fill="rgba(174,133,58,.32)"/></pattern>
+            </defs>
             <rect x="0" y="252" width="320" height="48" fill="rgba(140,174,121,.14)"/>
             <line x1="0" y1="252" x2="320" y2="252" stroke="rgba(174,133,58,.5)"/>
             <g id="cone">
-              <path d="M118 250 L160 150 L202 250 Z" fill="url(#paper)" stroke="#AE853A" stroke-opacity=".5"/>
-              <path d="M160 150 L118 250 L134 250 Z" fill="rgba(255,255,255,.25)"/>
-              <path d="M139 250 q21 12 42 0" fill="none" stroke="#8C671E" stroke-width="3" stroke-linecap="round"/>
+              <!-- papel del ramo: cono curvo, abierto arriba y recogido abajo -->
+              <path d="M128 176 C150 184 170 184 192 176 C186 212 176 236 164 249 L156 249 C144 236 134 212 128 176 Z" fill="url(#paper)" stroke="#AE853A" stroke-opacity=".4"/>
+              <path d="M128 176 C150 184 170 184 192 176 C186 212 176 236 164 249 L156 249 C144 236 134 212 128 176 Z" fill="url(#dots)"/>
+              <!-- pliegue frontal más claro -->
+              <path d="M143 179 C151 184 169 184 177 179 C173 213 168 236 160 248 C152 236 147 213 143 179 Z" fill="rgba(255,255,255,.30)" stroke="#8C671E" stroke-opacity=".2"/>
+              <!-- bordes doblados del papel arriba -->
+              <path d="M128 176 C134 170 142 170 148 175 C142 178 135 179 128 176 Z" fill="url(#paper)" stroke="#AE853A" stroke-opacity=".35"/>
+              <path d="M192 176 C186 170 178 170 172 175 C178 178 185 179 192 176 Z" fill="url(#paper)" stroke="#AE853A" stroke-opacity=".35"/>
+              <!-- lazo en la cintura del ramo -->
+              <g transform="translate(160,239)">
+                <path d="M0 0 C-11 -6 -17 3 -8 7 C-3 9 -1 3 0 0 Z" fill="#BE7C8B"/>
+                <path d="M0 0 C11 -6 17 3 8 7 C3 9 1 3 0 0 Z" fill="#BE7C8B"/>
+                <path d="M-2 4 C-5 11 -7 15 -9 19" stroke="#BE7C8B" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M2 4 C5 11 7 15 9 19" stroke="#BE7C8B" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <circle r="2.6" fill="#8C3B4A"/>
+              </g>
             </g>
             <g stroke="#46613E" stroke-width="2" fill="none" opacity=".9">
               <path d="M160 175 C150 130 140 120 138 100"/><path d="M160 175 C160 128 160 118 160 92"/><path d="M160 175 C170 130 182 122 184 102"/>
