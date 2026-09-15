@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deco Globos · Floristería en Maturín — ramos, rosas preservadas y globos</title>
+<meta name="description" content="Deco Globos, floristería al lado de la UBV en Maturín: ramos frescos, rosas preservadas, cajas de regalo y globos, hechos a mano para cada ocasión. Arma tu ramo y consulta por WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F3EC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Deco Globos · Floristería en Maturín">
+<meta property="og:description" content="Ramos frescos, rosas preservadas, cajas de regalo y globos — hechos a mano para cada ocasión. Arma tu ramo y consulta por WhatsApp.">
+<meta property="og:image" content="https://mnonline2001.github.io/medine-demos/deco-globos/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Deco Globos · Floristería en Maturín">
+<meta name="twitter:description" content="Ramos frescos, rosas preservadas y globos, hechos a mano. Arma tu ramo y consulta por WhatsApp.">
+<meta name="twitter:image" content="https://mnonline2001.github.io/medine-demos/deco-globos/preview.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @property --sheen { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+
+  :root{
+    color-scheme: light dark;
+    --cream:#F7F3EC; --cream-2:#F1EADD;
+    --paper:#EFE7D9; --paper-2:#E7DAC6;
+    --ink:#2E2723; --ink-soft:#6E6055;
+    --sage:#5E6B52; --sage-soft:#93A182; --sage-2:#7C8A6B;
+    --rose:#9E3346; --rose-deep:#7C2837; --blush:#E7C4CB; --blush-soft:#F3DEE2;
+    --gold:#CF9A34;
+    --on-rose:#FBF4EF;
+    --wa:#25D366;
+    --line-rgb:94,107,82;         /* sage hairlines */
+    --shadow:0 18px 40px -24px rgba(46,39,35,.45);
+    --maxw:1180px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --cream:#1E1A17; --cream-2:#241F1B;
+      --paper:#282017; --paper-2:#31281D;
+      --ink:#F2EADF; --ink-soft:#C4B4A4;
+      --sage:#AAB78C; --sage-soft:#8C9A75; --sage-2:#9AA97C;
+      --rose:#E6A0AC; --rose-deep:#C96B7A; --blush:#5C3A42; --blush-soft:#3A2A2C;
+      --gold:#E0B65A;
+      --on-rose:#20160f;
+      --line-rgb:150,163,128;
+      --shadow:0 20px 44px -26px rgba(0,0,0,.7);
+    }
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:'Hanken Grotesk',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Marcellus',Georgia,serif; font-weight:400; line-height:1.05; letter-spacing:.01em}
+  img{max-width:100%; display:block}
+  a{color:inherit}
+  .wrap{width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:22px}
+  .eyebrow{font-size:.74rem; letter-spacing:.28em; text-transform:uppercase; color:var(--sage); font-weight:600}
+  .sec-num{font-family:'Marcellus',serif; color:var(--rose); font-size:.95rem; letter-spacing:.1em}
+
+  /* botón-pétalo (firma de CTA: radios asimétricos como pétalo) */
+  .petal{
+    display:inline-flex; align-items:center; gap:.55em; cursor:pointer; border:0;
+    font-family:'Hanken Grotesk',sans-serif; font-weight:600; font-size:1rem;
+    padding:.86em 1.5em; color:var(--on-rose); background:var(--rose-deep);
+    border-radius:22px 22px 22px 4px; text-decoration:none;
+    box-shadow:0 10px 22px -12px rgba(124,40,55,.7); transition:transform .25s, box-shadow .25s, background .25s;
+  }
+  .petal:hover{transform:translateY(-2px); box-shadow:0 16px 28px -12px rgba(124,40,55,.75)}
+  .petal.ghost{background:transparent; color:var(--ink); border:1px solid rgba(var(--line-rgb),.5); box-shadow:none; border-radius:22px 22px 22px 4px}
+  .petal.ghost:hover{background:rgba(var(--line-rgb),.08)}
+  .petal.wa{background:var(--wa); color:#08331b; box-shadow:0 12px 24px -12px rgba(37,211,102,.7)}
+  :focus-visible{outline:2.5px solid var(--rose); outline-offset:3px; border-radius:3px}
+
+  /* ── Nav de tallo: hairline salvia con nodos de hoja ── */
+  header.nav{position:sticky; top:0; z-index:60; background:color-mix(in srgb, var(--cream) 86%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid rgba(var(--line-rgb),.28)}
+  .nav-in{display:flex; align-items:center; gap:18px; min-height:62px}
+  .brand{display:flex; align-items:baseline; gap:.5ch; font-family:'Marcellus',serif; font-size:1.28rem; letter-spacing:.02em; text-decoration:none; color:var(--ink)}
+  .brand b{color:var(--rose); font-weight:400}
+  .stemnav{margin-left:auto; display:flex; align-items:center; gap:0}
+  .stemnav a{position:relative; text-decoration:none; color:var(--ink-soft); font-size:.9rem; font-weight:500; padding:.5em 0; margin:0 .95rem; white-space:nowrap}
+  .stemnav a::before{content:""; position:absolute; left:-.95rem; top:50%; width:.95rem; height:1px; background:rgba(var(--line-rgb),.5)}
+  .stemnav a:first-of-type::before{display:none}
+  .stemnav a::after{content:""; position:absolute; left:50%; bottom:-1px; width:7px; height:7px; transform:translateX(-50%) scale(0); border-radius:0 60% 60% 60%; background:var(--sage); transition:transform .25s}
+  .stemnav a:hover{color:var(--ink)} .stemnav a:hover::after{transform:translateX(-50%) rotate(45deg) scale(1)}
+  .nav-cta{margin-left:.6rem}
+  .nav-links.hideable{display:flex}
+  @media (max-width:820px){ .stemnav{display:none} .nav-cta{margin-left:auto} }
+
+  /* ── Hero ── */
+  .hero{position:relative; padding:clamp(34px,6vw,74px) 0 clamp(30px,5vw,56px)}
+  .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(26px,4vw,56px); align-items:center}
+  .hero h1{font-size:clamp(2.5rem,7.2vw,5rem); margin:.32em 0 .28em; max-width:14ch}
+  .hero h1 .leaf{color:var(--rose)}
+  .hero p.lead{font-size:clamp(1.02rem,2.4vw,1.24rem); color:var(--ink-soft); max-width:40ch; margin:0 0 1.6em}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:12px}
+  .hero-tags{display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:1.9em; padding-top:1.4em; border-top:1px solid rgba(var(--line-rgb),.3)}
+  .hero-tags span{font-size:.82rem; color:var(--ink-soft); display:inline-flex; align-items:center; gap:.5ch}
+  .hero-tags span::before{content:""; width:6px; height:6px; background:var(--sage); border-radius:0 60% 60% 60%; transform:rotate(45deg)}
+
+  /* marco orgánico de la foto con brillo @property */
+  .hero-photo{position:relative; padding:14px}
+  .hero-photo .frame{position:relative; border-radius:52% 48% 46% 54% / 40% 42% 58% 60%; overflow:hidden; box-shadow:var(--shadow); border:1px solid rgba(var(--line-rgb),.35)}
+  .hero-photo .frame img{width:100%; height:100%; aspect-ratio:9/14; object-fit:cover}
+  .hero-photo::after{content:""; position:absolute; inset:0; border-radius:52% 48% 46% 54% / 40% 42% 58% 60%; pointer-events:none;
+    background:linear-gradient(var(--sheen), transparent 42%, rgba(255,255,255,.28) 50%, transparent 58%); mix-blend-mode:soft-light; animation:sheen 9s linear infinite}
+  @keyframes sheen{to{--sheen:360deg}}
+  .hero-photo .pill{position:absolute; z-index:2; background:var(--cream); border:1px solid rgba(var(--line-rgb),.4); border-radius:16px 16px 16px 4px; padding:.6em .9em; box-shadow:var(--shadow); font-size:.82rem; line-height:1.25}
+  .hero-photo .pill b{font-family:'Marcellus',serif; color:var(--rose); display:block; font-size:1rem}
+  .hero-photo .pill.a{top:6%; left:-6px} .hero-photo .pill.b{bottom:7%; right:-4px}
+  .drift{position:absolute; top:0; left:0; width:20px; height:20px; offset-path:path('M10,20 C60,10 120,120 40,220 C-10,300 90,340 60,420'); animation:drift 14s ease-in-out infinite; opacity:.6}
+  @media (prefers-reduced-motion: reduce){ .drift{display:none} .hero-photo::after{animation:none} }
+  @keyframes drift{0%{offset-distance:0%;opacity:0}12%{opacity:.7}88%{opacity:.6}100%{offset-distance:100%;opacity:0}}
+  @media (max-width:820px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-photo{order:-1; max-width:360px; margin-inline:auto}
+    .hero-photo .frame img{aspect-ratio:4/5}
+  }
+
+  /* ── Secciones ── */
+  section{padding:clamp(46px,7vw,88px) 0}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:1.5em; flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(1.8rem,4.4vw,2.9rem); margin:0}
+  .sec-head .kicker{max-width:44ch; color:var(--ink-soft); font-size:1rem; margin-left:auto}
+
+  /* catálogo por tipo — tarjetas de papel con borde deckle SVG */
+  .band{background:var(--cream-2); border-block:1px solid rgba(var(--line-rgb),.24)}
+  .cat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  @media (max-width:820px){ .cat-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:520px){ .cat-grid{grid-template-columns:1fr} }
+  .cat{position:relative; background:var(--paper); border:1px solid rgba(var(--line-rgb),.3); border-radius:6px; padding:20px 18px 22px; overflow:hidden; transition:transform .28s, box-shadow .28s}
+  .cat::before{content:""; position:absolute; left:0; right:0; top:0; height:9px;
+    background:var(--rose-deep);
+    -webkit-mask:var(--deckle) repeat-x bottom/22px 9px; mask:var(--deckle) repeat-x bottom/22px 9px; opacity:.85}
+  .cat:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+  .cat .ic{width:44px; height:44px; margin-bottom:10px}
+  .cat h3{font-size:1.28rem; margin:.1em 0 .3em}
+  .cat p{margin:0; color:var(--ink-soft); font-size:.95rem}
+  .cat .tag{display:inline-block; margin-top:.9em; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--sage); font-weight:600}
+  .vitrina-real{margin-top:36px; display:grid; grid-template-columns:1.15fr 1fr 1fr; gap:20px; align-items:center}
+  @media (max-width:820px){ .vitrina-real{grid-template-columns:1fr 1fr} .vitrina-real .vr-head{grid-column:1/-1} }
+  @media (max-width:520px){ .vitrina-real{grid-template-columns:1fr} }
+  .vitrina-real .vr-head h3{font-size:clamp(1.5rem,3vw,2rem); margin:0 0 .18em}
+  .vitrina-real .vr-head p{margin:0; color:var(--ink-soft); font-size:.96rem; max-width:26ch}
+  .vitrina-real figure{margin:0}
+  .vitrina-real img{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:46% 54% 48% 52% / 38% 40% 60% 62%; border:1px solid rgba(var(--line-rgb),.4); box-shadow:var(--shadow)}
+  .vitrina-real figcaption{margin-top:.55em; text-align:center; font-size:.76rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sage); font-weight:600}
+
+  /* para todos los bolsillos — filas tipo lámina */
+  .tiers{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  @media (max-width:820px){ .tiers{grid-template-columns:1fr} }
+  .tier{border:1px solid rgba(var(--line-rgb),.32); border-radius:8px; padding:24px 22px 22px; background:var(--cream); position:relative; display:flex; flex-direction:column}
+  .tier.feat{background:var(--paper); border-color:var(--rose)}
+  .tier .lbl{font-family:'Marcellus',serif; font-size:1.5rem}
+  .tier .sz{color:var(--rose); font-weight:600; font-size:.86rem; letter-spacing:.06em; margin:.2em 0 1em}
+  .tier ul{list-style:none; margin:0 0 1.4em; padding:0; display:flex; flex-direction:column; gap:.55em}
+  .tier li{position:relative; padding-left:1.5em; color:var(--ink-soft); font-size:.95rem}
+  .tier li::before{content:""; position:absolute; left:0; top:.5em; width:9px; height:9px; background:var(--sage-soft); border-radius:0 60% 60% 60%; transform:rotate(45deg)}
+  .tier .petal{margin-top:auto; align-self:flex-start}
+  .feat-flag{position:absolute; top:-11px; right:16px; background:var(--rose-deep); color:var(--on-rose); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; padding:.35em .7em; border-radius:12px 12px 12px 3px}
+
+  /* ── Arma tu ramo (firma) ── */
+  #arma{background:linear-gradient(180deg,var(--cream),var(--cream-2))}
+  .builder{display:grid; grid-template-columns:1fr 1.02fr; gap:clamp(22px,3.4vw,44px); align-items:start}
+  @media (max-width:900px){ .builder{grid-template-columns:1fr} }
+  .stage{position:sticky; top:80px; background:var(--paper); border:1px solid rgba(var(--line-rgb),.34); border-radius:14px; padding:14px; box-shadow:var(--shadow)}
+  @media (max-width:900px){ .stage{position:static; order:-1; max-width:420px; margin-inline:auto} }
+  .stage svg{width:100%; height:auto; display:block}
+  .stage .sum{margin-top:8px; padding:12px 14px; background:var(--cream); border:1px solid rgba(var(--line-rgb),.3); border-radius:9px}
+  .stage .sum .t{font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:var(--sage); font-weight:600}
+  .stage .sum .v{font-family:'Marcellus',serif; font-size:1.12rem; line-height:1.3; margin-top:.15em}
+  .stage .sum .hint{color:var(--ink-soft); font-size:.92rem}
+  .fields{display:flex; flex-direction:column; gap:22px}
+  .field .q{font-family:'Marcellus',serif; font-size:1.16rem; margin-bottom:.1em; display:flex; align-items:baseline; gap:.6ch}
+  .field .q i{font-style:normal; color:var(--rose); font-size:.85rem}
+  .field .sub{color:var(--ink-soft); font-size:.86rem; margin-bottom:.7em}
+  .opts{display:flex; flex-wrap:wrap; gap:9px}
+  .opt{position:relative}
+  .opt input{position:absolute; opacity:0; inset:0; cursor:pointer}
+  .opt span{display:inline-flex; align-items:center; gap:.5ch; padding:.58em .95em; border:1px solid rgba(var(--line-rgb),.45); border-radius:30px; background:var(--cream); font-size:.94rem; font-weight:500; transition:.2s; cursor:pointer}
+  .opt span .dot{width:12px; height:12px; border-radius:50%; box-shadow:inset 0 0 0 2px rgba(0,0,0,.06)}
+  .opt input:checked + span{background:var(--blush-soft); border-color:var(--rose); color:var(--rose-deep); font-weight:600}
+  .opt input:focus-visible + span{outline:2.5px solid var(--rose); outline-offset:2px}
+  .field:has(input:checked) .q i{opacity:0}
+  .buildbar{margin-top:8px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+  .buildbar .note{color:var(--ink-soft); font-size:.84rem; max-width:34ch}
+  .petal[aria-disabled="true"]{opacity:.45; pointer-events:none}
+
+  /* ocasiones */
+  .occ{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  @media (max-width:820px){ .occ{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:480px){ .occ{grid-template-columns:1fr} }
+  .occ a{text-decoration:none; color:var(--ink); border:1px solid rgba(var(--line-rgb),.3); border-radius:8px; padding:18px; background:var(--cream); transition:.25s; display:block}
+  .occ a:hover{background:var(--paper); transform:translateY(-3px)}
+  .occ h3{font-size:1.16rem; margin:.4em 0 .2em; display:flex; align-items:center; gap:.5ch}
+  .occ p{margin:0; color:var(--ink-soft); font-size:.9rem}
+  .occ .star{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); font-weight:700}
+
+  /* cómo pedir */
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:2.2em}
+  @media (max-width:820px){ .steps{grid-template-columns:1fr} }
+  .step{position:relative; padding-left:52px}
+  .step .n{position:absolute; left:0; top:0; width:38px; height:38px; display:grid; place-items:center; font-family:'Marcellus',serif; color:var(--rose-deep); border:1px solid var(--rose); border-radius:50% 50% 50% 4px}
+  .step h3{font-size:1.14rem; margin:.1em 0 .25em}
+  .step p{margin:0; color:var(--ink-soft); font-size:.94rem}
+  .place{display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:center; background:var(--paper); border:1px solid rgba(var(--line-rgb),.3); border-radius:12px; padding:22px}
+  .place svg{width:60px; height:60px}
+  .place .l{font-family:'Marcellus',serif; font-size:1.3rem}
+  .place .d{color:var(--ink-soft); font-size:.95rem}
+
+  /* ── Footer herbario ── */
+  footer.herb{background:var(--paper-2); border-top:1px solid rgba(var(--line-rgb),.4); position:relative; overflow:hidden}
+  .herb-in{display:grid; grid-template-columns:1.2fr .8fr; gap:34px; padding-block:clamp(38px,5vw,62px)}
+  @media (max-width:760px){ .herb-in{grid-template-columns:1fr; gap:26px} }
+  .specimen{border:1px solid rgba(var(--line-rgb),.5); border-radius:4px; padding:22px; background:color-mix(in srgb,var(--cream) 65%, transparent)}
+  .specimen .sci{font-family:'Marcellus',serif; font-style:italic; color:var(--sage); font-size:.95rem}
+  .specimen .nm{font-family:'Marcellus',serif; font-size:2rem; margin:.1em 0 .3em}
+  .specimen .meta{display:flex; flex-direction:column; gap:.35em; margin-top:1em; font-size:.92rem}
+  .specimen .meta .row{display:flex; gap:.7ch; color:var(--ink-soft)}
+  .specimen .meta .row b{color:var(--ink); font-weight:600; min-width:8.5ch; display:inline-block}
+  .socials{display:flex; gap:12px; margin-top:1.2em}
+  .socials a{width:42px; height:42px; display:grid; place-items:center; border:1px solid rgba(var(--line-rgb),.45); border-radius:50% 50% 50% 6px; color:var(--ink); transition:.2s}
+  .socials a:hover{background:var(--rose-deep); color:var(--on-rose); border-color:var(--rose-deep)}
+  .socials svg{width:20px;height:20px}
+  .herb-side{display:flex; flex-direction:column; justify-content:space-between; gap:20px}
+  .herb-side .line{font-family:'Marcellus',serif; font-size:1.5rem; line-height:1.25}
+  .herb-side .line em{color:var(--rose); font-style:italic}
+  .seal{font-size:.8rem; color:var(--ink-soft); border-top:1px solid rgba(var(--line-rgb),.35); padding-top:1.1em; line-height:1.5}
+  .seal a{color:var(--rose)}
+
+  /* FAB */
+  .fab{position:fixed; right:18px; bottom:18px; z-index:80; width:58px; height:58px; border-radius:50% 50% 50% 8px; background:var(--wa); display:grid; place-items:center; box-shadow:0 14px 30px -10px rgba(37,211,102,.7); transition:transform .2s}
+  .fab:hover{transform:scale(1.06)} .fab svg{width:30px; height:30px}
+
+  /* reveal on scroll */
+  .rv{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease}
+  .rv.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion: reduce){ .rv{opacity:1; transform:none; transition:none} }
+
+  .bloom{opacity:0; transform:translateY(10px) scale(.72); transform-origin:50% 100%; transition:opacity .5s ease, transform .5s cubic-bezier(.2,1.3,.4,1)}
+  .bloom.on{opacity:1; transform:none}
+  @media (prefers-reduced-motion: reduce){ .bloom{transition:none} }
+</style>
+</head>
+<body>
+<a class="skip" href="#arma" style="position:absolute;left:-9999px;top:auto;">Ir a armar tu ramo</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">Deco <b>Globos</b></a>
+    <nav class="stemnav" aria-label="Secciones">
+      <a href="#catalogo">Lo que hacemos</a>
+      <a href="#bolsillos">Para cada bolsillo</a>
+      <a href="#arma">Arma tu ramo</a>
+      <a href="#ocasiones">Ocasiones</a>
+      <a href="#pedir">Cómo pedir</a>
+    </nav>
+    <a class="petal wa nav-cta" data-wa="¡Hola Deco Globos! Vengo de su página. Quería consultarles por un arreglo 🌷" href="#">WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Floristería · Maturín · al lado de la UBV</span>
+        <h1>Flores que dicen lo que las <span class="leaf">palabras</span> no alcanzan.</h1>
+        <p class="lead">Ramos frescos, rosas preservadas, cajas de regalo y globos — hechos a mano, con el mismo amor para cada ocasión y cada bolsillo.</p>
+        <div class="hero-cta">
+          <a class="petal" href="#arma">Arma tu ramo</a>
+          <a class="petal ghost" data-wa="¡Hola Deco Globos! Vengo de su página 🌷 Quiero consultar por un ramo." href="#">Escríbenos</a>
+        </div>
+        <div class="hero-tags">
+          <span>Rosas</span><span>Girasoles</span><span>Flores mixtas</span><span>Rosa preservada</span><span>Cajas &amp; globos</span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <svg class="drift" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 3 3 7 0 9-3-2-3-6 0-9z" fill="#E7C4CB"/><path d="M12 12c3-2 7-1 8 2-3 2-7 1-8-2z" fill="#93A182"/></svg>
+        <div class="frame">
+          <img src="assets/vitrina.jpg" alt="Vitrina de Deco Globos con ramos, rosas preservadas en cúpula y cajas de regalo sobre repisas blancas" loading="eager">
+        </div>
+        <div class="pill a"><b>Hecho a mano</b>en Maturín</div>
+        <div class="pill b"><b>Para hoy</b>arma y consulta</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section id="catalogo" class="band">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-num">01</span>
+        <h2>Lo que preparamos</h2>
+        <p class="kicker">Cada arreglo se arma el día del pedido, con flor fresca y el detalle que la ocasión pide.</p>
+      </div>
+      <div class="cat-grid">
+        <article class="cat rv">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="#9E3346" stroke-width="2"><path d="M24 40V24" stroke="#5E6B52"/><path d="M24 26c-6 2-11-2-11-2s3 6 11 4" fill="#93A182" stroke="none"/><circle cx="24" cy="16" r="9" fill="#E7C4CB"/><path d="M24 8c4 2 5 8 0 8-5 0-4-6 0-8z" fill="#9E3346" stroke="none"/><circle cx="24" cy="16" r="4" fill="#7C2837" stroke="none"/></g></svg>
+          <h3>Rosas</h3>
+          <p>Clásicas de siempre: solas, en docena o en ramo. El regalo que nunca falla.</p>
+          <span class="tag">Rojas · rosadas · a elección</span>
+        </article>
+        <article class="cat rv">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40V22" stroke="#5E6B52" stroke-width="2"/><g fill="#CF9A34"><ellipse cx="24" cy="8" rx="3" ry="7"/><ellipse cx="24" cy="24" rx="3" ry="7"/><ellipse cx="8" cy="16" rx="7" ry="3"/><ellipse cx="40" cy="16" rx="7" ry="3"/><ellipse cx="13" cy="6" rx="6" ry="3" transform="rotate(45 13 6)"/><ellipse cx="35" cy="6" rx="6" ry="3" transform="rotate(-45 35 6)"/><ellipse cx="13" cy="26" rx="6" ry="3" transform="rotate(-45 13 26)"/><ellipse cx="35" cy="26" rx="6" ry="3" transform="rotate(45 35 26)"/></g><circle cx="24" cy="16" r="6" fill="#7C2837"/></svg>
+          <h3>Girasoles</h3>
+          <p>Luz pura. Para levantar el ánimo o decirle a alguien “tú alegras mi día”.</p>
+          <span class="tag">Solos o en mixto</span>
+        </article>
+        <article class="cat rv">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40V26" stroke="#5E6B52" stroke-width="2"/><circle cx="17" cy="16" r="7" fill="#9E3346"/><circle cx="30" cy="14" r="6" fill="#CF9A34"/><circle cx="26" cy="24" r="6" fill="#93A182"/><circle cx="14" cy="25" r="5" fill="#E7C4CB"/><circle cx="33" cy="24" r="5" fill="#7C2837"/></svg>
+          <h3>Flores mixtas</h3>
+          <p>Pompones, margaritas y color en armonía. Elegantes sin gastar de más.</p>
+          <span class="tag">La opción más pedida</span>
+        </article>
+        <article class="cat rv">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 22a12 12 0 0 1 24 0v14H12z" fill="none" stroke="#5E6B52" stroke-width="2"/><rect x="10" y="36" width="28" height="3" rx="1.5" fill="#5E6B52"/><path d="M24 18c4 2 5 8 0 8-5 0-4-6 0-8z" fill="#9E3346"/><circle cx="24" cy="22" r="3" fill="#7C2837"/></svg>
+          <h3>Rosa preservada</h3>
+          <p>Una rosa real que dura años, en su cúpula de cristal. Un recuerdo que se queda.</p>
+          <span class="tag">Regalo eterno</span>
+        </article>
+        <article class="cat rv">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="20" width="30" height="18" rx="2" fill="#E7C4CB" stroke="#9E3346" stroke-width="2"/><rect x="9" y="20" width="30" height="7" fill="#9E3346"/><path d="M24 20v18M24 20c-4-8-12-6-12-1 0 3 8 1 12 1zm0 0c4-8 12-6 12-1 0 3-8 1-12 1z" fill="none" stroke="#7C2837" stroke-width="2"/></svg>
+          <h3>Cajas de regalo</h3>
+          <p>Flores con chocolates, cosméticos o un detalle. Todo listo para entregar.</p>
+          <span class="tag">Arma la sorpresa</span>
+        </article>
+        <article class="cat rv">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="18" cy="16" rx="9" ry="11" fill="#9E3346"/><ellipse cx="31" cy="19" rx="7" ry="9" fill="#CF9A34"/><path d="M18 27l2 4h-4zM31 28l1.5 3h-3z" fill="#7C2837"/><path d="M18 31c0 5-3 6-3 9M31 31c0 4 3 5 3 8" fill="none" stroke="#5E6B52" stroke-width="1.5"/></svg>
+          <h3>Globos y decoración</h3>
+          <p>Globos con número, burbuja o metálicos para sumar a tu ramo o montar la sorpresa.</p>
+          <span class="tag">Complementa tu regalo</span>
+        </article>
+      </div>
+
+      <div class="vitrina-real rv">
+        <div class="vr-head">
+          <h3>De nuestra vitrina</h3>
+          <p>Fotos reales de la tienda: así lucen los ramos que te llevas.</p>
+        </div>
+        <figure><img src="assets/ramos.jpg" alt="Ramos de rosas, girasoles y flores mixtas listos en la vitrina de Deco Globos" loading="lazy"><figcaption>Listos en vitrina</figcaption></figure>
+        <figure><img src="assets/frescas.jpg" alt="Flores frescas: crisantemos morados, blancos y amarillos recién llegados a Deco Globos" loading="lazy"><figcaption>Flor fresca cada día</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCION BOLSILLOS -->
+  <section id="bolsillos">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-num">02</span>
+        <h2>Para todos los bolsillos</h2>
+        <p class="kicker">Un detalle chiquito también emociona. Elige el tamaño; la elegancia y el amor van incluidos siempre.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier rv">
+          <div class="lbl">El detalle</div>
+          <div class="sz">Mini ramo · para sorprender</div>
+          <ul>
+            <li>Pocas flores, bien puestas</li>
+            <li>Ideal para un “pensé en ti”</li>
+            <li>Papel y lazo a juego</li>
+          </ul>
+          <a class="petal ghost" data-wa="¡Hola Deco Globos! Me interesa un detalle (mini ramo). ¿Qué opciones tienen y precio?" href="#">Consultar</a>
+        </div>
+        <div class="tier feat rv">
+          <span class="feat-flag">El más pedido</span>
+          <div class="lbl">El ramo</div>
+          <div class="sz">Tamaño clásico · el que se regala</div>
+          <ul>
+            <li>Ramo completo y vistoso</li>
+            <li>Rosas, girasoles o mixto</li>
+            <li>Presentación de regalo lista</li>
+          </ul>
+          <a class="petal" data-wa="¡Hola Deco Globos! Quiero un ramo tamaño clásico. ¿Me pasan opciones y precio? 🌷" href="#">Consultar</a>
+        </div>
+        <div class="tier rv">
+          <div class="lbl">El gran ramo</div>
+          <div class="sz">Para impresionar de verdad</div>
+          <ul>
+            <li>Ramo abundante y de lujo</li>
+            <li>Combínalo con globos o caja</li>
+            <li>Para pedir sí, o grados</li>
+          </ul>
+          <a class="petal ghost" data-wa="¡Hola Deco Globos! Quiero un gran ramo (para impresionar). ¿Opciones y precio?" href="#">Consultar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARMA TU RAMO -->
+  <section id="arma">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-num">03</span>
+        <h2>Arma tu ramo</h2>
+        <p class="kicker">Elige y míralo tomar forma. Cuando esté listo, te lo llevas al chat con un toque — nosotros te confirmamos precio y disponibilidad.</p>
+      </div>
+      <div class="builder">
+        <div class="stage rv" aria-hidden="false">
+          <svg viewBox="0 0 320 300" role="img" aria-label="Vista previa de tu ramo">
+            <defs>
+              <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#F3DEE2"/><stop offset="1" stop-color="#E7DAC6"/>
+              </linearGradient>
+            </defs>
+            <!-- mesa -->
+            <rect x="0" y="252" width="320" height="48" fill="rgba(94,107,82,.10)"/>
+            <line x1="0" y1="252" x2="320" y2="252" stroke="rgba(94,107,82,.4)"/>
+            <!-- cono de papel -->
+            <g id="cone">
+              <path d="M118 250 L160 150 L202 250 Z" fill="url(#paper)" stroke="#9E3346" stroke-opacity=".35"/>
+              <path d="M160 150 L118 250 L134 250 Z" fill="rgba(255,255,255,.25)"/>
+              <path d="M139 250 q21 12 42 0" fill="none" stroke="#9E3346" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <!-- tallos -->
+            <g stroke="#5E6B52" stroke-width="2" fill="none" opacity=".9">
+              <path d="M160 175 C150 130 140 120 138 100"/>
+              <path d="M160 175 C160 128 160 118 160 92"/>
+              <path d="M160 175 C170 130 182 122 184 102"/>
+            </g>
+
+            <!-- ROSAS -->
+            <g id="b-rosas" class="bloom">
+              <g transform="translate(138,96)"><circle r="15" fill="#E7C4CB"/><circle r="15" fill="none" stroke="#9E3346" stroke-opacity=".3"/><path d="M0-9c6 3 7 12 0 12-7 0-6-9 0-12z" fill="#9E3346"/><circle r="4.5" fill="#7C2837"/></g>
+              <g transform="translate(112,116) scale(.8)"><circle r="15" fill="#E7C4CB"/><path d="M0-9c6 3 7 12 0 12-7 0-6-9 0-12z" fill="#9E3346"/><circle r="4.5" fill="#7C2837"/></g>
+            </g>
+            <!-- GIRASOLES -->
+            <g id="b-girasoles" class="bloom">
+              <g transform="translate(160,88)">
+                <g fill="#CF9A34"><ellipse cx="0" cy="-15" rx="4.5" ry="10"/><ellipse cx="0" cy="15" rx="4.5" ry="10"/><ellipse cx="-15" cy="0" rx="10" ry="4.5"/><ellipse cx="15" cy="0" rx="10" ry="4.5"/><ellipse cx="-11" cy="-11" rx="9" ry="4" transform="rotate(45 -11 -11)"/><ellipse cx="11" cy="-11" rx="9" ry="4" transform="rotate(-45 11 -11)"/><ellipse cx="-11" cy="11" rx="9" ry="4" transform="rotate(-45 -11 11)"/><ellipse cx="11" cy="11" rx="9" ry="4" transform="rotate(45 11 11)"/></g>
+                <circle r="9" fill="#7C2837"/>
+              </g>
+            </g>
+            <!-- FLORES MIXTAS -->
+            <g id="b-mixtas" class="bloom">
+              <g transform="translate(186,100)"><circle r="11" fill="#9E3346"/><circle r="4" fill="#F3DEE2"/></g>
+              <g transform="translate(200,116) scale(.85)"><circle r="10" fill="#CF9A34"/><circle r="3.5" fill="#7C2837"/></g>
+              <g transform="translate(176,120) scale(.8)"><circle r="10" fill="#93A182"/><circle r="3.5" fill="#F3DEE2"/></g>
+              <g transform="translate(150,116) scale(.7)"><circle r="10" fill="#E7C4CB"/><circle r="3.5" fill="#9E3346"/></g>
+            </g>
+            <!-- ROSA PRESERVADA (cúpula) -->
+            <g id="b-preservada" class="bloom">
+              <g transform="translate(250,196)">
+                <rect x="-26" y="40" width="52" height="6" rx="3" fill="#5E6B52"/>
+                <path d="M-24 42 a24 40 0 0 1 48 0 Z" fill="rgba(147,161,130,.16)" stroke="rgba(94,107,82,.5)"/>
+                <g transform="translate(0,20)"><path d="M0-9c6 3 7 12 0 12-7 0-6-9 0-12z" fill="#9E3346"/><circle r="4.5" fill="#7C2837"/><path d="M0 3v12" stroke="#5E6B52" stroke-width="2"/></g>
+              </g>
+            </g>
+            <!-- GLOBO -->
+            <g id="x-globo" class="bloom">
+              <g transform="translate(66,70)"><ellipse rx="26" ry="32" fill="#9E3346"/><ellipse rx="26" ry="32" fill="none" stroke="#7C2837" stroke-opacity=".4"/><ellipse cx="-8" cy="-12" rx="6" ry="9" fill="rgba(255,255,255,.35)"/><path d="M0 32 l-4 6 h8 z" fill="#7C2837"/><path d="M0 38 C-8 70 8 90 0 150" fill="none" stroke="#5E6B52" stroke-width="1.5"/></g>
+            </g>
+            <!-- CAJA -->
+            <g id="x-caja" class="bloom">
+              <g transform="translate(250,232)"><rect x="-30" y="-4" width="60" height="34" rx="3" fill="#E7C4CB" stroke="#9E3346"/><rect x="-30" y="-4" width="60" height="12" fill="#9E3346"/><path d="M0-4v34M0-4c-7-12-18-8-18-2 0 4 12 2 18 2zm0 0c7-12 18-8 18-2 0 4-12 2-18 2z" fill="none" stroke="#7C2837" stroke-width="2"/></g>
+            </g>
+          </svg>
+          <div class="sum">
+            <div class="t">Tu ramo</div>
+            <div class="v" id="sumFlowers">Elige tus flores para empezar</div>
+            <div class="hint" id="sumMeta"></div>
+          </div>
+        </div>
+
+        <form class="fields rv" id="builder" onsubmit="return false">
+          <div class="field">
+            <div class="q">Elige tus flores <i>· al menos una</i></div>
+            <div class="opts" data-group="flores">
+              <label class="opt"><input type="checkbox" value="Rosas" data-svg="b-rosas"><span><i class="dot" style="background:#9E3346"></i>Rosas</span></label>
+              <label class="opt"><input type="checkbox" value="Girasoles" data-svg="b-girasoles"><span><i class="dot" style="background:#CF9A34"></i>Girasoles</span></label>
+              <label class="opt"><input type="checkbox" value="Flores mixtas" data-svg="b-mixtas"><span><i class="dot" style="background:#93A182"></i>Flores mixtas</span></label>
+              <label class="opt"><input type="checkbox" value="Rosa preservada" data-svg="b-preservada"><span><i class="dot" style="background:#7C2837"></i>Rosa preservada</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="q">¿De qué tamaño?</div>
+            <div class="opts" data-group="tamano">
+              <label class="opt"><input type="radio" name="tamano" value="El detalle"><span>El detalle</span></label>
+              <label class="opt"><input type="radio" name="tamano" value="El ramo" checked><span>El ramo</span></label>
+              <label class="opt"><input type="radio" name="tamano" value="El gran ramo"><span>El gran ramo</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="q">¿Para qué ocasión? <i>· opcional</i></div>
+            <div class="opts" data-group="ocasion">
+              <label class="opt"><input type="radio" name="ocasion" value="Cumpleaños"><span>Cumpleaños</span></label>
+              <label class="opt"><input type="radio" name="ocasion" value="Aniversario"><span>Aniversario</span></label>
+              <label class="opt"><input type="radio" name="ocasion" value="Graduación"><span>Graduación</span></label>
+              <label class="opt"><input type="radio" name="ocasion" value="Solo porque sí"><span>Solo porque sí</span></label>
+              <label class="opt"><input type="radio" name="ocasion" value="Condolencias"><span>Condolencias</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="q">Suma un extra <i>· opcional</i></div>
+            <div class="opts" data-group="extras">
+              <label class="opt"><input type="checkbox" value="Globo" data-svg="x-globo"><span>Globo</span></label>
+              <label class="opt"><input type="checkbox" value="Caja de regalo" data-svg="x-caja"><span>Caja de regalo</span></label>
+              <label class="opt"><input type="checkbox" value="Tarjeta escrita a mano"><span>Tarjeta a mano</span></label>
+            </div>
+          </div>
+          <div class="buildbar">
+            <a class="petal wa" id="buildSend" aria-disabled="true" href="#">Pedir por WhatsApp</a>
+            <p class="note">Sin compromiso: te confirmamos precio y si hay disponibilidad para hoy.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- OCASIONES -->
+  <section id="ocasiones" class="band">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-num">04</span>
+        <h2>Para cada ocasión</h2>
+        <p class="kicker">Estamos al lado de la UBV: para un grado, un cumpleaños o un “te amo” de última hora, quedamos de pasito.</p>
+      </div>
+      <div class="occ">
+        <a class="rv" data-wa="¡Hola Deco Globos! Quiero flores para una graduación 🎓 ¿Qué me recomiendan?" href="#">
+          <span class="star">A un paso de la UBV</span>
+          <h3>Graduaciones 🎓</h3>
+          <p>Ramos y girasoles para tu grado o el de quien quieres celebrar. Retíralo saliendo de la universidad.</p>
+        </a>
+        <a class="rv" data-wa="¡Hola Deco Globos! Busco un arreglo para un aniversario. ¿Opciones?" href="#"><h3>Aniversarios</h3><p>Rosas rojas, rosa preservada o la caja que lo diga todo.</p></a>
+        <a class="rv" data-wa="¡Hola Deco Globos! Quiero un detalle de cumpleaños 🎂 con globos. ¿Qué tienen?" href="#"><h3>Cumpleaños</h3><p>Flores + globos con número para que la sorpresa sea completa.</p></a>
+        <a class="rv" data-wa="¡Hola Deco Globos! Quiero regalar flores solo porque sí 🌷 ¿Ideas?" href="#"><h3>Solo porque sí</h3><p>Los mejores detalles son los que no necesitan motivo.</p></a>
+        <a class="rv" data-wa="Hola Deco Globos, necesito un arreglo de condolencias. ¿Me orientan, por favor?" href="#"><h3>Condolencias</h3><p>Arreglos sobrios y a tiempo, con el respeto que el momento pide.</p></a>
+        <a class="rv" data-wa="¡Hola Deco Globos! Quiero un detalle de amor y amistad ❤️ ¿Qué me recomiendan?" href="#"><h3>Amor y amistad ❤️</h3><p>Ramos, peluches y cajas para consentir a quien quieres.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO PEDIR -->
+  <section id="pedir">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-num">05</span>
+        <h2>Cómo pedir</h2>
+        <p class="kicker">Fácil y sin vueltas. Nos escribes, coordinamos y lo tienes.</p>
+      </div>
+      <div class="steps">
+        <div class="step rv"><span class="n">1</span><h3>Arma o escríbenos</h3><p>Usa “Arma tu ramo” o mándanos un WhatsApp con lo que tienes en mente.</p></div>
+        <div class="step rv"><span class="n">2</span><h3>Confirmamos</h3><p>Te decimos precio, disponibilidad para hoy y cómo va la presentación.</p></div>
+        <div class="step rv"><span class="n">3</span><h3>Lo tienes</h3><p>Pasas a buscarlo saliendo de la UBV o coordinamos la entrega.</p></div>
+      </div>
+      <div class="place rv">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4c-8 0-14 6-14 14 0 10 14 26 14 26s14-16 14-26c0-8-6-14-14-14z" fill="none" stroke="#9E3346" stroke-width="2"/><circle cx="24" cy="18" r="6" fill="#E7C4CB" stroke="#7C2837"/><path d="M24 15c3 1 3 6 0 6-3 0-3-5 0-6z" fill="#9E3346"/></svg>
+        <div>
+          <div class="l">Al lado de la Universidad Bolivariana</div>
+          <div class="d">Maturín, estado Monagas. Escríbenos y te decimos la referencia exacta para que llegues fácil.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER HERBARIO -->
+<footer class="herb">
+  <div class="wrap herb-in">
+    <div class="specimen rv">
+      <div class="sci">Floristería · Maturín, Monagas</div>
+      <div class="nm">Deco Globos</div>
+      <p style="color:var(--ink-soft); margin:.2em 0 0; max-width:40ch">Flores frescas, rosas preservadas, cajas de regalo y globos, hechos a mano para cada ocasión.</p>
+      <div class="meta">
+        <div class="row"><b>WhatsApp</b><span id="footWa">— por confirmar —</span></div>
+        <div class="row"><b>Instagram</b><span id="footIg">@decoglobos</span></div>
+        <div class="row"><b>Dónde</b><span>Al lado de la UBV, Maturín</span></div>
+      </div>
+      <div class="socials">
+        <a id="igLink" href="#" aria-label="Instagram de Deco Globos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a id="waLink" href="#" aria-label="WhatsApp de Deco Globos"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.9.9-2.7-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.9.9-.9 2.2 0 3.5a11 11 0 0 0 4.6 4c1.6.7 2.2.6 3 .5.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.4-.2z"/></svg></a>
+      </div>
+    </div>
+    <div class="herb-side rv">
+      <div class="line">Cada flor, <em>escogida a mano</em> para decir justo lo que sientes.</div>
+      <div class="seal">
+        Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial de Deco Globos. Las fotos son de la tienda y se usan para mostrar cómo luciría su página.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" id="fabWa" href="#" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.9.9-2.7-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.9.9-.9 2.2 0 3.5a11 11 0 0 0 4.6 4c1.6.7 2.2.6 3 .5.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.4-.2z"/></svg>
+</a>
+
+<script>
+(function(){
+  // ── Datos de contacto (REEMPLAZAR cuando Ingrid confirme) ──
+  var WA = "584249399083";   // WhatsApp Deco Globos (0424-939-9083), confirmado por Ingrid
+  var IG = "decoglobosflores";   // confirmado por Ingrid (14-sep-2026)
+
+  function waLink(msg){ return "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg); }
+
+  // Enlaces con data-wa
+  document.querySelectorAll('[data-wa]').forEach(function(el){
+    el.setAttribute('href', waLink(el.getAttribute('data-wa')));
+  });
+  // FAB + footer
+  document.getElementById('fabWa').href = waLink("¡Hola Deco Globos! Vengo de su página 🌷 Quiero consultar por un arreglo.");
+  document.getElementById('waLink').href = waLink("¡Hola Deco Globos! Vengo de su página 🌷");
+  document.getElementById('igLink').href = "https://instagram.com/" + IG;
+  document.getElementById('footIg').textContent = "@" + IG;
+  document.getElementById('footWa').textContent = "Escríbenos por aquí";
+
+  // ── Deckle edge (SVG data-URI) para el borde superior de las tarjetas ──
+  var deckle = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='9'%3E%3Cpath d='M0 9 L0 4 Q3 0 6 4 T12 4 T18 4 T22 3 L22 9 Z' fill='%23000'/%3E%3C/svg%3E\")";
+  document.documentElement.style.setProperty('--deckle', deckle);
+
+  // ── Reveal on scroll (con respaldos a prueba de saltos/recargas: nada queda oculto) ──
+  var rvs = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  function drop(n){ rvs = rvs.filter(function(x){ return x!==n; }); }
+  function revealInView(){
+    var h = window.innerHeight || 800;
+    rvs.slice().forEach(function(n){
+      if(n.getBoundingClientRect().top < h*0.94){ n.classList.add('in'); drop(n); }
+    });
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); drop(e.target); } });
+    }, {threshold:0, rootMargin:'0px 0px -6% 0px'});
+    rvs.slice().forEach(function(n){ io.observe(n); });
+  }
+  var ticking=false;
+  function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ revealInView(); ticking=false; }); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('load', revealInView);
+  revealInView();
+  setTimeout(function(){ document.querySelectorAll('.rv').forEach(function(n){ n.classList.add('in'); }); }, 1800);
+
+  // ── Builder ──
+  var form = document.getElementById('builder');
+  var send = document.getElementById('buildSend');
+  var sumFlowers = document.getElementById('sumFlowers');
+  var sumMeta = document.getElementById('sumMeta');
+
+  function checked(sel){ return Array.prototype.map.call(document.querySelectorAll(sel), function(i){return i.value;}); }
+  function radio(name){ var el = document.querySelector('input[name="'+name+'"]:checked'); return el ? el.value : ""; }
+
+  function toggleSvg(){
+    document.querySelectorAll('input[data-svg]').forEach(function(i){
+      var g = document.getElementById(i.getAttribute('data-svg'));
+      if(g){ g.classList.toggle('on', i.checked); }
+    });
+  }
+
+  function update(){
+    toggleSvg();
+    var flores = checked('[data-group="flores"] input:checked');
+    var extras = checked('[data-group="extras"] input:checked');
+    var tam = radio('tamano');
+    var oca = radio('ocasion');
+
+    if(flores.length === 0){
+      sumFlowers.textContent = "Elige tus flores para empezar";
+      sumMeta.textContent = "";
+      send.setAttribute('aria-disabled','true');
+      send.removeAttribute('href');
+    } else {
+      sumFlowers.textContent = flores.join(" + ");
+      var meta = [tam];
+      if(oca) meta.push("para " + oca);
+      if(extras.length) meta.push("con " + extras.join(" y "));
+      sumMeta.textContent = meta.join(" · ");
+      send.setAttribute('aria-disabled','false');
+
+      var msg = "¡Hola Deco Globos! 🌷 Quiero armar un ramo:\n"
+        + "• Flores: " + flores.join(", ") + "\n"
+        + "• Tamaño: " + tam + "\n"
+        + (oca ? "• Ocasión: " + oca + "\n" : "")
+        + (extras.length ? "• Extras: " + extras.join(", ") + "\n" : "")
+        + "¿Me pasan precio y disponibilidad? ¡Gracias!";
+      send.setAttribute('href', waLink(msg));
+    }
+  }
+  form.addEventListener('change', update);
+  send.addEventListener('click', function(e){ if(send.getAttribute('aria-disabled')==='true'){ e.preventDefault(); document.querySelector('[data-group="flores"] input').focus(); } });
+  update();
+})();
+</script>
+</body>
+</html>
