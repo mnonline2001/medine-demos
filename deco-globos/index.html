@@ -140,8 +140,12 @@
   .hero-photo .badge.a{top:2%; left:-8px} .hero-photo .badge.b{bottom:4%; right:-8px}
   @media (prefers-reduced-motion: reduce){ .hero-photo::after{animation:none} }
   @media (max-width:860px){
-    .hero-grid{grid-template-columns:1fr}
-    .hero-photo{order:-1; max-width:350px; margin-inline:auto}
+    .hero{padding-top:18px}
+    .hero-grid{grid-template-columns:1fr; gap:24px}
+    .hero-copy{order:0}
+    .hero-photo{order:1; max-width:340px; margin-inline:auto}
+    .hero h1{margin-top:.15em}
+    .hero p.lead{margin-bottom:1.2em}
     .hero-photo .ornate .ph img{aspect-ratio:4/5}
   }
 
