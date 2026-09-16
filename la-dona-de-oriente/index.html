@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Repostería La Doña de Oriente · La tradición del buen sabor · Maturín</title>
+<meta name="description" content="Repostería La Doña de Oriente — tortas, encargos personalizados, raciones y dulces en Maturín desde 1996. Encarga tu torta por WhatsApp.">
+<meta name="theme-color" content="#7C4A46">
+<meta name="color-scheme" content="light dark">
+
+<!-- Open Graph / redes -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Repostería La Doña de Oriente — La tradición del buen sabor">
+<meta property="og:description" content="28 años endulzando Maturín. Tortas y encargos personalizados. Escríbenos por WhatsApp.">
+<meta property="og:image" content="https://mnonline2001.github.io/medine-demos/la-dona-de-oriente/assets/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://mnonline2001.github.io/medine-demos/la-dona-de-oriente/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,500&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --crema:#FBF5EC;      /* fondo */
+  --crema-2:#F5EAD9;    /* banda alterna */
+  --surface:#FFFCF7;    /* tarjetas */
+  --tinta:#4A2A25;      /* texto principal */
+  --tinta-soft:#7A5A52; /* texto secundario */
+  --cacao:#7C4A46;      /* marca */
+  --cacao-deep:#5E332F;
+  --rosa:#E09CA5;       /* acento */
+  --rosa-deep:#BE6B78;  /* acento fuerte / CTA */
+  --oro:#C79A54;
+  --oro-2:#EFD59A;
+  --wa:#25D366;
+  --linea-rgb:124,74,70;
+  --sombra: 0 18px 50px -28px rgba(94,51,47,.45);
+  --sombra-soft: 0 10px 30px -20px rgba(94,51,47,.35);
+  --maxw:1180px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --crema:#221310;
+    --crema-2:#2B1813;
+    --surface:#2C1A15;
+    --tinta:#F4E8DB;
+    --tinta-soft:#D6BCB2;
+    --cacao:#E9B7AD;
+    --cacao-deep:#F0CFC7;
+    --rosa:#EBA9B1;
+    --rosa-deep:#F0AEB6;
+    --oro:#E7C883;
+    --oro-2:#F6E6BE;
+    --linea-rgb:231,183,174;
+    --sombra: 0 20px 60px -30px rgba(0,0,0,.7);
+    --sombra-soft: 0 12px 34px -22px rgba(0,0,0,.6);
+  }
+}
+
+/* ============ BASE ============ */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--crema);color:var(--tinta);
+  font-family:"Albert Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:clamp(16px,1.05vw,17px);line-height:1.65;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,"Times New Roman",serif;font-weight:600;line-height:1.05;margin:0;color:var(--cacao-deep)}
+p{margin:0 0 1em}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:clamp(18px,5vw,44px)}
+.eyebrow{font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;color:var(--rosa-deep);font-weight:600;margin:0 0 .9em}
+.section-num{font-family:"Bodoni Moda",serif;font-style:italic;color:var(--rosa);font-size:1rem}
+:focus-visible{outline:2.5px solid var(--rosa-deep);outline-offset:3px;border-radius:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* ============ BOTONES ============ */
+.btn{
+  --edge:var(--rosa);
+  display:inline-flex;align-items:center;gap:.55em;justify-content:center;
+  font-family:"Albert Sans",sans-serif;font-weight:600;font-size:.98rem;letter-spacing:.01em;
+  padding:.85em 1.5em;border-radius:999px;border:0;cursor:pointer;text-decoration:none;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn-primary{background:var(--cacao);color:#FFF8F1;box-shadow:0 10px 24px -14px var(--cacao)}
+.btn-primary:hover{background:var(--cacao-deep);transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:#04351a}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 12px 26px -14px rgba(37,211,102,.8)}
+.btn-ghost{background:transparent;color:var(--cacao);border:1.5px solid rgba(var(--linea-rgb),.4)}
+.btn-ghost:hover{border-color:var(--rosa-deep);color:var(--rosa-deep);transform:translateY(-2px)}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+
+/* ============ NAV MEDALLÓN ============ */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb,var(--crema) 88%,transparent);
+  backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid rgba(var(--linea-rgb),.16);
+  transition:padding .3s ease;
+}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px clamp(18px,5vw,44px);
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
+.nav.scrolled .nav-inner{padding-top:8px;padding-bottom:8px}
+.nav-links{display:flex;gap:1.6rem;align-items:center}
+.nav-links.right{justify-content:flex-end}
+.nav-links a{font-size:.9rem;font-weight:500;text-decoration:none;color:var(--tinta-soft);white-space:nowrap;transition:color .2s}
+.nav-links a:hover{color:var(--rosa-deep)}
+.brandmark{justify-self:center;display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none}
+.brandmark img{width:58px;height:58px;border-radius:50%;box-shadow:var(--sombra-soft);background:#fff;transition:width .3s ease,height .3s ease}
+.nav.scrolled .brandmark img{width:46px;height:46px}
+.brandmark small{font-family:"Bodoni Moda",serif;font-style:italic;font-size:.66rem;letter-spacing:.18em;color:var(--rosa-deep);text-transform:uppercase}
+.nav-mobile{display:none}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:clamp(34px,6vw,72px) 0 clamp(48px,7vw,96px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(60% 55% at 88% 8%, color-mix(in srgb,var(--rosa) 26%,transparent), transparent 70%),
+    radial-gradient(50% 45% at 4% 96%, color-mix(in srgb,var(--oro) 18%,transparent), transparent 70%);
+  pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.9rem,7.2vw,5.4rem);letter-spacing:-.015em}
+.hero h1 em{font-style:italic;color:var(--rosa-deep)}
+.hero-lead{font-size:clamp(1.05rem,1.6vw,1.24rem);color:var(--tinta-soft);max-width:32ch;margin-top:1.1em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8em}
+.hero-since{display:inline-flex;align-items:center;gap:.7em;margin-top:1.9em;font-size:.86rem;color:var(--tinta-soft)}
+.hero-since b{color:var(--cacao);font-weight:700}
+.hero-since .rule{width:44px;height:1px;background:rgba(var(--linea-rgb),.4)}
+
+/* Foto hero en arco + sello */
+.hero-art{position:relative;justify-self:center;width:min(100%,440px)}
+.arch{aspect-ratio:4/4.6;border-radius:50% 50% 26px 26px / 34% 34% 5% 5%;overflow:hidden;
+  box-shadow:var(--sombra);border:6px solid var(--surface)}
+.arch img{width:100%;height:100%;object-fit:cover}
+.hero-art .leaf{position:absolute;inset:-14px;border:1.5px dashed rgba(var(--linea-rgb),.3);
+  border-radius:50% 50% 30px 30px / 36% 36% 6% 6%;z-index:-1}
+
+/* ============ SELLO DE ANIVERSARIO (firma @property) ============ */
+@property --foil{syntax:'<angle>';initial-value:0deg;inherits:false}
+.seal{position:absolute;right:-6px;bottom:14px;width:clamp(118px,20vw,150px);height:clamp(118px,20vw,150px);
+  z-index:3;filter:drop-shadow(0 12px 22px rgba(94,51,47,.4))}
+.seal .ring{position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from var(--foil),var(--oro),var(--oro-2),#fff6e0,var(--rosa),var(--oro-2),var(--oro));
+  animation:foil 7s linear infinite}
+.seal .face{position:absolute;inset:7px;border-radius:50%;background:var(--surface);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.seal .n{font-family:"Bodoni Moda",serif;font-weight:700;font-size:clamp(2.2rem,5vw,2.9rem);color:var(--cacao);line-height:.9}
+.seal .t{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--rosa-deep);font-weight:600;margin-top:.35em}
+.seal .t2{font-size:.52rem;letter-spacing:.16em;color:var(--tinta-soft);margin-top:.15em}
+.seal .flame{position:absolute;top:-13px;left:50%;transform:translateX(-50%);width:16px;height:26px}
+.seal .flame .fire{transform-origin:50% 100%;animation:flick 1.6s ease-in-out infinite;fill:var(--oro)}
+@keyframes foil{to{--foil:360deg}}
+@keyframes flick{0%,100%{transform:scaleY(1) rotate(-2deg)}50%{transform:scaleY(1.12) rotate(2deg)}}
+
+/* ============ TIRA DE CONFIANZA ============ */
+.trust{border-top:1px solid rgba(var(--linea-rgb),.16);border-bottom:1px solid rgba(var(--linea-rgb),.16);
+  background:var(--crema-2)}
+.trust-inner{display:flex;flex-wrap:wrap;gap:clamp(14px,4vw,40px);justify-content:space-between;
+  padding:22px clamp(18px,5vw,44px);max-width:var(--maxw);margin:0 auto}
+.trust-inner>div{display:flex;flex-direction:column}
+.trust b{font-family:"Bodoni Moda",serif;font-size:1.5rem;color:var(--cacao)}
+.trust span{font-size:.78rem;letter-spacing:.06em;color:var(--tinta-soft)}
+
+/* ============ SECCIONES ============ */
+section{position:relative}
+.band{padding:clamp(56px,9vw,110px) 0}
+.head{max-width:60ch;margin-bottom:clamp(30px,5vw,54px)}
+.head h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:.25em 0 .35em}
+.head p{color:var(--tinta-soft);font-size:1.05rem}
+
+/* ---- HISTORIA / línea de tiempo (biografía) ---- */
+.story{background:var(--crema-2)}
+.timeline{position:relative;display:grid;gap:clamp(26px,4vw,46px);margin-top:14px}
+.timeline::before{content:"";position:absolute;left:19px;top:6px;bottom:6px;width:2px;
+  background:repeating-linear-gradient(var(--rosa) 0 7px,transparent 7px 15px)}
+.tl{position:relative;padding-left:60px}
+.tl .dot{position:absolute;left:6px;top:2px;width:28px;height:28px;border-radius:50%;
+  background:var(--surface);border:2px solid var(--rosa);display:grid;place-items:center;color:var(--rosa-deep);
+  font-size:.7rem;font-weight:700;box-shadow:0 0 0 6px var(--crema-2)}
+.tl h3{font-size:1.5rem;margin-bottom:.25em}
+.tl .yr{font-family:"Bodoni Moda",serif;font-style:italic;color:var(--rosa-deep);font-size:.95rem;display:block;margin-bottom:.2em}
+.tl p{color:var(--tinta-soft);max-width:56ch}
+.founders{display:flex;gap:1rem;align-items:center;margin-top:2.4rem;padding:22px 24px;border-radius:20px;
+  background:var(--surface);box-shadow:var(--sombra-soft);border:1px solid rgba(var(--linea-rgb),.14)}
+.founders .quote{font-family:"Bodoni Moda",serif;font-style:italic;font-size:clamp(1.05rem,2vw,1.35rem);color:var(--cacao-deep);line-height:1.4}
+.founders .sig{margin-top:.5em;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rosa-deep);font-weight:600}
+
+/* ---- CATÁLOGO tarjetas arco ---- */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,26px)}
+.cake{background:var(--surface);border-radius:20px;overflow:hidden;box-shadow:var(--sombra-soft);
+  border:1px solid rgba(var(--linea-rgb),.12);display:flex;flex-direction:column;
+  transition:transform .3s ease, box-shadow .3s ease}
+.cake:hover{transform:translateY(-6px);box-shadow:var(--sombra)}
+.cake .ph{position:relative;padding:14px 14px 0}
+.cake .ph .inner{aspect-ratio:1/1.12;border-radius:130px 130px 16px 16px;overflow:hidden}
+.cake .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.cake:hover .ph img{transform:scale(1.05)}
+.cake .body{padding:16px 18px 20px;display:flex;flex-direction:column;gap:.4em;flex:1}
+.cake h3{font-size:1.28rem}
+.cake p{font-size:.9rem;color:var(--tinta-soft);margin:0;flex:1}
+.cake .link{margin-top:.6em;font-weight:600;font-size:.9rem;color:var(--rosa-deep);text-decoration:none;
+  display:inline-flex;align-items:center;gap:.4em}
+.cake .link:hover{color:var(--cacao-deep)}
+.cake .link svg{width:1em;height:1em}
+
+/* ---- ENCARGA (composer :has()) ---- */
+.encargo{background:linear-gradient(180deg,var(--crema),var(--crema-2))}
+.encargo-card{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,54px);align-items:start;
+  background:var(--surface);border-radius:28px;padding:clamp(24px,4vw,44px);box-shadow:var(--sombra);
+  border:1px solid rgba(var(--linea-rgb),.14)}
+.field{margin-bottom:1.4rem}
+.field > label{display:block;font-weight:600;font-size:.86rem;letter-spacing:.04em;margin-bottom:.6em;color:var(--cacao)}
+.chips{display:flex;flex-wrap:wrap;gap:.55rem}
+.chip{position:relative;cursor:pointer}
+.chip input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.chip span{display:inline-block;padding:.55em 1.05em;border-radius:999px;font-size:.9rem;font-weight:500;
+  border:1.5px solid rgba(var(--linea-rgb),.28);color:var(--tinta-soft);transition:all .2s ease;background:var(--crema)}
+.chip:has(input:checked) span{background:var(--rosa);color:#3a1a1f;border-color:var(--rosa-deep);font-weight:600}
+.chip:has(input:focus-visible) span{outline:2.5px solid var(--rosa-deep);outline-offset:2px}
+.encargo input[type=date],.encargo input[type=text]{
+  width:100%;padding:.8em 1em;border-radius:12px;border:1.5px solid rgba(var(--linea-rgb),.28);
+  background:var(--crema);color:var(--tinta);font-family:inherit;font-size:.98rem}
+.encargo input:focus{outline:none;border-color:var(--rosa-deep)}
+.preview{background:var(--crema-2);border-radius:20px;padding:22px;border:1px dashed rgba(var(--linea-rgb),.3);
+  position:sticky;top:96px}
+.preview .lbl{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rosa-deep);font-weight:600}
+.preview .msg{margin:.8em 0 1.2em;font-size:.96rem;color:var(--tinta);white-space:pre-line;line-height:1.5;min-height:5em}
+.preview .btn{width:100%}
+.preview small{display:block;margin-top:.8em;font-size:.74rem;color:var(--tinta-soft);text-align:center}
+
+/* ---- VISÍTANOS ---- */
+.visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px)}
+.vcard{background:var(--surface);border-radius:20px;padding:26px;box-shadow:var(--sombra-soft);
+  border:1px solid rgba(var(--linea-rgb),.12)}
+.vcard .ic{width:42px;height:42px;border-radius:12px;background:color-mix(in srgb,var(--rosa) 30%,transparent);
+  display:grid;place-items:center;color:var(--rosa-deep);margin-bottom:14px}
+.vcard .ic svg{width:22px;height:22px}
+.vcard h3{font-size:1.25rem;margin-bottom:.4em}
+.vcard p{font-size:.94rem;color:var(--tinta-soft);margin:0}
+.vcard a{color:var(--rosa-deep);text-decoration:none;font-weight:600}
+.vcard a:hover{text-decoration:underline}
+
+/* ============ FOOTER DEDICATORIA ============ */
+.foot{background:var(--cacao);color:#F7ECE2;padding:clamp(46px,7vw,84px) 0 30px;position:relative}
+:root:not([data-theme="light"]) .foot{background:#1C120F}
+.dedica{max-width:640px;margin:0 auto;text-align:center}
+.dedica img{width:78px;height:78px;border-radius:50%;margin:0 auto 20px;background:#fff;box-shadow:0 12px 30px -16px rgba(0,0,0,.6)}
+.dedica .thanks{font-family:"Bodoni Moda",serif;font-size:clamp(1.7rem,4vw,2.6rem);color:#FFF6EE;line-height:1.15}
+.dedica .thanks em{font-style:italic;color:var(--rosa)}
+.dedica .sub{color:#E7CFC6;margin-top:.8em}
+.dedica .sig{display:inline-block;margin-top:1.2em;font-family:"Bodoni Moda",serif;font-style:italic;font-size:1.3rem;color:var(--oro-2)}
+.dedica .sig-rule{width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--rosa),transparent);margin:.4em auto 0}
+.foot-info{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 34px;margin:38px auto 0;max-width:820px;
+  border-top:1px solid rgba(255,255,255,.14);padding-top:28px;font-size:.9rem}
+.foot-info a{color:#F3E3D9;text-decoration:none;display:inline-flex;align-items:center;gap:.5em}
+.foot-info a:hover{color:#fff}
+.foot-info svg{width:1.1em;height:1.1em}
+.socials{display:flex;gap:14px;justify-content:center;margin-top:26px}
+.socials a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.28);
+  display:grid;place-items:center;color:#F3E3D9;transition:all .25s}
+.socials a:hover{background:rgba(255,255,255,.12);transform:translateY(-3px)}
+.socials svg{width:20px;height:20px}
+.seal-note{text-align:center;margin-top:32px;font-size:.76rem;color:#D9BFB5}
+.seal-note a{color:var(--oro-2);text-decoration:none;font-weight:600}
+
+/* ============ FAB WhatsApp ============ */
+.fab{position:fixed;right:18px;bottom:18px;z-index:80;width:58px;height:58px;border-radius:50%;
+  background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(37,211,102,.7);
+  transition:transform .25s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:32px;height:32px}
+.fab::after{content:"Encarga por WhatsApp";position:absolute;right:70px;white-space:nowrap;
+  background:var(--cacao-deep);color:#fff;padding:.5em .9em;border-radius:10px;font-size:.82rem;
+  opacity:0;transform:translateX(8px);transition:all .25s;pointer-events:none}
+.fab:hover::after{opacity:1;transform:translateX(0)}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:920px){
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .visit-grid{grid-template-columns:1fr}
+  .encargo-card{grid-template-columns:1fr}
+  .preview{position:static}
+}
+@media (max-width:760px){
+  .nav-inner{grid-template-columns:auto 1fr auto}
+  .nav-links{display:none}
+  .brandmark{flex-direction:row;just-self:start;gap:8px}
+  .brandmark small{display:none}
+  .nav-mobile{display:flex;align-items:center;gap:10px;justify-self:end}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{order:-1;width:min(86%,360px)}
+  .hero h1{font-size:clamp(2.7rem,12vw,3.6rem)}
+  details.menu{position:relative}
+  details.menu > summary{list-style:none;cursor:pointer;width:42px;height:42px;border-radius:12px;
+    border:1.5px solid rgba(var(--linea-rgb),.3);display:grid;place-items:center;color:var(--cacao)}
+  details.menu > summary::-webkit-details-marker{display:none}
+  details.menu[open] .menu-panel{display:flex}
+  .menu-panel{display:none;position:absolute;right:0;top:52px;flex-direction:column;gap:2px;min-width:200px;
+    background:var(--surface);border:1px solid rgba(var(--linea-rgb),.2);border-radius:14px;padding:10px;
+    box-shadow:var(--sombra)}
+  .menu-panel a{padding:.7em .9em;border-radius:8px;text-decoration:none;color:var(--tinta);font-size:.95rem}
+  .menu-panel a:hover{background:var(--crema-2)}
+}
+@media (max-width:430px){
+  .cat-grid{grid-template-columns:1fr}
+  .trust-inner{gap:16px}
+  .trust-inner>div{width:calc(50% - 8px)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-links left">
+      <a href="#historia">Nuestra historia</a>
+      <a href="#tortas">Nuestras tortas</a>
+      <a href="#encarga">Encarga</a>
+    </div>
+    <a class="brandmark" href="#top" aria-label="Repostería La Doña de Oriente">
+      <img src="assets/logo.jpg" alt="Logo Repostería La Doña de Oriente" width="58" height="58">
+      <small>Desde 1996</small>
+    </a>
+    <div class="nav-links right">
+      <a href="#visitanos">Visítanos</a>
+      <a class="btn btn-wa" href="https://wa.me/584249314313?text=Hola%20La%20Do%C3%B1a%2C%20quisiera%20hacer%20un%20encargo%20%F0%9F%8E%82" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.87 11.87 0 010 6.19 11.9 11.9 0 0117.5 1.66 11.82 11.82 0 0124 6.06a11.9 11.9 0 01-11.9 11.9 12 12 0 01-5.7-1.45L.06 24zM6.6 20.2a9.9 9.9 0 004.9 1.34h.05a9.9 9.9 0 006.4-16.9 9.85 9.85 0 00-14 0 9.9 9.9 0 00-1.5 12l.24.38-1 3.63 3.7-.97.21.12z"/><path d="M9.13 6.63c-.22-.5-.46-.51-.68-.52h-.58a1.1 1.1 0 00-.8.38 3.37 3.37 0 00-1.05 2.5A5.86 5.86 0 007.5 12.1a13.32 13.32 0 005.1 4.5c2.53 1 2.53.66 2.99.62.46-.04 1.48-.6 1.69-1.19.2-.58.2-1.08.14-1.19-.06-.1-.22-.16-.46-.28s-1.48-.73-1.7-.81c-.23-.09-.4-.13-.56.12s-.64.81-.79.98-.29.18-.53.06a5.33 5.33 0 01-1.57-.97 5.87 5.87 0 01-1.08-1.35c-.11-.19 0-.3.11-.42s.24-.28.36-.42a1.63 1.63 0 00.24-.4.44.44 0 00-.02-.42c-.06-.12-.53-1.3-.74-1.78z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <!-- móvil -->
+    <div class="nav-mobile">
+      <a class="btn btn-wa" href="https://wa.me/584249314313?text=Hola%20La%20Do%C3%B1a%2C%20quisiera%20hacer%20un%20encargo%20%F0%9F%8E%82" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.87 11.87 0 010 6.19 11.9 11.9 0 0117.5 1.66 11.82 11.82 0 0124 6.06a11.9 11.9 0 01-11.9 11.9 12 12 0 01-5.7-1.45L.06 24zM6.6 20.2a9.9 9.9 0 004.9 1.34h.05a9.9 9.9 0 006.4-16.9 9.85 9.85 0 00-14 0 9.9 9.9 0 00-1.5 12l.24.38-1 3.63 3.7-.97.21.12z"/></svg>
+      </a>
+      <details class="menu">
+        <summary aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </summary>
+        <div class="menu-panel">
+          <a href="#historia">Nuestra historia</a>
+          <a href="#tortas">Nuestras tortas</a>
+          <a href="#encarga">Encarga tu torta</a>
+          <a href="#visitanos">Visítanos</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>
+
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Repostería · Maturín · desde 1996</p>
+      <h1>La tradición<br>del <em>buen sabor</em></h1>
+      <p class="hero-lead">Tortas, encargos personalizados y dulces hechos con el amor de siempre. 28 años endulzando a Maturín, una celebración a la vez.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#encarga">Encarga tu torta</a>
+        <a class="btn btn-ghost" href="#tortas">Ver nuestras tortas</a>
+      </div>
+      <div class="hero-since">
+        <span class="rule"></span>
+        <span>Fundada por <b>Vilma&nbsp;&amp;&nbsp;Luis</b> · una familia que endulza generaciones</span>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <span class="leaf" aria-hidden="true"></span>
+      <div class="arch">
+        <img src="assets/torta-rosas-blancas.jpg" alt="Torta de celebración de La Doña decorada con rosas de crema blancas y gypsophila" width="440" height="506">
+      </div>
+      <div class="seal" aria-hidden="true">
+        <svg class="flame" viewBox="0 0 16 26"><path class="fire" d="M8 0C9 6 13 7 13 13a5 5 0 01-10 0C3 9 6 8 8 0z"/></svg>
+        <span class="ring"></span>
+        <span class="face">
+          <span class="n">28</span>
+          <span class="t">Años</span>
+          <span class="t2">Est. 1996</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TIRA DE CONFIANZA ============ -->
+<div class="trust">
+  <div class="trust-inner">
+    <div><b>1996</b><span>Endulzando desde entonces</span></div>
+    <div><b>+5.500</b><span>Familias nos siguen</span></div>
+    <div><b>Encargos</b><span>Tortas a tu medida</span></div>
+    <div><b>Maturín</b><span>Calle Monagas #83</span></div>
+  </div>
+</div>
+
+<!-- ============ HISTORIA / BIOGRAFÍA ============ -->
+<section class="band story" id="historia">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="section-num">01 —</span>
+      <h2>Nuestra historia</h2>
+      <p>Detrás de cada torta hay una familia. Esta es la de La Doña: un sueño que empezó en casa y creció junto a Maturín.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl reveal">
+        <span class="dot">◆</span>
+        <span class="yr">1996 — El comienzo</span>
+        <h3>Un sueño hecho en casa</h3>
+        <p>Todo nació de las manos de <strong>Vilma y Luis</strong>, con una receta, mucha paciencia y el deseo de compartir dulzura. El nombre es un homenaje a “La Doña”, la matriarca que sembró el amor por la repostería en la familia.</p>
+      </div>
+      <div class="tl reveal">
+        <span class="dot">◆</span>
+        <span class="yr">Creciendo con la ciudad</span>
+        <h3>De la casa a la comunidad</h3>
+        <p>Con esfuerzo, dedicación y disciplina, aquel sueño familiar se convirtió en un punto de referencia de Maturín: el lugar al que se viene por la torta de cumpleaños, el postre del domingo y los detalles de cada celebración.</p>
+      </div>
+      <div class="tl reveal">
+        <span class="dot">◆</span>
+        <span class="yr">Hoy — 28 años</span>
+        <h3>Una familia que endulza generaciones</h3>
+        <p>Hoy La Doña no es solo un negocio: es una familia que ha crecido junto a su comunidad, trayendo dulzura y momentos inolvidables a tantas generaciones. Y esto apenas comienza.</p>
+      </div>
+    </div>
+
+    <div class="founders reveal">
+      <div>
+        <p class="quote">“El éxito no llega solo; es el resultado de vocación, entrega, amor y mucha disciplina.”</p>
+        <span class="sig">— Vilma &amp; Luis, fundadores</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NUESTRAS TORTAS ============ -->
+<section class="band" id="tortas">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="section-num">02 —</span>
+      <h2>Nuestras tortas</h2>
+      <p>Cada una es hecha por encargo, a tu gusto y para tu ocasión. Estas son algunas que hemos horneado con cariño.</p>
+    </div>
+    <div class="cat-grid">
+      <article class="cake reveal">
+        <div class="ph"><div class="inner"><img src="assets/torta-rosas-blancas.jpg" alt="Torta blanca con rosas de crema y gypsophila" width="280" height="314" loading="lazy"></div></div>
+        <div class="body">
+          <h3>De celebración</h3>
+          <p>Elegantes, con flores de crema y detalles finos para bodas, quince años y fechas especiales.</p>
+          <a class="link" href="https://wa.me/584249314313?text=Hola%20La%20Do%C3%B1a%2C%20me%20interesa%20una%20torta%20de%20celebraci%C3%B3n%20%F0%9F%8E%82" target="_blank" rel="noopener">Pedir por WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="cake reveal">
+        <div class="ph"><div class="inner"><img src="assets/torta-piso3.jpg" alt="Torta de tres pisos temática personalizada" width="280" height="314" loading="lazy"></div></div>
+        <div class="body">
+          <h3>Encargos temáticos</h3>
+          <p>De varios pisos y con el tema que imagines: personajes, colores y toppers a la medida.</p>
+          <a class="link" href="https://wa.me/584249314313?text=Hola%20La%20Do%C3%B1a%2C%20quiero%20una%20torta%20tem%C3%A1tica%20personalizada%20%F0%9F%8E%82" target="_blank" rel="noopener">Pedir por WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="cake reveal">
+        <div class="ph"><div class="inner"><img src="assets/torta-rosas-crema.jpg" alt="Torta clásica rosada con flores de crema" width="280" height="314" loading="lazy"></div></div>
+        <div class="body">
+          <h3>Clásicas de la casa</h3>
+          <p>El sabor de siempre en tortas y raciones, decoradas con nuestras flores de crema tradicionales.</p>
+          <a class="link" href="https://wa.me/584249314313?text=Hola%20La%20Do%C3%B1a%2C%20me%20interesan%20las%20tortas%20cl%C3%A1sicas%20%F0%9F%8E%82" target="_blank" rel="noopener">Pedir por WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="cake reveal">
+        <div class="ph"><div class="inner"><img src="assets/torta-rosas-rojas.jpg" alt="Torta blanca decorada con rosas rojas" width="280" height="314" loading="lazy"></div></div>
+        <div class="body">
+          <h3>Para cada ocasión</h3>
+          <p>Aniversarios, grados, agradecimientos… endulzamos cualquier motivo con el detalle perfecto.</p>
+          <a class="link" href="https://wa.me/584249314313?text=Hola%20La%20Do%C3%B1a%2C%20quiero%20una%20torta%20para%20una%20ocasi%C3%B3n%20especial%20%F0%9F%8E%82" target="_blank" rel="noopener">Pedir por WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENCARGA TU TORTA ============ -->
+<section class="band encargo" id="encarga">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="section-num">03 —</span>
+      <h2>Encarga tu torta</h2>
+      <p>Cuéntanos qué celebras y armamos tu pedido en segundos. Al final se abre WhatsApp con tu mensaje listo para enviar.</p>
+    </div>
+
+    <div class="encargo-card reveal">
+      <form id="encargoForm" oninput="buildMsg()" onsubmit="return false">
+        <div class="field">
+          <label>¿Qué celebras?</label>
+          <div class="chips" role="radiogroup" aria-label="Ocasión">
+            <label class="chip"><input type="radio" name="ocasion" value="un cumpleaños" checked><span>Cumpleaños</span></label>
+            <label class="chip"><input type="radio" name="ocasion" value="un bautizo"><span>Bautizo</span></label>
+            <label class="chip"><input type="radio" name="ocasion" value="un aniversario"><span>Aniversario</span></label>
+            <label class="chip"><input type="radio" name="ocasion" value="un grado"><span>Grado</span></label>
+            <label class="chip"><input type="radio" name="ocasion" value="una ocasión especial"><span>Otra</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>¿Para cuántas personas?</label>
+          <div class="chips" role="radiogroup" aria-label="Tamaño">
+            <label class="chip"><input type="radio" name="personas" value="10 a 15 personas" checked><span>10–15</span></label>
+            <label class="chip"><input type="radio" name="personas" value="20 a 30 personas"><span>20–30</span></label>
+            <label class="chip"><input type="radio" name="personas" value="40 a 50 personas"><span>40–50</span></label>
+            <label class="chip"><input type="radio" name="personas" value="más de 60 personas"><span>60+</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fecha">¿Para cuándo la necesitas?</label>
+          <input type="date" id="fecha" name="fecha">
+        </div>
+        <div class="field">
+          <label for="detalle">Sabor, tema o colores (opcional)</label>
+          <input type="text" id="detalle" name="detalle" placeholder="Ej: chocolate, tema jardín, tonos rosados">
+        </div>
+      </form>
+
+      <aside class="preview" aria-live="polite">
+        <span class="lbl">Tu mensaje</span>
+        <p class="msg" id="msgPreview"></p>
+        <a class="btn btn-wa" id="waSend" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.87 11.87 0 010 6.19 11.9 11.9 0 0117.5 1.66 11.82 11.82 0 0124 6.06a11.9 11.9 0 01-11.9 11.9 12 12 0 01-5.7-1.45L.06 24zM6.6 20.2a9.9 9.9 0 004.9 1.34h.05a9.9 9.9 0 006.4-16.9 9.85 9.85 0 00-14 0 9.9 9.9 0 00-1.5 12l.24.38-1 3.63 3.7-.97.21.12z"/></svg>
+          Enviar por WhatsApp
+        </a>
+        <small>Te responde una persona de La Doña 🤍</small>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISÍTANOS ============ -->
+<section class="band story" id="visitanos">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="section-num">04 —</span>
+      <h2>Visítanos</h2>
+      <p>Estamos en el corazón de Maturín, frente a la Plaza del Estudiante. Te esperamos con algo dulce.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="vcard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Dirección</h3>
+        <p>Calle Monagas #83, diagonal a la Plaza El Estudiante, Maturín 6201, Monagas.<br>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Reposter%C3%ADa%20La%20Do%C3%B1a%20de%20Oriente%20Calle%20Monagas%2083%20Matur%C3%ADn" target="_blank" rel="noopener">Ver en el mapa →</a></p>
+      </div>
+      <div class="vcard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Horario</h3>
+        <p>Lunes a sábado: 8:30 a.m. – 7:00 p.m.<br>Domingos: 9:00 a.m. – 3:00 p.m.</p>
+      </div>
+      <div class="vcard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.87 11.87 0 010 6.19 11.9 11.9 0 0117.5 1.66 11.82 11.82 0 0124 6.06a11.9 11.9 0 01-11.9 11.9 12 12 0 01-5.7-1.45L.06 24z"/></svg></div>
+        <h3>Escríbenos</h3>
+        <p><a href="https://wa.me/584249314313?text=Hola%20La%20Do%C3%B1a%20%F0%9F%8E%82" target="_blank" rel="noopener">WhatsApp: 0424-931.43.13</a><br>
+        <a href="https://instagram.com/ladona_oriente_reposteria" target="_blank" rel="noopener">@ladona_oriente_reposteria</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER DEDICATORIA ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="dedica">
+      <img src="assets/logo.jpg" alt="Sello Repostería La Doña de Oriente" width="78" height="78">
+      <p class="thanks">Gracias, Maturín, por <em>28 años</em> de confianza.</p>
+      <p class="sub">A nuestros fieles clientes: gracias por dejarnos ser parte de sus celebraciones. Por muchos años más de sabor y tradición.</p>
+      <span class="sig">Con cariño, Vilma &amp; Luis</span>
+      <div class="sig-rule"></div>
+    </div>
+
+    <div class="foot-info">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Reposter%C3%ADa%20La%20Do%C3%B1a%20de%20Oriente%20Matur%C3%ADn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Calle Monagas #83, Maturín</a>
+      <a href="https://wa.me/584249314313" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.87 11.87 0 010 6.19 11.9 11.9 0 0117.5 1.66 11.82 11.82 0 0124 6.06a11.9 11.9 0 01-11.9 11.9 12 12 0 01-5.7-1.45L.06 24z"/></svg>
+        0424-931.43.13</a>
+      <a href="#top">Lun–Sáb 8:30–19:00 · Dom 9:00–15:00</a>
+    </div>
+
+    <div class="socials">
+      <a href="https://instagram.com/ladona_oriente_reposteria" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/search/top?q=La%20Do%C3%B1a%20de%20Oriente%20reposter%C3%ADa" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l.5-3.5H13V8.2c0-1 .3-1.7 1.8-1.7H17V3.4A24 24 0 0014.2 3C11.6 3 10 4.6 10 7.5v3H7V14h3v8z"/></svg>
+      </a>
+      <a href="https://wa.me/584249314313" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.87 11.87 0 010 6.19 11.9 11.9 0 0117.5 1.66 11.82 11.82 0 0124 6.06a11.9 11.9 0 01-11.9 11.9 12 12 0 01-5.7-1.45L.06 24z"/></svg>
+      </a>
+    </div>
+
+    <p class="seal-note">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial de La Doña de Oriente.</p>
+  </div>
+</footer>
+
+<!-- ============ FAB ============ -->
+<a class="fab" href="https://wa.me/584249314313?text=Hola%20La%20Do%C3%B1a%2C%20quisiera%20hacer%20un%20encargo%20%F0%9F%8E%82" target="_blank" rel="noopener" aria-label="Encarga por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.87 11.87 0 010 6.19 11.9 11.9 0 0117.5 1.66 11.82 11.82 0 0124 6.06a11.9 11.9 0 01-11.9 11.9 12 12 0 01-5.7-1.45L.06 24zM6.6 20.2a9.9 9.9 0 004.9 1.34h.05a9.9 9.9 0 006.4-16.9 9.85 9.85 0 00-14 0 9.9 9.9 0 00-1.5 12l.24.38-1 3.63 3.7-.97.21.12z"/><path d="M9.13 6.63c-.22-.5-.46-.51-.68-.52h-.58a1.1 1.1 0 00-.8.38 3.37 3.37 0 00-1.05 2.5A5.86 5.86 0 007.5 12.1a13.32 13.32 0 005.1 4.5c2.53 1 2.53.66 2.99.62.46-.04 1.48-.6 1.69-1.19.2-.58.2-1.08.14-1.19-.06-.1-.22-.16-.46-.28s-1.48-.73-1.7-.81c-.23-.09-.4-.13-.56.12s-.64.81-.79.98-.29.18-.53.06a5.33 5.33 0 01-1.57-.97 5.87 5.87 0 01-1.08-1.35c-.11-.19 0-.3.11-.42s.24-.28.36-.42a1.63 1.63 0 00.24-.4.44.44 0 00-.02-.42c-.06-.12-.53-1.3-.74-1.78z"/></svg>
+</a>
+
+<script>
+/* ---- Nav shrink on scroll ---- */
+var nav=document.getElementById('nav');
+addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>24)},{passive:true});
+
+/* ---- Reveal on scroll ---- */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+/* ---- Encarga → WhatsApp composer ---- */
+var WA="584249314313";
+function val(name){var el=document.querySelector('input[name="'+name+'"]:checked');return el?el.value:''}
+function buildMsg(){
+  var oc=val('ocasion'), pe=val('personas');
+  var f=document.getElementById('fecha').value;
+  var d=document.getElementById('detalle').value.trim();
+  var fecha='';
+  if(f){var p=f.split('-');fecha=p[2]+'/'+p[1]+'/'+p[0]}
+  var t="¡Hola La Doña! 🎂 Quisiera encargar una torta para "+oc+", para "+pe+".";
+  if(fecha) t+=" La necesito para el "+fecha+".";
+  if(d) t+=" Detalles: "+d+".";
+  t+=" ¿Me ayudan con el pedido?";
+  document.getElementById('msgPreview').textContent=t;
+  document.getElementById('waSend').href="https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+}
+/* fecha mínima = hoy */
+(function(){var t=new Date();t.setDate(t.getDate()+1);document.getElementById('fecha').min=t.toISOString().split('T')[0]})();
+buildMsg();
+</script>
+</body>
+</html>

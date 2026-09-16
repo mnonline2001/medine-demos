@@ -1,0 +1,42 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,500&family=Albert+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{display:flex;font-family:"Albert Sans",sans-serif;background:#FBF5EC;color:#4A2A25}
+  .left{flex:1.15;padding:66px 56px;display:flex;flex-direction:column;justify-content:center;position:relative}
+  .left::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 6% 96%,rgba(199,154,84,.16),transparent 70%)}
+  .eyebrow{font-size:16px;letter-spacing:.32em;text-transform:uppercase;color:#BE6B78;font-weight:600;margin-bottom:18px;position:relative}
+  h1{font-family:"Bodoni Moda",serif;font-weight:700;font-size:78px;line-height:1.02;color:#5E332F;position:relative}
+  h1 em{font-style:italic;color:#BE6B78}
+  .sub{font-size:22px;color:#7A5A52;margin-top:22px;position:relative;max-width:20ch}
+  .brand{display:flex;align-items:center;gap:16px;margin-top:40px;position:relative}
+  .brand img{width:78px;height:78px;border-radius:50%;box-shadow:0 12px 26px -14px rgba(94,51,47,.5)}
+  .brand b{font-family:"Bodoni Moda",serif;font-size:24px;color:#7C4A46}
+  .brand span{display:block;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#BE6B78;font-weight:600}
+  .right{flex:.85;position:relative}
+  .right img.cake{width:100%;height:100%;object-fit:cover}
+  .seal{position:absolute;left:-58px;bottom:52px;width:130px;height:130px;border-radius:50%;
+    background:conic-gradient(from 40deg,#C79A54,#EFD59A,#fff6e0,#E09CA5,#EFD59A,#C79A54);
+    display:grid;place-items:center;box-shadow:0 14px 26px -12px rgba(94,51,47,.5)}
+  .seal .f{width:112px;height:112px;border-radius:50%;background:#FFFCF7;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .seal .n{font-family:"Bodoni Moda",serif;font-weight:700;font-size:44px;color:#7C4A46;line-height:.9}
+  .seal .t{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#BE6B78;font-weight:600;margin-top:4px}
+</style></head>
+<body>
+  <div class="left">
+    <div class="eyebrow">Repostería · Maturín · desde 1996</div>
+    <h1>La tradición<br>del <em>buen sabor</em></h1>
+    <div class="sub">28 años endulzando Maturín, una celebración a la vez.</div>
+    <div class="brand">
+      <img src="assets/logo.jpg" alt="">
+      <div><b>La Doña de Oriente</b><span>Tortas · Encargos · Dulces</span></div>
+    </div>
+  </div>
+  <div class="right">
+    <img class="cake" src="assets/torta-rosas-blancas.jpg" alt="">
+    <div class="seal"><div class="f"><span class="n">28</span><span class="t">Años</span></div></div>
+  </div>
+</body></html>
